@@ -1,0 +1,161 @@
+Fri Nov  9 16:50:25 EET 2012
+
+Section: Data
+
+	Sessions: child was 2.6 years or younger
+	
+	Mintz(2003) Dataset:
+	aran:	    1a to 20b are used (14a and 14b are missing as in (Clair et al. 2010)). 21a to 34b are omitted.
+	nina:	    01 to 23 are ok but 08 is missing. Don't use 24 to 56 part for  replication.
+	anne:	    01a to 23b are ok. Don't use the rest 24a to 34b.
+	eve:	    01 to 20 are ok.
+	naomi:	    01 to 58 are ok. 59 to 93 are omitted.
+	peter:	    01 to 12 are ok. 13 to 20 are omitted.
+	
+	(Clair et al. 2010) uses the CHILDES MOR line to code the
+	grammatical categories(%95 accuracy). 
+	
+	Pre-processes:
+
+	0) Keep only sessions of the child that was 2.6 or younger.
+	All utterances from children were exclueded, leaving only
+	adulth speech spoken in the presence of child.
+	   
+	1) Remove and replace all the following things with <utterance
+	boundary>.  Thus each of these markings either signalled the
+	"END OF A SENTENCE" or a "BREAK" in utterance.
+
+	- all punctuation
+
+	- all pause marking
+
+	- all trailing off
+
+	- all interruption
+
+	* „ satallite markers: I replaced them since they used as
+          utterance markers according to CHILDES manual.
+
+	* quotation_next_line, vovative and quotations are also marked
+          as utterance boundaries.
+
+	?? We should split the combined word forms like I'll or He's
+	   since these tokens have more information in them and heart by
+	   children.  Easy to split since split point is marked with '~'.
+	
+	2) Not spoken analysis in MOR line are not included.
+	3) Ex: duck [\] duck shows the repetition however MOR LINE
+	does not handle the repetition part.  (Clair et al. 2010)
+	manually added these line into the data.
+
+	!! Can we add them automatically.
+	
+	Question:
+	
+	1) It is not clear how do they handle the start of the
+	sentences?  Since without a start sentence tag it is
+	impossilbe to assign first words to a frame.
+	
+	2) (Mintz 2003) frequent frames do not intersect with the
+	utterance boundaries however in the case of (Clair et
+	al. 2010) this is not clear. In order to handle all data they
+	must intersect with uttenrance boundaries.
+
+	- For the (Mintz 2003) replication Clair does not includes the
+          frames that cross the utterance boundaries.
+
+Subsection Data::statistics
+
+	-(ver1) The difference between number of types is negligeble.
+		Possible reason for this difference is my code always
+		uses the correct version of utterances.  The
+		difference between the number of tokens might be due
+		to the not including the repetitions.  My version
+		includes grammatically necessary but not spoken words.
+		
+		       my      	      Clair	     	 my with words that do not have POS
+		   tokens/type	      tokens/type	 tokens/type
+	anne:	   93767  2611        95255	2602	 95205	2617
+	aran:	   104998 3253	      106931	3249	 105906	3258
+	eve:	   58680  2183	      60929	2125	 59099	2192
+	naomi:	   27788  1851	      28979	1877	 27933	1855
+	nina:	   72879  2029	      70867	1968	 73090	2030
+	peter:	   72501  2156	      74170	2127	 73335	2162
+
+Section: Replicating (Mintz 2003)
+	
+	1) The most 45 frames of each corpus are extracted (frames do
+	not cross utterance boundaries)
+
+	2) CHILDES Copora defines following major POS(pg 108 and 112
+	   of http://childes.psy.cmu.edu/manuals/CHAT.pdf)
+
+		Childes						                Mintz03_standard(10)	Mintz03_expandad(13)
+		Adjective ADJ			                ADJ			              ADJ
+		Adverb ADV					              ADV			              ADV
+		Communicator CO					          ??			              ??			
+		Conjunction CONJ				          CONJ			            CONJ
+		Determiner DET					          DET			              DET
+		Filler FIL 					
+		Infinitive marker to INF			
+		Noun N						                N			                N
+		Proper Noun N:PROP				        N			                N
+		Number DET:NUM					          DET			              DET			
+		Particle PTL					Not parsed since they are in <mw> tag in xml files
+		Preposition PREP				          PREP			            PREP
+		Pronoun PRO 					            N			                PRO
+		Quantifier QN					            ??	              		??
+		Post Quantifier POST				      ??	              		??
+		Verb V						                V               			V
+		Auxiliary verb, 
+    including modals  V:AUX		        V			                V:AUX
+		WH words WH		  	  		          WH			              WH
+		Interjection INT				          INT             			INT
+		Coordinator  COORD
+		Family specific form FAM
+		Meta-linguistic use META
+		Negative    NEG					          NEG             			NEG
+		Neologisms  NEO
+		Onomatopoeia (imitate animal sounds) ON
+		Participle PART
+		NOT CLEAR MOD
+		Singing	  SING
+		Word play wplay
+
+    (Mintz 2003) uses two labelling: 
+
+	   a) Standard 10 labels: Noun+pronouns, verbs+auxlaries+copula,
+	   adjectives, prepositions, adverbs, determiner, wh-words,
+	   "not", conjunctions, interjection
+	   
+	   b) Standard 13 labels: (splits noun and verbs) Noun
+	   ,pronouns, verbs, auxlaries, copula, adjectives,
+	   prepositions, adverbs, determiner, wh-words, "not",
+	   conjunctions, interjection
+	   
+	   - Clair used the standard one and reported that the
+             differences were small.
+
+	   - It's not clear how both papers handle communicators such
+             as "aha" or others.
+
+	3) Accuracy and completeness are defined in eval.pl.
+	   !! completeness is not tested
+	   
+	4) Random baseline is calculated by assigning the all
+	categorised words into the random frames.
+	
+	5) All multiple t-tests and pairwise comparisons are
+	Bonferonni corrected.
+	
+	6) Each individual corpus is a seperate "subject" in the
+	statistical analyses.
+
+
+**NOTES MEETING Mon Nov 12 16:08:29 EET 2012
+
+	Syntagmatic vs Paradigmatic
+	Sparse	       Probability Dist
+
+	Apply some token based approach.
+

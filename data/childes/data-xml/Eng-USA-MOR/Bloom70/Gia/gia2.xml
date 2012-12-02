@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CHAT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns="http://www.talkbank.org/ns/talkbank"
+      xsi:schemaLocation="http://www.talkbank.org/ns/talkbank http://talkbank.org/software/talkbank.xsd"
+      Version="2.0.1"
+      Lang="eng"
+      Corpus="Bloom70"
+      Id="gia2"
+      Date="1984-01-01">
+  <Participants>
+    <participant
+      id="GIA"
+      role="Target_Child"
+      language="eng"
+
+    />
+    <participant
+      id="MOT"
+      role="Mother"
+      language="eng"
+
+    />
+    <participant
+      id="LOI"
+    name="Lois"
+      role="Investigator"
+      language="eng"
+
+    />
+  </Participants>
+  <lazy-gem label="Action"/>
+  <u who="GIA" uID="u0">
+    <w>turned<mor type="mor"><mw><pos><c>v</c></pos><stem>turn</stem><mk type="sfx">PAST</mk></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>on<mor type="mor"><mw><pos><c>prep</c></pos><stem>on</stem></mw><gra type="gra" index="2" head="1" relation="JCT"/></mor></w>
+    <w>light<mor type="mor"><mw><pos><c>n</c></pos><stem>light</stem></mw><gra type="gra" index="3" head="2" relation="POBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="situation">Gia points to lamp which is off</a>
+  </u>
+  <u who="LOI" uID="u1">
+    <w>what's<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>what</stem></mw><gra type="gra" index="1" head="4" relation="OBJ"/><mor-post><mw><pos><c>aux</c></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="4" relation="AUX"/></mor-post></mor></w>
+    <w>Mommy<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Mommy</stem></mw><gra type="gra" index="3" head="4" relation="SUBJ"/></mor></w>
+    <w>doing<mor type="mor"><mw><pos><c>n</c><s>gerund</s></pos><stem>do</stem><mk type="sfx">PROG</mk></mw><gra type="gra" index="4" head="0" relation="ROOT"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="5" head="4" relation="PUNCT"/></mor></t>
+
+    <a type="explanation">&lt;bef&gt; Gia and Lois looking at snapshots , looks at picture of Mommy on Carousel</a>
+  </u>
+  <u who="GIA" uID="u2">
+    <w>ride<mor type="mor"><mw><pos><c>n</c></pos><stem>ride</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>Dumbo<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Dumbo</stem></mw><gra type="gra" index="2" head="1" relation="VOC"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="1" relation="PUNCT"/></mor></t>
+
+  </u>
+  <u who="LOI" uID="u3">
+    <w>who's<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>who</stem></mw><gra type="gra" index="1" head="3" relation="SUBJ"/><mor-post><mw><pos><c>aux</c></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="3" relation="AUX"/></mor-post></mor></w>
+    <w>riding<mor type="mor"><mw><pos><c>part</c></pos><stem>ride</stem><mk type="sfx">PROG</mk></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="4" head="3" relation="PUNCT"/></mor></t>
+
+  </u>
+  <u who="GIA" uID="u4">
+    <w>ride<mor type="mor"><mw><pos><c>v</c></pos><stem>ride</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>da<replacement><w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="2" head="3" relation="DET"/></mor></w></replacement></w>
+    <w>fish<mor type="mor"><mw><pos><c>n</c></pos><stem>fish</stem></mw><gra type="gra" index="3" head="1" relation="OBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="situation">looking at picture of herself on small animal</a>
+  </u>
+  <u who="GIA" uID="u5">
+    <w>more<mor type="mor"><mw><pos><c>qn</c></pos><stem>more</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+  </u>
+  <u who="GIA" uID="u6">
+    <w>see<mor type="mor"><mw><pos><c>v</c></pos><stem>see</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>book<mor type="mor"><mw><pos><c>n</c></pos><stem>book</stem></mw><gra type="gra" index="2" head="1" relation="OBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="situation">pushes snapshots away , picking up "Pat the Bunny"</a>
+  </u>
+  <u who="GIA" uID="u7">
+    <w>ca<shortening>n</shortening><mor type="mor"><mw><pos><c>mod</c></pos><stem>can</stem></mw><gra type="gra" index="1" head="2" relation="SUBJ"/></mor></w>
+    <w>push<mor type="mor"><mw><pos><c>v</c></pos><stem>push</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>a<mor type="mor"><mw><pos><c>det</c></pos><stem>a</stem></mw><gra type="gra" index="3" head="4" relation="DET"/></mor></w>
+    <w>carriage<mor type="mor"><mw><pos><c>n</c></pos><stem>carriage</stem></mw><gra type="gra" index="4" head="2" relation="OBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="5" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="situation">opens book to picture of girl pushing carriage</a>
+  </u>
+  <u who="GIA" uID="u8">
+    <w>ride<mor type="mor"><mw><pos><c>v</c></pos><stem>ride</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>dis<replacement><w>this<mor type="mor"><mw><pos><c>pro</c><s>dem</s></pos><stem>this</stem></mw><gra type="gra" index="2" head="1" relation="OBJ"/></mor></w></replacement></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="situation">Gia riding tike bike</a>
+  </u>
+  <u who="GIA" uID="u9">
+    <w>eat<mor type="mor"><mw><pos><c>v</c></pos><stem>eat</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>piece<mor type="mor"><mw><pos><c>n</c></pos><stem>piece</stem></mw><gra type="gra" index="2" head="1" relation="OBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="situation">breaks off piece of cookie , putting it in her mouth</a>
+  </u>
+  <u who="GIA" uID="u10">
+    <w>read<mor type="mor"><mw><pos><c>v</c></pos><stem>read</stem><mk type="sfxf">ZERO</mk></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>a<mor type="mor"><mw><pos><c>det</c></pos><stem>a</stem></mw><gra type="gra" index="2" head="3" relation="DET"/></mor></w>
+    <w>book<mor type="mor"><mw><pos><c>n</c></pos><stem>book</stem></mw><gra type="gra" index="3" head="1" relation="OBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="situation">Gia carrying book to Mommy</a>
+  </u>
+  <u who="GIA" uID="u11">
+    <w>write<mor type="mor"><mw><pos><c>v</c></pos><stem>write</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>a<mor type="mor"><mw><pos><c>det</c></pos><stem>a</stem></mw><gra type="gra" index="2" head="3" relation="DET"/></mor></w>
+    <w>paper<mor type="mor"><mw><pos><c>n</c></pos><stem>paper</stem></mw><gra type="gra" index="3" head="1" relation="OBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="situation">scribbling on paper</a>
+  </u>
+  <u who="GIA" uID="u12">
+    <w>write<mor type="mor"><mw><pos><c>v</c></pos><stem>write</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>a<mor type="mor"><mw><pos><c>det</c></pos><stem>a</stem></mw><gra type="gra" index="2" head="3" relation="DET"/></mor></w>
+    <w>rabbit<mor type="mor"><mw><pos><c>n</c></pos><stem>rabbit</stem></mw><gra type="gra" index="3" head="1" relation="OBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="situation">trying to scribble on picture of rabbit in book .</a>
+  </u>
+  <lazy-gem label="Attribution"/>
+  <u who="LOI" uID="u13">
+    <w>who's<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>who</stem></mw><gra type="gra" index="1" head="2" relation="PRED"/><mor-post><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor-post></mor></w>
+    <g><w>that<mor type="mor"><mw><pos><c>pro</c><s>dem</s></pos><stem>that</stem></mw><gra type="gra" index="3" head="2" relation="SUBJ"/></mor></w><ga type="explanation">hen</ga></g>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="4" head="2" relation="PUNCT"/></mor></t>
+
+  </u>
+  <u who="GIA" uID="u14">
+    <w>Mommy<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Mommy</stem></mw><gra type="gra" index="1" head="2" relation="VOC"/></mor></w>
+    <w>chicken<mor type="mor"><mw><pos><c>n</c></pos><stem>chicken</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="situation">looking at picture of hen and chicks</a>
+  </u>
+  <u who="GIA" uID="u15">
+    <w>baby<mor type="mor"><mw><pos><c>n</c></pos><stem>baby</stem></mw><gra type="gra" index="1" head="2" relation="MOD"/></mor></w>
+    <w>record<mor type="mor"><mw><pos><c>n</c></pos><stem>record</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="situation">pointing to record player on which she plays children's records</a>
+  </u>
+  <lazy-gem label="Existence"/>
+  <u who="GIA" uID="u16">
+    <w>a<mor type="mor"><mw><pos><c>det</c></pos><stem>a</stem></mw><gra type="gra" index="1" head="2" relation="DET"/></mor></w>
+    <w>record<mor type="mor"><mw><pos><c>n</c></pos><stem>record</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="situation">pointing to phonograph cabinet</a>
+  </u>
+  <u who="GIA" uID="u17">
+    <w>da<replacement><w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="1" head="2" relation="DET"/></mor></w></replacement></w>
+    <w>bow<mor type="mor"><mw><pos><c>n</c></pos><stem>bow</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>wow<mor type="mor"><mw><pos><c>co</c></pos><stem>wow</stem></mw><gra type="gra" index="3" head="2" relation="COM"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="situation">looking at picture of dog</a>
+  </u>
+  <u who="GIA" uID="u18">
+    <w>a<mor type="mor"><mw><pos><c>det</c></pos><stem>a</stem></mw><gra type="gra" index="1" head="2" relation="DET"/></mor></w>
+    <w>peek<shortening>a</shortening>boo<mor type="mor"><mw><pos><c>int</c></pos><stem>peekaboo</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="situation">opening book to picture of children playing peekaboo .</a>
+  </u>
+  <u who="LOI" uID="u19">
+    <w>what's<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>what</stem></mw><gra type="gra" index="1" head="2" relation="PRED"/><mor-post><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor-post></mor></w>
+    <w>that<mor type="mor"><mw><pos><c>pro</c><s>dem</s></pos><stem>that</stem></mw><gra type="gra" index="3" head="2" relation="SUBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="4" head="2" relation="PUNCT"/></mor></t>
+
+  </u>
+  <u who="GIA" uID="u20">
+    <w>a<mor type="mor"><mw><pos><c>det</c></pos><stem>a</stem></mw><gra type="gra" index="1" head="2" relation="DET"/></mor></w>
+    <w>lamb<mor type="mor"><mw><pos><c>n</c></pos><stem>lamb</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="situation">holding lamb , responds to Lois</a>
+  </u>
+  <u who="GIA" uID="u21">
+    <w>a<mor type="mor"><mw><pos><c>det</c></pos><stem>a</stem></mw><gra type="gra" index="1" head="2" relation="DET"/></mor></w>
+    <w>rabbit<mor type="mor"><mw><pos><c>n</c></pos><stem>rabbit</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="situation">pointing to rabbit in book</a>
+  </u>
+  <u who="GIA" uID="u22">
+    <w>da<replacement><w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="1" head="2" relation="DET"/></mor></w></replacement></w>
+    <w>bank<mor type="mor"><mw><pos><c>n</c></pos><stem>bank</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="situation">reaching for coin bank</a>
+  </u>
+  <u who="LOI" uID="u23">
+    <w>oh<mor type="mor"><mw><pos><c>co</c></pos><stem>oh</stem></mw><gra type="gra" index="1" head="3" relation="COM"/></mor></w>
+    <w>what's<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>what</stem></mw><gra type="gra" index="2" head="3" relation="PRED"/><mor-post><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor-post></mor></w>
+    <w>that<mor type="mor"><mw><pos><c>pro</c><s>dem</s></pos><stem>that</stem></mw><gra type="gra" index="4" head="3" relation="SUBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="5" head="3" relation="PUNCT"/></mor></t>
+
+  </u>
+  <u who="GIA" uID="u24">
+    <w>a<mor type="mor"><mw><pos><c>det</c></pos><stem>a</stem></mw><gra type="gra" index="1" head="2" relation="DET"/></mor></w>
+    <w>stroller<mor type="mor"><mw><pos><c>n</c></pos><stem>stroller</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="situation">pointing to her new stroller</a>
+  </u>
+  <u who="GIA" uID="u25">
+    <w>a<mor type="mor"><mw><pos><c>det</c></pos><stem>a</stem></mw><gra type="gra" index="1" head="2" relation="DET"/></mor></w>
+    <w>record<mor type="mor"><mw><pos><c>n</c></pos><stem>record</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="situation">pointing to records on top of record player</a>
+  </u>
+  <u who="GIA" uID="u26">
+    <w>a<mor type="mor"><mw><pos><c>det</c></pos><stem>a</stem></mw><gra type="gra" index="1" head="2" relation="DET"/></mor></w>
+    <w>cookie<mor type="mor"><mw><pos><c>n</c></pos><stem>cookie</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="situation">pointing to cookies on top of refrigerator</a>
+  </u>
+  <u who="GIA" uID="u27">
+    <w>a<mor type="mor"><mw><pos><c>det</c></pos><stem>a</stem></mw><gra type="gra" index="1" head="2" relation="DET"/></mor></w>
+    <w>train<mor type="mor"><mw><pos><c>n</c></pos><stem>train</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="situation">Lois assembles train , Gia points to it</a>
+  </u>
+  <lazy-gem label="Locative Action"/>
+  <u who="GIA" uID="u28">
+    <w>mommy<mor type="mor"><mw><pos><c>n</c></pos><stem>mommy</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>in<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>in</stem></mw><gra type="gra" index="2" head="1" relation="JCT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="situation">Gia giving Lois block to fit in larger block .</a>
+  </u>
+  <u who="GIA" uID="u29">
+    <w>a<mor type="mor"><mw><pos><c>det</c></pos><stem>a</stem></mw><gra type="gra" index="1" head="2" relation="DET"/></mor></w>
+    <w>baby<mor type="mor"><mw><pos><c>n</c></pos><stem>baby</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>on<mor type="mor"><mw><pos><c>adv</c></pos><stem>on</stem></mw><gra type="gra" index="3" head="2" relation="JCT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="situation">Gia pointing to space on puzzle where baby belongs</a>
+  </u>
+  <u who="GIA" uID="u30">
+    <w>away<mor type="mor"><mw><pos><c>adv</c></pos><stem>away</stem></mw><gra type="gra" index="1" head="2" relation="JCT"/></mor></w>
+    <w>picture<mor type="mor"><mw><pos><c>v</c></pos><stem>picture</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="situation">Gia takes handful of snapshots to desk</a>
+  </u>
+  <u who="GIA" uID="u31">
+    <w>away<mor type="mor"><mw><pos><c>adv</c></pos><stem>away</stem></mw><gra type="gra" index="1" head="2" relation="JCT"/></mor></w>
+    <w>bag<mor type="mor"><mw><pos><c>v</c></pos><stem>bag</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="situation">Gia carrying wheels to toy bag .</a>
+  </u>
+  <lazy-gem label="Possession"/>
+  <u who="GIA" uID="u32">
+    <w>mommy<mor type="mor"><mw><pos><c>n</c></pos><stem>mommy</stem></mw><gra type="gra" index="1" head="2" relation="MOD"/></mor></w>
+    <w>face<mor type="mor"><mw><pos><c>n</c></pos><stem>face</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="situation">pointing to Mommy's face in a photograph</a>
+  </u>
+  <u who="GIA" uID="u33">
+    <w>dolly<mor type="mor"><mw><pos><c>n</c></pos><stem>doll</stem><mk type="sfx">DIM</mk></mw><gra type="gra" index="1" head="2" relation="MOD"/></mor></w>
+    <w>hat<mor type="mor"><mw><pos><c>n</c></pos><stem>hat</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="situation">pointing to hat on her doll</a>
+  </u>
+  <lazy-gem label="Recurrence"/>
+  <u who="GIA" uID="u34">
+    <w>more<mor type="mor"><mw><pos><c>qn</c></pos><stem>more</stem></mw><gra type="gra" index="1" head="2" relation="QUANT"/></mor></w>
+    <w>record<mor type="mor"><mw><pos><c>n</c></pos><stem>record</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="situation">mommy turns off radio</a>
+  </u>
+  <u who="GIA" uID="u35">
+    <w>more<mor type="mor"><mw><pos><c>qn</c></pos><stem>more</stem></mw><gra type="gra" index="1" head="2" relation="QUANT"/></mor></w>
+    <w>clown<mor type="mor"><mw><pos><c>n</c></pos><stem>clown</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="situation">Gia takes out second clown</a>
+  </u>
+  <u who="GIA" uID="u36">
+    <w>more<mor type="mor"><mw><pos><c>qn</c></pos><stem>more</stem></mw><gra type="gra" index="1" head="2" relation="QUANT"/></mor></w>
+    <w>picture<mor type="mor"><mw><pos><c>n</c></pos><stem>picture</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="situation">Gia had been looking at snapshots , pointing to snapshots she hasn't looked at yet</a>
+  </u>
+  <u who="GIA" uID="u37">
+    <w>more<mor type="mor"><mw><pos><c>qn</c></pos><stem>more</stem></mw><gra type="gra" index="1" head="2" relation="QUANT"/></mor></w>
+    <w>block<mor type="mor"><mw><pos><c>n</c></pos><stem>block</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="situation">Lois pushes block tower over , Gia points to blocks</a>
+  </u>
+  <u who="GIA" uID="u38">
+    <w>more<mor type="mor"><mw><pos><c>adv</c></pos><stem>more</stem></mw><gra type="gra" index="1" head="2" relation="JCT"/></mor></w>
+    <w>in<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>in</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="situation">Lois nests blocks , Gia picking up another block , then tries to fit it in</a>
+  </u>
+  <u who="GIA" uID="u39">
+    <w>more<mor type="mor"><mw><pos><c>qn</c></pos><stem>more</stem></mw><gra type="gra" index="1" head="2" relation="QUANT"/></mor></w>
+    <w>cookie<mor type="mor"><mw><pos><c>n</c></pos><stem>cookie</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="situation">finishes eating a cookie</a>
+  </u>
+  <u who="MOT" uID="u40">
+    <w>who's<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>who</stem></mw><gra type="gra" index="1" head="2" relation="PRED"/><mor-post><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor-post></mor></w>
+    <w>this<mor type="mor"><mw><pos><c>pro</c><s>dem</s></pos><stem>this</stem></mw><gra type="gra" index="3" head="2" relation="SUBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="4" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="situation">puts baby figure on form board , holds up boy figure</a>
+  </u>
+  <u who="GIA" uID="u41">
+    <w>more<mor type="mor"><mw><pos><c>qn</c></pos><stem>more</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+  </u>
+  <u who="GIA" uID="u42">
+    <w>more<mor type="mor"><mw><pos><c>qn</c></pos><stem>more</stem></mw><gra type="gra" index="1" head="2" relation="QUANT"/></mor></w>
+    <w>girl<mor type="mor"><mw><pos><c>n</c></pos><stem>girl</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="situation">responds</a>
+  </u>
+  <u who="GIA" uID="u43">
+    <w>butterfly<mor type="mor"><mwc><pos><c>n</c></pos><mw><pos><c>n</c></pos><stem>butter</stem></mw><mw><pos><c>n</c></pos><stem>fly</stem></mw></mwc><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="situation">pointing to picture of butterfly</a>
+  </u>
+  <u who="LOI" uID="u44">
+    <w>butterfly<mor type="mor"><mwc><pos><c>n</c></pos><mw><pos><c>n</c></pos><stem>butter</stem></mw><mw><pos><c>n</c></pos><stem>fly</stem></mw></mwc><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+  </u>
+  <u who="LOI" uID="u45">
+    <w>yes<mor type="mor"><mw><pos><c>co</c></pos><stem>yes</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+  </u>
+  <u who="GIA" uID="u46">
+    <w>rabbit<mor type="mor"><mw><pos><c>n</c></pos><stem>rabbit</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="situation">pointing to another butterfly</a>
+  </u>
+  <u who="LOI" uID="u47">
+    <w>that's<mor type="mor"><mw><pos><c>pro</c><s>dem</s></pos><stem>that</stem></mw><gra type="gra" index="1" head="2" relation="SUBJ"/><mor-post><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor-post></mor></w>
+    <w>not<mor type="mor"><mw><pos><c>neg</c></pos><stem>not</stem></mw><gra type="gra" index="3" head="2" relation="NEG"/></mor></w>
+    <w>a<mor type="mor"><mw><pos><c>det</c></pos><stem>a</stem></mw><gra type="gra" index="4" head="5" relation="DET"/></mor></w>
+    <w>rabbit<mor type="mor"><mw><pos><c>n</c></pos><stem>rabbit</stem></mw><gra type="gra" index="5" head="2" relation="PRED"/></mor></w>
+    <tagMarker type="comma"><mor type="mor"><mw><pos><c>cm</c></pos><stem>cm</stem></mw><gra type="gra" index="6" head="2" relation="PRED"/></mor></tagMarker>
+    <w>silly<mor type="mor"><mw><pos><c>adj</c></pos><stem>silly</stem></mw><gra type="gra" index="7" head="6" relation="MOD"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="8" head="2" relation="PUNCT"/></mor></t>
+
+  </u>
+  <u who="LOI" uID="u48">
+    <w>that's<mor type="mor"><mw><pos><c>pro</c><s>dem</s></pos><stem>that</stem></mw><gra type="gra" index="1" head="2" relation="SUBJ"/><mor-post><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor-post></mor></w>
+    <w>also<mor type="mor"><mw><pos><c>adv</c></pos><stem>also</stem></mw><gra type="gra" index="3" head="5" relation="JCT"/></mor></w>
+    <w>a<mor type="mor"><mw><pos><c>det</c></pos><stem>a</stem></mw><gra type="gra" index="4" head="5" relation="DET"/></mor></w>
+    <w>butterfly<mor type="mor"><mwc><pos><c>n</c></pos><mw><pos><c>n</c></pos><stem>butter</stem></mw><mw><pos><c>n</c></pos><stem>fly</stem></mw></mwc><gra type="gra" index="5" head="2" relation="PRED"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="6" head="2" relation="PUNCT"/></mor></t>
+
+  </u>
+  <u who="GIA" uID="u49">
+    <w>more<mor type="mor"><mw><pos><c>qn</c></pos><stem>more</stem></mw><gra type="gra" index="1" head="2" relation="QUANT"/></mor></w>
+    <w>butterfly<mor type="mor"><mwc><pos><c>n</c></pos><mw><pos><c>n</c></pos><stem>butter</stem></mw><mw><pos><c>n</c></pos><stem>fly</stem></mw></mwc><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="situation">response</a>
+  </u>
+  <u who="GIA" uID="u50">
+    <w>more<mor type="mor"><mw><pos><c>adv</c></pos><stem>more</stem></mw><gra type="gra" index="1" head="2" relation="JCT"/></mor></w>
+    <w>read<mor type="mor"><mw><pos><c>v</c></pos><stem>read</stem><mk type="sfxf">ZERO</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="situation">Gia picks up book , turns pages by gerself for awhile , then holds book out to mommy</a>
+  </u>
+</CHAT>

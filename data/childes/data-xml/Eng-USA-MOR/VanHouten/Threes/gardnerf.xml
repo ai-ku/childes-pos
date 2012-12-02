@@ -1,0 +1,2002 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CHAT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns="http://www.talkbank.org/ns/talkbank"
+      xsi:schemaLocation="http://www.talkbank.org/ns/talkbank http://talkbank.org/software/talkbank.xsd"
+      Version="2.0.1"
+      Lang="eng"
+      Corpus="vanhouten"
+      Id="gardnerf"
+      Date="1984-01-01">
+  <Participants>
+    <participant
+      id="INV"
+    name="Alison"
+      role="Investigator"
+      language="eng"
+
+    />
+    <participant
+      id="CHI"
+    name="Nicole"
+      role="Target_Child"
+      language="eng"
+      age="P3Y4M22D"
+
+      sex="female"
+      group="normal"
+
+    />
+  </Participants>
+  <comment type="Generic">Education of MOT is 2</comment>
+  <comment type="Generic">Mother's Age Group Older</comment>
+  <comment type="Generic">McCarthy-Cognitive 106</comment>
+  <comment type="Generic">McCarthy-Verbal 50</comment>
+  <comment type="Generic">RITLS 24</comment>
+  <comment type="Situation">Freeplay</comment>
+  <u who="INV" uID="u0">
+    <w>what<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>what</stem></mw><gra type="gra" index="1" head="2" relation="PRED"/></mor></w>
+    <w>is<mor type="mor"><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>all<mor type="mor"><mw><pos><c>qn</c></pos><stem>all</stem></mw><gra type="gra" index="3" head="5" relation="QUANT"/></mor></w>
+    <w>this<mor type="mor"><mw><pos><c>det</c></pos><stem>this</stem></mw><gra type="gra" index="4" head="5" relation="DET"/></mor></w>
+    <w>stuff<mor type="mor"><mw><pos><c>n</c></pos><stem>stuff</stem></mw><gra type="gra" index="5" head="2" relation="PRED"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="6" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=5 $NMV=1 $Ini $Rfi</a>
+  </u>
+  <u who="CHI" uID="u1">
+    <w>blocks<mor type="mor"><mw><pos><c>n</c></pos><stem>block</stem><mk type="sfx">PL</mk></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=1 $NMV=0 $Res $Rep</a>
+  </u>
+  <u who="INV" uID="u2">
+    <w>is<mor type="mor"><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>that<mor type="mor"><mw><pos><c>pro</c><s>dem</s></pos><stem>that</stem></mw><gra type="gra" index="2" head="1" relation="SUBJ"/></mor></w>
+    <w>blocks<mor type="mor"><mw><pos><c>n</c></pos><stem>block</stem><mk type="sfx">PL</mk></mw><gra type="gra" index="3" head="1" relation="PRED"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="4" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=3 $NMV=1 $Rre $Rfi</a>
+  </u>
+  <u who="CHI" uID="u3">
+    <w>yup<mor type="mor"><mw><pos><c>co</c></pos><stem>yup</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=1 $NMV=0 $Res $Rep</a>
+  </u>
+  <u who="INV" uID="u4">
+    <w>what's<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>what</stem></mw><gra type="gra" index="1" head="2" relation="PRED"/><mor-post><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor-post></mor></w>
+    <w>that<mor type="mor"><mw><pos><c>pro</c><s>dem</s></pos><stem>that</stem></mw><gra type="gra" index="3" head="2" relation="SUBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="4" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=3 $NMV=1 $Ini $Rfi</a>
+  </u>
+  <u who="CHI" uID="u5">
+    <w>a<mor type="mor"><mw><pos><c>det</c></pos><stem>a</stem></mw><gra type="gra" index="1" head="2" relation="DET"/></mor></w>
+    <w>slide<mor type="mor"><mw><pos><c>n</c></pos><stem>slide</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=2 $NMV=0 $Res $Rep</a>
+  </u>
+  <u who="INV" uID="u6">
+    <w>yeah<mor type="mor"><mw><pos><c>co</c></pos><stem>yeah</stem></mw><gra type="gra" index="1" head="3" relation="COM"/></mor></w>
+    <w>a<mor type="mor"><mw><pos><c>det</c></pos><stem>a</stem></mw><gra type="gra" index="2" head="3" relation="DET"/></mor></w>
+    <w>slide<mor type="mor"><mw><pos><c>n</c></pos><stem>slide</stem></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=3 $NMV=0 $Rre $C/A</a>
+  </u>
+  <u who="INV" uID="u7">
+    <w>what's<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>what</stem></mw><gra type="gra" index="1" head="2" relation="PRED"/><mor-post><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor-post></mor></w>
+    <w>this<mor type="mor"><mw><pos><c>pro</c><s>dem</s></pos><stem>this</stem></mw><gra type="gra" index="3" head="2" relation="SUBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="4" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=3 $NMV=1 $Ini $Rfi</a>
+  </u>
+  <u who="CHI" uID="u8">
+    <w>a<mor type="mor"><mw><pos><c>det</c></pos><stem>a</stem></mw><gra type="gra" index="1" head="3" relation="DET"/></mor></w>
+    <w>round<mor type="mor"><mw><pos><c>adj</c></pos><stem>round</stem></mw><gra type="gra" index="2" head="3" relation="MOD"/></mor></w>
+    <w>thing<mor type="mor"><mw><pos><c>n</c></pos><stem>thing</stem></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=3 $NMV=0 $Res $Rep</a>
+  </u>
+  <u who="CHI" uID="u9">
+    <w>round<mor type="mor"><mw><pos><c>adj</c></pos><stem>round</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="situation">spins top of merry+go+round</a>
+    <a type="coding">$MLU=1 $NMV=0 $Con $Rep</a>
+  </u>
+  <u who="INV" uID="u10">
+    <w>a<mor type="mor"><mw><pos><c>det</c></pos><stem>a</stem></mw><gra type="gra" index="1" head="2" relation="DET"/></mor></w>
+    <w>merry<wk type="cmp"/>go<wk type="cmp"/>round<mor type="mor"><mwc><pos><c>n</c></pos><mw><pos><c>adj</c></pos><stem>merry</stem></mw><mw><pos><c>v</c></pos><stem>go</stem></mw><mw><pos><c>adj</c></pos><stem>round</stem></mw></mwc><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=2 $NMV=0 $Rre $Exp</a>
+  </u>
+  <u who="CHI" uID="u11">
+    <w>yeah<mor type="mor"><mw><pos><c>co</c></pos><stem>yeah</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=1 $NMV=0 $Res $Rep</a>
+  </u>
+  <u who="CHI" uID="u12">
+    <w>who's<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>who</stem></mw><gra type="gra" index="1" head="3" relation="SUBJ"/><mor-post><mw><pos><c>aux</c></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="3" relation="AUX"/></mor-post></mor></w>
+    <w>gonna<mor type="mor"><mw><pos><c>part</c></pos><stem>go</stem><mk type="sfx">PROG</mk></mw><gra type="gra" index="3" head="0" relation="ROOT"/><mor-post><mw><pos><c>inf</c></pos><stem>to</stem></mw><gra type="gra" index="4" head="5" relation="INF"/></mor-post></mor></w>
+    <w>sit<mor type="mor"><mw><pos><c>v</c></pos><stem>sit</stem></mw><gra type="gra" index="5" head="3" relation="XCOMP"/></mor></w>
+    <w>in<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>in</stem></mw><gra type="gra" index="6" head="5" relation="JCT"/></mor></w>
+    <w>here<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>here</stem></mw><gra type="gra" index="7" head="6" relation="POBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="8" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=6 $NMV=1 $Ini $Rfi</a>
+  </u>
+  <u who="INV" uID="u13">
+    <w>I<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>I</stem></mw><gra type="gra" index="1" head="4" relation="COM"/></mor></w>
+    <w>don't<mor type="mor"><mw><pos><c>mod</c></pos><stem>do</stem></mw><gra type="gra" index="2" head="4" relation="SUBJ"/><mor-post><mw><pos><c>neg</c></pos><stem>not</stem></mw><gra type="gra" index="3" head="4" relation="JCT"/></mor-post></mor></w>
+    <w>know<mor type="mor"><mw><pos><c>v</c></pos><stem>know</stem></mw><gra type="gra" index="4" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="5" head="4" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=4 $NMV=1 $Rri $Rep</a>
+  </u>
+  <u who="INV" uID="u14">
+    <w>maybe<mor type="mor"><mw><pos><c>adv</c></pos><stem>maybe</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="2" head="1" relation="OBJ"/></mor></w>
+    <w>should<mor type="mor"><mw><pos><c>mod</c></pos><stem>should</stem></mw><gra type="gra" index="3" head="2" relation="MOD"/></mor></w>
+    <w>get<mor type="mor"><mw><pos><c>v</c></pos><stem>get</stem></mw><gra type="gra" index="4" head="3" relation="ROOT"/></mor></w>
+    <w>somebody<mor type="mor"><mw><pos><c>pro</c><s>indef</s></pos><stem>somebody</stem></mw><gra type="gra" index="5" head="4" relation="OBJ"/></mor></w>
+    <w>to<mor type="mor"><mw><pos><c>inf</c></pos><stem>to</stem></mw><gra type="gra" index="6" head="7" relation="INF"/></mor></w>
+    <w>sit<mor type="mor"><mw><pos><c>v</c></pos><stem>sit</stem></mw><gra type="gra" index="7" head="5" relation="XMOD"/></mor></w>
+    <w>in<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>in</stem></mw><gra type="gra" index="8" head="7" relation="JCT"/></mor></w>
+    <w>here<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>here</stem></mw><gra type="gra" index="9" head="8" relation="POBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="10" head="4" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=9 $NMV=2 $Con $C/R</a>
+  </u>
+  <u who="INV" uID="u15">
+    <w>what<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>what</stem></mw><gra type="gra" index="1" head="4" relation="OBJ"/></mor></w>
+    <w>do<mor type="mor"><mw><pos><c>mod</c></pos><stem>do</stem></mw><gra type="gra" index="2" head="4" relation="AUX"/></mor></w>
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="3" head="4" relation="SUBJ"/></mor></w>
+    <w>call<mor type="mor"><mw><pos><c>v</c></pos><stem>call</stem></mw><gra type="gra" index="4" head="0" relation="ROOT"/></mor></w>
+    <w>all<mor type="mor"><mw><pos><c>qn</c></pos><stem>all</stem></mw><gra type="gra" index="5" head="7" relation="QUANT"/></mor></w>
+    <w>these<mor type="mor"><mw><pos><c>det</c></pos><stem>these</stem></mw><gra type="gra" index="6" head="7" relation="DET"/></mor></w>
+    <w>pieces<mor type="mor"><mw><pos><c>n</c></pos><stem>piece</stem><mk type="sfx">PL</mk></mw><gra type="gra" index="7" head="4" relation="OBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="8" head="4" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=7 $NMV=1 $Ini $Rfi</a>
+  </u>
+  <u who="INV" uID="u16">
+    <w>what<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>what</stem></mw><gra type="gra" index="1" head="4" relation="OBJ"/></mor></w>
+    <w>do<mor type="mor"><mw><pos><c>mod</c></pos><stem>do</stem></mw><gra type="gra" index="2" head="4" relation="AUX"/></mor></w>
+    <w>they<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>they</stem></mw><gra type="gra" index="3" head="4" relation="SUBJ"/></mor></w>
+    <w>go<mor type="mor"><mw><pos><c>v</c></pos><stem>go</stem></mw><gra type="gra" index="4" head="0" relation="ROOT"/></mor></w>
+    <w>to<mor type="mor"><mw><pos><c>prep</c></pos><stem>to</stem></mw><gra type="gra" index="5" head="4" relation="JCT"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="6" head="4" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=5 $NMV=1 $Con $Rfi</a>
+  </u>
+  <u who="CHI" uID="u17">
+    <w>huh<mor type="mor"><mw><pos><c>co</c></pos><stem>huh</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="situation">child is obviously more interested in playing than in answering questions . Responses are very soft and suggest she is otherwise engaged .</a>
+    <a type="coding">$MLU=0 $NMV=0 $Res $Rfi</a>
+  </u>
+  <u who="INV" uID="u18">
+    <w>to<mor type="mor"><mw><pos><c>prep</c></pos><stem>to</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>a<mor type="mor"><mw><pos><c>det</c></pos><stem>a</stem></mw><gra type="gra" index="2" head="3" relation="DET"/></mor></w>
+    <w>park<mor type="mor"><mw><pos><c>n</c></pos><stem>park</stem></mw><gra type="gra" index="3" head="1" relation="POBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="4" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=3 $NMV=0 $Rri $Rep</a>
+  </u>
+  <u who="CHI" uID="u19">
+    <w>yeah<mor type="mor"><mw><pos><c>co</c></pos><stem>yeah</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=1 $NMV=0 $Res $Rep</a>
+  </u>
+  <u who="INV" uID="u20">
+    <w>do<mor type="mor"><mw><pos><c>v</c></pos><stem>do</stem></mw><gra type="gra" index="1" head="3" relation="AUX"/></mor></w>
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="2" head="3" relation="SUBJ"/></mor></w>
+    <w>like<mor type="mor"><mw><pos><c>v</c></pos><stem>like</stem></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <w>to<mor type="mor"><mw><pos><c>inf</c></pos><stem>to</stem></mw><gra type="gra" index="4" head="5" relation="INF"/></mor></w>
+    <w>go<mor type="mor"><mw><pos><c>v</c></pos><stem>go</stem></mw><gra type="gra" index="5" head="3" relation="XCOMP"/></mor></w>
+    <w>to<mor type="mor"><mw><pos><c>prep</c></pos><stem>to</stem></mw><gra type="gra" index="6" head="5" relation="JCT"/></mor></w>
+    <w>parks<mor type="mor"><mw><pos><c>n</c></pos><stem>park</stem><mk type="sfx">PL</mk></mw><gra type="gra" index="7" head="6" relation="POBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="8" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=7 $NMV=2 $Ini $Rfi</a>
+  </u>
+  <u who="CHI" uID="u21">
+    <w>yeah<mor type="mor"><mw><pos><c>co</c></pos><stem>yeah</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="e"><mor type="mor"><mt type="e"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="situation">now pays attention to examiner</a>
+    <a type="coding">$MLU=1 $NMV=0 $Res $Epr</a>
+  </u>
+  <u who="INV" uID="u22">
+    <w>what<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>what</stem></mw><gra type="gra" index="1" head="2" relation="OBJ"/></mor></w>
+    <w>do<mor type="mor"><mw><pos><c>mod</c></pos><stem>do</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="3" head="4" relation="SUBJ"/></mor></w>
+    <w>do<mor type="mor"><mw><pos><c>v</c></pos><stem>do</stem></mw><gra type="gra" index="4" head="2" relation="CMOD"/></mor></w>
+    <w>when<mor type="mor"><mw><pos><c>conj</c></pos><stem>when</stem></mw><gra type="gra" index="5" head="7" relation="CPZR"/></mor></w>
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="6" head="7" relation="SUBJ"/></mor></w>
+    <w>go<mor type="mor"><mw><pos><c>v</c></pos><stem>go</stem></mw><gra type="gra" index="7" head="4" relation="CJCT"/></mor></w>
+    <w>to<mor type="mor"><mw><pos><c>prep</c></pos><stem>to</stem></mw><gra type="gra" index="8" head="7" relation="JCT"/></mor></w>
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="9" head="10" relation="DET"/></mor></w>
+    <w>park<mor type="mor"><mw><pos><c>n</c></pos><stem>park</stem></mw><gra type="gra" index="10" head="8" relation="POBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="11" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=10 $NMV=2 $Rex $Rfi</a>
+  </u>
+  <u who="CHI" uID="u23">
+    <w>feed<mor type="mor"><mw><pos><c>v</c></pos><stem>feed</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>some<mor type="mor"><mw><pos><c>qn</c></pos><stem>some</stem></mw><gra type="gra" index="2" head="3" relation="QUANT"/></mor></w>
+    <w>bread<mor type="mor"><mw><pos><c>n</c></pos><stem>bread</stem></mw><gra type="gra" index="3" head="1" relation="OBJ"/></mor></w>
+    <w>to<mor type="mor"><mw><pos><c>prep</c></pos><stem>to</stem></mw><gra type="gra" index="4" head="1" relation="JCT"/></mor></w>
+    <w>animals<mor type="mor"><mw><pos><c>n</c></pos><stem>animal</stem><mk type="sfx">PL</mk></mw><gra type="gra" index="5" head="4" relation="POBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="6" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=5 $NMV=1 $Res $Rep</a>
+  </u>
+  <u who="INV" uID="u24">
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="1" head="2" relation="SUBJ"/></mor></w>
+    <w>feed<mor type="mor"><mw><pos><c>v</c></pos><stem>feed</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>bread<mor type="mor"><mw><pos><c>n</c></pos><stem>bread</stem></mw><gra type="gra" index="3" head="2" relation="OBJ"/></mor></w>
+    <w>to<mor type="mor"><mw><pos><c>prep</c></pos><stem>to</stem></mw><gra type="gra" index="4" head="2" relation="JCT"/></mor></w>
+    <w>animals<mor type="mor"><mw><pos><c>n</c></pos><stem>animal</stem><mk type="sfx">PL</mk></mw><gra type="gra" index="5" head="4" relation="POBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="6" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=5 $NMV=1 $Rre $Rfi</a>
+  </u>
+  <u who="CHI" uID="u25">
+    <w>yup<mor type="mor"><mw><pos><c>co</c></pos><stem>yup</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="situation">begins to play with the park figures again .</a>
+    <a type="coding">$MLU=1 $NMV=0 $Res $Rep</a>
+  </u>
+  <u who="INV" uID="u26">
+    <w>and<mor type="mor"><mw><pos><c>coord</c></pos><stem>and</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>what<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>what</stem></mw><gra type="gra" index="2" head="6" relation="OBJ"/></mor></w>
+    <w>else<mor type="mor"><mw><pos><c>post</c></pos><stem>else</stem></mw><gra type="gra" index="3" head="2" relation="JCT"/></mor></w>
+    <w>do<mor type="mor"><mw><pos><c>mod</c></pos><stem>do</stem></mw><gra type="gra" index="4" head="6" relation="AUX"/></mor></w>
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="5" head="6" relation="SUBJ"/></mor></w>
+    <w>do<mor type="mor"><mw><pos><c>v</c></pos><stem>do</stem></mw><gra type="gra" index="6" head="1" relation="COMP"/></mor></w>
+    <w>at<mor type="mor"><mw><pos><c>prep</c></pos><stem>at</stem></mw><gra type="gra" index="7" head="6" relation="JCT"/></mor></w>
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="8" head="9" relation="DET"/></mor></w>
+    <w>park<mor type="mor"><mw><pos><c>n</c></pos><stem>park</stem></mw><gra type="gra" index="9" head="7" relation="POBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="10" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=9 $NMV=1 $Rre $Rfi</a>
+  </u>
+  <u who="CHI" uID="u27">
+    <w>oh<mor type="mor"><mw><pos><c>co</c></pos><stem>oh</stem></mw><gra type="gra" index="1" head="2" relation="COM"/></mor></w>
+    <w>gosh<mor type="mor"><mw><pos><c>co</c></pos><stem>gosh</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=1 $NMV=0 $Ini $Epr</a>
+  </u>
+  <u who="CHI" uID="u28">
+    <w>I<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>I</stem></mw><gra type="gra" index="1" head="2" relation="SUBJ"/></mor></w>
+    <w>lost<mor type="mor"><mw><pos><c>v</c></pos><stem>lose</stem><mk type="sfxf">PAST</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="3" head="4" relation="DET"/></mor></w>
+    <w>girl<mor type="mor"><mw><pos><c>n</c></pos><stem>girl</stem></mw><gra type="gra" index="4" head="2" relation="OBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="5" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=4 $NMV=1 $Con $Rep</a>
+  </u>
+  <u who="INV" uID="u29">
+    <w>what<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>what</stem></mw><gra type="gra" index="1" head="2" relation="OBJ"/></mor></w>
+    <w>does<mor type="mor"><mw><pos><c>mod</c></pos><stem>do</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="3" head="5" relation="DET"/></mor></w>
+    <w>little<mor type="mor"><mw><pos><c>adj</c></pos><stem>little</stem></mw><gra type="gra" index="4" head="5" relation="MOD"/></mor></w>
+    <w>girl<mor type="mor"><mw><pos><c>n</c></pos><stem>girl</stem></mw><gra type="gra" index="5" head="6" relation="SUBJ"/></mor></w>
+    <w>say<mor type="mor"><mw><pos><c>v</c></pos><stem>say</stem></mw><gra type="gra" index="6" head="2" relation="COMP"/></mor></w>
+    <w>when<mor type="mor"><mw><pos><c>conj</c></pos><stem>when</stem></mw><gra type="gra" index="7" head="9" relation="CPZR"/></mor></w>
+    <w>she<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>she</stem></mw><gra type="gra" index="8" head="9" relation="SUBJ"/></mor></w>
+    <w>falls<mor type="mor"><mw><pos><c>v</c></pos><stem>fall</stem><mk type="sfx">3S</mk></mw><gra type="gra" index="9" head="6" relation="COMP"/></mor></w>
+    <w>off<mor type="mor"><mw><pos><c>prep</c></pos><stem>off</stem></mw><gra type="gra" index="10" head="9" relation="JCT"/></mor></w>
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="11" head="12" relation="DET"/></mor></w>
+    <w>merry<wk type="cmp"/>go<wk type="cmp"/>round<mor type="mor"><mwc><pos><c>n</c></pos><mw><pos><c>adj</c></pos><stem>merry</stem></mw><mw><pos><c>v</c></pos><stem>go</stem></mw><mw><pos><c>adj</c></pos><stem>round</stem></mw></mwc><gra type="gra" index="12" head="10" relation="POBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="13" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=12 $NMV=2 $Rre $Rfi</a>
+  </u>
+  <u who="CHI" uID="u30">
+    <w>she<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>she</stem></mw><gra type="gra" index="1" head="2" relation="SUBJ"/></mor></w>
+    <w>cries<mor type="mor"><mw><pos><c>v</c></pos><stem>cry</stem><mk type="sfx">3S</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=2 $NMV=1 $Res $Rep</a>
+  </u>
+  <u who="INV" uID="u31">
+    <w>yeah<mor type="mor"><mw><pos><c>co</c></pos><stem>yeah</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=1 $NMV=0 $Rre $C/A</a>
+  </u>
+  <u who="INV" uID="u32">
+    <w>and<mor type="mor"><mw><pos><c>coord</c></pos><stem>and</stem></mw><gra type="gra" index="1" head="3" relation="TOP"/></mor></w>
+    <w>this<mor type="mor"><mw><pos><c>pro</c><s>dem</s></pos><stem>this</stem></mw><gra type="gra" index="2" head="3" relation="SUBJ"/></mor></w>
+    <w>is<mor type="mor"><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="4" head="5" relation="DET"/></mor></w>
+    <w>mommy<mor type="mor"><mw><pos><c>n</c></pos><stem>mommy</stem></mw><gra type="gra" index="5" head="3" relation="PRED"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="6" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=5 $NMV=1 $Ini $Rep</a>
+  </u>
+  <u who="INV" uID="u33">
+    <w>see<mor type="mor"><mw><pos><c>v</c></pos><stem>see</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="2" head="3" relation="DET"/></mor></w>
+    <w>mommy<mor type="mor"><mw><pos><c>n</c></pos><stem>mommy</stem></mw><gra type="gra" index="3" head="1" relation="OBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=3 $NMV=1 $Con $Rep</a>
+  </u>
+  <u who="INV" uID="u34">
+    <w>there's<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>there</stem></mw><gra type="gra" index="1" head="2" relation="PRED"/><mor-post><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor-post></mor></w>
+    <w>her<mor type="mor"><mw><pos><c>pro</c><s>poss</s><s>det</s></pos><stem>her</stem></mw><gra type="gra" index="3" head="4" relation="MOD"/></mor></w>
+    <w>mommy<mor type="mor"><mw><pos><c>n</c></pos><stem>mommy</stem></mw><gra type="gra" index="4" head="2" relation="SUBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="5" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=4 $NMV=1 $Con $Rep</a>
+  </u>
+  <u who="INV" uID="u35">
+    <w>what<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>what</stem></mw><gra type="gra" index="1" head="4" relation="OBJ"/></mor></w>
+    <w>does<mor type="mor"><mw><pos><c>mod</c></pos><stem>do</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="4" relation="JCT"/></mor></w>
+    <w>she<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>she</stem></mw><gra type="gra" index="3" head="4" relation="SUBJ"/></mor></w>
+    <w>have<mor type="mor"><mw><pos><c>v</c></pos><stem>have</stem></mw><gra type="gra" index="4" head="0" relation="ROOT"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="5" head="4" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=4 $NMV=1 $Con $Rfi</a>
+  </u>
+  <u who="CHI" uID="u36">
+    <w>a<mor type="mor"><mw><pos><c>det</c></pos><stem>a</stem></mw><gra type="gra" index="1" head="2" relation="DET"/></mor></w>
+    <w>hat<mor type="mor"><mw><pos><c>n</c></pos><stem>hat</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=2 $NMV=0 $Res $Rep</a>
+  </u>
+  <u who="INV" uID="u37">
+    <w>look<mor type="mor"><mw><pos><c>v</c></pos><stem>look</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=1 $NMV=1 $Ini $C/R</a>
+  </u>
+  <u who="INV" uID="u38">
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="1" head="3" relation="DET"/></mor></w>
+    <w>mommy's<mor type="mor"><mw><pos><c>n</c></pos><stem>mommy</stem></mw><gra type="gra" index="2" head="3" relation="MOD"/><mor-post><mw><pos><c>poss</c></pos><stem>s</stem></mw><gra type="gra" index="3" head="4" relation="SUBJ"/></mor-post></mor></w>
+    <w>saying<mor type="mor"><mw><pos><c>n</c><s>gerund</s></pos><stem>say</stem><mk type="sfx">PROG</mk></mw><gra type="gra" index="4" head="0" relation="ROOT"/></mor></w>
+    <t type="quotation next line"><mor type="mor"><mt type="quotation next line"/><gra type="gra" index="5" head="4" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=8 $NMV=2 $Con $Col</a>
+  </u>
+  <u who="INV" uID="u39">
+    <linker type="quoted utterance next"/>
+    <w>get<mor type="mor"><mw><pos><c>v</c></pos><stem>get</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>off<mor type="mor"><mw><pos><c>prep</c></pos><stem>off</stem></mw><gra type="gra" index="2" head="1" relation="JCT"/></mor></w>
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="3" head="4" relation="DET"/></mor></w>
+    <w>ground<mor type="mor"><mw><pos><c>n</c></pos><stem>ground</stem></mw><gra type="gra" index="4" head="2" relation="POBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="5" head="1" relation="PUNCT"/></mor></t>
+
+  </u>
+  <u who="INV" uID="u40">
+    <w>get<mor type="mor"><mw><pos><c>v</c></pos><stem>get</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>off<mor type="mor"><mw><pos><c>prep</c></pos><stem>off</stem></mw><gra type="gra" index="2" head="1" relation="JCT"/></mor></w>
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="3" head="4" relation="DET"/></mor></w>
+    <w>ground<mor type="mor"><mw><pos><c>n</c></pos><stem>ground</stem></mw><gra type="gra" index="4" head="2" relation="POBJ"/></mor></w>
+    <w>little<mor type="mor"><mw><pos><c>adj</c></pos><stem>little</stem></mw><gra type="gra" index="5" head="6" relation="MOD"/></mor></w>
+    <w>girl<mor type="mor"><mw><pos><c>n</c></pos><stem>girl</stem></mw><gra type="gra" index="6" head="1" relation="OBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="7" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=6 $NMV=1 $Con $Col</a>
+  </u>
+  <u who="INV" uID="u41">
+    <w>what's<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>what</stem></mw><gra type="gra" index="1" head="2" relation="PRED"/><mor-post><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor-post></mor></w>
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="3" head="5" relation="DET"/></mor></w>
+    <w>little<mor type="mor"><mw><pos><c>adj</c></pos><stem>little</stem></mw><gra type="gra" index="4" head="5" relation="MOD"/></mor></w>
+    <w>girl<mor type="mor"><mw><pos><c>n</c></pos><stem>girl</stem></mw><gra type="gra" index="5" head="2" relation="PRED"/></mor></w>
+    <w>say<mor type="mor"><mw><pos><c>co</c></pos><stem>say</stem></mw><gra type="gra" index="6" head="2" relation="COM"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="7" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=6 $NMV=1 $Con $Rfi</a>
+  </u>
+  <u who="CHI" uID="u42">
+    <e><action/></e>
+    <t type="p"></t>
+
+    <a type="coding">$Nul</a>
+  </u>
+  <u who="INV" uID="u43">
+    <w>be<mor type="mor"><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>careful<mor type="mor"><mw><pos><c>adj</c></pos><stem>careful</stem></mw><gra type="gra" index="2" head="1" relation="PRED"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=2 $NMV=1 $Ini $Col</a>
+  </u>
+  <u who="INV" uID="u44">
+    <w>be<mor type="mor"><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>careful<mor type="mor"><mw><pos><c>adj</c></pos><stem>careful</stem></mw><gra type="gra" index="2" head="1" relation="PRED"/></mor></w>
+    <w>on<mor type="mor"><mw><pos><c>prep</c></pos><stem>on</stem></mw><gra type="gra" index="3" head="1" relation="JCT"/></mor></w>
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="4" head="5" relation="DET"/></mor></w>
+    <w>merry<wk type="cmp"/>go<wk type="cmp"/>round<mor type="mor"><mwc><pos><c>n</c></pos><mw><pos><c>adj</c></pos><stem>merry</stem></mw><mw><pos><c>v</c></pos><stem>go</stem></mw><mw><pos><c>adj</c></pos><stem>round</stem></mw></mwc><gra type="gra" index="5" head="3" relation="POBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="6" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=5 $NMV=1 $Con $Col</a>
+  </u>
+  <u who="INV" uID="u45">
+    <w>and<mor type="mor"><mw><pos><c>coord</c></pos><stem>and</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>what<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>what</stem></mw><gra type="gra" index="2" head="1" relation="COM"/></mor></w>
+    <w>else<mor type="mor"><mw><pos><c>post</c></pos><stem>else</stem></mw><gra type="gra" index="3" head="2" relation="JCT"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="4" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=3 $NMV=0 $Ini $Rfi</a>
+  </u>
+  <u who="CHI" uID="u46">
+    <w>okay<mor type="mor"><mw><pos><c>co</c></pos><stem>okay</stem></mw><gra type="gra" index="1" head="4" relation="COM"/></mor></w>
+    <w>now<mor type="mor"><mw><pos><c>adv</c></pos><stem>now</stem></mw><gra type="gra" index="2" head="4" relation="COM"/></mor></w>
+    <w>just<mor type="mor"><mw><pos><c>adv</c><s>int</s></pos><stem>just</stem></mw><gra type="gra" index="3" head="4" relation="JCT"/></mor></w>
+    <w>sit<mor type="mor"><mw><pos><c>v</c></pos><stem>sit</stem></mw><gra type="gra" index="4" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="5" head="4" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=4 $NMV=1 $Ini $Rep</a>
+  </u>
+  <u who="CHI" uID="u47">
+    <w>does<mor type="mor"><mw><pos><c>mod</c></pos><stem>do</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="1" head="3" relation="COM"/></mor></w>
+    <w>she<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>she</stem></mw><gra type="gra" index="2" head="3" relation="SUBJ"/></mor></w>
+    <w>sit<mor type="mor"><mw><pos><c>v</c></pos><stem>sit</stem></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="4" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=3 $NMV=1 $Ini $Rfi</a>
+  </u>
+  <u who="INV" uID="u48">
+    <w>does<mor type="mor"><mw><pos><c>mod</c></pos><stem>do</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="1" head="3" relation="COM"/></mor></w>
+    <w>she<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>she</stem></mw><gra type="gra" index="2" head="3" relation="SUBJ"/></mor></w>
+    <w>sit<mor type="mor"><mw><pos><c>v</c></pos><stem>sit</stem></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="4" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=3 $NMV=1 $Rri $Exp</a>
+  </u>
+  <u who="INV" uID="u49">
+    <w>yeah<mor type="mor"><mw><pos><c>co</c></pos><stem>yeah</stem></mw><gra type="gra" index="1" head="4" relation="COM"/></mor></w>
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="2" head="4" relation="SUBJ"/></mor></w>
+    <w>can<mor type="mor"><mw><pos><c>mod</c></pos><stem>can</stem></mw><gra type="gra" index="3" head="4" relation="AUX"/></mor></w>
+    <w>make<mor type="mor"><mw><pos><c>v</c></pos><stem>make</stem></mw><gra type="gra" index="4" head="0" relation="ROOT"/></mor></w>
+    <w>her<mor type="mor"><mw><pos><c>pro</c><s>obj</s></pos><stem>her</stem></mw><gra type="gra" index="5" head="6" relation="MOD"/></mor></w>
+    <w>sit<mor type="mor"><mw><pos><c>v</c></pos><stem>sit</stem></mw><gra type="gra" index="6" head="4" relation="OBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="7" head="4" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=6 $NMV=2 $Con $Rep</a>
+  </u>
+  <u who="CHI" uID="u50">
+    <w>can't<mor type="mor"><mw><pos><c>mod</c></pos><stem>can</stem></mw><gra type="gra" index="1" head="3" relation="SUBJ"/><mor-post><mw><pos><c>neg</c></pos><stem>not</stem></mw><gra type="gra" index="2" head="3" relation="JCT"/></mor-post></mor></w>
+    <w>sit<mor type="mor"><mw><pos><c>v</c></pos><stem>sit</stem></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=3 $NMV=1 $Res $Rep</a>
+  </u>
+  <u who="INV" uID="u51">
+    <w>move<mor type="mor"><mw><pos><c>v</c></pos><stem>move</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>her<mor type="mor"><mw><pos><c>pro</c><s>poss</s><s>det</s></pos><stem>her</stem></mw><gra type="gra" index="2" head="3" relation="MOD"/></mor></w>
+    <w>legs<mor type="mor"><mw><pos><c>n</c></pos><stem>leg</stem><mk type="sfx">PL</mk></mw><gra type="gra" index="3" head="1" relation="OBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=3 $NMV=1 $Rre $Tea</a>
+  </u>
+  <u who="CHI" uID="u52">
+    <e><action/></e>
+    <t type="p"></t>
+
+    <a type="situation">sits figure down</a>
+  </u>
+  <u who="INV" uID="u53">
+    <w>there<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>there</stem></mw><gra type="gra" index="1" head="3" relation="JCT"/></mor></w>
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="2" head="3" relation="SUBJ"/></mor></w>
+    <w>go<mor type="mor"><mw><pos><c>v</c></pos><stem>go</stem></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=3 $NMV=1 $Rta $Tea</a>
+  </u>
+  <u who="INV" uID="u54">
+    <w>what<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>what</stem></mw><gra type="gra" index="1" head="4" relation="OBJ"/></mor></w>
+    <w>does<mor type="mor"><mw><pos><c>mod</c></pos><stem>do</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="4" relation="AUX"/></mor></w>
+    <w>she<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>she</stem></mw><gra type="gra" index="3" head="4" relation="SUBJ"/></mor></w>
+    <w>say<mor type="mor"><mw><pos><c>v</c></pos><stem>say</stem></mw><gra type="gra" index="4" head="0" relation="ROOT"/></mor></w>
+    <w>when<mor type="mor"><mw><pos><c>conj</c></pos><stem>when</stem></mw><gra type="gra" index="5" head="7" relation="CPZR"/></mor></w>
+    <w>she<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>she</stem></mw><gra type="gra" index="6" head="7" relation="SUBJ"/></mor></w>
+    <w>gets<mor type="mor"><mw><pos><c>v</c></pos><stem>get</stem><mk type="sfx">3S</mk></mw><gra type="gra" index="7" head="4" relation="COMP"/></mor></w>
+    <w>on<mor type="mor"><mw><pos><c>prep</c></pos><stem>on</stem></mw><gra type="gra" index="8" head="7" relation="PRED"/></mor></w>
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="9" head="10" relation="DET"/></mor></w>
+    <w>merry<wk type="cmp"/>go<wk type="cmp"/>round<mor type="mor"><mwc><pos><c>n</c></pos><mw><pos><c>adj</c></pos><stem>merry</stem></mw><mw><pos><c>v</c></pos><stem>go</stem></mw><mw><pos><c>adj</c></pos><stem>round</stem></mw></mwc><gra type="gra" index="10" head="8" relation="POBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="11" head="4" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=10 $NMV=2 $Ini $Rfi</a>
+  </u>
+  <u who="CHI" uID="u55">
+    <w>she<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>she</stem></mw><gra type="gra" index="1" head="2" relation="SUBJ"/></mor></w>
+    <w>says<mor type="mor"><mw><pos><c>v</c></pos><stem>say</stem><mk type="sfx">3S</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>she<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>she</stem></mw><gra type="gra" index="3" head="4" relation="SUBJ"/></mor></w>
+    <w>falls<mor type="mor"><mw><pos><c>v</c></pos><stem>fall</stem><mk type="sfx">3S</mk></mw><gra type="gra" index="4" head="2" relation="COMP"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="5" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=4 $NMV=2 $Res $Rep</a>
+  </u>
+  <u who="INV" uID="u56">
+    <w>she<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>she</stem></mw><gra type="gra" index="1" head="2" relation="SUBJ"/></mor></w>
+    <w>said<mor type="mor"><mw><pos><c>v</c></pos><stem>say</stem><mk type="sfxf">PAST</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>she<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>she</stem></mw><gra type="gra" index="3" head="4" relation="MOD"/></mor></w>
+    <w>falls<mor type="mor"><mw><pos><c>n</c></pos><stem>fall</stem><mk type="sfx">PL</mk></mw><gra type="gra" index="4" head="2" relation="OBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="5" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=4 $NMV=2 $Rre $Exp</a>
+  </u>
+  <u who="CHI" uID="u57">
+    <w>ummhm<mor type="mor"><mw><pos><c>co</c></pos><stem>ummhm</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=1 $NMV=0 $Res $Rep</a>
+  </u>
+  <u who="INV" uID="u58">
+    <w>what<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>what</stem></mw><gra type="gra" index="1" head="2" relation="OBJ"/></mor></w>
+    <w>happens<mor type="mor"><mw><pos><c>v</c></pos><stem>happen</stem><mk type="sfx">3S</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>after<mor type="mor"><mw><pos><c>prep</c></pos><stem>after</stem></mw><gra type="gra" index="3" head="5" relation="CPZR"/></mor></w>
+    <w>she<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>she</stem></mw><gra type="gra" index="4" head="5" relation="SUBJ"/></mor></w>
+    <w>falls<mor type="mor"><mw><pos><c>v</c></pos><stem>fall</stem><mk type="sfx">3S</mk></mw><gra type="gra" index="5" head="2" relation="CJCT"/></mor></w>
+    <w>down<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>down</stem></mw><gra type="gra" index="6" head="5" relation="JCT"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="7" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=6 $NMV=2 $Rre $Rfi</a>
+  </u>
+  <u who="CHI" uID="u59">
+    <w>she<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>she</stem></mw><gra type="gra" index="1" head="2" relation="SUBJ"/></mor></w>
+    <w>slips<mor type="mor"><mw><pos><c>v</c></pos><stem>slip</stem><mk type="sfx">3S</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=2 $NMV=1 $Res $Rep</a>
+  </u>
+  <u who="INV" uID="u60">
+    <w>what<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>what</stem></mw><gra type="gra" index="1" head="2" relation="PRED"/></mor></w>
+    <w>are<mor type="mor"><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">PRES</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>these<mor type="mor"><mw><pos><c>det</c></pos><stem>these</stem></mw><gra type="gra" index="3" head="5" relation="DET"/></mor></w>
+    <w>little<mor type="mor"><mw><pos><c>adj</c></pos><stem>little</stem></mw><gra type="gra" index="4" head="5" relation="MOD"/></mor></w>
+    <w>girls<mor type="mor"><mw><pos><c>n</c></pos><stem>girl</stem><mk type="sfx">PL</mk></mw><gra type="gra" index="5" head="6" relation="SUBJ"/></mor></w>
+    <w>doing<mor type="mor"><mw><pos><c>n</c><s>gerund</s></pos><stem>do</stem><mk type="sfx">PROG</mk></mw><gra type="gra" index="6" head="2" relation="SUBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="7" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=6 $NMV=1 $Ini $Rfi</a>
+  </u>
+  <u who="CHI" uID="u61">
+    <w>going<mor type="mor"><mw><pos><c>n</c><s>gerund</s></pos><stem>go</stem><mk type="sfx">PROG</mk></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="trail off"><mor type="mor"><mt type="trail off"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+  </u>
+  <u who="CHI" uID="u62">
+    <w>how<mor type="mor"><mw><pos><c>adv</c><s>wh</s></pos><stem>how</stem></mw><gra type="gra" index="1" head="2" relation="JCT"/></mor></w>
+    <w>can<mor type="mor"><mw><pos><c>mod</c></pos><stem>can</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>these<mor type="mor"><mw><pos><c>det</c></pos><stem>these</stem></mw><gra type="gra" index="3" head="4" relation="DET"/></mor></w>
+    <w>girls<mor type="mor"><mw><pos><c>n</c></pos><stem>girl</stem><mk type="sfx">PL</mk></mw><gra type="gra" index="4" head="5" relation="SUBJ"/></mor></w>
+    <w>go<mor type="mor"><mw><pos><c>v</c></pos><stem>go</stem></mw><gra type="gra" index="5" head="2" relation="COMP"/></mor></w>
+    <w>on<mor type="mor"><mw><pos><c>prep</c></pos><stem>on</stem></mw><gra type="gra" index="6" head="5" relation="JCT"/></mor></w>
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="7" head="8" relation="DET"/></mor></w>
+    <w>ladder<mor type="mor"><mw><pos><c>n</c></pos><stem>ladder</stem></mw><gra type="gra" index="8" head="6" relation="POBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="9" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=8 $NMV=1 $Ini $Lim</a>
+  </u>
+  <u who="INV" uID="u63">
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="1" head="3" relation="SUBJ"/></mor></w>
+    <w>can<mor type="mor"><mw><pos><c>mod</c></pos><stem>can</stem></mw><gra type="gra" index="2" head="3" relation="AUX"/></mor></w>
+    <w>make<mor type="mor"><mw><pos><c>v</c></pos><stem>make</stem></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <w>them<mor type="mor"><mw><pos><c>pro</c><s>obj</s></pos><stem>them</stem></mw><gra type="gra" index="4" head="3" relation="OBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="5" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=4 $NMV=1 $Rle $Tea</a>
+  </u>
+  <u who="CHI" uID="u64">
+    <w>up<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>up</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>up<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>up</stem></mw><gra type="gra" index="2" head="1" relation="JCT"/></mor></w>
+    <w>up<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>up</stem></mw><gra type="gra" index="3" head="1" relation="JCT"/></mor></w>
+    <w>up<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>up</stem></mw><gra type="gra" index="4" head="1" relation="JCT"/></mor></w>
+    <w>up<mor type="mor"><mw><pos><c>prep</c></pos><stem>up</stem></mw><gra type="gra" index="5" head="1" relation="JCT"/></mor></w>
+    <w>slide<mor type="mor"><mw><pos><c>n</c></pos><stem>slide</stem></mw><gra type="gra" index="6" head="5" relation="POBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="7" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="situation">makes figures go up the slide and slide down</a>
+    <a type="coding">$MLU=6 $NMV=1 $Res $Lim</a>
+  </u>
+  <u who="INV" uID="u65">
+    <w>yeah<mor type="mor"><mw><pos><c>co</c></pos><stem>yeah</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=1 $NMV=0 $Rle $Tea</a>
+  </u>
+  <u who="CHI" uID="u66">
+    <w>slide<mor type="mor"><mw><pos><c>n</c></pos><stem>slide</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=1 $NMV=1 $Res $Lim</a>
+  </u>
+  <u who="CHI" uID="u67">
+    <w>now<mor type="mor"><mw><pos><c>adv</c></pos><stem>now</stem></mw><gra type="gra" index="1" head="4" relation="COM"/></mor></w>
+    <w>I'm<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>I</stem></mw><gra type="gra" index="2" head="4" relation="SUBJ"/><mor-post><mw><pos><c>aux</c></pos><stem>be</stem><mk type="sfxf">1S</mk></mw><gra type="gra" index="3" head="4" relation="AUX"/></mor-post></mor></w>
+    <w>gonna<mor type="mor"><mw><pos><c>part</c></pos><stem>go</stem><mk type="sfx">PROG</mk></mw><gra type="gra" index="4" head="0" relation="ROOT"/><mor-post><mw><pos><c>inf</c></pos><stem>to</stem></mw><gra type="gra" index="5" head="6" relation="INF"/></mor-post></mor></w>
+    <w>put<mor type="mor"><mw><pos><c>v</c></pos><stem>put</stem><mk type="sfxf">ZERO</mk></mw><gra type="gra" index="6" head="4" relation="XCOMP"/></mor></w>
+    <w>her<mor type="mor"><mw><pos><c>pro</c><s>obj</s></pos><stem>her</stem></mw><gra type="gra" index="7" head="6" relation="OBJ"/></mor></w>
+    <w>on<mor type="mor"><mw><pos><c>prep</c></pos><stem>on</stem></mw><gra type="gra" index="8" head="6" relation="LOC"/></mor></w>
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="9" head="10" relation="DET"/></mor></w>
+    <w>slide<mor type="mor"><mw><pos><c>n</c></pos><stem>slide</stem></mw><gra type="gra" index="10" head="8" relation="POBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="11" head="4" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=9 $NMV=1 $Ini $Rep</a>
+  </u>
+  <u who="CHI" uID="u68">
+    <w>get<mor type="mor"><mw><pos><c>v</c></pos><stem>get</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>up<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>up</stem></mw><gra type="gra" index="2" head="1" relation="JCT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=2 $NMV=1 $Ini $Col</a>
+  </u>
+  <u who="CHI" uID="u69">
+    <w>get<mor type="mor"><mw><pos><c>v</c></pos><stem>get</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>up<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>up</stem></mw><gra type="gra" index="2" head="1" relation="JCT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=2 $NMV=1 $Con $Col</a>
+  </u>
+  <u who="INV" uID="u70">
+    <w>whoops<mor type="mor"><mw><pos><c>int</c></pos><stem>whoops</stem></mw><gra type="gra" index="1" head="2" relation="SUBJ"/></mor></w>
+    <w>get<mor type="mor"><mw><pos><c>v</c></pos><stem>get</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>up<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>up</stem></mw><gra type="gra" index="3" head="2" relation="JCT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=3 $NMV=1 $Rco $Col</a>
+  </u>
+  <u who="INV" uID="u71">
+    <w>that's<mor type="mor"><mw><pos><c>pro</c><s>dem</s></pos><stem>that</stem></mw><gra type="gra" index="1" head="2" relation="SUBJ"/><mor-post><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor-post></mor></w>
+    <w>what<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>what</stem></mw><gra type="gra" index="3" head="4" relation="MOD"/></mor></w>
+    <w>mommy<mor type="mor"><mw><pos><c>n</c></pos><stem>mommy</stem></mw><gra type="gra" index="4" head="2" relation="PRED"/></mor></w>
+    <w>says<mor type="mor"><mw><pos><c>v</c></pos><stem>say</stem><mk type="sfx">3S</mk></mw><gra type="gra" index="5" head="4" relation="CMOD"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="6" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=5 $NMV=2 $Con $Rep</a>
+  </u>
+  <u who="INV" uID="u72">
+    <w>get<mor type="mor"><mw><pos><c>v</c></pos><stem>get</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>up<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>up</stem></mw><gra type="gra" index="2" head="1" relation="JCT"/></mor></w>
+    <w>there<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>there</stem></mw><gra type="gra" index="3" head="2" relation="POBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=3 $NMV=1 $Con $Col</a>
+  </u>
+  <u who="CHI" uID="u73">
+    <w>get<mor type="mor"><mw><pos><c>v</c></pos><stem>get</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>up<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>up</stem></mw><gra type="gra" index="2" head="1" relation="JCT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=2 $NMV=1 $Res $Col</a>
+  </u>
+  <u who="CHI" uID="u74">
+    <w>get<mor type="mor"><mw><pos><c>v</c></pos><stem>get</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>up<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>up</stem></mw><gra type="gra" index="2" head="1" relation="JCT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=2 $NMV=1 $Con $Col</a>
+  </u>
+  <u who="CHI" uID="u75">
+    <w>where<mor type="mor"><mw><pos><c>adv</c><s>wh</s></pos><stem>where</stem></mw><gra type="gra" index="1" head="2" relation="JCT"/></mor></w>
+    <w>does<mor type="mor"><mw><pos><c>mod</c></pos><stem>do</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="trail off"><mor type="mor"><mt type="trail off"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+  </u>
+  <u who="INV" uID="u76">
+    <w>what<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>what</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=1 $NMV=0 $Res $Cla</a>
+  </u>
+  <u who="CHI" uID="u77">
+    <w>how<mor type="mor"><mw><pos><c>adv</c><s>wh</s></pos><stem>how</stem></mw><gra type="gra" index="1" head="4" relation="JCT"/></mor></w>
+    <w>do<mor type="mor"><mw><pos><c>mod</c></pos><stem>do</stem></mw><gra type="gra" index="2" head="4" relation="AUX"/></mor></w>
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="3" head="4" relation="SUBJ"/></mor></w>
+    <w>push<mor type="mor"><mw><pos><c>v</c></pos><stem>push</stem></mw><gra type="gra" index="4" head="0" relation="ROOT"/></mor></w>
+    <w>them<mor type="mor"><mw><pos><c>pro</c><s>obj</s></pos><stem>them</stem></mw><gra type="gra" index="5" head="4" relation="OBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="6" head="4" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=5 $NMV=1 $Res $Lim</a>
+  </u>
+  <u who="INV" uID="u78">
+    <w>like<mor type="mor"><mw><pos><c>v</c></pos><stem>like</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>this<mor type="mor"><mw><pos><c>pro</c><s>dem</s></pos><stem>this</stem></mw><gra type="gra" index="2" head="1" relation="OBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=2 $NMV=0 $Rle $Tea</a>
+  </u>
+  <u who="INV" uID="u79">
+    <w>see<mor type="mor"><mw><pos><c>v</c></pos><stem>see</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="2" head="3" relation="DET"/></mor></w>
+    <w>mommy<mor type="mor"><mw><pos><c>n</c></pos><stem>mommy</stem></mw><gra type="gra" index="3" head="4" relation="SUBJ"/></mor></w>
+    <w>pushes<mor type="mor"><mw><pos><c>v</c></pos><stem>push</stem><mk type="sfx">3S</mk></mw><gra type="gra" index="4" head="1" relation="COMP"/></mor></w>
+    <w>them<mor type="mor"><mw><pos><c>pro</c><s>obj</s></pos><stem>them</stem></mw><gra type="gra" index="5" head="4" relation="OBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="6" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=5 $NMV=2 $Con $Tea</a>
+  </u>
+  <u who="CHI" uID="u80">
+    <w>does<mor type="mor"><mw><pos><c>mod</c></pos><stem>do</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="1" head="3" relation="COM"/></mor></w>
+    <w>she<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>she</stem></mw><gra type="gra" index="2" head="3" relation="SUBJ"/></mor></w>
+    <w>go<mor type="mor"><mw><pos><c>v</c></pos><stem>go</stem></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <w>in<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>in</stem></mw><gra type="gra" index="4" head="3" relation="JCT"/></mor></w>
+    <w>here<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>here</stem></mw><gra type="gra" index="5" head="4" relation="POBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="6" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=5 $NMV=1 $Res $Lim</a>
+  </u>
+  <u who="INV" uID="u81">
+    <w>yup<mor type="mor"><mw><pos><c>co</c></pos><stem>yup</stem></mw><gra type="gra" index="1" head="3" relation="COM"/></mor></w>
+    <w>she<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>she</stem></mw><gra type="gra" index="2" head="3" relation="SUBJ"/></mor></w>
+    <w>goes<mor type="mor"><mw><pos><c>v</c></pos><stem>go</stem><mk type="sfx">3S</mk></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <w>in<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>in</stem></mw><gra type="gra" index="4" head="3" relation="JCT"/></mor></w>
+    <w>there<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>there</stem></mw><gra type="gra" index="5" head="4" relation="POBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="6" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=5 $NMV=1 $Rle $Tea</a>
+  </u>
+  <u who="INV" uID="u82">
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="1" head="2" relation="DET"/></mor></w>
+    <w>mommy<mor type="mor"><mw><pos><c>n</c></pos><stem>mommy</stem></mw><gra type="gra" index="2" head="3" relation="SUBJ"/></mor></w>
+    <w>says<mor type="mor"><mw><pos><c>v</c></pos><stem>say</stem><mk type="sfx">3S</mk></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <t type="quotation next line"><mor type="mor"><mt type="quotation next line"/><gra type="gra" index="4" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=13 $NMV=5 $Ini $Col</a>
+  </u>
+  <u who="INV" uID="u83">
+    <linker type="quoted utterance next"/>
+    <w>let's<mor type="mor"><mw><pos><c>v</c></pos><stem>let</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/><mor-post><mw><pos><c>pro</c><s>obj</s></pos><stem>us</stem></mw><gra type="gra" index="2" head="1" relation="OBJ"/></mor-post></mor></w>
+    <w>go<mor type="mor"><mw><pos><c>v</c></pos><stem>go</stem></mw><gra type="gra" index="3" head="4" relation="SRL"/></mor></w>
+    <w>see<mor type="mor"><mw><pos><c>v</c></pos><stem>see</stem></mw><gra type="gra" index="4" head="1" relation="COMP"/></mor></w>
+    <w>what<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>what</stem></mw><gra type="gra" index="5" head="4" relation="OBJ"/></mor></w>
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="6" head="8" relation="DET"/></mor></w>
+    <w>other<mor type="mor"><mw><pos><c>qn</c></pos><stem>other</stem></mw><gra type="gra" index="7" head="8" relation="MOD"/></mor></w>
+    <w>kids<mor type="mor"><mw><pos><c>n</c></pos><stem>kid</stem><mk type="sfx">PL</mk></mw><gra type="gra" index="8" head="9" relation="SUBJ"/></mor></w>
+    <w>are<mor type="mor"><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">PRES</mk></mw><gra type="gra" index="9" head="4" relation="COMP"/></mor></w>
+    <w>doing<mor type="mor"><mw><pos><c>n</c><s>gerund</s></pos><stem>do</stem><mk type="sfx">PROG</mk></mw><gra type="gra" index="10" head="9" relation="PRED"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="11" head="1" relation="PUNCT"/></mor></t>
+
+  </u>
+  <u who="INV" uID="u84">
+    <w>hi<mor type="mor"><mw><pos><c>co</c></pos><stem>hi</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=1 $NMV=0 $Con $Col</a>
+  </u>
+  <u who="INV" uID="u85">
+    <w>what<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>what</stem></mw><gra type="gra" index="1" head="2" relation="OBJ"/></mor></w>
+    <w>do<mor type="mor"><mw><pos><c>mod</c></pos><stem>do</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="3" head="4" relation="DET"/></mor></w>
+    <w>kids<mor type="mor"><mw><pos><c>n</c></pos><stem>kid</stem><mk type="sfx">PL</mk></mw><gra type="gra" index="4" head="2" relation="SUBJ"/></mor></w>
+    <w>say<mor type="mor"><mw><pos><c>co</c></pos><stem>say</stem></mw><gra type="gra" index="5" head="2" relation="COM"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="6" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=5 $NMV=1 $Ini $Rfi</a>
+  </u>
+  <u who="CHI" uID="u86">
+    <w>can<mor type="mor"><mw><pos><c>mod</c></pos><stem>can</stem></mw><gra type="gra" index="1" head="3" relation="COM"/></mor></w>
+    <w>I<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>I</stem></mw><gra type="gra" index="2" head="3" relation="SUBJ"/></mor></w>
+    <w>push<mor type="mor"><mw><pos><c>n</c></pos><stem>push</stem></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="4" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=3 $NMV=1 $Res $Rep</a>
+  </u>
+  <u who="INV" uID="u87">
+    <w>yeah<mor type="mor"><mw><pos><c>co</c></pos><stem>yeah</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=1 $NMV=0 $Res $C/A</a>
+  </u>
+  <u who="CHI" uID="u88">
+    <w>say<mor type="mor"><mw><pos><c>v</c></pos><stem>say</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>hi<mor type="mor"><mw><pos><c>co</c></pos><stem>hi</stem></mw><gra type="gra" index="2" head="1" relation="COM"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=2 $NMV=1 $Ini $Col</a>
+  </u>
+  <u who="CHI" uID="u89">
+    <w>whoops<mor type="mor"><mw><pos><c>int</c></pos><stem>whoops</stem></mw><gra type="gra" index="1" head="3" relation="JCT"/></mor></w>
+    <w>she<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>she</stem></mw><gra type="gra" index="2" head="3" relation="SUBJ"/></mor></w>
+    <w>wants<mor type="mor"><mw><pos><c>v</c></pos><stem>want</stem><mk type="sfx">3S</mk></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <w>to<mor type="mor"><mw><pos><c>inf</c></pos><stem>to</stem></mw><gra type="gra" index="4" head="5" relation="INF"/></mor></w>
+    <w>go<mor type="mor"><mw><pos><c>v</c></pos><stem>go</stem></mw><gra type="gra" index="5" head="3" relation="XCOMP"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="6" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=5 $NMV=2 $Ini $Rep</a>
+  </u>
+  <u who="CHI" uID="u90">
+    <w>how<mor type="mor"><mw><pos><c>adv</c><s>wh</s></pos><stem>how</stem></mw><gra type="gra" index="1" head="2" relation="JCT"/></mor></w>
+    <w>do<mor type="mor"><mw><pos><c>mod</c></pos><stem>do</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="3" head="2" relation="SUBJ"/></mor></w>
+    <t type="trail off"><mor type="mor"><mt type="trail off"/><gra type="gra" index="4" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="situation">plays with the figures by herself speaking a few unintelligible utterances to herself</a>
+  </u>
+  <u who="CHI" uID="u91">
+    <w>oops<mor type="mor"><mw><pos><c>int</c></pos><stem>oops</stem></mw><gra type="gra" index="1" head="3" relation="JCT"/></mor></w>
+    <w>I<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>I</stem></mw><gra type="gra" index="2" head="3" relation="SUBJ"/></mor></w>
+    <w>broke<mor type="mor"><mw><pos><c>v</c></pos><stem>break</stem><mk type="sfxf">PAST</mk></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <w>her<mor type="mor"><mw><pos><c>pro</c><s>poss</s><s>det</s></pos><stem>her</stem></mw><gra type="gra" index="4" head="5" relation="MOD"/></mor></w>
+    <w>hand<mor type="mor"><mw><pos><c>n</c></pos><stem>hand</stem></mw><gra type="gra" index="5" head="3" relation="OBJ"/></mor></w>
+    <w>off<mor type="mor"><mw><pos><c>adv</c></pos><stem>off</stem></mw><gra type="gra" index="6" head="3" relation="JCT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="7" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=6 $NMV=1 $Ini $Rep</a>
+  </u>
+  <u who="INV" uID="u92">
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="1" head="3" relation="SUBJ"/></mor></w>
+    <w>could<mor type="mor"><mw><pos><c>mod</c></pos><stem>could</stem></mw><gra type="gra" index="2" head="3" relation="AUX"/></mor></w>
+    <w>put<mor type="mor"><mw><pos><c>v</c></pos><stem>put</stem><mk type="sfxf">ZERO</mk></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <w>her<mor type="mor"><mw><pos><c>pro</c><s>obj</s></pos><stem>her</stem></mw><gra type="gra" index="4" head="5" relation="MOD"/></mor></w>
+    <w>back<mor type="mor"><mw><pos><c>v</c></pos><stem>back</stem></mw><gra type="gra" index="5" head="3" relation="OBJ"/></mor></w>
+    <w>on<mor type="mor"><mw><pos><c>prep</c></pos><stem>on</stem></mw><gra type="gra" index="6" head="3" relation="LOC"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="7" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=6 $NMV=1 $Res $Rep</a>
+  </u>
+  <u who="CHI" uID="u93">
+    <w>is<mor type="mor"><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>this<mor type="mor"><mw><pos><c>pro</c><s>dem</s></pos><stem>this</stem></mw><gra type="gra" index="2" head="1" relation="SUBJ"/></mor></w>
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="3" head="4" relation="DET"/></mor></w>
+    <w>carriage<mor type="mor"><mw><pos><c>n</c></pos><stem>carriage</stem></mw><gra type="gra" index="4" head="1" relation="PRED"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="5" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=4 $NMV=1 $Ini $Rfi</a>
+  </u>
+  <u who="INV" uID="u94">
+    <w>that's<mor type="mor"><mw><pos><c>pro</c><s>dem</s></pos><stem>that</stem></mw><gra type="gra" index="1" head="2" relation="SUBJ"/><mor-post><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor-post></mor></w>
+    <w>a<mor type="mor"><mw><pos><c>det</c></pos><stem>a</stem></mw><gra type="gra" index="3" head="4" relation="DET"/></mor></w>
+    <w>carriage<mor type="mor"><mw><pos><c>n</c></pos><stem>carriage</stem></mw><gra type="gra" index="4" head="2" relation="PRED"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="5" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=4 $NMV=1 $Rri $Rep</a>
+  </u>
+  <u who="CHI" uID="u95">
+    <w>can<mor type="mor"><mw><pos><c>mod</c></pos><stem>can</stem></mw><gra type="gra" index="1" head="3" relation="VOC"/></mor></w>
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="2" head="3" relation="SUBJ"/></mor></w>
+    <w>fit<mor type="mor"><mw><pos><c>v</c></pos><stem>fit</stem><mk type="sfxf">ZERO</mk></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <w>her<mor type="mor"><mw><pos><c>pro</c><s>obj</s></pos><stem>her</stem></mw><gra type="gra" index="4" head="3" relation="OBJ"/></mor></w>
+    <w>on<mor type="mor"><mw><pos><c>adv</c></pos><stem>on</stem></mw><gra type="gra" index="5" head="3" relation="JCT"/></mor></w>
+    <w>there<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>there</stem></mw><gra type="gra" index="6" head="5" relation="POBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="7" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=6 $NMV=1 $Ini $Des</a>
+  </u>
+  <u who="INV" uID="u96">
+    <w>let's<mor type="mor"><mw><pos><c>v</c></pos><stem>let</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/><mor-post><mw><pos><c>pro</c><s>obj</s></pos><stem>us</stem></mw><gra type="gra" index="2" head="1" relation="OBJ"/></mor-post></mor></w>
+    <w>see<mor type="mor"><mw><pos><c>v</c></pos><stem>see</stem></mw><gra type="gra" index="3" head="1" relation="COMP"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=3 $NMV=2 $Rde $Acc</a>
+  </u>
+  <u who="INV" uID="u97">
+    <w>does<mor type="mor"><mw><pos><c>mod</c></pos><stem>do</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>she<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>she</stem></mw><gra type="gra" index="2" head="3" relation="MOD"/></mor></w>
+    <w>fit<mor type="mor"><mw><pos><c>v</c></pos><stem>fit</stem><mk type="sfxf">ZERO</mk></mw><gra type="gra" index="3" head="1" relation="SUBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="4" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=3 $NMV=1 $Con $Rfi</a>
+  </u>
+  <u who="CHI" uID="u98">
+    <w>no<mor type="mor"><mw><pos><c>co</c></pos><stem>no</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=1 $NMV=0 $Res $Rep</a>
+  </u>
+  <u who="INV" uID="u99">
+    <w>why<mor type="mor"><mw><pos><c>adv</c><s>wh</s></pos><stem>why</stem></mw><gra type="gra" index="1" head="2" relation="JCT"/></mor></w>
+    <w>not<mor type="mor"><mw><pos><c>neg</c></pos><stem>not</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=2 $NMV=0 $Rre $Rfi</a>
+  </u>
+  <u who="CHI" uID="u100">
+    <w>cause<mor type="mor"><mw><pos><c>n</c></pos><stem>cause</stem></mw><gra type="gra" index="1" head="3" relation="TOP"/></mor></w>
+    <w>she's<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>she</stem></mw><gra type="gra" index="2" head="3" relation="PRED"/><mor-post><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor-post></mor></w>
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="4" head="6" relation="DET"/></mor></w>
+    <w>big<mor type="mor"><mw><pos><c>adj</c></pos><stem>big</stem></mw><gra type="gra" index="5" head="6" relation="MOD"/></mor></w>
+    <w>mom<mor type="mor"><mw><pos><c>n</c></pos><stem>mom</stem></mw><gra type="gra" index="6" head="3" relation="PRED"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="7" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=6 $NMV=1 $Res $Rep</a>
+  </u>
+  <u who="INV" uID="u101">
+    <w>yeah<mor type="mor"><mw><pos><c>co</c></pos><stem>yeah</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=1 $NMV=0 $Rre $C/A</a>
+  </u>
+  <u who="CHI" uID="u102">
+    <w>how<mor type="mor"><mw><pos><c>adv</c><s>wh</s></pos><stem>how</stem></mw><gra type="gra" index="1" head="4" relation="JCT"/></mor></w>
+    <w>do<mor type="mor"><mw><pos><c>mod</c></pos><stem>do</stem></mw><gra type="gra" index="2" head="4" relation="AUX"/></mor></w>
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="3" head="4" relation="SUBJ"/></mor></w>
+    <w>put<mor type="mor"><mw><pos><c>v</c></pos><stem>put</stem><mk type="sfxf">ZERO</mk></mw><gra type="gra" index="4" head="0" relation="ROOT"/></mor></w>
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="5" head="6" relation="DET"/></mor></w>
+    <w>baby<mor type="mor"><mw><pos><c>n</c></pos><stem>baby</stem></mw><gra type="gra" index="6" head="4" relation="OBJ"/></mor></w>
+    <w>in<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>in</stem></mw><gra type="gra" index="7" head="4" relation="LOC"/></mor></w>
+    <w>there<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>there</stem></mw><gra type="gra" index="8" head="7" relation="POBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="9" head="4" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=8 $NMV=1 $Ini $Lim</a>
+  </u>
+  <u who="INV" uID="u103">
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="1" head="2" relation="SUBJ"/></mor></w>
+    <w>try<mor type="mor"><mw><pos><c>v</c></pos><stem>try</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=2 $NMV=1 $Rle $C/R</a>
+  </u>
+  <u who="INV" uID="u104">
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="1" head="2" relation="SUBJ"/></mor></w>
+    <w>tell<mor type="mor"><mw><pos><c>v</c></pos><stem>tell</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>me<mor type="mor"><mw><pos><c>pro</c><s>obj</s></pos><stem>me</stem></mw><gra type="gra" index="3" head="2" relation="OBJ"/></mor></w>
+    <w>how<mor type="mor"><mw><pos><c>adv</c><s>wh</s></pos><stem>how</stem></mw><gra type="gra" index="4" head="6" relation="JCT"/></mor></w>
+    <w>to<mor type="mor"><mw><pos><c>inf</c></pos><stem>to</stem></mw><gra type="gra" index="5" head="6" relation="INF"/></mor></w>
+    <w>put<mor type="mor"><mw><pos><c>v</c></pos><stem>put</stem><mk type="sfxf">ZERO</mk></mw><gra type="gra" index="6" head="2" relation="XCOMP"/></mor></w>
+    <w>it<mor type="mor"><mw><pos><c>pro</c></pos><stem>it</stem></mw><gra type="gra" index="7" head="6" relation="OBJ"/></mor></w>
+    <w>in<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>in</stem></mw><gra type="gra" index="8" head="6" relation="LOC"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="9" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=8 $NMV=2 $Con $C/R</a>
+  </u>
+  <u who="CHI" uID="u105">
+    <e><action/></e>
+    <t type="p"></t>
+
+    <a type="coding">$Nul</a>
+  </u>
+  <u who="INV" uID="u106">
+    <w>how<mor type="mor"><mw><pos><c>adv</c><s>wh</s></pos><stem>how</stem></mw><gra type="gra" index="1" head="4" relation="JCT"/></mor></w>
+    <w>do<mor type="mor"><mw><pos><c>mod</c></pos><stem>do</stem></mw><gra type="gra" index="2" head="4" relation="AUX"/></mor></w>
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="3" head="4" relation="SUBJ"/></mor></w>
+    <w>do<mor type="mor"><mw><pos><c>v</c></pos><stem>do</stem></mw><gra type="gra" index="4" head="0" relation="ROOT"/></mor></w>
+    <w>it<mor type="mor"><mw><pos><c>pro</c></pos><stem>it</stem></mw><gra type="gra" index="5" head="4" relation="OBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="6" head="4" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=5 $NMV=1 $Ini $Rfi</a>
+  </u>
+  <u who="CHI" uID="u107">
+    <w>sit<mor type="mor"><mw><pos><c>v</c></pos><stem>sit</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="situation">talks to figure</a>
+    <a type="coding">$MLU=1 $NMV=1 $Ini $Col</a>
+  </u>
+  <u who="CHI" uID="u108">
+    <w>good<mor type="mor"><mw><pos><c>adj</c></pos><stem>good</stem></mw><gra type="gra" index="1" head="2" relation="MOD"/></mor></w>
+    <w>girl<mor type="mor"><mw><pos><c>n</c></pos><stem>girl</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=2 $NMV=0 $Con $Col</a>
+  </u>
+  <u who="INV" uID="u109">
+    <w>yeah<mor type="mor"><mw><pos><c>co</c></pos><stem>yeah</stem></mw><gra type="gra" index="1" head="3" relation="COM"/></mor></w>
+    <w>good<mor type="mor"><mw><pos><c>adj</c></pos><stem>good</stem></mw><gra type="gra" index="2" head="3" relation="MOD"/></mor></w>
+    <w>girl<mor type="mor"><mw><pos><c>n</c></pos><stem>girl</stem></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=3 $NMV=0 $Rco $C/A</a>
+  </u>
+  <u who="CHI" uID="u110">
+    <w>good<mor type="mor"><mw><pos><c>adj</c></pos><stem>good</stem></mw><gra type="gra" index="1" head="2" relation="MOD"/></mor></w>
+    <w>girl<mor type="mor"><mw><pos><c>n</c></pos><stem>girl</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="situation">to examiner .</a>
+    <a type="coding">$MLU=2 $NMV=0 $Res $Rep</a>
+  </u>
+  <u who="CHI" uID="u111">
+    <w>she's<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>she</stem></mw><gra type="gra" index="1" head="3" relation="SUBJ"/><mor-post><mw><pos><c>aux</c></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="3" relation="AUX"/></mor-post></mor></w>
+    <w>learning<mor type="mor"><mw><pos><c>part</c></pos><stem>learn</stem><mk type="sfx">PROG</mk></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=3 $NMV=1 $Con $Rep</a>
+  </u>
+  <u who="INV" uID="u112">
+    <w>yeah<mor type="mor"><mw><pos><c>co</c></pos><stem>yeah</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=1 $NMV=0 $Rre $C/A</a>
+  </u>
+  <u who="CHI" uID="u113">
+    <w>how<mor type="mor"><mw><pos><c>adv</c><s>wh</s></pos><stem>how</stem></mw><gra type="gra" index="1" head="2" relation="JCT"/></mor></w>
+    <w>do<mor type="mor"><mw><pos><c>v</c></pos><stem>do</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>these<mor type="mor"><mw><pos><c>det</c></pos><stem>these</stem></mw><gra type="gra" index="3" head="4" relation="DET"/></mor></w>
+    <w>guys<mor type="mor"><mw><pos><c>n</c></pos><stem>guy</stem><mk type="sfx">PL</mk></mw><gra type="gra" index="4" head="5" relation="SUBJ"/></mor></w>
+    <w>sit<mor type="mor"><mw><pos><c>v</c></pos><stem>sit</stem></mw><gra type="gra" index="5" head="2" relation="COMP"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="6" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=5 $NMV=1 $Ini $Lim</a>
+  </u>
+  <u who="INV" uID="u114">
+    <w>how<mor type="mor"><mw><pos><c>adv</c><s>wh</s></pos><stem>how</stem></mw><gra type="gra" index="1" head="4" relation="JCT"/></mor></w>
+    <w>do<mor type="mor"><mw><pos><c>mod</c></pos><stem>do</stem></mw><gra type="gra" index="2" head="4" relation="AUX"/></mor></w>
+    <w>they<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>they</stem></mw><gra type="gra" index="3" head="4" relation="SUBJ"/></mor></w>
+    <w>sit<mor type="mor"><mw><pos><c>v</c></pos><stem>sit</stem></mw><gra type="gra" index="4" head="0" relation="ROOT"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="5" head="4" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=4 $NMV=1 $Rle $Exp</a>
+  </u>
+  <u who="INV" uID="u115">
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="1" head="2" relation="SUBJ"/></mor></w>
+    <w>bend<mor type="mor"><mw><pos><c>v</c></pos><stem>bend</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>their<mor type="mor"><mw><pos><c>pro</c><s>poss</s><s>det</s></pos><stem>their</stem></mw><gra type="gra" index="3" head="4" relation="MOD"/></mor></w>
+    <w>legs<mor type="mor"><mw><pos><c>n</c></pos><stem>leg</stem><mk type="sfx">PL</mk></mw><gra type="gra" index="4" head="2" relation="OBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="5" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=4 $NMV=1 $Con $Tea</a>
+  </u>
+  <u who="INV" uID="u116">
+    <w>what<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>what</stem></mw><gra type="gra" index="1" head="2" relation="PRED"/></mor></w>
+    <w>is<mor type="mor"><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>this<mor type="mor"><mw><pos><c>det</c></pos><stem>this</stem></mw><gra type="gra" index="3" head="4" relation="DET"/></mor></w>
+    <pause symbolic-length="simple"/>
+    <w>called<mor type="mor"><mw><pos><c>part</c></pos><stem>call</stem><mk type="sfx">PERF</mk></mw><gra type="gra" index="4" head="2" relation="SUBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="5" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=4 $NMV=1 $Ini $Rfi</a>
+  </u>
+  <u who="CHI" uID="u117">
+    <w>sitting<mor type="mor"><mw><pos><c>n</c><s>gerund</s></pos><stem>sit</stem><mk type="sfx">PROG</mk></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>place<mor type="mor"><mw><pos><c>n</c></pos><stem>place</stem></mw><gra type="gra" index="2" head="1" relation="OBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=2 $NMV=0 $Res $Rep</a>
+  </u>
+  <u who="INV" uID="u118">
+    <w>sitting<mor type="mor"><mw><pos><c>n</c><s>gerund</s></pos><stem>sit</stem><mk type="sfx">PROG</mk></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>place<mor type="mor"><mw><pos><c>n</c></pos><stem>place</stem></mw><gra type="gra" index="2" head="1" relation="OBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="3" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=2 $NMV=0 $Rre $Exp</a>
+  </u>
+  <u who="INV" uID="u119">
+    <w>this<mor type="mor"><mw><pos><c>pro</c><s>dem</s></pos><stem>this</stem></mw><gra type="gra" index="1" head="2" relation="SUBJ"/></mor></w>
+    <w>is<mor type="mor"><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>a<mor type="mor"><mw><pos><c>det</c></pos><stem>a</stem></mw><gra type="gra" index="3" head="4" relation="DET"/></mor></w>
+    <w>bench<mor type="mor"><mw><pos><c>n</c></pos><stem>bench</stem></mw><gra type="gra" index="4" head="2" relation="PRED"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="5" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=4 $NMV=1 $Con $Tea</a>
+  </u>
+  <u who="CHI" uID="u120">
+    <e><action/></e>
+    <t type="p"></t>
+
+    <a type="situation">slides figure down slide</a>
+  </u>
+  <u who="INV" uID="u121">
+    <w>whoa<mor type="mor"><mw><pos><c>co</c></pos><stem>whoa</stem></mw><gra type="gra" index="1" head="3" relation="COM"/></mor></w>
+    <w>what<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>what</stem></mw><gra type="gra" index="2" head="3" relation="OBJ"/></mor></w>
+    <w>happened<mor type="mor"><mw><pos><c>v</c></pos><stem>happen</stem><mk type="sfx">PAST</mk></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="4" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=3 $NMV=1 $Rta $Rfi</a>
+  </u>
+  <u who="CHI" uID="u122">
+    <w>what<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>what</stem></mw><gra type="gra" index="1" head="2" relation="OBJ"/></mor></w>
+    <w>happened<mor type="mor"><mw><pos><c>v</c></pos><stem>happen</stem><mk type="sfx">PAST</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>to<mor type="mor"><mw><pos><c>prep</c></pos><stem>to</stem></mw><gra type="gra" index="3" head="2" relation="JCT"/></mor></w>
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="4" head="6" relation="DET"/></mor></w>
+    <w>other<mor type="mor"><mw><pos><c>qn</c></pos><stem>other</stem></mw><gra type="gra" index="5" head="6" relation="MOD"/></mor></w>
+    <w>guy<mor type="mor"><mw><pos><c>n</c></pos><stem>guy</stem></mw><gra type="gra" index="6" head="3" relation="POBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="7" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="situation">uses a high squeaky pretending voice</a>
+    <a type="coding">$MLU=6 $NMV=1 $Res $Col</a>
+  </u>
+  <u who="INV" uID="u123">
+    <w>help<mor type="mor"><mw><pos><c>v</c></pos><stem>help</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="e"><mor type="mor"><mt type="e"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=1 $NMV=1 $Rco $Col</a>
+  </u>
+  <u who="INV" uID="u124">
+    <w>help<mor type="mor"><mw><pos><c>v</c></pos><stem>help</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="e"><mor type="mor"><mt type="e"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=1 $NMV=1 $Con $Col</a>
+  </u>
+  <u who="INV" uID="u125">
+    <w>what's<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>what</stem></mw><gra type="gra" index="1" head="2" relation="PRED"/><mor-post><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor-post></mor></w>
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="3" head="4" relation="DET"/></mor></w>
+    <w>mommy<mor type="mor"><mw><pos><c>n</c></pos><stem>mommy</stem></mw><gra type="gra" index="4" head="5" relation="SUBJ"/></mor></w>
+    <w>do<mor type="mor"><mw><pos><c>v</c></pos><stem>do</stem></mw><gra type="gra" index="5" head="2" relation="SUBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="6" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=5 $NMV=1 $Ini $Rfi</a>
+  </u>
+  <u who="INV" uID="u126">
+    <w>tell<mor type="mor"><mw><pos><c>v</c></pos><stem>tell</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>what<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>what</stem></mw><gra type="gra" index="2" head="1" relation="OBJ"/></mor></w>
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="3" head="4" relation="DET"/></mor></w>
+    <w>mommy<mor type="mor"><mw><pos><c>n</c></pos><stem>mommy</stem></mw><gra type="gra" index="4" head="5" relation="SUBJ"/></mor></w>
+    <w>does<mor type="mor"><mw><pos><c>v</c></pos><stem>do</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="5" head="1" relation="COMP"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="6" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=5 $NMV=2 $Con $Rfi</a>
+  </u>
+  <u who="INV" uID="u127">
+    <w>what's<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>what</stem></mw><gra type="gra" index="1" head="5" relation="SUBJ"/><mor-post><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="5" relation="AUX"/></mor-post></mor></w>
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="3" head="4" relation="DET"/></mor></w>
+    <w>mommy<mor type="mor"><mw><pos><c>n</c></pos><stem>mommy</stem></mw><gra type="gra" index="4" head="5" relation="SUBJ"/></mor></w>
+    <w>gonna<mor type="mor"><mw><pos><c>part</c></pos><stem>go</stem><mk type="sfx">PROG</mk></mw><gra type="gra" index="5" head="0" relation="ROOT"/><mor-post><mw><pos><c>inf</c></pos><stem>to</stem></mw><gra type="gra" index="6" head="7" relation="INF"/></mor-post></mor></w>
+    <w>do<mor type="mor"><mw><pos><c>v</c></pos><stem>do</stem></mw><gra type="gra" index="7" head="5" relation="XCOMP"/></mor></w>
+    <w>about<mor type="mor"><mw><pos><c>prep</c></pos><stem>about</stem></mw><gra type="gra" index="8" head="7" relation="JCT"/></mor></w>
+    <w>this<mor type="mor"><mw><pos><c>det</c></pos><stem>this</stem></mw><gra type="gra" index="9" head="11" relation="DET"/></mor></w>
+    <w>little<mor type="mor"><mw><pos><c>adj</c></pos><stem>little</stem></mw><gra type="gra" index="10" head="11" relation="MOD"/></mor></w>
+    <w>girl<mor type="mor"><mw><pos><c>n</c></pos><stem>girl</stem></mw><gra type="gra" index="11" head="8" relation="POBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="12" head="5" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=10 $NMV=1 $Con $Rfi</a>
+  </u>
+  <u who="CHI" uID="u128">
+    <w>put<mor type="mor"><mw><pos><c>v</c></pos><stem>put</stem><mk type="sfxf">ZERO</mk></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>her<mor type="mor"><mw><pos><c>pro</c><s>obj</s></pos><stem>her</stem></mw><gra type="gra" index="2" head="1" relation="OBJ"/></mor></w>
+    <w>in<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>in</stem></mw><gra type="gra" index="3" head="1" relation="LOC"/></mor></w>
+    <w>there<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>there</stem></mw><gra type="gra" index="4" head="3" relation="POBJ"/></mor></w>
+    <w>and<mor type="mor"><mw><pos><c>coord</c></pos><stem>and</stem></mw><gra type="gra" index="5" head="6" relation="INF"/></mor></w>
+    <w>let<mor type="mor"><mw><pos><c>v</c></pos><stem>let</stem><mk type="sfxf">ZERO</mk></mw><gra type="gra" index="6" head="1" relation="PUNCT"/></mor></w>
+    <w>her<mor type="mor"><mw><pos><c>pro</c><s>obj</s></pos><stem>her</stem></mw><gra type="gra" index="7" head="8" relation="MOD"/></mor></w>
+    <w>hold<mor type="mor"><mw><pos><c>n</c></pos><stem>hold</stem></mw><gra type="gra" index="8" head="6" relation="OBJ"/></mor></w>
+    <w>on<mor type="mor"><mw><pos><c>prep</c></pos><stem>on</stem></mw><gra type="gra" index="9" head="6" relation="JCT"/></mor></w>
+    <w>to<mor type="mor"><mw><pos><c>prep</c></pos><stem>to</stem></mw><gra type="gra" index="10" head="9" relation="JCT"/></mor></w>
+    <w>these<mor type="mor"><mw><pos><c>pro</c><s>dem</s></pos><stem>these</stem></mw><gra type="gra" index="11" head="10" relation="POBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="12" head="9" relation="POBJ"/></mor></t>
+
+    <a type="coding">$MLU=11 $NMV=3 $Res $Rep</a>
+  </u>
+  <u who="INV" uID="u129">
+    <w>is<mor type="mor"><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>that<mor type="mor"><mw><pos><c>pro</c><s>dem</s></pos><stem>that</stem></mw><gra type="gra" index="2" head="1" relation="SUBJ"/></mor></w>
+    <w>what<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>what</stem></mw><gra type="gra" index="3" head="6" relation="OBJ"/></mor></w>
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="4" head="5" relation="DET"/></mor></w>
+    <w>mommy<mor type="mor"><mw><pos><c>n</c></pos><stem>mommy</stem></mw><gra type="gra" index="5" head="6" relation="SUBJ"/></mor></w>
+    <w>says<mor type="mor"><mw><pos><c>v</c></pos><stem>say</stem><mk type="sfx">3S</mk></mw><gra type="gra" index="6" head="1" relation="PRED"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="7" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=6 $NMV=2 $Rre $Rfi</a>
+  </u>
+  <u who="CHI" uID="u130">
+    <w>yeah<mor type="mor"><mw><pos><c>co</c></pos><stem>yeah</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=1 $NMV=0 $Res $Rep</a>
+  </u>
+  <u who="INV" uID="u131">
+    <w>mommy<mor type="mor"><mw><pos><c>n</c></pos><stem>mommy</stem></mw><gra type="gra" index="1" head="2" relation="SUBJ"/></mor></w>
+    <w>help<mor type="mor"><mw><pos><c>v</c></pos><stem>help</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>me<mor type="mor"><mw><pos><c>pro</c><s>obj</s></pos><stem>me</stem></mw><gra type="gra" index="3" head="2" relation="OBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=3 $NMV=1 $Ini $Col</a>
+  </u>
+  <u who="CHI" uID="u132">
+    <w>c<shortening>o</shortening>m<shortening>e</shortening><mor type="mor"><mw><pos><c>v</c></pos><stem>come</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w><shortening>h</shortening>ere<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>here</stem></mw><gra type="gra" index="2" head="1" relation="JCT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=1 $NMV=1 $Res $Col</a>
+  </u>
+  <u who="CHI" uID="u133">
+    <w>upadaisy<replacement><w>upsadaisy<mor type="mor"><mw><pos><c>int</c></pos><stem>upsadaisy</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w></replacement></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=1 $NMV=0 $Con $Col</a>
+  </u>
+  <u who="INV" uID="u134">
+    <g><w>upadaisy<replacement><w>upsadaisy<mor type="mor"><mw><pos><c>int</c></pos><stem>upsadaisy</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w></replacement></w><overlap type="overlap follows"/></g>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="situation">simultaneous with below .</a>
+    <a type="coding">$MLU=1 $NMV=0 $Rco $Exp</a>
+  </u>
+  <u who="CHI" uID="u135">
+    <g><w>there<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>there</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w><overlap type="overlap precedes"/></g>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="situation">simultaneous with above</a>
+    <a type="coding">$MLU=1 $NMV=0 $Con $Col</a>
+  </u>
+  <u who="CHI" uID="u136">
+    <w>how<mor type="mor"><mw><pos><c>adv</c><s>wh</s></pos><stem>how</stem></mw><gra type="gra" index="1" head="2" relation="JCT"/></mor></w>
+    <w>can<mor type="mor"><mw><pos><c>mod</c></pos><stem>can</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>her<mor type="mor"><mw><pos><c>pro</c><s>poss</s><s>det</s></pos><stem>her</stem></mw><gra type="gra" index="3" head="4" relation="MOD"/></mor></w>
+    <w>mom<mor type="mor"><mw><pos><c>n</c></pos><stem>mom</stem></mw><gra type="gra" index="4" head="5" relation="SUBJ"/></mor></w>
+    <w>hold<mor type="mor"><mw><pos><c>v</c></pos><stem>hold</stem></mw><gra type="gra" index="5" head="2" relation="COMP"/></mor></w>
+    <w>her<mor type="mor"><mw><pos><c>pro</c><s>obj</s></pos><stem>her</stem></mw><gra type="gra" index="6" head="5" relation="OBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="7" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=6 $NMV=1 $Ini $Lim</a>
+  </u>
+  <u who="INV" uID="u137">
+    <w>let's<mor type="mor"><mw><pos><c>v</c></pos><stem>let</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/><mor-post><mw><pos><c>pro</c><s>obj</s></pos><stem>us</stem></mw><gra type="gra" index="2" head="1" relation="OBJ"/></mor-post></mor></w>
+    <w>see<mor type="mor"><mw><pos><c>v</c></pos><stem>see</stem></mw><gra type="gra" index="3" head="1" relation="COMP"/></mor></w>
+    <w>if<mor type="mor"><mw><pos><c>conj</c></pos><stem>if</stem></mw><gra type="gra" index="4" head="8" relation="CPZR"/></mor></w>
+    <w>her<mor type="mor"><mw><pos><c>pro</c><s>poss</s><s>det</s></pos><stem>her</stem></mw><gra type="gra" index="5" head="6" relation="MOD"/></mor></w>
+    <w>mom<mor type="mor"><mw><pos><c>n</c></pos><stem>mom</stem></mw><gra type="gra" index="6" head="8" relation="SUBJ"/></mor></w>
+    <w>can<mor type="mor"><mw><pos><c>mod</c></pos><stem>can</stem></mw><gra type="gra" index="7" head="8" relation="AUX"/></mor></w>
+    <w>hold<mor type="mor"><mw><pos><c>v</c></pos><stem>hold</stem></mw><gra type="gra" index="8" head="3" relation="COMP"/></mor></w>
+    <w>her<mor type="mor"><mw><pos><c>pro</c><s>obj</s></pos><stem>her</stem></mw><gra type="gra" index="9" head="8" relation="OBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="10" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=9 $NMV=3 $Rle $Tea</a>
+  </u>
+  <u who="INV" uID="u138">
+    <w>like<mor type="mor"><mw><pos><c>v</c></pos><stem>like</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>that<mor type="mor"><mw><pos><c>pro</c><s>dem</s></pos><stem>that</stem></mw><gra type="gra" index="2" head="1" relation="OBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=2 $NMV=0 $Con $Tea</a>
+  </u>
+  <u who="INV" uID="u139">
+    <w>yeah<mor type="mor"><mw><pos><c>co</c></pos><stem>yeah</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=1 $NMV=0 $Con $Tea</a>
+  </u>
+  <u who="CHI" uID="u140">
+    <w>sit<mor type="mor"><mw><pos><c>v</c></pos><stem>sit</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="situation">talks to figure</a>
+    <a type="coding">$MLU=1 $NMV=1 $Ini $Col</a>
+  </u>
+  <u who="CHI" uID="u141">
+    <w>sit<mor type="mor"><mw><pos><c>v</c></pos><stem>sit</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="situation">talks to figure</a>
+    <a type="coding">$MLU=1 $NMV=1 $Con $Col</a>
+  </u>
+  <u who="CHI" uID="u142">
+    <w>oh<mor type="mor"><mw><pos><c>co</c></pos><stem>oh</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="e"><mor type="mor"><mt type="e"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="situation">tips merry-go-round over</a>
+    <a type="coding">$MLU=0 $NMV=0 $Ini $Epr</a>
+  </u>
+  <u who="CHI" uID="u143">
+    <w>upadaisy<replacement><w>upsadaisy<mor type="mor"><mw><pos><c>int</c></pos><stem>upsadaisy</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w></replacement></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=1 $NMV=0 $Ini $Col</a>
+  </u>
+  <u who="CHI" uID="u144">
+    <w>upadaisy<replacement><w>upsadaisy<mor type="mor"><mw><pos><c>int</c></pos><stem>upsadaisy</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w></replacement></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=1 $NMV=0 $Con $Col</a>
+  </u>
+  <u who="CHI" uID="u145">
+    <w>upadaisy<replacement><w>upsadaisy<mor type="mor"><mw><pos><c>int</c></pos><stem>upsadaisy</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w></replacement></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=1 $NMV=0 $Con $Col</a>
+  </u>
+  <u who="CHI" uID="u146">
+    <w>she<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>she</stem></mw><gra type="gra" index="1" head="3" relation="COM"/></mor></w>
+    <w>can<mor type="mor"><mw><pos><c>mod</c></pos><stem>can</stem></mw><gra type="gra" index="2" head="3" relation="SUBJ"/></mor></w>
+    <w>do<mor type="mor"><mw><pos><c>v</c></pos><stem>do</stem></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <w>it<mor type="mor"><mw><pos><c>pro</c></pos><stem>it</stem></mw><gra type="gra" index="4" head="3" relation="OBJ"/></mor></w>
+    <w>herself<mor type="mor"><mw><pos><c>pro</c><s>refl</s></pos><stem>herself</stem></mw><gra type="gra" index="5" head="3" relation="JCT"/></mor></w>
+    <w>now<mor type="mor"><mw><pos><c>adv</c></pos><stem>now</stem></mw><gra type="gra" index="6" head="3" relation="JCT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="7" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="situation">to examiner</a>
+    <a type="coding">$MLU=6 $NMV=1 $Ini $Rep</a>
+  </u>
+  <u who="CHI" uID="u147">
+    <w>where's<mor type="mor"><mw><pos><c>adv</c><s>wh</s></pos><stem>where</stem></mw><gra type="gra" index="1" head="2" relation="PRED"/><mor-post><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor-post></mor></w>
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="3" head="4" relation="DET"/></mor></w>
+    <w>mommy<mor type="mor"><mw><pos><c>n</c></pos><stem>mommy</stem></mw><gra type="gra" index="4" head="2" relation="SUBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="5" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=4 $NMV=1 $Ini $Rfi</a>
+  </u>
+  <u who="INV" uID="u148">
+    <w>I<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>I</stem></mw><gra type="gra" index="1" head="4" relation="COM"/></mor></w>
+    <w>don't<mor type="mor"><mw><pos><c>mod</c></pos><stem>do</stem></mw><gra type="gra" index="2" head="4" relation="SUBJ"/><mor-post><mw><pos><c>neg</c></pos><stem>not</stem></mw><gra type="gra" index="3" head="4" relation="JCT"/></mor-post></mor></w>
+    <w>know<mor type="mor"><mw><pos><c>v</c></pos><stem>know</stem></mw><gra type="gra" index="4" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="5" head="4" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=4 $NMV=1 $Rri $Rep</a>
+  </u>
+  <u who="INV" uID="u149">
+    <w>which<mor type="mor"><mw><pos><c>rel</c></pos><stem>which</stem></mw><gra type="gra" index="1" head="2" relation="MOD"/></mor></w>
+    <w>one's<mor type="mor"><mw><pos><c>pro</c><s>indef</s></pos><stem>one</stem></mw><gra type="gra" index="2" head="3" relation="SUBJ"/><mor-post><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor-post></mor></w>
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="4" head="5" relation="DET"/></mor></w>
+    <w>mommy<mor type="mor"><mw><pos><c>n</c></pos><stem>mommy</stem></mw><gra type="gra" index="5" head="3" relation="PRED"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="6" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=5 $NMV=1 $Con $Rfi</a>
+  </u>
+  <u who="CHI" uID="u150">
+    <w>I<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>I</stem></mw><gra type="gra" index="1" head="4" relation="COM"/></mor></w>
+    <w>don't<mor type="mor"><mw><pos><c>mod</c></pos><stem>do</stem></mw><gra type="gra" index="2" head="4" relation="SUBJ"/><mor-post><mw><pos><c>neg</c></pos><stem>not</stem></mw><gra type="gra" index="3" head="4" relation="JCT"/></mor-post></mor></w>
+    <w>know<mor type="mor"><mw><pos><c>v</c></pos><stem>know</stem></mw><gra type="gra" index="4" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="5" head="4" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=4 $NMV=1 $Res $Rep</a>
+  </u>
+  <u who="INV" uID="u151">
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="1" head="2" relation="SUBJ"/></mor></w>
+    <w>do<mor type="mor"><mw><pos><c>v</c></pos><stem>do</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>so<mor type="mor"><mw><pos><c>co</c></pos><stem>so</stem></mw><gra type="gra" index="3" head="2" relation="COM"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=3 $NMV=1 $Rre $Rep</a>
+  </u>
+  <u who="INV" uID="u152">
+    <w>which<mor type="mor"><mw><pos><c>rel</c></pos><stem>which</stem></mw><gra type="gra" index="1" head="2" relation="MOD"/></mor></w>
+    <w>one's<mor type="mor"><mw><pos><c>pro</c><s>indef</s></pos><stem>one</stem></mw><gra type="gra" index="2" head="3" relation="SUBJ"/><mor-post><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor-post></mor></w>
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="4" head="5" relation="DET"/></mor></w>
+    <w>mommy<mor type="mor"><mw><pos><c>n</c></pos><stem>mommy</stem></mw><gra type="gra" index="5" head="3" relation="PRED"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="6" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=5 $NMV=1 $Con $Rfi</a>
+  </u>
+  <u who="CHI" uID="u153">
+    <w>this<mor type="mor"><mw><pos><c>det</c></pos><stem>this</stem></mw><gra type="gra" index="1" head="2" relation="DET"/></mor></w>
+    <w>one<mor type="mor"><mw><pos><c>pro</c><s>indef</s></pos><stem>one</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=2 $NMV=0 $Res $Rep</a>
+  </u>
+  <u who="INV" uID="u154">
+    <w>yeah<mor type="mor"><mw><pos><c>co</c></pos><stem>yeah</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=1 $NMV=0 $Rre $C/A</a>
+  </u>
+  <u who="CHI" uID="u155">
+    <w>and<mor type="mor"><mw><pos><c>coord</c></pos><stem>and</stem></mw><gra type="gra" index="1" head="5" relation="COM"/></mor></w>
+    <w>I<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>I</stem></mw><gra type="gra" index="2" head="5" relation="SUBJ"/></mor></w>
+    <w>can't<mor type="mor"><mw><pos><c>mod</c></pos><stem>can</stem></mw><gra type="gra" index="3" head="5" relation="AUX"/><mor-post><mw><pos><c>neg</c></pos><stem>not</stem></mw><gra type="gra" index="4" head="5" relation="JCT"/></mor-post></mor></w>
+    <w>put<mor type="mor"><mw><pos><c>v</c></pos><stem>put</stem><mk type="sfxf">ZERO</mk></mw><gra type="gra" index="5" head="0" relation="ROOT"/></mor></w>
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="6" head="7" relation="DET"/></mor></w>
+    <w>hat<mor type="mor"><mw><pos><c>n</c></pos><stem>hat</stem></mw><gra type="gra" index="7" head="5" relation="OBJ"/></mor></w>
+    <w>on<mor type="mor"><mw><pos><c>prep</c></pos><stem>on</stem></mw><gra type="gra" index="8" head="5" relation="LOC"/></mor></w>
+    <w>her<mor type="mor"><mw><pos><c>pro</c><s>obj</s></pos><stem>her</stem></mw><gra type="gra" index="9" head="8" relation="POBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="10" head="5" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=9 $NMV=1 $Ini $Rep</a>
+  </u>
+  <u who="INV" uID="u156">
+    <w>it's<mor type="mor"><mw><pos><c>pro</c></pos><stem>it</stem></mw><gra type="gra" index="1" head="2" relation="SUBJ"/><mor-post><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor-post></mor></w>
+    <w>hard<mor type="mor"><mw><pos><c>adj</c></pos><stem>hard</stem></mw><gra type="gra" index="3" head="2" relation="PRED"/></mor></w>
+    <w>to<mor type="mor"><mw><pos><c>inf</c></pos><stem>to</stem></mw><gra type="gra" index="4" head="5" relation="INF"/></mor></w>
+    <w>get<mor type="mor"><mw><pos><c>v</c></pos><stem>get</stem></mw><gra type="gra" index="5" head="3" relation="XMOD"/></mor></w>
+    <w>on<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>on</stem></mw><gra type="gra" index="6" head="5" relation="JCT"/></mor></w>
+    <w>isn't<mor type="mor"><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="7" head="6" relation="POBJ"/><mor-post><mw><pos><c>neg</c></pos><stem>not</stem></mw><gra type="gra" index="8" head="7" relation="NEG"/></mor-post></mor></w>
+    <w>it<mor type="mor"><mw><pos><c>pro</c></pos><stem>it</stem></mw><gra type="gra" index="9" head="7" relation="SUBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="10" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=9 $NMV=3 $Rre $C/A</a>
+  </u>
+  <u who="CHI" uID="u157">
+    <e><action/></e>
+    <t type="p"></t>
+
+    <a type="situation">puts hat on figure</a>
+  </u>
+  <u who="INV" uID="u158">
+    <w>there<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>there</stem></mw><gra type="gra" index="1" head="3" relation="JCT"/></mor></w>
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="2" head="3" relation="SUBJ"/></mor></w>
+    <w>go<mor type="mor"><mw><pos><c>v</c></pos><stem>go</stem></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=3 $NMV=1 $Rta $Rep</a>
+  </u>
+  <u who="CHI" uID="u159">
+    <w>can<mor type="mor"><mw><pos><c>mod</c></pos><stem>can</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>she<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>she</stem></mw><gra type="gra" index="2" head="1" relation="MOD"/></mor></w>
+    <w>walk<mor type="mor"><mw><pos><c>n</c></pos><stem>walk</stem></mw><gra type="gra" index="3" head="2" relation="POBJ"/></mor></w>
+    <w>all<mor type="mor"><mw><pos><c>adv</c><s>int</s></pos><stem>all</stem></mw><gra type="gra" index="4" head="5" relation="JCT"/></mor></w>
+    <w>by<mor type="mor"><mw><pos><c>prep</c></pos><stem>by</stem></mw><gra type="gra" index="5" head="3" relation="JCT"/></mor></w>
+    <w>herself<mor type="mor"><mw><pos><c>pro</c><s>refl</s></pos><stem>herself</stem></mw><gra type="gra" index="6" head="5" relation="POBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="7" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=6 $NMV=1 $Ini $Lim</a>
+  </u>
+  <u who="INV" uID="u160">
+    <w>not<mor type="mor"><mw><pos><c>neg</c></pos><stem>not</stem></mw><gra type="gra" index="1" head="2" relation="JCT"/></mor></w>
+    <w>all<mor type="mor"><mw><pos><c>adv</c><s>int</s></pos><stem>all</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>by<mor type="mor"><mw><pos><c>prep</c></pos><stem>by</stem></mw><gra type="gra" index="3" head="2" relation="JCT"/></mor></w>
+    <w>herself<mor type="mor"><mw><pos><c>pro</c><s>refl</s></pos><stem>herself</stem></mw><gra type="gra" index="4" head="3" relation="POBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="5" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=4 $NMV=0 $Rle $Tea</a>
+  </u>
+  <u who="INV" uID="u161">
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="1" head="3" relation="SUBJ"/></mor></w>
+    <w>have_to<mor type="mor"><mw><pos><c>mod</c><s>aux</s></pos><stem>have_to</stem></mw><gra type="gra" index="2" head="3" relation="AUX"/></mor></w>
+    <w>help<mor type="mor"><mw><pos><c>v</c></pos><stem>help</stem></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <w>her<mor type="mor"><mw><pos><c>pro</c><s>obj</s></pos><stem>her</stem></mw><gra type="gra" index="4" head="3" relation="OBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="5" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=5 $NMV=2 $Con $Tea</a>
+  </u>
+  <u who="INV" uID="u162">
+    <w>she's<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>she</stem></mw><gra type="gra" index="1" head="2" relation="SUBJ"/><mor-post><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor-post></mor></w>
+    <w>just<mor type="mor"><mw><pos><c>adv</c><s>int</s></pos><stem>just</stem></mw><gra type="gra" index="3" head="6" relation="JCT"/></mor></w>
+    <w>a<mor type="mor"><mw><pos><c>det</c></pos><stem>a</stem></mw><gra type="gra" index="4" head="6" relation="DET"/></mor></w>
+    <w>play<mor type="mor"><mw><pos><c>n</c></pos><stem>play</stem></mw><gra type="gra" index="5" head="6" relation="MOD"/></mor></w>
+    <w>mommy<mor type="mor"><mw><pos><c>n</c></pos><stem>mommy</stem></mw><gra type="gra" index="6" head="2" relation="PRED"/></mor></w>
+    <w>right<mor type="mor"><mw><pos><c>co</c></pos><stem>right</stem></mw><gra type="gra" index="7" head="2" relation="COM"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="8" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=7 $NMV=1 $Ini $Rfi</a>
+  </u>
+  <u who="CHI" uID="u163">
+    <w>yeah<mor type="mor"><mw><pos><c>co</c></pos><stem>yeah</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=1 $NMV=0 $Res $Rep</a>
+  </u>
+  <u who="INV" uID="u164">
+    <w>hi<mor type="mor"><mw><pos><c>co</c></pos><stem>hi</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>Nicole<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Nicole</stem></mw><gra type="gra" index="2" head="1" relation="VOC"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=2 $NMV=0 $Ini $Col</a>
+  </u>
+  <u who="CHI" uID="u165">
+    <w>I'm<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>I</stem></mw><gra type="gra" index="1" head="4" relation="SUBJ"/><mor-post><mw><pos><c>aux</c></pos><stem>be</stem><mk type="sfxf">1S</mk></mw><gra type="gra" index="2" head="4" relation="AUX"/></mor-post></mor></w>
+    <w>not<mor type="mor"><mw><pos><c>neg</c></pos><stem>not</stem></mw><gra type="gra" index="3" head="2" relation="NEG"/></mor></w>
+    <w>Nicole<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Nicole</stem></mw><gra type="gra" index="4" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="5" head="4" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=4 $NMV=1 $Res $Rep</a>
+  </u>
+  <u who="CHI" uID="u166">
+    <w>what's<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>what</stem></mw><gra type="gra" index="1" head="2" relation="PRED"/><mor-post><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor-post></mor></w>
+    <w>her<mor type="mor"><mw><pos><c>pro</c><s>poss</s><s>det</s></pos><stem>her</stem></mw><gra type="gra" index="3" head="4" relation="MOD"/></mor></w>
+    <w>name<mor type="mor"><mw><pos><c>n</c></pos><stem>name</stem></mw><gra type="gra" index="4" head="2" relation="SUBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="5" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=4 $NMV=1 $Con $Rfi</a>
+  </u>
+  <u who="INV" uID="u167">
+    <w>what's<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>what</stem></mw><gra type="gra" index="1" head="2" relation="PRED"/><mor-post><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor-post></mor></w>
+    <w>your<mor type="mor"><mw><pos><c>pro</c><s>poss</s><s>det</s></pos><stem>your</stem></mw><gra type="gra" index="3" head="4" relation="MOD"/></mor></w>
+    <w>name<mor type="mor"><mw><pos><c>n</c></pos><stem>name</stem></mw><gra type="gra" index="4" head="2" relation="SUBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="5" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=4 $NMV=1 $Rri $Rfi</a>
+  </u>
+  <u who="CHI" uID="u168">
+    <w>what's<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>what</stem></mw><gra type="gra" index="1" head="2" relation="PRED"/><mor-post><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor-post></mor></w>
+    <w>her<mor type="mor"><mw><pos><c>pro</c><s>poss</s><s>det</s></pos><stem>her</stem></mw><gra type="gra" index="3" head="4" relation="MOD"/></mor></w>
+    <w>name<mor type="mor"><mw><pos><c>n</c></pos><stem>name</stem></mw><gra type="gra" index="4" head="2" relation="SUBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="5" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=4 $NMV=1 $Res $Rfi</a>
+  </u>
+  <u who="INV" uID="u169">
+    <w>her<mor type="mor"><mw><pos><c>pro</c><s>poss</s><s>det</s></pos><stem>her</stem></mw><gra type="gra" index="1" head="2" relation="MOD"/></mor></w>
+    <w>name<mor type="mor"><mw><pos><c>n</c></pos><stem>name</stem></mw><gra type="gra" index="2" head="3" relation="SUBJ"/></mor></w>
+    <w>is<mor type="mor"><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <w>Sallysue<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Sallysue</stem></mw><gra type="gra" index="4" head="3" relation="PRED"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="5" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=4 $NMV=1 $Rri $Rep</a>
+  </u>
+  <u who="CHI" uID="u170">
+    <w>what's<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>what</stem></mw><gra type="gra" index="1" head="2" relation="PRED"/><mor-post><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor-post></mor></w>
+    <w>your<mor type="mor"><mw><pos><c>pro</c><s>poss</s><s>det</s></pos><stem>your</stem></mw><gra type="gra" index="3" head="4" relation="MOD"/></mor></w>
+    <w>name<mor type="mor"><mw><pos><c>n</c></pos><stem>name</stem></mw><gra type="gra" index="4" head="2" relation="SUBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="5" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=4 $NMV=1 $Res $Rfi</a>
+  </u>
+  <u who="INV" uID="u171">
+    <w>Alison<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Alison</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=1 $NMV=0 $Rri $Rep</a>
+  </u>
+  <u who="CHI" uID="u172">
+    <w>what's<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>what</stem></mw><gra type="gra" index="1" head="2" relation="PRED"/><mor-post><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor-post></mor></w>
+    <w>your<mor type="mor"><mw><pos><c>pro</c><s>poss</s><s>det</s></pos><stem>your</stem></mw><gra type="gra" index="3" head="7" relation="MOD"/></mor></w>
+    <w>other<mor type="mor"><mw><pos><c>qn</c></pos><stem>other</stem></mw><gra type="gra" index="4" head="7" relation="MOD"/></mor></w>
+    <w>girl's<mor type="mor"><mw><pos><c>n</c></pos><stem>girl</stem></mw><gra type="gra" index="5" head="7" relation="MOD"/><mor-post><mw><pos><c>poss</c></pos><stem>s</stem></mw><gra type="gra" index="6" head="7" relation="MOD"/></mor-post></mor></w>
+    <w>name<mor type="mor"><mw><pos><c>n</c></pos><stem>name</stem></mw><gra type="gra" index="7" head="2" relation="SUBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="8" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=6 $NMV=1 $Res $Rfi</a>
+  </u>
+  <u who="INV" uID="u173">
+    <w>Emily<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Emily</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=1 $NMV=0 $Rri $Rep</a>
+  </u>
+  <u who="INV" uID="u174">
+    <w>what's<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>what</stem></mw><gra type="gra" index="1" head="2" relation="PRED"/><mor-post><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor-post></mor></w>
+    <w>your<mor type="mor"><mw><pos><c>pro</c><s>poss</s><s>det</s></pos><stem>your</stem></mw><gra type="gra" index="3" head="4" relation="MOD"/></mor></w>
+    <w>name<mor type="mor"><mw><pos><c>n</c></pos><stem>name</stem></mw><gra type="gra" index="4" head="2" relation="SUBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="5" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=4 $NMV=1 $Con $Rfi</a>
+  </u>
+  <u who="CHI" uID="u175">
+    <w>Ally<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Ally</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=1 $NMV=0 $Res $Rep</a>
+  </u>
+  <u who="INV" uID="u176">
+    <w>Ally<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Ally</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=1 $NMV=0 $Rre $Exp</a>
+  </u>
+  <u who="INV" uID="u177">
+    <w>that's<mor type="mor"><mw><pos><c>pro</c><s>dem</s></pos><stem>that</stem></mw><gra type="gra" index="1" head="2" relation="SUBJ"/><mor-post><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor-post></mor></w>
+    <w>a<mor type="mor"><mw><pos><c>det</c></pos><stem>a</stem></mw><gra type="gra" index="3" head="5" relation="DET"/></mor></w>
+    <w>nice<mor type="mor"><mw><pos><c>adj</c></pos><stem>nice</stem></mw><gra type="gra" index="4" head="5" relation="MOD"/></mor></w>
+    <w>name<mor type="mor"><mw><pos><c>n</c></pos><stem>name</stem></mw><gra type="gra" index="5" head="2" relation="PRED"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="6" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=5 $NMV=1 $Con $Rep</a>
+  </u>
+  <u who="INV" uID="u178">
+    <w>hello<mor type="mor"><mw><pos><c>co</c></pos><stem>hello</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>Ally<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Ally</stem></mw><gra type="gra" index="2" head="1" relation="VOC"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="situation">uses a high , pretend voice</a>
+    <a type="coding">$MLU=2 $NMV=0 $Ini $Col</a>
+  </u>
+  <u who="INV" uID="u179">
+    <w>hello<mor type="mor"><mw><pos><c>co</c></pos><stem>hello</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>Ally<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Ally</stem></mw><gra type="gra" index="2" head="1" relation="VOC"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=2 $NMV=0 $Con $Col</a>
+  </u>
+  <u who="CHI" uID="u180">
+    <e><action/></e>
+    <t type="p"></t>
+
+    <a type="coding">$Nul</a>
+  </u>
+  <u who="INV" uID="u181">
+    <w>are<mor type="mor"><mw><pos><c>aux</c></pos><stem>be</stem><mk type="sfxf">PRES</mk></mw><gra type="gra" index="1" head="3" relation="AUX"/></mor></w>
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="2" head="3" relation="SUBJ"/></mor></w>
+    <w>going<mor type="mor"><mw><pos><c>n</c><s>gerund</s></pos><stem>go</stem><mk type="sfx">PROG</mk></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <w>to<mor type="mor"><mw><pos><c>prep</c></pos><stem>to</stem></mw><gra type="gra" index="4" head="5" relation="INF"/></mor></w>
+    <w>bite<mor type="mor"><mw><pos><c>n</c></pos><stem>bite</stem></mw><gra type="gra" index="5" head="3" relation="XCOMP"/></mor></w>
+    <w>off<mor type="mor"><mw><pos><c>prep</c></pos><stem>off</stem></mw><gra type="gra" index="6" head="5" relation="JCT"/></mor></w>
+    <w>my<mor type="mor"><mw><pos><c>pro</c><s>poss</s><s>det</s></pos><stem>my</stem></mw><gra type="gra" index="7" head="10" relation="MOD"/></mor></w>
+    <w>daughter's<mor type="mor"><mw><pos><c>n</c></pos><stem>daughter</stem></mw><gra type="gra" index="8" head="10" relation="MOD"/><mor-post><mw><pos><c>poss</c></pos><stem>s</stem></mw><gra type="gra" index="9" head="10" relation="MOD"/></mor-post></mor></w>
+    <w>hand<mor type="mor"><mw><pos><c>n</c></pos><stem>hand</stem></mw><gra type="gra" index="10" head="6" relation="POBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="11" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=9 $NMV=2 $Ini $Col</a>
+  </u>
+  <u who="INV" uID="u182">
+    <w>ow<mor type="mor"><mw><pos><c>co</c></pos><stem>ow</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="e"><mor type="mor"><mt type="e"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=0 $NMV=0 $Con $Col</a>
+  </u>
+  <u who="INV" uID="u183">
+    <w>that<mor type="mor"><mw><pos><c>det</c></pos><stem>that</stem></mw><gra type="gra" index="1" head="3" relation="SUBJ"/></mor></w>
+    <w>little<mor type="mor"><mw><pos><c>adj</c></pos><stem>little</stem></mw><gra type="gra" index="2" head="3" relation="MOD"/></mor></w>
+    <w>girl<mor type="mor"><mw><pos><c>n</c></pos><stem>girl</stem></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <w>in<mor type="mor"><mw><pos><c>prep</c></pos><stem>in</stem></mw><gra type="gra" index="4" head="3" relation="JCT"/></mor></w>
+    <w>your<mor type="mor"><mw><pos><c>pro</c><s>poss</s><s>det</s></pos><stem>your</stem></mw><gra type="gra" index="5" head="6" relation="MOD"/></mor></w>
+    <w>mouth<mor type="mor"><mw><pos><c>n</c></pos><stem>mouth</stem></mw><gra type="gra" index="6" head="4" relation="POBJ"/></mor></w>
+    <w>is<mor type="mor"><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="7" head="4" relation="POBJ"/></mor></w>
+    <w>saying<mor type="mor"><mw><pos><c>n</c><s>gerund</s></pos><stem>say</stem><mk type="sfx">PROG</mk></mw><gra type="gra" index="8" head="7" relation="PRED"/></mor></w>
+    <t type="quotation next line"><mor type="mor"><mt type="quotation next line"/><gra type="gra" index="9" head="7" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=9 $NMV=1 $Con $Col</a>
+  </u>
+  <u who="INV" uID="u184">
+    <linker type="quoted utterance next"/>
+    <w>ow<mor type="mor"><mw><pos><c>co</c></pos><stem>ow</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+  </u>
+  <u who="INV" uID="u185">
+    <w>don't<mor type="mor"><mw><pos><c>mod</c></pos><stem>do</stem></mw><gra type="gra" index="1" head="3" relation="SUBJ"/><mor-post><mw><pos><c>neg</c></pos><stem>not</stem></mw><gra type="gra" index="2" head="3" relation="JCT"/></mor-post></mor></w>
+    <w>bite<mor type="mor"><mw><pos><c>v</c></pos><stem>bite</stem></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <w>off<mor type="mor"><mw><pos><c>prep</c></pos><stem>off</stem></mw><gra type="gra" index="4" head="3" relation="JCT"/></mor></w>
+    <w>her<mor type="mor"><mw><pos><c>pro</c><s>obj</s></pos><stem>her</stem></mw><gra type="gra" index="5" head="6" relation="MOD"/></mor></w>
+    <w>hand<mor type="mor"><mw><pos><c>n</c></pos><stem>hand</stem></mw><gra type="gra" index="6" head="4" relation="POBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="7" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=6 $NMV=1 $Ini $C/R</a>
+  </u>
+  <u who="INV" uID="u186">
+    <w>she<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>she</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>won't<mor type="mor"><mw><pos><c>mod</c></pos><stem>will</stem></mw><gra type="gra" index="2" head="1" relation="COORD"/><mor-post><mw><pos><c>neg</c></pos><stem>not</stem></mw><gra type="gra" index="3" head="4" relation="ESUBJ"/></mor-post></mor></w>
+    <w>be<mor type="mor"><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem></mw><gra type="gra" index="4" head="2" relation="ROOT"/></mor></w>
+    <w>able<mor type="mor"><mw><pos><c>adj</c></pos><stem>able</stem></mw><gra type="gra" index="5" head="4" relation="PRED"/></mor></w>
+    <w>to<mor type="mor"><mw><pos><c>inf</c></pos><stem>to</stem></mw><gra type="gra" index="6" head="7" relation="INF"/></mor></w>
+    <w>hold<mor type="mor"><mw><pos><c>v</c></pos><stem>hold</stem></mw><gra type="gra" index="7" head="5" relation="XMOD"/></mor></w>
+    <w>on<mor type="mor"><mw><pos><c>prep</c></pos><stem>on</stem></mw><gra type="gra" index="8" head="7" relation="JCT"/></mor></w>
+    <w>to<mor type="mor"><mw><pos><c>prep</c></pos><stem>to</stem></mw><gra type="gra" index="9" head="8" relation="POBJ"/></mor></w>
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="10" head="11" relation="DET"/></mor></w>
+    <w>merry<wk type="cmp"/>go<wk type="cmp"/>round<mor type="mor"><mwc><pos><c>n</c></pos><mw><pos><c>adj</c></pos><stem>merry</stem></mw><mw><pos><c>v</c></pos><stem>go</stem></mw><mw><pos><c>adj</c></pos><stem>round</stem></mw></mwc><gra type="gra" index="11" head="9" relation="POBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="12" head="4" relation="PUNCT"/></mor></t>
+
+    <a type="situation">pause between this and previous utterance</a>
+    <a type="coding">$MLU=11 $NMV=2 $Ini $Rep</a>
+  </u>
+  <u who="CHI" uID="u187">
+    <g><w>will</w>
+    <w>you</w>
+    <w>put</w><k type="retracing with correction"/></g>
+    <w>will<mor type="mor"><mw><pos><c>mod</c></pos><stem>will</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="2" head="3" relation="SUBJ"/></mor></w>
+    <w>sit<mor type="mor"><mw><pos><c>v</c></pos><stem>sit</stem></mw><gra type="gra" index="3" head="1" relation="COMP"/></mor></w>
+    <w>her<mor type="mor"><mw><pos><c>pro</c><s>obj</s></pos><stem>her</stem></mw><gra type="gra" index="4" head="3" relation="OBJ"/></mor></w>
+    <w>in<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>in</stem></mw><gra type="gra" index="5" head="3" relation="JCT"/></mor></w>
+    <w>here<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>here</stem></mw><gra type="gra" index="6" head="5" relation="POBJ"/></mor></w>
+    <w>and<mor type="mor"><mw><pos><c>coord</c></pos><stem>and</stem></mw><gra type="gra" index="7" head="8" relation="SUBJ"/></mor></w>
+    <w>put<mor type="mor"><mw><pos><c>v</c></pos><stem>put</stem><mk type="sfxf">ZERO</mk></mw><gra type="gra" index="8" head="3" relation="CJCT"/></mor></w>
+    <w>her<mor type="mor"><mw><pos><c>pro</c><s>obj</s></pos><stem>her</stem></mw><gra type="gra" index="9" head="10" relation="MOD"/></mor></w>
+    <w>hands<mor type="mor"><mw><pos><c>n</c></pos><stem>hand</stem><mk type="sfx">PL</mk></mw><gra type="gra" index="10" head="8" relation="OBJ"/></mor></w>
+    <w>on<mor type="mor"><mw><pos><c>prep</c></pos><stem>on</stem></mw><gra type="gra" index="11" head="8" relation="LOC"/></mor></w>
+    <w>this<mor type="mor"><mw><pos><c>det</c></pos><stem>this</stem></mw><gra type="gra" index="12" head="13" relation="DET"/></mor></w>
+    <w>merry<wk type="cmp"/>go<wk type="cmp"/>round<mor type="mor"><mwc><pos><c>n</c></pos><mw><pos><c>adj</c></pos><stem>merry</stem></mw><mw><pos><c>v</c></pos><stem>go</stem></mw><mw><pos><c>adj</c></pos><stem>round</stem></mw></mwc><gra type="gra" index="13" head="11" relation="POBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="14" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=13 $NMV=2 $Ini $Des</a>
+  </u>
+  <u who="INV" uID="u188">
+    <w>yup<mor type="mor"><mw><pos><c>co</c></pos><stem>yup</stem></mw><gra type="gra" index="1" head="3" relation="COM"/></mor></w>
+    <w>I<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>I</stem></mw><gra type="gra" index="2" head="3" relation="SUBJ"/></mor></w>
+    <w>sure<mor type="mor"><mw><pos><c>v</c></pos><stem>sure</stem></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <w>will<mor type="mor"><mw><pos><c>mod</c></pos><stem>will</stem></mw><gra type="gra" index="4" head="3" relation="OBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="5" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=4 $NMV=1 $Rde $Acc</a>
+  </u>
+  <u who="CHI" uID="u189">
+    <w>and<mor type="mor"><mw><pos><c>coord</c></pos><stem>and</stem></mw><gra type="gra" index="1" head="2" relation="SUBJ"/></mor></w>
+    <w>put<mor type="mor"><mw><pos><c>v</c></pos><stem>put</stem><mk type="sfxf">ZERO</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>his<mor type="mor"><mw><pos><c>pro</c><s>poss</s><s>det</s></pos><stem>his</stem></mw><gra type="gra" index="3" head="4" relation="MOD"/></mor></w>
+    <w>hands<mor type="mor"><mw><pos><c>n</c></pos><stem>hand</stem><mk type="sfx">PL</mk></mw><gra type="gra" index="4" head="2" relation="OBJ"/></mor></w>
+    <w>on<mor type="mor"><mw><pos><c>prep</c></pos><stem>on</stem></mw><gra type="gra" index="5" head="2" relation="LOC"/></mor></w>
+    <w>that<mor type="mor"><mw><pos><c>det</c></pos><stem>that</stem></mw><gra type="gra" index="6" head="7" relation="DET"/></mor></w>
+    <w>merry<wk type="cmp"/>go<wk type="cmp"/>round<mor type="mor"><mwc><pos><c>n</c></pos><mw><pos><c>adj</c></pos><stem>merry</stem></mw><mw><pos><c>v</c></pos><stem>go</stem></mw><mw><pos><c>adj</c></pos><stem>round</stem></mw></mwc><gra type="gra" index="7" head="5" relation="POBJ"/></mor></w>
+    <w>so<mor type="mor"><mw><pos><c>conj</c></pos><stem>so</stem></mw><gra type="gra" index="8" head="12" relation="CPZR"/></mor></w>
+    <w>he<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>he</stem></mw><gra type="gra" index="9" head="12" relation="SUBJ"/></mor></w>
+    <w>won't<mor type="mor"><mw><pos><c>mod</c></pos><stem>will</stem></mw><gra type="gra" index="10" head="12" relation="AUX"/><mor-post><mw><pos><c>neg</c></pos><stem>not</stem></mw><gra type="gra" index="11" head="12" relation="JCT"/></mor-post></mor></w>
+    <w>fall<mor type="mor"><mw><pos><c>v</c></pos><stem>fall</stem></mw><gra type="gra" index="12" head="2" relation="CJCT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="13" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=12 $NMV=2 $Res $Des</a>
+  </u>
+  <u who="INV" uID="u190">
+    <w>okay<mor type="mor"><mw><pos><c>co</c></pos><stem>okay</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=1 $NMV=0 $Rde $Acc</a>
+  </u>
+  <u who="INV" uID="u191">
+    <w>let's<mor type="mor"><mw><pos><c>v</c></pos><stem>let</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/><mor-post><mw><pos><c>pro</c><s>obj</s></pos><stem>us</stem></mw><gra type="gra" index="2" head="1" relation="OBJ"/></mor-post></mor></w>
+    <w>see<mor type="mor"><mw><pos><c>v</c></pos><stem>see</stem></mw><gra type="gra" index="3" head="1" relation="COMP"/></mor></w>
+    <w>if<mor type="mor"><mw><pos><c>conj</c></pos><stem>if</stem></mw><gra type="gra" index="4" head="3" relation="OBJ"/></mor></w>
+    <w>I<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>I</stem></mw><gra type="gra" index="5" head="4" relation="COORD"/></mor></w>
+    <w>can<mor type="mor"><mw><pos><c>mod</c></pos><stem>can</stem></mw><gra type="gra" index="6" head="7" relation="SUBJ"/></mor></w>
+    <w>get<mor type="mor"><mw><pos><c>v</c></pos><stem>get</stem></mw><gra type="gra" index="7" head="5" relation="ROOT"/></mor></w>
+    <w>her<mor type="mor"><mw><pos><c>pro</c><s>poss</s><s>det</s></pos><stem>her</stem></mw><gra type="gra" index="8" head="9" relation="MOD"/></mor></w>
+    <w>sitting<mor type="mor"><mw><pos><c>n</c><s>gerund</s></pos><stem>sit</stem><mk type="sfx">PROG</mk></mw><gra type="gra" index="9" head="7" relation="ROOT"/></mor></w>
+    <w>in<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>in</stem></mw><gra type="gra" index="10" head="9" relation="JCT"/></mor></w>
+    <w>there<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>there</stem></mw><gra type="gra" index="11" head="10" relation="POBJ"/></mor></w>
+    <w>and<mor type="mor"><mw><pos><c>coord</c></pos><stem>and</stem></mw><gra type="gra" index="12" head="9" relation="ROOT"/></mor></w>
+    <w>we<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>we</stem></mw><gra type="gra" index="13" head="14" relation="SUBJ"/></mor></w>
+    <w>put<mor type="mor"><mw><pos><c>v</c></pos><stem>put</stem><mk type="sfxf">ZERO</mk></mw><gra type="gra" index="14" head="12" relation="ROOT"/></mor></w>
+    <w>her<mor type="mor"><mw><pos><c>pro</c><s>obj</s></pos><stem>her</stem></mw><gra type="gra" index="15" head="16" relation="MOD"/></mor></w>
+    <w>hand<mor type="mor"><mw><pos><c>n</c></pos><stem>hand</stem></mw><gra type="gra" index="16" head="14" relation="OBJ"/></mor></w>
+    <w>on<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>on</stem></mw><gra type="gra" index="17" head="14" relation="LOC"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="18" head="14" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=17 $NMV=5 $Con $Acc</a>
+  </u>
+  <u who="INV" uID="u192">
+    <w>put<mor type="mor"><mw><pos><c>v</c></pos><stem>put</stem><mk type="sfxf">ZERO</mk></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>his<mor type="mor"><mw><pos><c>pro</c><s>poss</s><s>det</s></pos><stem>his</stem></mw><gra type="gra" index="2" head="3" relation="MOD"/></mor></w>
+    <w>hand<mor type="mor"><mw><pos><c>n</c></pos><stem>hand</stem></mw><gra type="gra" index="3" head="1" relation="OBJ"/></mor></w>
+    <w>on<mor type="mor"><mw><pos><c>adv</c></pos><stem>on</stem></mw><gra type="gra" index="4" head="1" relation="JCT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="5" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=4 $NMV=1 $Con $Acc</a>
+  </u>
+  <u who="INV" uID="u193">
+    <w>that's<mor type="mor"><mw><pos><c>pro</c><s>dem</s></pos><stem>that</stem></mw><gra type="gra" index="1" head="2" relation="SUBJ"/><mor-post><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor-post></mor></w>
+    <w>a<mor type="mor"><mw><pos><c>det</c></pos><stem>a</stem></mw><gra type="gra" index="3" head="5" relation="DET"/></mor></w>
+    <w>little<mor type="mor"><mw><pos><c>adj</c></pos><stem>little</stem></mw><gra type="gra" index="4" head="5" relation="MOD"/></mor></w>
+    <w>girl<mor type="mor"><mw><pos><c>n</c></pos><stem>girl</stem></mw><gra type="gra" index="5" head="2" relation="PRED"/></mor></w>
+    <w>too<mor type="mor"><mw><pos><c>post</c></pos><stem>too</stem></mw><gra type="gra" index="6" head="2" relation="JCT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="7" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=6 $NMV=1 $Ini $Rep</a>
+  </u>
+  <u who="INV" uID="u194">
+    <w>okay<mor type="mor"><mw><pos><c>co</c></pos><stem>okay</stem></mw><gra type="gra" index="1" head="3" relation="COM"/></mor></w>
+    <w>they're<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>they</stem></mw><gra type="gra" index="2" head="3" relation="SUBJ"/><mor-post><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">PRES</mk></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor-post></mor></w>
+    <w>all<mor type="mor"><mw><pos><c>qn</c></pos><stem>all</stem></mw><gra type="gra" index="4" head="5" relation="QUANT"/></mor></w>
+    <w>set<mor type="mor"><mw><pos><c>n</c></pos><stem>set</stem></mw><gra type="gra" index="5" head="3" relation="PRED"/></mor></w>
+    <w>to<mor type="mor"><mw><pos><c>inf</c></pos><stem>to</stem></mw><gra type="gra" index="6" head="7" relation="INF"/></mor></w>
+    <w>go<mor type="mor"><mw><pos><c>v</c></pos><stem>go</stem></mw><gra type="gra" index="7" head="5" relation="XMOD"/></mor></w>
+    <w>now<mor type="mor"><mw><pos><c>adv</c></pos><stem>now</stem></mw><gra type="gra" index="8" head="7" relation="JCT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="9" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=8 $NMV=2 $Ini $Rep</a>
+  </u>
+  <u who="CHI" uID="u195">
+    <e><action/></e>
+    <t type="p"></t>
+
+    <a type="situation">spins merry-go-round</a>
+  </u>
+  <u who="INV" uID="u196">
+    <w>wow<mor type="mor"><mw><pos><c>co</c></pos><stem>wow</stem></mw><gra type="gra" index="1" head="2" relation="COM"/></mor></w>
+    <w>look<mor type="mor"><mw><pos><c>v</c></pos><stem>look</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>at<mor type="mor"><mw><pos><c>prep</c></pos><stem>at</stem></mw><gra type="gra" index="3" head="2" relation="JCT"/></mor></w>
+    <w>them<mor type="mor"><mw><pos><c>pro</c><s>obj</s></pos><stem>them</stem></mw><gra type="gra" index="4" head="3" relation="POBJ"/></mor></w>
+    <w>go<mor type="mor"><mw><pos><c>v</c></pos><stem>go</stem></mw><gra type="gra" index="5" head="2" relation="COM"/></mor></w>
+    <t type="e"><mor type="mor"><mt type="e"/><gra type="gra" index="6" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=4 $NMV=2 $Rta $Rep</a>
+  </u>
+  <u who="CHI" uID="u197">
+    <w>but<mor type="mor"><mw><pos><c>conj</c></pos><stem>but</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>how<mor type="mor"><mw><pos><c>adv</c><s>wh</s></pos><stem>how</stem></mw><gra type="gra" index="2" head="3" relation="JCT"/></mor></w>
+    <w>can<mor type="mor"><mw><pos><c>mod</c></pos><stem>can</stem></mw><gra type="gra" index="3" head="1" relation="POBJ"/></mor></w>
+    <w>this<mor type="mor"><mw><pos><c>det</c></pos><stem>this</stem></mw><gra type="gra" index="4" head="5" relation="DET"/></mor></w>
+    <w>one<mor type="mor"><mw><pos><c>pro</c><s>indef</s></pos><stem>one</stem></mw><gra type="gra" index="5" head="6" relation="SUBJ"/></mor></w>
+    <w>go<mor type="mor"><mw><pos><c>v</c></pos><stem>go</stem></mw><gra type="gra" index="6" head="3" relation="CJCT"/></mor></w>
+    <w>on<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>on</stem></mw><gra type="gra" index="7" head="6" relation="JCT"/></mor></w>
+    <w>here<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>here</stem></mw><gra type="gra" index="8" head="7" relation="POBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="9" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=8 $NMV=1 $Ini $Rfi</a>
+  </u>
+  <u who="INV" uID="u198">
+    <w>I<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>I</stem></mw><gra type="gra" index="1" head="4" relation="COM"/></mor></w>
+    <w>don't<mor type="mor"><mw><pos><c>mod</c></pos><stem>do</stem></mw><gra type="gra" index="2" head="4" relation="SUBJ"/><mor-post><mw><pos><c>neg</c></pos><stem>not</stem></mw><gra type="gra" index="3" head="4" relation="JCT"/></mor-post></mor></w>
+    <w>know<mor type="mor"><mw><pos><c>v</c></pos><stem>know</stem></mw><gra type="gra" index="4" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="5" head="4" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=4 $NMV=1 $Rri $Rep</a>
+  </u>
+  <u who="INV" uID="u199">
+    <w>what's<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>what</stem></mw><gra type="gra" index="1" head="3" relation="SUBJ"/><mor-post><mw><pos><c>aux</c></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="3" relation="AUX"/></mor-post></mor></w>
+    <w>gonna<mor type="mor"><mw><pos><c>part</c></pos><stem>go</stem><mk type="sfx">PROG</mk></mw><gra type="gra" index="3" head="0" relation="ROOT"/><mor-post><mw><pos><c>inf</c></pos><stem>to</stem></mw><gra type="gra" index="4" head="5" relation="INF"/></mor-post></mor></w>
+    <w>happen<mor type="mor"><mw><pos><c>v</c></pos><stem>happen</stem></mw><gra type="gra" index="5" head="3" relation="XCOMP"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="6" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=4 $NMV=1 $Con $Rfi</a>
+  </u>
+  <u who="CHI" uID="u200">
+    <w>I<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>I</stem></mw><gra type="gra" index="1" head="4" relation="COM"/></mor></w>
+    <w>don't<mor type="mor"><mw><pos><c>mod</c></pos><stem>do</stem></mw><gra type="gra" index="2" head="4" relation="SUBJ"/><mor-post><mw><pos><c>neg</c></pos><stem>not</stem></mw><gra type="gra" index="3" head="4" relation="JCT"/></mor-post></mor></w>
+    <w>know<mor type="mor"><mw><pos><c>v</c></pos><stem>know</stem></mw><gra type="gra" index="4" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="5" head="4" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=4 $NMV=1 $Rri $Rep</a>
+  </u>
+  <u who="INV" uID="u201">
+    <w>they're<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>they</stem></mw><gra type="gra" index="1" head="3" relation="SUBJ"/><mor-post><mw><pos><c>aux</c></pos><stem>be</stem><mk type="sfxf">PRES</mk></mw><gra type="gra" index="2" head="3" relation="AUX"/></mor-post></mor></w>
+    <w>gonna<mor type="mor"><mw><pos><c>part</c></pos><stem>go</stem><mk type="sfx">PROG</mk></mw><gra type="gra" index="3" head="0" relation="ROOT"/><mor-post><mw><pos><c>inf</c></pos><stem>to</stem></mw><gra type="gra" index="4" head="3" relation="JCT"/></mor-post></mor></w>
+    <w>have_to<mor type="mor"><mw><pos><c>mod</c><s>aux</s></pos><stem>have_to</stem></mw><gra type="gra" index="5" head="4" relation="POBJ"/></mor></w>
+    <w>take<mor type="mor"><mw><pos><c>v</c></pos><stem>take</stem></mw><gra type="gra" index="6" head="5" relation="AUX-ROOT"/></mor></w>
+    <w>turns<mor type="mor"><mw><pos><c>n</c></pos><stem>turn</stem><mk type="sfx">PL</mk></mw><gra type="gra" index="7" head="6" relation="OBJ"/></mor></w>
+    <w>maybe<mor type="mor"><mw><pos><c>adv</c></pos><stem>maybe</stem></mw><gra type="gra" index="8" head="6" relation="JCT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="9" head="6" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=8 $NMV=2 $Rre $Rep</a>
+  </u>
+  <u who="CHI" uID="u202">
+    <w>what<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>what</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=1 $NMV=0 $Res $Rfi</a>
+  </u>
+  <u who="INV" uID="u203">
+    <w>maybe<mor type="mor"><mw><pos><c>adv</c></pos><stem>maybe</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>they<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>they</stem></mw><gra type="gra" index="2" head="1" relation="MOD"/></mor></w>
+    <w>have_to<mor type="mor"><mw><pos><c>mod</c><s>aux</s></pos><stem>have_to</stem></mw><gra type="gra" index="3" head="2" relation="POBJ"/></mor></w>
+    <w>take<mor type="mor"><mw><pos><c>v</c></pos><stem>take</stem></mw><gra type="gra" index="4" head="3" relation="AUX-ROOT"/></mor></w>
+    <w>turns<mor type="mor"><mw><pos><c>n</c></pos><stem>turn</stem><mk type="sfx">PL</mk></mw><gra type="gra" index="5" head="4" relation="OBJ"/></mor></w>
+    <w>and<mor type="mor"><mw><pos><c>coord</c></pos><stem>and</stem></mw><gra type="gra" index="6" head="7" relation="MOD"/></mor></w>
+    <w>share<mor type="mor"><mw><pos><c>n</c></pos><stem>share</stem></mw><gra type="gra" index="7" head="4" relation="OBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="8" head="4" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=8 $NMV=3 $Rri $Rep</a>
+  </u>
+  <u who="CHI" uID="u204">
+    <w>get<mor type="mor"><mw><pos><c>v</c></pos><stem>get</stem></mw><gra type="gra" index="1" head="7" relation="COM"/></mor></w>
+    <w>one<mor type="mor"><mw><pos><c>det</c><s>num</s></pos><stem>one</stem></mw><gra type="gra" index="2" head="3" relation="QUANT"/></mor></w>
+    <w>out<mor type="mor"><mw><pos><c>n</c></pos><stem>out</stem></mw><gra type="gra" index="3" head="1" relation="OBJ"/></mor></w>
+    <w>and<mor type="mor"><mw><pos><c>coord</c></pos><stem>and</stem></mw><gra type="gra" index="4" head="7" relation="SUBJ"/></mor></w>
+    <w>she<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>she</stem></mw><gra type="gra" index="5" head="7" relation="COM"/></mor></w>
+    <w>can<mor type="mor"><mw><pos><c>mod</c></pos><stem>can</stem></mw><gra type="gra" index="6" head="7" relation="SUBJ"/></mor></w>
+    <w>go<mor type="mor"><mw><pos><c>v</c></pos><stem>go</stem></mw><gra type="gra" index="7" head="0" relation="ROOT"/></mor></w>
+    <w>in<mor type="mor"><mw><pos><c>prep</c></pos><stem>in</stem></mw><gra type="gra" index="8" head="7" relation="JCT"/></mor></w>
+    <w>one<mor type="mor"><mw><pos><c>pro</c><s>indef</s></pos><stem>one</stem></mw><gra type="gra" index="9" head="8" relation="POBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="10" head="7" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=9 $NMV=2 $Res $Des</a>
+  </u>
+  <u who="CHI" uID="u205">
+    <w>and<mor type="mor"><mw><pos><c>coord</c></pos><stem>and</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="2" head="4" relation="SUBJ"/></mor></w>
+    <w>can<mor type="mor"><mw><pos><c>mod</c></pos><stem>can</stem></mw><gra type="gra" index="3" head="4" relation="AUX"/></mor></w>
+    <w>put<mor type="mor"><mw><pos><c>v</c></pos><stem>put</stem><mk type="sfxf">ZERO</mk></mw><gra type="gra" index="4" head="1" relation="COMP"/></mor></w>
+    <w>her<mor type="mor"><mw><pos><c>pro</c><s>obj</s></pos><stem>her</stem></mw><gra type="gra" index="5" head="6" relation="MOD"/></mor></w>
+    <w>hands<mor type="mor"><mw><pos><c>n</c></pos><stem>hand</stem><mk type="sfx">PL</mk></mw><gra type="gra" index="6" head="4" relation="OBJ"/></mor></w>
+    <w>on<mor type="mor"><mw><pos><c>prep</c></pos><stem>on</stem></mw><gra type="gra" index="7" head="4" relation="LOC"/></mor></w>
+    <w>one<mor type="mor"><mw><pos><c>det</c><s>num</s></pos><stem>one</stem></mw><gra type="gra" index="8" head="7" relation="POBJ"/></mor></w>
+    <w>of<mor type="mor"><mw><pos><c>prep</c></pos><stem>of</stem></mw><gra type="gra" index="9" head="8" relation="MOD"/></mor></w>
+    <w>these<mor type="mor"><mw><pos><c>pro</c><s>dem</s></pos><stem>these</stem></mw><gra type="gra" index="10" head="9" relation="POBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="11" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=10 $NMV=1 $Con $Des</a>
+  </u>
+  <u who="INV" uID="u206">
+    <w>okay<mor type="mor"><mw><pos><c>co</c></pos><stem>okay</stem></mw><gra type="gra" index="1" head="3" relation="COM"/></mor></w>
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="2" head="3" relation="SUBJ"/></mor></w>
+    <w>take<mor type="mor"><mw><pos><c>v</c></pos><stem>take</stem></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <w>them<mor type="mor"><mw><pos><c>pro</c><s>obj</s></pos><stem>them</stem></mw><gra type="gra" index="4" head="5" relation="MOD"/></mor></w>
+    <w>out<mor type="mor"><mw><pos><c>n</c></pos><stem>out</stem></mw><gra type="gra" index="5" head="3" relation="OBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="6" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=5 $NMV=1 $Rde $C/R</a>
+  </u>
+  <u who="INV" uID="u207">
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="1" head="3" relation="SUBJ"/></mor></w>
+    <w>can<mor type="mor"><mw><pos><c>mod</c></pos><stem>can</stem></mw><gra type="gra" index="2" head="3" relation="AUX"/></mor></w>
+    <w>take<mor type="mor"><mw><pos><c>v</c></pos><stem>take</stem></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <w>them<mor type="mor"><mw><pos><c>pro</c><s>obj</s></pos><stem>them</stem></mw><gra type="gra" index="4" head="5" relation="MOD"/></mor></w>
+    <w>out<mor type="mor"><mw><pos><c>n</c></pos><stem>out</stem></mw><gra type="gra" index="5" head="3" relation="OBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="6" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=5 $NMV=1 $Con $C/R</a>
+  </u>
+  <u who="INV" uID="u208">
+    <w>just<mor type="mor"><mw><pos><c>adv</c><s>int</s></pos><stem>just</stem></mw><gra type="gra" index="1" head="2" relation="JCT"/></mor></w>
+    <w>pull<mor type="mor"><mw><pos><c>v</c></pos><stem>pull</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>them<mor type="mor"><mw><pos><c>pro</c><s>obj</s></pos><stem>them</stem></mw><gra type="gra" index="3" head="2" relation="OBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=3 $NMV=1 $Con $C/R</a>
+  </u>
+  <u who="CHI" uID="u209">
+    <e><action/></e>
+    <t type="p"></t>
+
+    <a type="situation">removes figure from merry-go-round</a>
+  </u>
+  <u who="INV" uID="u210">
+    <w>there<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>there</stem></mw><gra type="gra" index="1" head="3" relation="JCT"/></mor></w>
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="2" head="3" relation="SUBJ"/></mor></w>
+    <w>go<mor type="mor"><mw><pos><c>v</c></pos><stem>go</stem></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=3 $NMV=1 $Rta $Rep</a>
+  </u>
+  <u who="INV" uID="u211">
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="1" head="2" relation="SUBJ"/></mor></w>
+    <w>sit<mor type="mor"><mw><pos><c>v</c></pos><stem>sit</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>her<mor type="mor"><mw><pos><c>pro</c><s>obj</s></pos><stem>her</stem></mw><gra type="gra" index="3" head="2" relation="OBJ"/></mor></w>
+    <w>in<mor type="mor"><mw><pos><c>prep</c></pos><stem>in</stem></mw><gra type="gra" index="4" head="2" relation="JCT"/></mor></w>
+    <w>like<mor type="mor"><mw><pos><c>prep</c></pos><stem>like</stem></mw><gra type="gra" index="5" head="4" relation="MOD"/></mor></w>
+    <w>that<mor type="mor"><mw><pos><c>pro</c><s>dem</s></pos><stem>that</stem></mw><gra type="gra" index="6" head="5" relation="POBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="7" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="situation">demonstrates how to put figure in merry-go-round .</a>
+    <a type="coding">$MLU=6 $NMV=1 $Ini $Tea</a>
+  </u>
+  <u who="INV" uID="u212">
+    <w>tell<mor type="mor"><mw><pos><c>v</c></pos><stem>tell</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>her<mor type="mor"><mw><pos><c>pro</c><s>obj</s></pos><stem>her</stem></mw><gra type="gra" index="2" head="1" relation="OBJ"/></mor></w>
+    <w>to<mor type="mor"><mw><pos><c>inf</c></pos><stem>to</stem></mw><gra type="gra" index="3" head="4" relation="INF"/></mor></w>
+    <w>hold<mor type="mor"><mw><pos><c>v</c></pos><stem>hold</stem></mw><gra type="gra" index="4" head="1" relation="XCOMP"/></mor></w>
+    <w>on<mor type="mor"><mw><pos><c>adv</c></pos><stem>on</stem></mw><gra type="gra" index="5" head="4" relation="JCT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="6" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=5 $NMV=2 $Con $Tea</a>
+  </u>
+  <u who="INV" uID="u213">
+    <w>there<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>there</stem></mw><gra type="gra" index="1" head="3" relation="JCT"/></mor></w>
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="2" head="3" relation="SUBJ"/></mor></w>
+    <w>go<mor type="mor"><mw><pos><c>v</c></pos><stem>go</stem></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=3 $NMV=1 $Con $Tea</a>
+  </u>
+  <u who="CHI" uID="u214">
+    <w formType="singing">dodododo<mor type="mor"><mw><pos><c>sing</c></pos><stem>dodododo</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="situation">singing as she marches figure around .</a>
+    <a type="coding">$MLU=0 $NMV=0 $Ini $Col</a>
+  </u>
+  <u who="INV" uID="u215">
+    <w>what's<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>what</stem></mw><gra type="gra" index="1" head="4" relation="OBJ"/><mor-post><mw><pos><c>aux</c></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="4" relation="AUX"/></mor-post></mor></w>
+    <w>he<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>he</stem></mw><gra type="gra" index="3" head="4" relation="MOD"/></mor></w>
+    <w>saying<mor type="mor"><mw><pos><c>n</c><s>gerund</s></pos><stem>say</stem><mk type="sfx">PROG</mk></mw><gra type="gra" index="4" head="0" relation="ROOT"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="5" head="4" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=4 $NMV=1 $Rco $Rfi</a>
+  </u>
+  <u who="CHI" uID="u216">
+    <w>he<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>he</stem></mw><gra type="gra" index="1" head="2" relation="SUBJ"/></mor></w>
+    <w>wants<mor type="mor"><mw><pos><c>v</c></pos><stem>want</stem><mk type="sfx">3S</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>to<mor type="mor"><mw><pos><c>inf</c></pos><stem>to</stem></mw><gra type="gra" index="3" head="4" relation="INF"/></mor></w>
+    <w>go<mor type="mor"><mw><pos><c>v</c></pos><stem>go</stem></mw><gra type="gra" index="4" head="2" relation="XCOMP"/></mor></w>
+    <w>back<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>back</stem></mw><gra type="gra" index="5" head="4" relation="JCT"/></mor></w>
+    <w>on<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>on</stem></mw><gra type="gra" index="6" head="4" relation="JCT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="7" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=6 $NMV=2 $Res $Rep</a>
+  </u>
+  <u who="INV" uID="u217">
+    <w>already<mor type="mor"><mw><pos><c>adv</c></pos><stem>already</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=1 $NMV=0 $Rre $Exp</a>
+  </u>
+  <u who="INV" uID="u218">
+    <w>maybe<mor type="mor"><mw><pos><c>adv</c></pos><stem>maybe</stem></mw><gra type="gra" index="1" head="4" relation="JCT"/></mor></w>
+    <w>he<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>he</stem></mw><gra type="gra" index="2" head="4" relation="MOD"/></mor></w>
+    <w>can<mor type="mor"><mw><pos><c>mod</c></pos><stem>can</stem></mw><gra type="gra" index="3" head="4" relation="SUBJ"/></mor></w>
+    <w>go<mor type="mor"><mw><pos><c>v</c></pos><stem>go</stem></mw><gra type="gra" index="4" head="0" relation="ROOT"/></mor></w>
+    <w>on<mor type="mor"><mw><pos><c>prep</c></pos><stem>on</stem></mw><gra type="gra" index="5" head="4" relation="JCT"/></mor></w>
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="6" head="7" relation="DET"/></mor></w>
+    <w>slide<mor type="mor"><mw><pos><c>n</c></pos><stem>slide</stem></mw><gra type="gra" index="7" head="5" relation="POBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="8" head="4" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=7 $NMV=1 $Con $Rep</a>
+  </u>
+  <u who="INV" uID="u219">
+    <w>one<mor type="mor"><mw><pos><c>det</c><s>num</s></pos><stem>one</stem></mw><gra type="gra" index="1" head="5" relation="ENUM"/></mor></w>
+    <w>two<mor type="mor"><mw><pos><c>det</c><s>num</s></pos><stem>two</stem></mw><gra type="gra" index="2" head="5" relation="ENUM"/></mor></w>
+    <w>three<mor type="mor"><mw><pos><c>det</c><s>num</s></pos><stem>three</stem></mw><gra type="gra" index="3" head="5" relation="ENUM"/></mor></w>
+    <w>four<mor type="mor"><mw><pos><c>det</c><s>num</s></pos><stem>four</stem></mw><gra type="gra" index="4" head="5" relation="ENUM"/></mor></w>
+    <w>five<mor type="mor"><mw><pos><c>det</c><s>num</s></pos><stem>five</stem></mw><gra type="gra" index="5" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="6" head="5" relation="PUNCT"/></mor></t>
+
+    <a type="situation">counts as she marches figure up the slide</a>
+    <a type="coding">$MLU=5 $NMV=0 $Con $Rep</a>
+  </u>
+  <u who="INV" uID="u220">
+    <w>woo<p type="drawl"/><mor type="mor"><mw><pos><c>v</c></pos><stem>woo</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="situation">makes figure go down slide</a>
+    <a type="coding">$MLU=0 $NMV=0 $Con $Rep</a>
+  </u>
+  <u who="CHI" uID="u221">
+    <e><action/></e>
+    <t type="p"></t>
+
+    <a type="situation">spins merry-go-round</a>
+  </u>
+  <u who="INV" uID="u222">
+    <w>whoa<mor type="mor"><mw><pos><c>co</c></pos><stem>whoa</stem></mw><gra type="gra" index="1" head="2" relation="COM"/></mor></w>
+    <w>look<mor type="mor"><mw><pos><c>v</c></pos><stem>look</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>at<mor type="mor"><mw><pos><c>prep</c></pos><stem>at</stem></mw><gra type="gra" index="3" head="2" relation="JCT"/></mor></w>
+    <w>that<mor type="mor"><mw><pos><c>pro</c><s>dem</s></pos><stem>that</stem></mw><gra type="gra" index="4" head="3" relation="POBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="5" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="coding">$MLU=3 $NMV=1 $Rta $Rep</a>
+  </u>
+</CHAT>

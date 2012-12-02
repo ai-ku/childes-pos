@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CHAT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns="http://www.talkbank.org/ns/talkbank"
+      xsi:schemaLocation="http://www.talkbank.org/ns/talkbank http://talkbank.org/software/talkbank.xsd"
+      Version="2.0.1"
+      Lang="eng"
+      Corpus="cruttenden"
+      Id="jane24"
+      Date="1970-09-24">
+  <Participants>
+    <participant
+      id="CHI"
+    name="Jane"
+      role="Target_Child"
+      language="eng"
+      age="P3Y6M18D"
+      ageTo="P3Y7M17D"
+      sex="female"
+      group="normal"
+
+    />
+  </Participants>
+  <comment type="Date">24-SEP-1970</comment>
+  <u who="CHI" uID="u0">
+    <w>I<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>I</stem></mw><gra type="gra" index="1" head="2" relation="SUBJ"/></mor></w>
+    <w>got<mor type="mor"><mw><pos><c>v</c></pos><stem>get</stem><mk type="sfxf">PAST</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>a<mor type="mor"><mw><pos><c>det</c></pos><stem>a</stem></mw><gra type="gra" index="3" head="5" relation="DET"/></mor></w>
+    <w>big<mor type="mor"><mw><pos><c>adj</c></pos><stem>big</stem></mw><gra type="gra" index="4" head="5" relation="MOD"/></mor></w>
+    <w>feet<mor type="mor"><mw><pos><c>n</c></pos><stem>foot</stem><mk type="sfxf">PL</mk></mw><gra type="gra" index="5" head="2" relation="OBJ"/></mor></w>
+    <w>now<mor type="mor"><mw><pos><c>adv</c></pos><stem>now</stem></mw><gra type="gra" index="6" head="2" relation="JCT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="7" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">aı ɡɒt ə bıɡ fi:t naʊ</a>
+    <a type="explanation">referring to her feet which are together and covered with sand , to look like one big foot</a>
+  </u>
+  <u who="CHI" uID="u1">
+    <w>will<mor type="mor"><mw><pos><c>mod</c></pos><stem>will</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="2" head="3" relation="SUBJ"/></mor></w>
+    <w>hold<mor type="mor"><mw><pos><c>v</c></pos><stem>hold</stem></mw><gra type="gra" index="3" head="1" relation="COMP"/></mor></w>
+    <w>one<mor type="mor"><mw><pos><c>det</c><s>num</s></pos><stem>one</stem></mw><gra type="gra" index="4" head="5" relation="QUANT"/></mor></w>
+    <w>door<mor type="mor"><mw><pos><c>n</c></pos><stem>door</stem></mw><gra type="gra" index="5" head="3" relation="OBJ"/></mor></w>
+    <w>for<mor type="mor"><mw><pos><c>prep</c></pos><stem>for</stem></mw><gra type="gra" index="6" head="3" relation="JCT"/></mor></w>
+    <w>me<mor type="mor"><mw><pos><c>pro</c><s>obj</s></pos><stem>me</stem></mw><gra type="gra" index="7" head="6" relation="POBJ"/></mor></w>
+    <w>Mum<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Mum</stem></mw><gra type="gra" index="8" head="3" relation="VOC"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="9" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">wıl ðu [*] həʊld wʌn [*] dɔ fɔ mi mʌm</a>
+    <a type="errcoding">paltal semi-vowel replaced by voiced dental fricative; one = the;</a>
+  </u>
+  <u who="CHI" uID="u2">
+    <w>it<mor type="mor"><mw><pos><c>pro</c></pos><stem>it</stem></mw><gra type="gra" index="1" head="4" relation="SUBJ"/></mor></w>
+    <w>might<mor type="mor"><mw><pos><c>mod</c></pos><stem>might</stem></mw><gra type="gra" index="2" head="4" relation="AUX"/></mor></w>
+    <w>be<mor type="mor"><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem></mw><gra type="gra" index="3" head="4" relation="AUX"/></mor></w>
+    <w>come<mor type="mor"><mw><pos><c>v</c></pos><stem>come</stem></mw><gra type="gra" index="4" head="0" relation="ROOT"/></mor></w>
+    <w>when<mor type="mor"><mw><pos><c>conj</c></pos><stem>when</stem></mw><gra type="gra" index="5" head="9" relation="JCT"/></mor></w>
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="6" head="7" relation="DET"/></mor></w>
+    <w>tea's<mor type="mor"><mw><pos><c>n</c></pos><stem>tea</stem></mw><gra type="gra" index="7" head="9" relation="SUBJ"/><mor-post><mw><pos><c>aux</c></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="8" head="9" relation="AUX"/></mor-post></mor></w>
+    <w>boiling<mor type="mor"><mw><pos><c>part</c></pos><stem>boil</stem><mk type="sfx">PROG</mk></mw><gra type="gra" index="9" head="4" relation="XCOMP"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="10" head="4" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">ıt maıt bi kʌm wɛn ðə tiz bɔılıŋ</a>
+    <a type="comments">meaning unclear</a>
+  </u>
+  <comment type="Date">10-OCT-1970</comment>
+  <u who="CHI" uID="u3">
+    <w>I<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>I</stem></mw><gra type="gra" index="1" head="2" relation="SUBJ"/></mor></w>
+    <w>went<mor type="mor"><mw><pos><c>v</c></pos><stem>go</stem><mk type="sfxf">PAST</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>down<mor type="mor"><mw><pos><c>prep</c></pos><stem>down</stem></mw><gra type="gra" index="3" head="2" relation="JCT"/></mor></w>
+    <w>on<mor type="mor"><mw><pos><c>prep</c></pos><stem>on</stem></mw><gra type="gra" index="4" head="2" relation="JCT"/></mor></w>
+    <w>my<mor type="mor"><mw><pos><c>pro</c><s>poss</s><s>det</s></pos><stem>my</stem></mw><gra type="gra" index="5" head="7" relation="MOD"/></mor></w>
+    <w>own<mor type="mor"><mw><pos><c>adj</c></pos><stem>own</stem></mw><gra type="gra" index="6" head="7" relation="MOD"/></mor></w>
+    <w>and<mor type="mor"><mw><pos><c>coord</c></pos><stem>and</stem></mw><gra type="gra" index="7" head="4" relation="POBJ"/></mor></w>
+    <w>I<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>I</stem></mw><gra type="gra" index="8" head="2" relation="JCT"/></mor></w>
+    <w>didn't<mor type="mor"><mw><pos><c>mod</c></pos><stem>do</stem><mk type="sfxf">PAST</mk></mw><gra type="gra" index="9" head="8" relation="POBJ"/><mor-post><mw><pos><c>neg</c></pos><stem>not</stem></mw><gra type="gra" index="10" head="11" relation="JCT"/></mor-post></mor></w>
+    <w>be<mor type="mor"><mw><pos><c>aux</c></pos><stem>be</stem></mw><gra type="gra" index="11" head="9" relation="CMOD"/></mor></w>
+    <w>scared<mor type="mor"><mw><pos><c>part</c></pos><stem>scare</stem><mk type="sfx">PERF</mk></mw><gra type="gra" index="12" head="11" relation="PRED"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="13" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">aı wɛnt dɑʊn ɒn maı əʊn ən aı &lt;dıdn̩ bi&gt; [*] kɛəd [*]</a>
+    <a type="errcoding">didn't be = wasn't; first element of cluster omitted in "scared";</a>
+  </u>
+</CHAT>

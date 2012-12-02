@@ -1,0 +1,208 @@
+*** Introduction
+*** Review   
+
+Notes to myself:
+
+  - We can replicate Mintz experiments on whole corpora which not only
+  further generalizes the work of Mintz(2003) but also supports our
+  statistical language training on whole corpus.
+
+>>>From CL (Clair et al. 2010)
+
+Distributional information from child-directed speech
+
+	 - Finch and Chater(1992), redington(1998) show dist. information
+	 provided accurate information about grammatical categories of
+	 words.
+	    
+	 Model type:
+
+	 1- Co-occurance based on previous and succeeding two words
+
+	    pros: Demonstrates the potantial for grammatical category
+	    learning on the basis only of a distributional information from
+	    the text.
+	    
+	    cons: the plausilbility of all this information of words would
+	    require ascribing a vast memory for co-occurences between
+	    thousands of words.
+	    
+	    Question: What sources of distributional information may be
+	    computationally tractable to the child determinig the pattern of
+	    grammatical categories within the language?
+
+	    
+ 	 2- Maratos and Chalkley (1980) proposed that local
+ 	 distributional information
+
+    - If X, Y and Z are heard within the same position in
+    constructions A, B and C, then X, Y and Z will be abducted into
+    the same category.
+	 
+	  Cartwright and Brent (1997) applies this approach by examining
+    "minimal pairs" of phrases.
+
+	  ex: the dog sat & the cat sat -> "the _ sat", {dog, cat}
+	 
+	  pros: local information was available to generate sets of words
+	  that often coresponded to grammatical categories.
+
+	  cons: It was computationally intesive and additionally it resulted
+	  in an only partial coverage of the words (Redington et al. 1998))
+
+  3- Mintz(2003) local, high frequency co-occurences basis for the
+  derivation of grammatical categories.
+
+	 - frequently occuring non-adjacent pairs of words in speech: (1)
+   available, (2) useful to scaffolding the word groupings.
+
+	 - to _ to => words that can intervane tend to be from same
+   category.
+	 
+	 - top 45 frequent frames very accurate
+	 
+	 - Mintz(2002) tested non-adjacent frames could be used by adulth
+   learners to categorise words in an artificial language learning.
+   (this work can be used to support substitute words)
+	   
+   - Mintz (02,03) are not require intensive memory or computational
+   resources so trackable by child in early stages of development.
+	   
+	   * demonstrates participants respond to the co-occurance when
+     learning artificial language.
+
+   -Fraquent frames have information from two distributional jointly
+   working resources => {preciding, succeeding} bigrams.
+	   
+   Some results on Bigrams:
+	   
+	   * Valian and Coulson (1988) found that bigram cues could induce
+	   word categorization within an artificial language learning
+	   paradigm provided the bigram frame words much more frequent than
+	   the words being categorised.
+	   
+	   * Monoghan et al.(2005), St. Clair and Monaghan(2005),
+     Smith(1966), St. Clair Monaghan & Ramscar(2009).
+
+   Fixedframe critization:
+
+   - Present the problem of sparsity.  45 frames only categorizes only
+   a small fraction of the corpus.  (Manning & Schutze 1999) highly
+   enriched context vs the reduced frequency of that spesific context.
+   That why most of the time bigrams preferred instead of trigrams.
+   (Grainger & Whitney 2004)
+	    
+	 - Fixed frequent frames are only available at later stages of
+   development ( Gomez & Maye, 2005) and even then they are difficult
+   to learn ( Endress et al., 2007) (Onnis et al., 2005).  They are
+   only available to use by language learner under certain specific
+   circumstances even when they provide perfect categorisation
+   information (Gomez, 2002)
+	     
+	 - They can only categorise words that are regularly surrounded by
+   other frequent words.  So they are unlikely to provide information
+   about membership for categories, such as advervs or adjectives
+   which are generally adjacent to a content word of lower frequency.
+	     
+   They provide rather relative cue to grammatical categories in
+   German, which have a ralatively large nubmer of function words
+   (Stumper, Bannard, Lieve & Tomasello, 2010) and also seem similarly
+   inappropriate for Dutch (Erkelens, 2009)
+  
+   Flexible frames:
+
+   Cons:
+   * inherit strengths of both the bigram and the fixed frame
+   statistics but avoid the weakness of both methods.
+    
+   * Also consistent with the developmental trajectory of children's
+   sensitivity to different sources of distributional information.
+
+   * Adjacent, bigram information can be used before children become
+   sensitive to non-adjacent dependencies (Gomez & Maye, 2005).
+   
+   * succeeding bigram information can be used as well as preceding
+   information as cues for categorisation (Frigo & MacDonald, 1998;
+   St. Clair et al., 2009)
+
+   * adjacent bigram information remains easier to use for determining
+     language structure even after considerable language exposure
+     (Onnis et al., 2005)
+
+   * the child will exploit any sources of information that prove
+     useful such as some combination of highly frequent and useful
+     trigrams, bigrams and even higher order co-occurences. (Bannard &
+     Matthews, 2008)
+
+   * Cartwright and Brent's (1997) indicates frames with different
+     amount of specifity may be useful.
+
+>>>From Danielle Matthes, Colin Bannard 
+
+Title: Children's Production of Unfamiliar Word Sequence Is Predicted
+by Positional Variability and Latent Classes in a Large Sample of
+Child-Directed Speech
+
+  (Bannard & Matthews, 2008) 2- and 3- year old children were
+  significantly better at repeating the sahred first three words of
+  frequently occurring multiword sequences than matched infrequent
+  sequences.  
+  ex : better at repeating "sit in your" when saying "sit in your
+  chair" than when saying "sit in your truck"
+
+  Interesting: Gomez(2002) found than the ability of 18-month-olds to
+  detect a nonadjacent dependency between tow sounds was predicted by
+  the extent to which the intervening element was varied in the
+  artificial language they were exposed to.
+
+  
+  "Type frequency" :: Tomasello(2003) has argued that children form
+  the most basic of productive constructions through a process of
+  schematization.  Repeated uses of one form (e.g. 'Throw', "Throw the
+  ball", "Throw teddy" and "Throw your bottle") => "Throw X"
+  
+  pros: can be used to quantify how appropriate it is to generalize
+  over a set of similar utterances
+  
+  cons: it does not take into account the frequency distribution of
+  the words filling a given slot.  Ex:
+  Throw your bottle 118
+  Throw the ball  1
+  Throw the teddy 1 
+
+  child not detect potential productivity.
+  Throw your bottle 40
+  Throw the ball  40
+  Throw the teddy 40 
+  higher productivity
+
+  They predict: Children should have an expectations concerning
+  whether a given word or phase will be seen in a particular position
+  based on its similarity to the words that have been seen there
+  before.
+
+  Distributional and semantic similarity are likely to be highly
+  intercorreleted and that words that have similar meanings will occur
+  in similar contexts (Landauer & Duamis 1997)
+
+  Statistical language models = (Bannard & Matthews 2008) shows that
+  children are better at repeating sequences of words that they have
+  frequently encountered before.
+
+  They found:
+  
+  Children in both age groups were better able to reproduce unfamiliar
+  sequences with higher slot entropy.
+  
+  The more semantically similar the items that are likely to have been
+  previously heard in a slot, the easier it was for children to repeat
+  an unfamiliar variant of that schema.
+  
+  Slot entropy and semantic density had predictive value over and
+  above syntacic class, suggesting that they affect learning across
+  phrase types.
+
+  (Tomasello, 2003; p.124) Children should have expectations
+  concerning what words or phrases they are going to see in a
+  particular position based on the functions of the words that have
+  been seen before.

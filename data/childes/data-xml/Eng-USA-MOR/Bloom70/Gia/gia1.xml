@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CHAT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns="http://www.talkbank.org/ns/talkbank"
+      xsi:schemaLocation="http://www.talkbank.org/ns/talkbank http://talkbank.org/software/talkbank.xsd"
+      Version="2.0.1"
+      Lang="eng"
+      Corpus="Bloom70"
+      Id="gia1"
+      Date="1984-01-01">
+  <Participants>
+    <participant
+      id="GIA"
+      role="Target_Child"
+      language="eng"
+
+    />
+  </Participants>
+  <lazy-gem label="Existence"/>
+  <u who="GIA" uID="u0">
+    <w>a<mor type="mor"><mw><pos><c>det</c></pos><stem>a</stem></mw><gra type="gra" index="1" head="2" relation="DET"/></mor></w>
+    <w>button<mor type="mor"><mw><pos><c>n</c></pos><stem>button</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="situation">Lois holding up button</a>
+  </u>
+  <u who="GIA" uID="u1">
+    <w>a<mor type="mor"><mw><pos><c>det</c></pos><stem>a</stem></mw><gra type="gra" index="1" head="2" relation="DET"/></mor></w>
+    <w>baby<mor type="mor"><mw><pos><c>n</c></pos><stem>baby</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="situation">Gia looking at picture of teddy bear</a>
+  </u>
+  <u who="GIA" uID="u2">
+    <w>a<mor type="mor"><mw><pos><c>det</c></pos><stem>a</stem></mw><gra type="gra" index="1" head="2" relation="DET"/></mor></w>
+    <w>box<mor type="mor"><mw><pos><c>n</c></pos><stem>box</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="situation">holding out box of tape recorder tape</a>
+  </u>
+  <u who="GIA" uID="u3">
+    <w>a<mor type="mor"><mw><pos><c>det</c></pos><stem>a</stem></mw><gra type="gra" index="1" head="2" relation="DET"/></mor></w>
+    <w>rabbit<mor type="mor"><mw><pos><c>n</c></pos><stem>rabbit</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="situation">pointing to picture of rabbit</a>
+  </u>
+  <lazy-gem label="Recurrence"/>
+  <u who="GIA" uID="u4">
+    <w>more<mor type="mor"><mw><pos><c>adv</c></pos><stem>more</stem></mw><gra type="gra" index="1" head="2" relation="JCT"/></mor></w>
+    <w>write<mor type="mor"><mw><pos><c>v</c></pos><stem>write</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="situation">Gia scribbles on paper , scribbling some more</a>
+  </u>
+  <u who="GIA" uID="u5">
+    <w>more<mor type="mor"><mw><pos><c>qn</c></pos><stem>more</stem></mw><gra type="gra" index="1" head="2" relation="QUANT"/></mor></w>
+    <w>clown<mor type="mor"><mw><pos><c>n</c></pos><stem>clown</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="situation">Lois rocks clown , Gia rties to rock it and it falls</a>
+  </u>
+  <u who="GIA" uID="u6">
+    <w>more<mor type="mor"><mw><pos><c>qn</c></pos><stem>more</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+  </u>
+  <u who="GIA" uID="u7">
+    <w>more<mor type="mor"><mw><pos><c>qn</c></pos><stem>more</stem></mw><gra type="gra" index="1" head="2" relation="QUANT"/></mor></w>
+    <w>rabbit<mor type="mor"><mw><pos><c>n</c></pos><stem>rabbit</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="situation">Gia and Lois had been looking at a book with a picture of a rabbit , Gia picks up book , looking for picture of rabbit</a>
+  </u>
+</CHAT>

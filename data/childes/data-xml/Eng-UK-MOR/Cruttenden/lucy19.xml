@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CHAT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns="http://www.talkbank.org/ns/talkbank"
+      xsi:schemaLocation="http://www.talkbank.org/ns/talkbank http://talkbank.org/software/talkbank.xsd"
+      Version="2.0.1"
+      Lang="eng"
+      Corpus="cruttenden"
+      Id="lucy19"
+      Date="1970-04-25">
+  <Participants>
+    <participant
+      id="CHI"
+    name="Lucy"
+      role="Target_Child"
+      language="eng"
+      age="P2Y11M18D"
+      ageTo="P3Y0M17D"
+      sex="female"
+      group="normal"
+
+    />
+  </Participants>
+  <comment type="Date">25-APR-1970</comment>
+  <u who="CHI" uID="u0">
+    <w>can<mor type="mor"><mw><pos><c>mod</c></pos><stem>can</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>Jenny<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Jenny</stem></mw><gra type="gra" index="2" head="3" relation="SUBJ"/></mor></w>
+    <w>have<mor type="mor"><mw><pos><c>v</c></pos><stem>have</stem></mw><gra type="gra" index="3" head="1" relation="COMP"/></mor></w>
+    <w>a<mor type="mor"><mw><pos><c>det</c></pos><stem>a</stem></mw><gra type="gra" index="4" head="5" relation="DET"/></mor></w>
+    <w>spade<mor type="mor"><mw><pos><c>n</c></pos><stem>spade</stem></mw><gra type="gra" index="5" head="3" relation="OBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="6" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">kæn dʒɛni æv ə speıd</a>
+  </u>
+  <u who="CHI" uID="u1">
+    <w>I<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>I</stem></mw><gra type="gra" index="1" head="4" relation="SUBJ"/></mor></w>
+    <w>don't<mor type="mor"><mw><pos><c>mod</c></pos><stem>do</stem></mw><gra type="gra" index="2" head="4" relation="AUX"/><mor-post><mw><pos><c>neg</c></pos><stem>not</stem></mw><gra type="gra" index="3" head="4" relation="JCT"/></mor-post></mor></w>
+    <w>want<mor type="mor"><mw><pos><c>v</c></pos><stem>want</stem></mw><gra type="gra" index="4" head="0" relation="ROOT"/></mor></w>
+    <w>some<mor type="mor"><mw><pos><c>qn</c></pos><stem>some</stem></mw><gra type="gra" index="5" head="6" relation="JCT"/></mor></w>
+    <w>more<mor type="mor"><mw><pos><c>qn</c></pos><stem>more</stem></mw><gra type="gra" index="6" head="7" relation="QUANT"/></mor></w>
+    <w>jelly<mor type="mor"><mw><pos><c>n</c></pos><stem>jelly</stem></mw><gra type="gra" index="7" head="4" relation="OBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="8" head="4" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">aı dəʊn wɒnt səm mɔ dʒɛli</a>
+  </u>
+  <comment type="Date">08-MAY-1970</comment>
+  <u who="CHI" uID="u2">
+    <w>we<mor type="mor"><mw><pos><c>pro</c><s>sub</s></pos><stem>we</stem></mw><gra type="gra" index="1" head="2" relation="SUBJ"/></mor></w>
+    <w>had<mor type="mor"><mw><pos><c>v</c></pos><stem>have</stem><mk type="sfxf">PAST</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>to<mor type="mor"><mw><pos><c>prep</c></pos><stem>to</stem></mw><gra type="gra" index="3" head="2" relation="JCT"/></mor></w>
+    <w>not<mor type="mor"><mw><pos><c>neg</c></pos><stem>not</stem></mw><gra type="gra" index="4" head="6" relation="JCT"/></mor></w>
+    <w>play<mor type="mor"><mw><pos><c>n</c></pos><stem>play</stem></mw><gra type="gra" index="5" head="6" relation="MOD"/></mor></w>
+    <g><w>out<mor type="mor"><mw><pos><c>n</c></pos><stem>out</stem></mw><gra type="gra" index="6" head="3" relation="POBJ"/></mor></w><ga type="explanation">we can't play out</ga></g>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="7" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">wi &lt;hæt tə nɒt&gt; [*] pleı aʊt</a>
+    <a type="errcoding">had to not = can't;</a>
+  </u>
+  <u who="CHI" uID="u3">
+    <w><shortening>are</shortening><mor type="mor"><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">PRES</mk></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="2" head="1" relation="SUBJ"/></mor></w>
+    <g><w>undoning<replacement><w>undoing<mor type="mor"><mw><mpfx>un</mpfx><pos><c>part</c></pos><stem>do</stem><mk type="sfx">PROG</mk></mw><gra type="gra" index="3" head="1" relation="PRED"/></mor></w></replacement></w><error>m</error></g>
+    <w>them<mor type="mor"><mw><pos><c>pro</c><s>obj</s></pos><stem>them</stem></mw><gra type="gra" index="4" head="1" relation="PRED"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="5" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">ju ʌndʌnıŋ [*] ðɛm</a>
+    <a type="errcoding">undoning = undoing;</a>
+  </u>
+  <u who="CHI" uID="u4">
+    <w>don't<mor type="mor"><mw><pos><c>mod</c></pos><stem>do</stem></mw><gra type="gra" index="1" head="3" relation="SUBJ"/><mor-post><mw><pos><c>neg</c></pos><stem>not</stem></mw><gra type="gra" index="2" head="3" relation="JCT"/></mor-post></mor></w>
+    <w>cut<mor type="mor"><mw><pos><c>v</c></pos><stem>cut</stem><mk type="sfxf">ZERO</mk></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <w>it<mor type="mor"><mw><pos><c>pro</c></pos><stem>it</stem></mw><gra type="gra" index="4" head="3" relation="OBJ"/></mor></w>
+    <w>to<mor type="mor"><mw><pos><c>prep</c></pos><stem>to</stem></mw><gra type="gra" index="5" head="3" relation="JCT"/></mor></w>
+    <w>half<mor type="mor"><mw><pos><c>n</c></pos><stem>half</stem></mw><gra type="gra" index="6" head="5" relation="POBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="7" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">dəʊn kʌt ıt tə [*] hɑ:f</a>
+    <a type="errcoding">to = in;</a>
+  </u>
+</CHAT>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CHAT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns="http://www.talkbank.org/ns/talkbank"
+      xsi:schemaLocation="http://www.talkbank.org/ns/talkbank http://talkbank.org/software/talkbank.xsd"
+      Version="2.0.1"
+      Lang="eng"
+      Corpus="macwhinney"
+      Id="21b1"
+      Date="1984-01-01">
+  <Participants>
+    <participant
+      id="CHI"
+    name="Ross"
+      role="Target_Child"
+      language="eng"
+      age="P2Y6M17D"
+
+      sex="male"
+      group="normal"
+
+    />
+  </Participants>
+  <u who="CHI" uID="u0">
+    <w>this<mor type="mor"><mw><pos><c>det</c></pos><stem>this</stem></mw><gra type="gra" index="1" head="2" relation="DET"/></mor></w>
+    <w>tape<mor type="mor"><mw><pos><c>n</c></pos><stem>tape</stem></mw><gra type="gra" index="2" head="3" relation="SUBJ"/></mor></w>
+    <w>has<mor type="mor"><mw><pos><c>aux</c></pos><stem>have</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <w>not<mor type="mor"><mw><pos><c>neg</c></pos><stem>not</stem></mw><gra type="gra" index="4" head="3" relation="NEG"/></mor></w>
+    <w>been<mor type="mor"><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">PERF</mk></mw><gra type="gra" index="5" head="6" relation="AUX"/></mor></w>
+    <w>transcribed<mor type="mor"><mw><pos><c>part</c></pos><stem>transcribe</stem><mk type="sfx">PERF</mk></mw><gra type="gra" index="6" head="3" relation="PRED"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="7" head="3" relation="PUNCT"/></mor></t>
+
+  </u>
+</CHAT>

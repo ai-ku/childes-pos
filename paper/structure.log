@@ -1,0 +1,52 @@
+Introduction
+related work
+  * Historical
+    Finch and Chater(1992), redington(1998) 
+    Maratos and Chalkley
+  * Sytagmatic
+    Bigrams *may be*
+    Frequent frames (mintz)
+    Flexible frames (St. Clair)
+    constructive models and Unfamiliar Word prediction
+    Statistical models relevance with learning
+    
+  * Explain substitute vector idea
+
+Possible Experiments:
+
+#0 data preparation 
+
+  * Follow the work of Mintz(2003) St.Clair(2010) not so clear.
+  * Remove all CHILDES markups
+  * Add morphological tags to repeated words
+  * Remove all utterance boundaries and punctuation marks
+  * Use the standard groupings of Mintz:
+    -> Still how do the group words other than standard dictionary is
+       unclear to me
+
+#1 ngram order experiments
+  * Present different ngram models and their perplexities show statistically 
+  the difference.
+
+#2 Learner: Neural Network Compare: Flexible frames (since it beats
+  fixed one)
+  * Input substitute vectors
+	      * use probabilities	
+	      * use lopg
+	      * dim_red input
+	      * Sampling(be careful duplicates)
+          -> Talk about why using the top n words is not same as using substitutes.
+          -> This might be a set of experiment
+
+
+#3 Scode: (It ll be very hard to explain this algorithm)
+
+  * Explain the algorithm briefly and perform learning report results
+  using Mintz accuracy.
+  * Compare with Mintz.
+  * Talk about type based.
+  * Bigram and flex gram results would be good here
+
+#4 train and test on the same document
+  * Ask Yuret is this a problem
+

@@ -1,0 +1,709 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CHAT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns="http://www.talkbank.org/ns/talkbank"
+      xsi:schemaLocation="http://www.talkbank.org/ns/talkbank http://talkbank.org/software/talkbank.xsd"
+      Media="triplets" Mediatypes="video"
+      Version="2.0.1"
+      Lang="eng"
+      Corpus="julie"
+      Id="triplets"
+      Date="1984-01-01">
+  <Participants>
+    <participant
+      id="RAC"
+    name="Rachel"
+      role="Target_Child"
+      language="eng"
+
+    />
+    <participant
+      id="SAR"
+    name="Sarah"
+      role="Target_Child"
+      language="eng"
+
+    />
+    <participant
+      id="MOT"
+      role="Mother"
+      language="eng"
+
+    />
+    <participant
+      id="GRA"
+      role="Grandmother"
+      language="eng"
+
+    />
+    <participant
+      id="ADU"
+      role="Adult"
+      language="eng"
+
+    />
+  </Participants>
+  <comment type="Situation">Luke , Rachel , and Sarah are sitting at the table getting ice cream from their mother. Their grandma is off-camera , and their grandfather (Poppa) has recently left the room.</comment>
+  <u who="MOT" uID="u0">
+    <w>mom<mor type="mor"><mw><pos><c>n</c></pos><stem>mom</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>doesn't<mor type="mor"><mw><pos><c>mod</c></pos><stem>do</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="1" relation="ROOT"/><mor-post><mw><pos><c>neg</c></pos><stem>not</stem></mw><gra type="gra" index="3" head="4" relation="JCT"/></mor-post></mor></w>
+    <w>let<mor type="mor"><mw><pos><c>v</c></pos><stem>let</stem><mk type="sfxf">ZERO</mk></mw><gra type="gra" index="4" head="2" relation="ROOT"/></mor></w>
+    <w>us<mor type="mor"><mw><pos><c>pro</c><s>obj</s></pos><stem>us</stem></mw><gra type="gra" index="5" head="4" relation="OBJ"/></mor></w>
+    <w>have<mor type="mor"><mw><pos><c>v</c></pos><stem>have</stem></mw><gra type="gra" index="6" head="4" relation="COMP"/></mor></w>
+    <w>this<mor type="mor"><mw><pos><c>det</c></pos><stem>this</stem></mw><gra type="gra" index="7" head="8" relation="DET"/></mor></w>
+    <w>stuff<mor type="mor"><mw><pos><c>n</c></pos><stem>stuff</stem></mw><gra type="gra" index="8" head="6" relation="OBJ"/></mor></w>
+    <w>very<mor type="mor"><mw><pos><c>adv</c><s>int</s></pos><stem>very</stem></mw><gra type="gra" index="9" head="10" relation="JCT"/></mor></w>
+    <w>often<mor type="mor"><mw><pos><c>adv</c></pos><stem>often</stem></mw><gra type="gra" index="10" head="6" relation="JCT"/></mor></w>
+    <tagMarker type="comma"><mor type="mor"><mw><pos><c>cm</c></pos><stem>cm</stem></mw><gra type="gra" index="11" head="12" relation="MOD"/></mor></tagMarker>
+    <w>Grandma<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Grandma</stem></mw><gra type="gra" index="12" head="10" relation="POBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="13" head="4" relation="PUNCT"/></mor></t>
+    <media
+      start="1.500"
+      end="5.600"
+      unit="s"
+    />
+  </u>
+  <u who="GRA" uID="u1">
+    <e><happening>laugh</happening></e>
+    <w>are<mor type="mor"><mw><pos><c>aux</c></pos><stem>be</stem><mk type="sfxf">PRES</mk></mw><gra type="gra" index="1" head="3" relation="AUX"/></mor></w>
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="2" head="3" relation="SUBJ"/></mor></w>
+    <w>ready<mor type="mor"><mw><pos><c>v</c></pos><stem>ready</stem></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <w>for<mor type="mor"><mw><pos><c>prep</c></pos><stem>for</stem></mw><gra type="gra" index="4" head="3" relation="JCT"/></mor></w>
+    <w>more<mor type="mor"><mw><pos><c>qn</c></pos><stem>more</stem></mw><gra type="gra" index="5" head="4" relation="POBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="6" head="3" relation="PUNCT"/></mor></t>
+    <media
+      start="5.601"
+      end="8.000"
+      unit="s"
+    />
+  </u>
+  <u who="RAC" uID="u2">
+    <w>what's<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>what</stem></mw><gra type="gra" index="1" head="2" relation="PRED"/><mor-post><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor-post></mor></w>
+    <w>that<mor type="mor"><mw><pos><c>pro</c><s>dem</s></pos><stem>that</stem></mw><gra type="gra" index="3" head="2" relation="SUBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="4" head="2" relation="PUNCT"/></mor></t>
+    <media
+      start="7.299"
+      end="8.000"
+      unit="s"
+    />
+  </u>
+  <u who="GRA" uID="u3">
+    <w>ready<mor type="mor"><mw><pos><c>v</c></pos><stem>ready</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>for<mor type="mor"><mw><pos><c>prep</c></pos><stem>for</stem></mw><gra type="gra" index="2" head="1" relation="JCT"/></mor></w>
+    <w>more<mor type="mor"><mw><pos><c>qn</c></pos><stem>more</stem></mw><gra type="gra" index="3" head="5" relation="QUANT"/></mor></w>
+    <w>ice<mor type="mor"><mw><pos><c>n</c></pos><stem>ice</stem></mw><gra type="gra" index="4" head="5" relation="MOD"/></mor></w>
+    <w>cream<mor type="mor"><mw><pos><c>n</c></pos><stem>cream</stem></mw><gra type="gra" index="5" head="2" relation="POBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="6" head="1" relation="PUNCT"/></mor></t>
+    <media
+      start="8.000"
+      end="9.500"
+      unit="s"
+    />
+  </u>
+  <u who="MOT" uID="u4">
+    <w>whose<mor type="mor"><mw><pos><c>det</c><s>wh</s></pos><stem>whose</stem></mw><gra type="gra" index="1" head="2" relation="MOD"/></mor></w>
+    <w>turn<mor type="mor"><mw><pos><c>n</c></pos><stem>turn</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+  </u>
+  <u who="MOT" uID="u5">
+    <w>whose<mor type="mor"><mw><pos><c>det</c><s>wh</s></pos><stem>whose</stem></mw><gra type="gra" index="1" head="2" relation="MOD"/></mor></w>
+    <w>turn<mor type="mor"><mw><pos><c>n</c></pos><stem>turn</stem></mw><gra type="gra" index="2" head="3" relation="PRED"/></mor></w>
+    <w>is<mor type="mor"><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <w>it<mor type="mor"><mw><pos><c>pro</c></pos><stem>it</stem></mw><gra type="gra" index="4" head="3" relation="SUBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="5" head="3" relation="PUNCT"/></mor></t>
+    <media
+      start="8.500"
+      end="10.200"
+      unit="s"
+    />
+  </u>
+  <u who="MOT" uID="u6">
+    <w>whose<mor type="mor"><mw><pos><c>det</c><s>wh</s></pos><stem>whose</stem></mw><gra type="gra" index="1" head="2" relation="MOD"/></mor></w>
+    <w>turn<mor type="mor"><mw><pos><c>n</c></pos><stem>turn</stem></mw><gra type="gra" index="2" head="3" relation="SUBJ"/></mor></w>
+    <w>is<mor type="mor"><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <w>it<mor type="mor"><mw><pos><c>pro</c></pos><stem>it</stem></mw><gra type="gra" index="4" head="3" relation="SUBJ"/></mor></w>
+    <w>for<mor type="mor"><mw><pos><c>prep</c></pos><stem>for</stem></mw><gra type="gra" index="5" head="3" relation="PRED"/></mor></w>
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="6" head="8" relation="DET"/></mor></w>
+    <w>next<mor type="mor"><mw><pos><c>adj</c></pos><stem>next</stem></mw><gra type="gra" index="7" head="8" relation="MOD"/></mor></w>
+    <w>bite<mor type="mor"><mw><pos><c>n</c></pos><stem>bite</stem></mw><gra type="gra" index="8" head="5" relation="POBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="9" head="3" relation="PUNCT"/></mor></t>
+    <media
+      start="10.200"
+      end="12.000"
+      unit="s"
+    />
+  </u>
+  <u who="GRA" uID="u7">
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="1" head="3" relation="SUBJ"/></mor></w>
+    <w>gotta<mor type="mor"><mw><pos><c>mod</c><s>aux</s></pos><stem>gotta</stem></mw><gra type="gra" index="2" head="3" relation="AUX"/></mor></w>
+    <w>sit<mor type="mor"><mw><pos><c>v</c></pos><stem>sit</stem></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <tagMarker type="comma"><mor type="mor"><mw><pos><c>cm</c></pos><stem>cm</stem></mw><gra type="gra" index="4" head="5" relation="NAME"/></mor></tagMarker>
+    <w>Sarah<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Sarah</stem></mw><gra type="gra" index="5" head="3" relation="OBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="6" head="3" relation="PUNCT"/></mor></t>
+
+  </u>
+  <u who="GRA" uID="u8">
+    <w>Sarah<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Sarah</stem></mw><gra type="gra" index="1" head="2" relation="SUBJ"/></mor></w>
+    <tagMarker type="comma"><mor type="mor"><mw><pos><c>cm</c></pos><stem>cm</stem></mw><gra type="gra" index="2" head="8" relation="SUBJ"/></mor></tagMarker>
+    <w>no<mor type="mor"><mw><pos><c>co</c></pos><stem>no</stem></mw><gra type="gra" index="3" head="8" relation="COM"/></mor></w>
+    <w>no<mor type="mor"><mw><pos><c>co</c></pos><stem>no</stem></mw><gra type="gra" index="4" head="8" relation="COM"/></mor></w>
+    <tagMarker type="comma"><mor type="mor"><mw><pos><c>cm</c></pos><stem>cm</stem></mw><gra type="gra" index="5" head="8" relation="COM"/></mor></tagMarker>
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="6" head="8" relation="SUBJ"/></mor></w>
+    <w>gotta<mor type="mor"><mw><pos><c>mod</c><s>aux</s></pos><stem>gotta</stem></mw><gra type="gra" index="7" head="8" relation="AUX"/></mor></w>
+    <w>sit<mor type="mor"><mw><pos><c>v</c></pos><stem>sit</stem></mw><gra type="gra" index="8" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="9" head="8" relation="PUNCT"/></mor></t>
+    <media
+      start="10.200"
+      end="14.000"
+      unit="s"
+    />
+  </u>
+  <u who="MOT" uID="u9">
+    <w>no<mor type="mor"><mw><pos><c>co</c></pos><stem>no</stem></mw><gra type="gra" index="1" head="3" relation="COM"/></mor></w>
+    <w>no<mor type="mor"><mw><pos><c>co</c></pos><stem>no</stem></mw><gra type="gra" index="2" head="3" relation="COM"/></mor></w>
+    <tagMarker type="comma"><mor type="mor"><mw><pos><c>cm</c></pos><stem>cm</stem></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></tagMarker>
+    <w>not<mor type="mor"><mw><pos><c>neg</c></pos><stem>not</stem></mw><gra type="gra" index="4" head="3" relation="NEG"/></mor></w>
+    <w>at<mor type="mor"><mw><pos><c>prep</c></pos><stem>at</stem></mw><gra type="gra" index="5" head="3" relation="JCT"/></mor></w>
+    <w>table<mor type="mor"><mw><pos><c>n</c></pos><stem>table</stem></mw><gra type="gra" index="6" head="5" relation="POBJ"/></mor></w>
+    <tagMarker type="comma"><mor type="mor"><mw><pos><c>cm</c></pos><stem>cm</stem></mw><gra type="gra" index="7" head="10" relation="JCT"/></mor></tagMarker>
+    <w>nothing<mor type="mor"><mw><pos><c>pro</c><s>indef</s></pos><stem>nothing</stem></mw><gra type="gra" index="8" head="10" relation="QUANT"/></mor></w>
+    <tagMarker type="comma"><mor type="mor"><mw><pos><c>cm</c></pos><stem>cm</stem></mw><gra type="gra" index="9" head="10" relation="NAME"/></mor></tagMarker>
+    <w>Rachel<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Rachel</stem></mw><gra type="gra" index="10" head="3" relation="VOC"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="11" head="3" relation="PUNCT"/></mor></t>
+
+  </u>
+  <u who="MOT" uID="u10">
+    <w type="fragment">er</w>
+    <tagMarker type="comma"><mor type="mor"><mw><pos><c>cm</c></pos><stem>cm</stem></mw><gra type="gra" index="1" head="2" relation="NAME"/></mor></tagMarker>
+    <w>Sarah<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Sarah</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+    <media
+      start="12.500"
+      end="15.500"
+      unit="s"
+    />
+  </u>
+  <u who="GRA" uID="u11">
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="1" head="4" relation="SUBJ"/></mor></w>
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="2" head="4" relation="SUBJ"/></mor></w>
+    <w>gotta<mor type="mor"><mw><pos><c>mod</c><s>aux</s></pos><stem>gotta</stem></mw><gra type="gra" index="3" head="4" relation="AUX"/></mor></w>
+    <w>sit<mor type="mor"><mw><pos><c>v</c></pos><stem>sit</stem></mw><gra type="gra" index="4" head="0" relation="ROOT"/></mor></w>
+    <tagMarker type="comma"><mor type="mor"><mw><pos><c>cm</c></pos><stem>cm</stem></mw><gra type="gra" index="5" head="4" relation="OBJ"/></mor></tagMarker>
+    <w>Sarah<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Sarah</stem></mw><gra type="gra" index="6" head="5" relation="MOD"/></mor></w>
+    <tagMarker type="comma"><mor type="mor"><mw><pos><c>cm</c></pos><stem>cm</stem></mw><gra type="gra" index="7" head="6" relation="POBJ"/></mor></tagMarker>
+    <w>if<mor type="mor"><mw><pos><c>conj</c></pos><stem>if</stem></mw><gra type="gra" index="8" head="10" relation="CPZR"/></mor></w>
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="9" head="10" relation="SUBJ"/></mor></w>
+    <w>want<mor type="mor"><mw><pos><c>v</c></pos><stem>want</stem></mw><gra type="gra" index="10" head="7" relation="CMOD"/></mor></w>
+    <w>ice<mor type="mor"><mw><pos><c>n</c></pos><stem>ice</stem></mw><gra type="gra" index="11" head="12" relation="MOD"/></mor></w>
+    <w>cream<mor type="mor"><mw><pos><c>n</c></pos><stem>cream</stem></mw><gra type="gra" index="12" head="10" relation="OBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="13" head="4" relation="PUNCT"/></mor></t>
+
+  </u>
+  <u who="GRA" uID="u12">
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="1" head="3" relation="SUBJ"/></mor></w>
+    <w>gotta<mor type="mor"><mw><pos><c>mod</c><s>aux</s></pos><stem>gotta</stem></mw><gra type="gra" index="2" head="3" relation="AUX"/></mor></w>
+    <w>sit<mor type="mor"><mw><pos><c>v</c></pos><stem>sit</stem></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="3" relation="PUNCT"/></mor></t>
+    <media
+      start="15.000"
+      end="18.500"
+      unit="s"
+    />
+  </u>
+  <u who="GRA" uID="u13">
+    <w>there<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>there</stem></mw><gra type="gra" index="1" head="3" relation="JCT"/></mor></w>
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="2" head="3" relation="SUBJ"/></mor></w>
+    <w>go<mor type="mor"><mw><pos><c>v</c></pos><stem>go</stem></mw><gra type="gra" index="3" head="7" relation="COM"/></mor></w>
+    <tagMarker type="comma"><mor type="mor"><mw><pos><c>cm</c></pos><stem>cm</stem></mw><gra type="gra" index="4" head="7" relation="SUBJ"/></mor></tagMarker>
+    <g><w>baby<mor type="mor"><mw><pos><c>adj</c></pos><stem>babe</stem><mk type="sfxf">dn</mk><mk type="sfx">Y</mk></mw><gra type="gra" index="5" head="7" relation="COM"/></mor></w><k type="best guess"/></g>
+    <tagMarker type="comma"><mor type="mor"><mw><pos><c>cm</c></pos><stem>cm</stem></mw><gra type="gra" index="6" head="7" relation="SUBJ"/></mor></tagMarker>
+    <w>sit<mor type="mor"><mw><pos><c>v</c></pos><stem>sit</stem></mw><gra type="gra" index="7" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="8" head="7" relation="PUNCT"/></mor></t>
+    <media
+      start="20.427"
+      end="23.366"
+      unit="s"
+    />
+  </u>
+  <u who="SAR" uID="u14">
+    <w>dat<replacement><w>that<mor type="mor"><mw><pos><c>pro</c><s>dem</s></pos><stem>that</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w></replacement></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+    <media
+      start="23.231"
+      end="24.500"
+      unit="s"
+    />
+  </u>
+  <u who="MOT" uID="u15">
+    <w>that's<mor type="mor"><mw><pos><c>pro</c><s>dem</s></pos><stem>that</stem></mw><gra type="gra" index="1" head="2" relation="SUBJ"/><mor-post><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor-post></mor></w>
+    <w>a<mor type="mor"><mw><pos><c>det</c></pos><stem>a</stem></mw><gra type="gra" index="3" head="4" relation="DET"/></mor></w>
+    <w>camera<mor type="mor"><mw><pos><c>n</c></pos><stem>camera</stem></mw><gra type="gra" index="4" head="2" relation="PRED"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="5" head="2" relation="PUNCT"/></mor></t>
+    <media
+      start="24.500"
+      end="25.800"
+      unit="s"
+    />
+  </u>
+  <u who="ADU" uID="u16">
+    <e><action/></e>
+    <t type="p"></t>
+    <media
+      start="25.800"
+      end="27.702"
+      unit="s"
+    />
+  </u>
+  <u who="SAR" uID="u17">
+    <w type="fragment">eh</w>
+    <t type="q"></t>
+    <media
+      start="27.702"
+      end="28.961"
+      unit="s"
+    />
+  </u>
+  <u who="MOT" uID="u18">
+    <w>Rachel<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Rachel</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+    <media
+      start="28.961"
+      end="30.831"
+      unit="s"
+    />
+  </u>
+  <u who="SAR" uID="u19">
+    <w>more<mor type="mor"><mw><pos><c>adv</c></pos><stem>more</stem></mw><gra type="gra" index="1" head="3" relation="JCT"/></mor></w>
+    <tagMarker type="comma"><mor type="mor"><mw><pos><c>cm</c></pos><stem>cm</stem></mw><gra type="gra" index="2" head="3" relation="JCT"/></mor></tagMarker>
+    <w>more<mor type="mor"><mw><pos><c>qn</c></pos><stem>more</stem></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="3" relation="PUNCT"/></mor></t>
+    <media
+      start="30.831"
+      end="32.254"
+      unit="s"
+    />
+  </u>
+  <u who="MOT" uID="u20">
+    <w>would<mor type="mor"><mw><pos><c>mod</c></pos><stem>will</stem><mk type="sfxf">COND</mk></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="2" head="3" relation="SUBJ"/></mor></w>
+    <w>like<mor type="mor"><mw><pos><c>v</c></pos><stem>like</stem></mw><gra type="gra" index="3" head="1" relation="COMP"/></mor></w>
+    <w>more<mor type="mor"><mw><pos><c>qn</c></pos><stem>more</stem></mw><gra type="gra" index="4" head="3" relation="QUANT-OBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="5" head="1" relation="PUNCT"/></mor></t>
+    <media
+      start="32.254"
+      end="33.589"
+      unit="s"
+    />
+  </u>
+  <u who="SAR" uID="u21">
+    <w>more<mor type="mor"><mw><pos><c>qn</c></pos><stem>more</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+    <media
+      start="33.589"
+      end="37.752"
+      unit="s"
+    />
+    <a type="comments">sounds of happiness as ice cream approaches</a>
+  </u>
+  <u who="MOT" uID="u22">
+    <w type="fragment">mm</w>
+    <t type="q"></t>
+    <media
+      start="37.752"
+      end="39.487"
+      unit="s"
+    />
+  </u>
+  <u who="GRA" uID="u23">
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="1" head="2" relation="SUBJ"/></mor></w>
+    <w>think<mor type="mor"><mw><pos><c>v</c></pos><stem>think</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>that<mor type="mor"><mw><pos><c>rel</c></pos><stem>that</stem></mw><gra type="gra" index="3" head="6" relation="SUBJ"/></mor></w>
+    <w>Poppa's<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Poppa</stem></mw><gra type="gra" index="4" head="6" relation="SUBJ"/><mor-post><mw><pos><c>aux</c></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="5" head="6" relation="AUX"/></mor-post></mor></w>
+    <w>gonna<mor type="mor"><mw><pos><c>part</c></pos><stem>go</stem><mk type="sfx">PROG</mk></mw><gra type="gra" index="6" head="2" relation="XCOMP"/><mor-post><mw><pos><c>inf</c></pos><stem>to</stem></mw><gra type="gra" index="7" head="8" relation="INF"/></mor-post></mor></w>
+    <w>come<mor type="mor"><mw><pos><c>v</c></pos><stem>come</stem></mw><gra type="gra" index="8" head="6" relation="XCOMP"/></mor></w>
+    <w>back<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>back</stem></mw><gra type="gra" index="9" head="8" relation="JCT"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="10" head="2" relation="PUNCT"/></mor></t>
+    <media
+      start="39.487"
+      end="42.527"
+      unit="s"
+    />
+  </u>
+  <u who="RAC" uID="u24">
+    <w>where's<mor type="mor"><mw><pos><c>adv</c><s>wh</s></pos><stem>where</stem></mw><gra type="gra" index="1" head="2" relation="PRED"/><mor-post><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor-post></mor></w>
+    <w>Poppa<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Poppa</stem></mw><gra type="gra" index="3" head="2" relation="SUBJ"/></mor></w>
+    <w>at<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>at</stem></mw><gra type="gra" index="4" head="2" relation="JCT"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="5" head="2" relation="PUNCT"/></mor></t>
+    <media
+      start="42.527"
+      end="43.998"
+      unit="s"
+    />
+  </u>
+  <u who="GRA" uID="u25">
+    <w untranscribed="unintelligible">xxx</w>
+    <t type="p"></t>
+
+  </u>
+  <u who="SAR" uID="u26">
+    <w>where's<mor type="mor"><mw><pos><c>adv</c><s>wh</s></pos><stem>where</stem></mw><gra type="gra" index="1" head="2" relation="PRED"/><mor-post><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor-post></mor></w>
+    <w>Poppa<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Poppa</stem></mw><gra type="gra" index="3" head="2" relation="SUBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="4" head="2" relation="PUNCT"/></mor></t>
+    <media
+      start="43.998"
+      end="45.300"
+      unit="s"
+    />
+  </u>
+  <u who="RAC" uID="u27">
+    <w type="fragment">hah</w>
+    <t type="p"></t>
+    <media
+      start="45.300"
+      end="46.442"
+      unit="s"
+    />
+  </u>
+  <u who="ADU" uID="u28">
+    <e><happening>laugh</happening></e>
+    <t type="p"></t>
+    <media
+      start="46.442"
+      end="48.248"
+      unit="s"
+    />
+  </u>
+  <u who="MOT" uID="u29">
+    <w>okay<mor type="mor"><mw><pos><c>co</c></pos><stem>okay</stem></mw><gra type="gra" index="1" head="4" relation="COM"/></mor></w>
+    <tagMarker type="comma"><mor type="mor"><mw><pos><c>cm</c></pos><stem>cm</stem></mw><gra type="gra" index="2" head="4" relation="COM"/></mor></tagMarker>
+    <w>who's<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>who</stem></mw><gra type="gra" index="3" head="4" relation="PRED"/><mor-post><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="4" head="0" relation="ROOT"/></mor-post></mor></w>
+    <w>next<mor type="mor"><mw><pos><c>adj</c></pos><stem>next</stem></mw><gra type="gra" index="5" head="4" relation="PRED"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="6" head="4" relation="PUNCT"/></mor></t>
+    <media
+      start="50.248"
+      end="51.800"
+      unit="s"
+    />
+  </u>
+  <u who="SAR" uID="u30">
+    <w>oh<mor type="mor"><mw><pos><c>co</c></pos><stem>oh</stem></mw><gra type="gra" index="1" head="2" relation="COM"/></mor></w>
+    <w>no<mor type="mor"><mw><pos><c>co</c></pos><stem>no</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+    <media
+      start="51.848"
+      end="53.000"
+      unit="s"
+    />
+    <a type="comments">tracing tabletop</a>
+  </u>
+  <u who="MOT" uID="u31">
+    <w>who's<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>who</stem></mw><gra type="gra" index="1" head="2" relation="PRED"/><mor-post><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor-post></mor></w>
+    <w>next<mor type="mor"><mw><pos><c>adj</c></pos><stem>next</stem></mw><gra type="gra" index="3" head="2" relation="PRED"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="4" head="2" relation="PUNCT"/></mor></t>
+    <media
+      start="53.000"
+      end="54.200"
+      unit="s"
+    />
+  </u>
+  <u who="GRA" uID="u32">
+    <w>who<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>who</stem></mw><gra type="gra" index="1" head="2" relation="SUBJ"/></mor></w>
+    <w>wants<mor type="mor"><mw><pos><c>v</c></pos><stem>want</stem><mk type="sfx">3S</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>more<mor type="mor"><mw><pos><c>qn</c></pos><stem>more</stem></mw><gra type="gra" index="3" head="2" relation="QUANT-OBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="4" head="2" relation="PUNCT"/></mor></t>
+    <media
+      start="54.200"
+      end="55.200"
+      unit="s"
+    />
+  </u>
+  <u who="SAR" uID="u33">
+    <w>oh<mor type="mor"><mw><pos><c>co</c></pos><stem>oh</stem></mw><gra type="gra" index="1" head="2" relation="COM"/></mor></w>
+    <w>no<mor type="mor"><mw><pos><c>co</c></pos><stem>no</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+    <media
+      start="55.200"
+      end="56.500"
+      unit="s"
+    />
+  </u>
+  <u who="RAC" uID="u34">
+    <w>more<mor type="mor"><mw><pos><c>qn</c></pos><stem>more</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+    <media
+      start="56.500"
+      end="57.300"
+      unit="s"
+    />
+  </u>
+  <u who="MOT" uID="u35">
+    <w>more<mor type="mor"><mw><pos><c>qn</c></pos><stem>more</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+    <media
+      start="57.300"
+      end="58.577"
+      unit="s"
+    />
+  </u>
+  <u who="SAR" uID="u36">
+    <w>oh<mor type="mor"><mw><pos><c>co</c></pos><stem>oh</stem></mw><gra type="gra" index="1" head="2" relation="COM"/></mor></w>
+    <w>no<mor type="mor"><mw><pos><c>co</c></pos><stem>no</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+    <media
+      start="58.577"
+      end="62.873"
+      unit="s"
+    />
+  </u>
+  <u who="SAR" uID="u37">
+    <w untranscribed="unintelligible">xxx</w>
+    <t type="p"></t>
+    <media
+      start="62.873"
+      end="63.600"
+      unit="s"
+    />
+  </u>
+  <u who="MOT" uID="u38">
+    <freecode>notices tracing</freecode>
+    <w>who<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>who</stem></mw><gra type="gra" index="1" head="2" relation="SUBJ"/></mor></w>
+    <w>drew<mor type="mor"><mw><pos><c>v</c></pos><stem>draw</stem><mk type="sfxf">PAST</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>on<mor type="mor"><mw><pos><c>prep</c></pos><stem>on</stem></mw><gra type="gra" index="3" head="2" relation="JCT"/></mor></w>
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="4" head="5" relation="DET"/></mor></w>
+    <w>table<mor type="mor"><mw><pos><c>n</c></pos><stem>table</stem></mw><gra type="gra" index="5" head="3" relation="POBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="6" head="2" relation="PUNCT"/></mor></t>
+    <media
+      start="63.600"
+      end="64.700"
+      unit="s"
+    />
+  </u>
+  <u who="RAC" uID="u39">
+    <w>where's<mor type="mor"><mw><pos><c>adv</c><s>wh</s></pos><stem>where</stem></mw><gra type="gra" index="1" head="2" relation="PRED"/><mor-post><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor-post></mor></w>
+    <w>Poppa<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Poppa</stem></mw><gra type="gra" index="3" head="2" relation="SUBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="4" head="2" relation="PUNCT"/></mor></t>
+    <media
+      start="64.000"
+      end="65.500"
+      unit="s"
+    />
+  </u>
+  <u who="MOT" uID="u40">
+    <w>Sarah<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Sarah</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <tagMarker type="comma"><mor type="mor"><mw><pos><c>cm</c></pos><stem>cm</stem></mw><gra type="gra" index="2" head="1" relation="MOD"/></mor></tagMarker>
+    <w>did<mor type="mor"><mw><pos><c>mod</c></pos><stem>do</stem><mk type="sfxf">PAST</mk></mw><gra type="gra" index="3" head="2" relation="POBJ"/></mor></w>
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="4" head="5" relation="SUBJ"/></mor></w>
+    <w>draw<mor type="mor"><mw><pos><c>v</c></pos><stem>draw</stem></mw><gra type="gra" index="5" head="3" relation="CMOD"/></mor></w>
+    <w>on<mor type="mor"><mw><pos><c>prep</c></pos><stem>on</stem></mw><gra type="gra" index="6" head="5" relation="JCT"/></mor></w>
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="7" head="8" relation="DET"/></mor></w>
+    <w>table<mor type="mor"><mw><pos><c>n</c></pos><stem>table</stem></mw><gra type="gra" index="8" head="6" relation="POBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="9" head="1" relation="PUNCT"/></mor></t>
+    <media
+      start="64.700"
+      end="66.366"
+      unit="s"
+    />
+  </u>
+  <u who="GRA" uID="u41">
+    <w>where<mor type="mor"><mw><pos><c>adv</c><s>wh</s></pos><stem>where</stem></mw><gra type="gra" index="1" head="2" relation="PRED"/></mor></w>
+    <g><w>are<mor type="mor"><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">PRES</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w><k type="best guess"/></g>
+    <w>Poppa<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Poppa</stem></mw><gra type="gra" index="3" head="2" relation="SUBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="4" head="2" relation="PUNCT"/></mor></t>
+
+  </u>
+  <u who="GRA" uID="u42">
+    <w>poppa's<mor type="mor"><mw><pos><c>n</c></pos><stem>poppa</stem></mw><gra type="gra" index="1" head="3" relation="SUBJ"/><mor-post><mw><pos><c>aux</c></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="3" relation="AUX"/></mor-post></mor></w>
+    <w>gone<mor type="mor"><mw><pos><c>part</c></pos><stem>go</stem><mk type="sfxf">PERF</mk></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="3" relation="PUNCT"/></mor></t>
+    <media
+      start="65.500"
+      end="67.800"
+      unit="s"
+    />
+  </u>
+  <u who="MOT" uID="u43">
+    <w>did<mor type="mor"><mw><pos><c>mod</c></pos><stem>do</stem><mk type="sfxf">PAST</mk></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="2" head="3" relation="SUBJ"/></mor></w>
+    <w>draw<mor type="mor"><mw><pos><c>v</c></pos><stem>draw</stem></mw><gra type="gra" index="3" head="1" relation="COMP"/></mor></w>
+    <w>on<mor type="mor"><mw><pos><c>prep</c></pos><stem>on</stem></mw><gra type="gra" index="4" head="3" relation="JCT"/></mor></w>
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="5" head="6" relation="DET"/></mor></w>
+    <w>table<mor type="mor"><mw><pos><c>n</c></pos><stem>table</stem></mw><gra type="gra" index="6" head="4" relation="POBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="7" head="1" relation="PUNCT"/></mor></t>
+    <media
+      start="67.800"
+      end="70.000"
+      unit="s"
+    />
+  </u>
+  <u who="SAR" uID="u44">
+    <w>no<mor type="mor"><mw><pos><c>co</c></pos><stem>no</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+    <media
+      start="70.000"
+      end="71.400"
+      unit="s"
+    />
+  </u>
+  <u who="MOT" uID="u45">
+    <w>Rachel<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Rachel</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <tagMarker type="comma"><mor type="mor"><mw><pos><c>cm</c></pos><stem>cm</stem></mw><gra type="gra" index="2" head="1" relation="MOD"/></mor></tagMarker>
+    <w>did<mor type="mor"><mw><pos><c>mod</c></pos><stem>do</stem><mk type="sfxf">PAST</mk></mw><gra type="gra" index="3" head="2" relation="POBJ"/></mor></w>
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="4" head="5" relation="SUBJ"/></mor></w>
+    <w>draw<mor type="mor"><mw><pos><c>v</c></pos><stem>draw</stem></mw><gra type="gra" index="5" head="3" relation="CMOD"/></mor></w>
+    <w>on<mor type="mor"><mw><pos><c>prep</c></pos><stem>on</stem></mw><gra type="gra" index="6" head="5" relation="JCT"/></mor></w>
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="7" head="8" relation="DET"/></mor></w>
+    <w>table<mor type="mor"><mw><pos><c>n</c></pos><stem>table</stem></mw><gra type="gra" index="8" head="6" relation="POBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="9" head="1" relation="PUNCT"/></mor></t>
+    <media
+      start="71.400"
+      end="73.088"
+      unit="s"
+    />
+  </u>
+  <u who="RAC" uID="u46">
+    <e><happening>nod</happening></e>
+    <t type="p"></t>
+
+  </u>
+  <u who="ADU" uID="u47">
+    <e><happening>laugh</happening></e>
+    <t type="p"></t>
+    <media
+      start="73.088"
+      end="75.888"
+      unit="s"
+    />
+  </u>
+  <u who="SAR" uID="u48">
+    <w>oh<mor type="mor"><mw><pos><c>co</c></pos><stem>oh</stem></mw><gra type="gra" index="1" head="2" relation="COM"/></mor></w>
+    <w>no<mor type="mor"><mw><pos><c>co</c></pos><stem>no</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+    <media
+      start="75.888"
+      end="77.250"
+      unit="s"
+    />
+  </u>
+  <u who="RAC" uID="u49">
+    <w>where<mor type="mor"><mw><pos><c>adv</c><s>wh</s></pos><stem>where</stem></mw><gra type="gra" index="1" head="2" relation="PRED"/></mor></w>
+    <w>are<mor type="mor"><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">PRES</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>Poppa<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Poppa</stem></mw><gra type="gra" index="3" head="2" relation="SUBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="4" head="2" relation="PUNCT"/></mor></t>
+    <media
+      start="77.250"
+      end="78.771"
+      unit="s"
+    />
+  </u>
+  <u who="ADU" uID="u50">
+    <e><happening>laugh</happening></e>
+    <t type="p"></t>
+    <media
+      start="78.771"
+      end="80.000"
+      unit="s"
+    />
+  </u>
+  <u who="MOT" uID="u51">
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="1" head="4" relation="SUBJ"/></mor></w>
+    <w>didn't<mor type="mor"><mw><pos><c>mod</c></pos><stem>do</stem><mk type="sfxf">PAST</mk></mw><gra type="gra" index="2" head="4" relation="AUX"/><mor-post><mw><pos><c>neg</c></pos><stem>not</stem></mw><gra type="gra" index="3" head="4" relation="JCT"/></mor-post></mor></w>
+    <w>answer<mor type="mor"><mw><pos><c>v</c></pos><stem>answer</stem></mw><gra type="gra" index="4" head="0" relation="ROOT"/></mor></w>
+    <w>my<mor type="mor"><mw><pos><c>pro</c><s>poss</s><s>det</s></pos><stem>my</stem></mw><gra type="gra" index="5" head="6" relation="MOD"/></mor></w>
+    <w>question<mor type="mor"><mw><pos><c>n</c></pos><stem>question</stem></mw><gra type="gra" index="6" head="4" relation="OBJ"/></mor></w>
+    <tagMarker type="comma"><mor type="mor"><mw><pos><c>cm</c></pos><stem>cm</stem></mw><gra type="gra" index="7" head="8" relation="NAME"/></mor></tagMarker>
+    <w>Rachel<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Rachel</stem></mw><gra type="gra" index="8" head="4" relation="VOC"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="9" head="4" relation="PUNCT"/></mor></t>
+    <media
+      start="80.000"
+      end="82.000"
+      unit="s"
+    />
+  </u>
+  <u who="RAC" uID="u52">
+    <w>where<mor type="mor"><mw><pos><c>adv</c><s>wh</s></pos><stem>where</stem></mw><gra type="gra" index="1" head="3" relation="JCT"/></mor></w>
+    <w>our<mor type="mor"><mw><pos><c>pro</c><s>poss</s><s>det</s></pos><stem>our</stem></mw><gra type="gra" index="2" head="3" relation="MOD"/></mor></w>
+    <w>Poppa<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Poppa</stem></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="4" head="3" relation="PUNCT"/></mor></t>
+    <media
+      start="80.500"
+      end="81.900"
+      unit="s"
+    />
+  </u>
+  <u who="SAR" uID="u53">
+    <w>where<mor type="mor"><mw><pos><c>adv</c><s>wh</s></pos><stem>where</stem></mw><gra type="gra" index="1" head="2" relation="JCT"/></mor></w>
+    <w>Poppa<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Poppa</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+    <media
+      start="81.800"
+      end="82.600"
+      unit="s"
+    />
+  </u>
+  <u who="GRA" uID="u54">
+    <w>where<mor type="mor"><mw><pos><c>adv</c><s>wh</s></pos><stem>where</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+    <media
+      start="82.500"
+      end="83.600"
+      unit="s"
+    />
+  </u>
+  <u who="RAC" uID="u55">
+    <w>where<mor type="mor"><mw><pos><c>adv</c><s>wh</s></pos><stem>where</stem></mw><gra type="gra" index="1" head="2" relation="JCT"/></mor></w>
+    <w>Poppa<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Poppa</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+    <media
+      start="83.600"
+      end="85.200"
+      unit="s"
+    />
+  </u>
+  <u who="GRA" uID="u56">
+    <g><w>where's</w><k type="retracing"/></g>
+    <w>where<mor type="mor"><mw><pos><c>adv</c><s>wh</s></pos><stem>where</stem></mw><gra type="gra" index="1" head="2" relation="PRED"/></mor></w>
+    <w>is<mor type="mor"><mw><pos><c>v</c><s>cop</s></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>our<mor type="mor"><mw><pos><c>pro</c><s>poss</s><s>det</s></pos><stem>our</stem></mw><gra type="gra" index="3" head="4" relation="MOD"/></mor></w>
+    <w>Poppa<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Poppa</stem></mw><gra type="gra" index="4" head="2" relation="SUBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="5" head="2" relation="PUNCT"/></mor></t>
+    <media
+      start="84.200"
+      end="89.000"
+      unit="s"
+    />
+  </u>
+  <u who="MOT" uID="u57">
+    <w>Rachel<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Rachel</stem></mw><gra type="gra" index="1" head="5" relation="VOC"/></mor></w>
+    <tagMarker type="comma"><mor type="mor"><mw><pos><c>cm</c></pos><stem>cm</stem></mw><gra type="gra" index="2" head="5" relation="JCT"/></mor></tagMarker>
+    <w>did<mor type="mor"><mw><pos><c>mod</c></pos><stem>do</stem><mk type="sfxf">PAST</mk></mw><gra type="gra" index="3" head="5" relation="AUX"/></mor></w>
+    <w>you<mor type="mor"><mw><pos><c>pro</c></pos><stem>you</stem></mw><gra type="gra" index="4" head="5" relation="SUBJ"/></mor></w>
+    <w>hear<mor type="mor"><mw><pos><c>v</c></pos><stem>hear</stem></mw><gra type="gra" index="5" head="0" relation="ROOT"/></mor></w>
+    <w>my<mor type="mor"><mw><pos><c>pro</c><s>poss</s><s>det</s></pos><stem>my</stem></mw><gra type="gra" index="6" head="7" relation="MOD"/></mor></w>
+    <w>question<mor type="mor"><mw><pos><c>n</c></pos><stem>question</stem></mw><gra type="gra" index="7" head="5" relation="OBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="8" head="5" relation="PUNCT"/></mor></t>
+
+  </u>
+  <u who="MOT" uID="u58">
+    <w>who<mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>who</stem></mw><gra type="gra" index="1" head="2" relation="SUBJ"/></mor></w>
+    <w>drew<mor type="mor"><mw><pos><c>v</c></pos><stem>draw</stem><mk type="sfxf">PAST</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>on<mor type="mor"><mw><pos><c>prep</c></pos><stem>on</stem></mw><gra type="gra" index="3" head="2" relation="JCT"/></mor></w>
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="4" head="5" relation="DET"/></mor></w>
+    <w>table<mor type="mor"><mw><pos><c>n</c></pos><stem>table</stem></mw><gra type="gra" index="5" head="3" relation="POBJ"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="6" head="2" relation="PUNCT"/></mor></t>
+    <media
+      start="89.000"
+      end="93.000"
+      unit="s"
+    />
+  </u>
+  <u who="ADU" uID="u59">
+    <e><happening>laugh</happening></e>
+    <t type="p"></t>
+    <media
+      start="93.000"
+      end="95.000"
+      unit="s"
+    />
+  </u>
+</CHAT>

@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CHAT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns="http://www.talkbank.org/ns/talkbank"
+      xsi:schemaLocation="http://www.talkbank.org/ns/talkbank http://talkbank.org/software/talkbank.xsd"
+      Version="2.0.1"
+      Lang="eng"
+      Corpus="cruttenden"
+      Id="jane09"
+      Date="1969-06-16">
+  <Participants>
+    <participant
+      id="CHI"
+    name="Jane"
+      role="Target_Child"
+      language="eng"
+      age="P2Y1M17D"
+      ageTo="P2Y2M16D"
+      sex="female"
+      group="normal"
+
+    />
+  </Participants>
+  <comment type="Date">16-JUN-1969</comment>
+  <u who="CHI" uID="u0">
+    <w>swan<mor type="mor"><mw><pos><c>n</c></pos><stem>swan</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">fɒm</a>
+  </u>
+  <u who="CHI" uID="u1">
+    <w>Daddy<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Daddy</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">dædæı</a>
+  </u>
+  <u who="CHI" uID="u2">
+    <w>hello<mor type="mor"><mw><pos><c>co</c></pos><stem>hello</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>Daddy<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Daddy</stem></mw><gra type="gra" index="2" head="1" relation="VOC"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">hælo dædi</a>
+  </u>
+  <u who="CHI" uID="u3">
+    <w>all<mor type="mor"><mw><pos><c>adv</c><s>int</s></pos><stem>all</stem></mw><gra type="gra" index="1" head="2" relation="JCT"/></mor></w>
+    <w>gone<mor type="mor"><mw><pos><c>part</c></pos><stem>go</stem><mk type="sfxf">PERF</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>cup<mor type="mor"><mw><pos><c>n</c></pos><stem>cup</stem></mw><gra type="gra" index="3" head="2" relation="OBJ"/></mor></w>
+    <w>of<mor type="mor"><mw><pos><c>prep</c></pos><stem>of</stem></mw><gra type="gra" index="4" head="3" relation="MOD"/></mor></w>
+    <w>tea<mor type="mor"><mw><pos><c>n</c></pos><stem>tea</stem></mw><gra type="gra" index="5" head="4" relation="POBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="6" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">ɡɒɡɒn kʌp ə tıi</a>
+  </u>
+  <u who="CHI" uID="u4">
+    <w>cup<mor type="mor"><mw><pos><c>n</c></pos><stem>cup</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>of<mor type="mor"><mw><pos><c>prep</c></pos><stem>of</stem></mw><gra type="gra" index="2" head="1" relation="MOD"/></mor></w>
+    <w>tea<mor type="mor"><mw><pos><c>n</c></pos><stem>tea</stem></mw><gra type="gra" index="3" head="2" relation="POBJ"/></mor></w>
+    <g><w>Lulu<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Lulu</stem></mw><gra type="gra" index="4" head="1" relation="VOC"/></mor></w><ga type="explanation">Lucy's got a cup of tea</ga></g>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="5" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">pʌp [*] ə tıi lulu</a>
+    <a type="errcoding">voiceless velar plosive replaced by voiceless bilabial plosive;</a>
+  </u>
+  <u who="CHI" uID="u5">
+    <w>hi<mor type="mor"><mw><pos><c>co</c></pos><stem>hi</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>Daddy<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Daddy</stem></mw><gra type="gra" index="2" head="1" relation="VOC"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">haı dædi</a>
+  </u>
+  <u who="CHI" uID="u6">
+    <w>go<mor type="mor"><mw><pos><c>v</c></pos><stem>go</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>away<mor type="mor"><mw><pos><c>adv</c></pos><stem>away</stem></mw><gra type="gra" index="2" head="1" relation="JCT"/></mor></w>
+    <w>fly<mor type="mor"><mw><pos><c>n</c></pos><stem>fly</stem></mw><gra type="gra" index="3" head="1" relation="JCT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">ɡəʊ weı fa</a>
+  </u>
+  <u who="CHI" uID="u7">
+    <w>go<mor type="mor"><mw><pos><c>v</c></pos><stem>go</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>away<mor type="mor"><mw><pos><c>adv</c></pos><stem>away</stem></mw><gra type="gra" index="2" head="1" relation="JCT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">gəʊ ʋæ</a>
+  </u>
+  <u who="CHI" uID="u8">
+    <w>sucker<mor type="mor"><mw><pos><c>n</c></pos><stem>sucker</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">ɬʌɬʌ [*]</a>
+    <a type="errcoding">voiceless alveolar fricative is lateralised; voiceless velar plosive replaced by voiceless alveolar lateral fricative;</a>
+  </u>
+  <u who="CHI" uID="u9">
+    <w>table<mor type="mor"><mw><pos><c>n</c></pos><stem>table</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">debəʊ [*]</a>
+    <a type="errcoding">voiceless alveolar plosive becomes voiced;</a>
+  </u>
+  <u who="CHI" uID="u10">
+    <w>little<mor type="mor"><mw><pos><c>adj</c></pos><stem>little</stem></mw><gra type="gra" index="1" head="2" relation="MOD"/></mor></w>
+    <w>baby<mor type="mor"><mw><pos><c>n</c></pos><stem>baby</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">ləlʊ be:bi</a>
+  </u>
+  <u who="CHI" uID="u11">
+    <w>go<mor type="mor"><mw><pos><c>v</c></pos><stem>go</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>away<mor type="mor"><mw><pos><c>adv</c></pos><stem>away</stem></mw><gra type="gra" index="2" head="1" relation="JCT"/></mor></w>
+    <w>Daddy<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Daddy</stem></mw><gra type="gra" index="3" head="1" relation="VOC"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">ɡö weı dædi</a>
+  </u>
+  <u who="CHI" uID="u12">
+    <w>finished<mor type="mor"><mw><pos><c>adj</c><s>part</s></pos><stem>finish</stem><mk type="sfx">PERF</mk></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">fınıs</a>
+  </u>
+  <u who="CHI" uID="u13">
+    <w><shortening>a</shortening><mor type="mor"><mw><pos><c>det</c></pos><stem>a</stem></mw><gra type="gra" index="1" head="3" relation="DET"/></mor></w>
+    <w>pink<mor type="mor"><mw><pos><c>adj</c></pos><stem>pink</stem></mw><gra type="gra" index="2" head="3" relation="MOD"/></mor></w>
+    <w>one<mor type="mor"><mw><pos><c>pro</c><s>indef</s></pos><stem>one</stem></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <w><shortening>for</shortening><mor type="mor"><mw><pos><c>prep</c></pos><stem>for</stem></mw><gra type="gra" index="4" head="3" relation="JCT"/></mor></w>
+    <w>Jenny<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Jenny</stem></mw><gra type="gra" index="5" head="4" relation="POBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="6" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">pıŋk wʌn d̪ɛni [*]</a>
+    <a type="errcoding">voiced palato-alveolar affricate replaced by voiced dental plosive;</a>
+  </u>
+  <u who="CHI" uID="u14">
+    <w>Jenny<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Jenny</stem></mw><gra type="gra" index="1" head="2" relation="SUBJ"/></mor></w>
+    <w>eat<mor type="mor"><mw><pos><c>v</c></pos><stem>eat</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>it<mor type="mor"><mw><pos><c>pro</c></pos><stem>it</stem></mw><gra type="gra" index="3" head="2" relation="OBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">d̪ɛni [*] i:t ıt</a>
+    <a type="errcoding">voiced palato-alveolar affricate replaced by dentalised voiced alveolar plosive;</a>
+    <a type="comments">means "Jenny will eat it up"</a>
+  </u>
+  <u who="CHI" uID="u15">
+    <w>in<mor type="mor"><mw><pos><c>prep</c></pos><stem>in</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>hand<mor type="mor"><mw><pos><c>n</c></pos><stem>hand</stem></mw><gra type="gra" index="2" head="1" relation="POBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">ın hænd</a>
+    <a type="comments">command to put it in Jenny's hand</a>
+  </u>
+  <u who="CHI" uID="u16">
+    <w>another<mor type="mor"><mw><pos><c>qn</c></pos><stem>another</stem></mw><gra type="gra" index="1" head="2" relation="DET"/></mor></w>
+    <w>biscuit<mor type="mor"><mw><pos><c>n</c></pos><stem>biscuit</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">nʌdə [*] bıbı</a>
+    <a type="errcoding">first syllable deleted; voiced dental fricative replaced by voiced alveolar plosive;</a>
+    <a type="comments">requesting another biscuit</a>
+  </u>
+  <u who="CHI" uID="u17">
+    <w>all<mor type="mor"><mw><pos><c>adv</c><s>int</s></pos><stem>all</stem></mw><gra type="gra" index="1" head="2" relation="JCT"/></mor></w>
+    <w>broken<mor type="mor"><mw><pos><c>part</c></pos><stem>break</stem><mk type="sfxf">PERF</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">ɔ beıbən [*]</a>
+    <a type="errcoding">voiceless velar plosive replaced by voiced bilabial plosive;</a>
+  </u>
+  <u who="CHI" uID="u18">
+    <w>Daddy's<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Daddy</stem></mw><gra type="gra" index="1" head="3" relation="SUBJ"/><mor-post><mw><pos><c>aux</c></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="3" relation="AUX"/></mor-post></mor></w>
+    <w>tired<mor type="mor"><mw><pos><c>part</c></pos><stem>tire</stem><mk type="sfx">PERF</mk></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">dædi taıd</a>
+  </u>
+  <u who="CHI" uID="u19">
+    <w>say<mor type="mor"><mw><pos><c>co</c></pos><stem>say</stem></mw><gra type="gra" index="1" head="2" relation="COM"/></mor></w>
+    <w>sorry<mor type="mor"><mw><pos><c>co</c></pos><stem>sorry</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">&lt;ɬeı ɬɒli&gt; [*]</a>
+    <a type="errcoding">voiceless alveolar fricatives are lateralised;</a>
+  </u>
+  <u who="CHI" uID="u20">
+    <w>all<mor type="mor"><mw><pos><c>adv</c><s>int</s></pos><stem>all</stem></mw><gra type="gra" index="1" head="2" relation="JCT"/></mor></w>
+    <w>gone<mor type="mor"><mw><pos><c>part</c></pos><stem>go</stem><mk type="sfxf">PERF</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>biscuits<mor type="mor"><mw><pos><c>n</c></pos><stem>biscuit</stem><mk type="sfx">PL</mk></mw><gra type="gra" index="3" head="2" relation="OBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">ɡɒɡɒn bıbı</a>
+  </u>
+  <u who="CHI" uID="u21">
+    <w>sore<mor type="mor"><mw><pos><c>adj</c></pos><stem>sore</stem></mw><gra type="gra" index="1" head="2" relation="MOD"/></mor></w>
+    <w>toe<mor type="mor"><mw><pos><c>n</c></pos><stem>toe</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">tɔ: [*] təʊ</a>
+    <a type="errcoding">voiceless alveolar fricative replaced by voiceless alveolar plosive;</a>
+  </u>
+  <u who="CHI" uID="u22">
+    <w><shortening>what's</shortening><mor type="mor"><mw><pos><c>pro</c><s>wh</s></pos><stem>what</stem></mw><gra type="gra" index="1" head="4" relation="OBJ"/><mor-post><mw><pos><c>aux</c></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="4" relation="AUX"/></mor-post></mor></w>
+    <w>Daddy<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Daddy</stem></mw><gra type="gra" index="3" head="4" relation="SUBJ"/></mor></w>
+    <w>doing<mor type="mor"><mw><pos><c>n</c><s>gerund</s></pos><stem>do</stem><mk type="sfx">PROG</mk></mw><gra type="gra" index="4" head="0" relation="ROOT"/></mor></w>
+    <t type="q"><mor type="mor"><mt type="q"/><gra type="gra" index="5" head="4" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">dædi duıŋ</a>
+  </u>
+  <u who="CHI" uID="u23">
+    <w>outside<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>outside</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">na haı</a>
+  </u>
+  <u who="CHI" uID="u24">
+    <w>darling<mor type="mor"><mw><pos><c>adj</c></pos><stem>darling</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">da:nın [*]</a>
+    <a type="errcoding">voiced alveolar lateral approximant replaced by voiced alveolar nasal;</a>
+  </u>
+  <u who="CHI" uID="u25">
+    <w>Jane<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Jane</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="2" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">de:n [*]</a>
+    <a type="errcoding">voiced palato-alveolar affricate replaced by voiced alveolar plosive;</a>
+  </u>
+  <u who="CHI" uID="u26">
+    <w>cuddle<mor type="mor"><mw><pos><c>v</c></pos><stem>cuddle</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>teddy<mor type="mor"><mw><pos><c>n</c></pos><stem>teddy</stem></mw><gra type="gra" index="2" head="3" relation="MOD"/></mor></w>
+    <g><w>boy<mor type="mor"><mw><pos><c>n</c></pos><stem>boy</stem></mw><gra type="gra" index="3" head="1" relation="OBJ"/></mor></w><ga type="explanation">I'm cuddling teddy boy</ga></g>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">kʌkʊ tɛdi bɔı</a>
+  </u>
+  <u who="CHI" uID="u27">
+    <w>bath<mor type="mor"><mw><pos><c>n</c></pos><stem>bath</stem></mw><gra type="gra" index="1" head="2" relation="MOD"/></mor></w>
+    <w>time<mor type="mor"><mw><pos><c>n</c></pos><stem>time</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>now<mor type="mor"><mw><pos><c>adv</c></pos><stem>now</stem></mw><gra type="gra" index="3" head="2" relation="JCT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">ba taım nɑʊ</a>
+  </u>
+  <u who="CHI" uID="u28">
+    <w>Daddy's<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Daddy</stem></mw><gra type="gra" index="1" head="4" relation="MOD"/><mor-post><mw><pos><c>poss</c></pos><stem>s</stem></mw><gra type="gra" index="2" head="4" relation="MOD"/></mor-post></mor></w>
+    <w>sore<mor type="mor"><mw><pos><c>adj</c></pos><stem>sore</stem></mw><gra type="gra" index="3" head="4" relation="MOD"/></mor></w>
+    <w>toe<mor type="mor"><mw><pos><c>n</c></pos><stem>toe</stem></mw><gra type="gra" index="4" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="5" head="4" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">dædi tɔ: [*] təʊ</a>
+    <a type="errcoding">voiceless alveolar fricative replaced by voiceless alveolar plosive;</a>
+  </u>
+  <u who="CHI" uID="u29">
+    <w>put<mor type="mor"><mw><pos><c>v</c></pos><stem>put</stem><mk type="sfxf">ZERO</mk></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>it<mor type="mor"><mw><pos><c>pro</c></pos><stem>it</stem></mw><gra type="gra" index="2" head="1" relation="OBJ"/></mor></w>
+    <w>on<mor type="mor"><mw><pos><c>prep</c></pos><stem>on</stem></mw><gra type="gra" index="3" head="1" relation="LOC"/></mor></w>
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="4" head="5" relation="DET"/></mor></w>
+    <w>table<mor type="mor"><mw><pos><c>n</c></pos><stem>table</stem></mw><gra type="gra" index="5" head="3" relation="POBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="6" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">pʊt ıt ɒn ə teibʊ</a>
+    <a type="comments">request</a>
+  </u>
+  <u who="CHI" uID="u30">
+    <w>Daddy<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Daddy</stem></mw><gra type="gra" index="1" head="2" relation="SUBJ"/></mor></w>
+    <w>do<mor type="mor"><mw><pos><c>mod</c></pos><stem>do</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>it<mor type="mor"><mw><pos><c>pro</c></pos><stem>it</stem></mw><gra type="gra" index="3" head="2" relation="OBJ"/></mor></w>
+    <w>again<mor type="mor"><mw><pos><c>adv</c></pos><stem>again</stem></mw><gra type="gra" index="4" head="2" relation="JCT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="5" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">dædi du ıt əɡem</a>
+    <a type="comments">request</a>
+  </u>
+  <u who="CHI" uID="u31">
+    <w>more<mor type="mor"><mw><pos><c>adv</c></pos><stem>more</stem></mw><gra type="gra" index="1" head="3" relation="JCT"/></mor></w>
+    <w>walking<mor type="mor"><mw><pos><c>part</c></pos><stem>walk</stem><mk type="sfx">PROG</mk></mw><gra type="gra" index="2" head="3" relation="MOD"/></mor></w>
+    <w>man<mor type="mor"><mw><pos><c>n</c></pos><stem>man</stem></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">mɑ: wɑ:kın mæn</a>
+    <a type="explanation">request for walking man toy to be wound up</a>
+  </u>
+  <u who="CHI" uID="u32">
+    <w>on<mor type="mor"><mw><pos><c>prep</c></pos><stem>on</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>the<mor type="mor"><mw><pos><c>det</c></pos><stem>the</stem></mw><gra type="gra" index="2" head="3" relation="DET"/></mor></w>
+    <w>table<mor type="mor"><mw><pos><c>n</c></pos><stem>table</stem></mw><gra type="gra" index="3" head="1" relation="POBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">ɒn ə teıbu</a>
+  </u>
+  <comment type="Date">21-JUN-1969</comment>
+  <u who="CHI" uID="u33">
+    <w>Daddy's<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Daddy</stem></mw><gra type="gra" index="1" head="3" relation="SUBJ"/><mor-post><mw><pos><c>aux</c></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="3" relation="AUX"/></mor-post></mor></w>
+    <w>got<mor type="mor"><mw><pos><c>part</c></pos><stem>get</stem><mk type="sfxf">PERF</mk></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <w><shortening>a</shortening><mor type="mor"><mw><pos><c>det</c></pos><stem>a</stem></mw><gra type="gra" index="4" head="6" relation="DET"/></mor></w>
+    <w>sore<mor type="mor"><mw><pos><c>adj</c></pos><stem>sore</stem></mw><gra type="gra" index="5" head="6" relation="MOD"/></mor></w>
+    <w>toe<mor type="mor"><mw><pos><c>n</c></pos><stem>toe</stem></mw><gra type="gra" index="6" head="3" relation="OBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="7" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">dædi ɡɒ tɔ [*] təʊ</a>
+    <a type="errcoding">voiceless alveolar fricative replaced by voiceless alveolar plosive;</a>
+  </u>
+  <u who="CHI" uID="u34">
+    <w>take<mor type="mor"><mw><pos><c>v</c></pos><stem>take</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>to<mor type="mor"><mw><pos><c>prep</c></pos><stem>to</stem></mw><gra type="gra" index="2" head="1" relation="JCT"/></mor></w>
+    <w>Mummy<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Mummy</stem></mw><gra type="gra" index="3" head="2" relation="POBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">teı tə mʌmi</a>
+  </u>
+  <u who="CHI" uID="u35">
+    <w>Lulu's<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Lulu</stem></mw><gra type="gra" index="1" head="4" relation="MOD"/><mor-post><mw><pos><c>poss</c></pos><stem>s</stem></mw><gra type="gra" index="2" head="4" relation="MOD"/></mor-post></mor></w>
+    <w>good<mor type="mor"><mw><pos><c>adj</c></pos><stem>good</stem></mw><gra type="gra" index="3" head="4" relation="MOD"/></mor></w>
+    <w>girl<mor type="mor"><mw><pos><c>n</c></pos><stem>girl</stem></mw><gra type="gra" index="4" head="0" relation="ROOT"/></mor></w>
+    <g><w>no<mor type="mor"><mw><pos><c>co</c></pos><stem>no</stem></mw><gra type="gra" index="5" head="4" relation="COM"/></mor></w><ga type="explanation">Lulu's not a good girl</ga></g>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="6" head="4" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">lulu ɡʊ ɡəl nəʊ</a>
+  </u>
+  <u who="CHI" uID="u36">
+    <w>Lulu's<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Lulu</stem></mw><gra type="gra" index="1" head="3" relation="SUBJ"/><mor-post><mw><pos><c>aux</c></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="3" relation="AUX"/></mor-post></mor></w>
+    <w>crying<mor type="mor"><mw><pos><c>part</c></pos><stem>cry</stem><mk type="sfx">PROG</mk></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">lulu kaının</a>
+  </u>
+  <u who="CHI" uID="u37">
+    <w>see<mor type="mor"><mw><pos><c>co</c></pos><stem>see</stem></mw><gra type="gra" index="1" head="2" relation="COM"/></mor></w>
+    <g><w>Lulu<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Lulu</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w><ga type="explanation">I want to see Lulu</ga></g>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">si lulu</a>
+  </u>
+  <u who="CHI" uID="u38">
+    <w>like<mor type="mor"><mw><pos><c>prep</c></pos><stem>like</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>nut<mor type="mor"><mw><pos><c>n</c></pos><stem>nut</stem></mw><gra type="gra" index="2" head="4" relation="NAME"/></mor></w>
+    <w>Mummy<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Mummy</stem></mw><gra type="gra" index="3" head="4" relation="NAME"/></mor></w>
+    <w>Jenny<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Jenny</stem></mw><gra type="gra" index="4" head="1" relation="POBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="5" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">laı nʌ mʌmi d̪ɛni [*]</a>
+    <a type="errcoding">voiced palato-alveolar affricate replaced by voiced dental plosive;</a>
+    <a type="explanation">requesting a nut</a>
+  </u>
+  <u who="CHI" uID="u39">
+    <w>Jane's<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Jane</stem></mw><gra type="gra" index="1" head="3" relation="MOD"/><mor-post><mw><pos><c>poss</c></pos><stem>s</stem></mw><gra type="gra" index="2" head="3" relation="MOD"/></mor-post></mor></w>
+    <w>scooter<mor type="mor"><mw><pos><c>n</c></pos><stem>scooter</stem></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">deın kʊtʌ [*]</a>
+    <a type="errcoding">first element of cluster omitted;</a>
+  </u>
+  <comment type="Date">02-JUL-1969</comment>
+  <u who="CHI" uID="u40">
+    <w>play<mor type="mor"><mw><pos><c>n</c></pos><stem>play</stem></mw><gra type="gra" index="1" head="3" relation="ENUM"/></mor></w>
+    <w>pennies<mor type="mor"><mw><pos><c>n</c></pos><stem>penny</stem><mk type="sfx">PL</mk></mw><gra type="gra" index="2" head="3" relation="ENUM"/></mor></w>
+    <w>Mummy<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Mummy</stem></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">pʰeı [*] pɛnıɵ [*] mʌmi</a>
+    <a type="errcoding">second element of cluster omitted in "play"; voiced alveolar fricative replaced by voiceless dental fricative in "pennies";</a>
+    <a type="explanation">request to play with pennies</a>
+  </u>
+  <u who="CHI" uID="u41">
+    <w>byebye<mor type="mor"><mw><pos><c>co</c></pos><stem>byebye</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>Beryl<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Beryl</stem></mw><gra type="gra" index="2" head="1" relation="VOC"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">baı baı bɛʊ</a>
+  </u>
+  <u who="CHI" uID="u42">
+    <w>down<mor type="mor"><mw><pos><c>prep</c></pos><stem>down</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>road<mor type="mor"><mw><pos><c>n</c></pos><stem>road</stem></mw><gra type="gra" index="2" head="1" relation="POBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">dɑʊn ʋəʊ [*]</a>
+    <a type="errcoding">voiced post-alveolar approximant replaced by voiced labio-dental approximant;</a>
+    <a type="explanation">request to go to play down the road</a>
+  </u>
+  <u who="CHI" uID="u43">
+    <w>pennies<mor type="mor"><mw><pos><c>n</c></pos><stem>penny</stem><mk type="sfx">PL</mk></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>Daddy<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Daddy</stem></mw><gra type="gra" index="2" head="1" relation="VOC"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">pɛnıɵ [*] dædi</a>
+    <a type="errcoding">voiced alveolar fricative replaced by voiceless dental fricative;</a>
+    <a type="explanation">requesting pennies back from Daddy</a>
+  </u>
+  <u who="CHI" uID="u44">
+    <w>gone<mor type="mor"><mw><pos><c>part</c></pos><stem>go</stem><mk type="sfxf">PERF</mk></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>tea<mor type="mor"><mw><pos><c>n</c></pos><stem>tea</stem></mw><gra type="gra" index="2" head="3" relation="MOD"/></mor></w>
+    <w>leaves<mor type="mor"><mw><pos><c>n</c></pos><stem>leave</stem><mk type="sfx">PL</mk></mw><gra type="gra" index="3" head="1" relation="OBJ"/></mor></w>
+    <g><w>now<mor type="mor"><mw><pos><c>adv</c></pos><stem>now</stem></mw><gra type="gra" index="4" head="1" relation="JCT"/></mor></w><ga type="explanation">the tea leaves have gone now</ga></g>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="5" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">ɡɒn ti:li: naʊ</a>
+  </u>
+  <u who="CHI" uID="u45">
+    <w>just<mor type="mor"><mw><pos><c>adv</c><s>int</s></pos><stem>just</stem></mw><gra type="gra" index="1" head="2" relation="JCT"/></mor></w>
+    <w>like<mor type="mor"><mw><pos><c>v</c></pos><stem>like</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>that<mor type="mor"><mw><pos><c>pro</c><s>dem</s></pos><stem>that</stem></mw><gra type="gra" index="3" head="2" relation="OBJ"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">ɡı laı da</a>
+  </u>
+  <u who="CHI" uID="u46">
+    <w>get<mor type="mor"><mw><pos><c>v</c></pos><stem>get</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>down<mor type="mor"><mw><pos><c>adv</c><s>loc</s></pos><stem>down</stem></mw><gra type="gra" index="2" head="1" relation="JCT"/></mor></w>
+    <w>now<mor type="mor"><mw><pos><c>adv</c></pos><stem>now</stem></mw><gra type="gra" index="3" head="1" relation="JCT"/></mor></w>
+    <w>Mummy<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Mummy</stem></mw><gra type="gra" index="4" head="1" relation="VOC"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="5" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">ɡı daʊn naʊ mʌmi</a>
+    <a type="comments">request</a>
+  </u>
+  <u who="CHI" uID="u47">
+    <w>no<mor type="mor"><mw><pos><c>co</c></pos><stem>no</stem></mw><gra type="gra" index="1" head="3" relation="COM"/></mor></w>
+    <w>thank<wk type="cmp"/>you<mor type="mor"><mwc><pos><c>int</c></pos><mw><pos><c>int</c></pos><stem>thank</stem></mw><mw><pos><c>int</c></pos><stem>you</stem></mw></mwc><gra type="gra" index="2" head="3" relation="JCT"/></mor></w>
+    <w>Mummy<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Mummy</stem></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">nəʊ ɵæŋk u mʌmi</a>
+  </u>
+  <u who="CHI" uID="u48">
+    <w>another<mor type="mor"><mw><pos><c>qn</c></pos><stem>another</stem></mw><gra type="gra" index="1" head="3" relation="DET"/></mor></w>
+    <w>one<mor type="mor"><mw><pos><c>pro</c><s>indef</s></pos><stem>one</stem></mw><gra type="gra" index="2" head="3" relation="QUANT"/></mor></w>
+    <w>penny<mor type="mor"><mw><pos><c>n</c></pos><stem>penny</stem></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">nʌdə wʌm pɛni</a>
+  </u>
+  <u who="CHI" uID="u49">
+    <w>Jenny's<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Jenny</stem></mw><gra type="gra" index="1" head="3" relation="SUBJ"/><mor-post><mw><pos><c>poss</c></pos><stem>s</stem></mw><gra type="gra" index="2" head="3" relation="AUX"/></mor-post></mor></w>
+    <w>find<mor type="mor"><mw><pos><c>v</c></pos><stem>find</stem></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <g><w>it<mor type="mor"><mw><pos><c>pro</c></pos><stem>it</stem></mw><gra type="gra" index="4" head="3" relation="OBJ"/></mor></w><ga type="explanation">Jenny's found it</ga></g>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="5" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">d̪ɛni [*] faınd ı</a>
+    <a type="errcoding">voiced palato-alveolar affricate replaced by voiced dental plosive;</a>
+  </u>
+  <u who="CHI" uID="u50">
+    <w>only<mor type="mor"><mw><pos><c>qn</c></pos><stem>only</stem></mw><gra type="gra" index="1" head="2" relation="JCT"/></mor></w>
+    <w>pennies<mor type="mor"><mw><pos><c>n</c></pos><stem>penny</stem><mk type="sfx">PL</mk></mw><gra type="gra" index="2" head="3" relation="SUBJ"/></mor></w>
+    <g><w>coming<mor type="mor"><mw><pos><c>n</c><s>gerund</s></pos><stem>come</stem><mk type="sfx">PROG</mk></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w><ga type="explanation">only pennies can come</ga></g>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">əʊni pɛnız kʌmın</a>
+  </u>
+  <u who="CHI" uID="u51">
+    <w>gone<mor type="mor"><mw><pos><c>part</c></pos><stem>go</stem><mk type="sfxf">PERF</mk></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>now<mor type="mor"><mw><pos><c>adv</c></pos><stem>now</stem></mw><gra type="gra" index="2" head="1" relation="JCT"/></mor></w>
+    <w>Daddy<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Daddy</stem></mw><gra type="gra" index="3" head="1" relation="JCT"/></mor></w>
+    <g><w>no<mor type="mor"><mw><pos><c>co</c></pos><stem>no</stem></mw><gra type="gra" index="4" head="1" relation="COM"/></mor></w><ga type="explanation">Daddy hasn't gone yet</ga></g>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="5" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">ɡɒn naʊ dædi nəʊ</a>
+  </u>
+  <u who="CHI" uID="u52">
+    <w>two<mor type="mor"><mw><pos><c>det</c><s>num</s></pos><stem>two</stem></mw><gra type="gra" index="1" head="2" relation="QUANT"/></mor></w>
+    <w>pennies<mor type="mor"><mw><pos><c>n</c></pos><stem>penny</stem><mk type="sfx">PL</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">tuɵ pɛnıɵ [*]</a>
+    <a type="errcoding">voiced alveolar fricative replaced by voiceless dental fricative;</a>
+  </u>
+  <u who="CHI" uID="u53">
+    <w>got<mor type="mor"><mw><pos><c>v</c></pos><stem>get</stem><mk type="sfxf">PAST</mk></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>cup<mor type="mor"><mw><pos><c>n</c></pos><stem>cup</stem></mw><gra type="gra" index="2" head="1" relation="OBJ"/></mor></w>
+    <w>of<mor type="mor"><mw><pos><c>prep</c></pos><stem>of</stem></mw><gra type="gra" index="3" head="2" relation="MOD"/></mor></w>
+    <w>tea<mor type="mor"><mw><pos><c>n</c></pos><stem>tea</stem></mw><gra type="gra" index="4" head="3" relation="POBJ"/></mor></w>
+    <g><w>Daddy<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Daddy</stem></mw><gra type="gra" index="5" head="1" relation="VOC"/></mor></w><ga type="explanation">Daddy's got a cup of tea</ga></g>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="6" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">ɡı pʌp [*] ə ti dædi</a>
+    <a type="errcoding">voiceless velar plosive replaced by voiceless bilabial plosive;</a>
+  </u>
+  <u who="CHI" uID="u54">
+    <w>gone<mor type="mor"><mw><pos><c>part</c></pos><stem>go</stem><mk type="sfxf">PERF</mk></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <w>gooseberry<mor type="mor"><mw><pos><c>n</c></pos><stem>gooseberry</stem></mw><gra type="gra" index="2" head="3" relation="MOD"/></mor></w>
+    <w>pie<mor type="mor"><mw><pos><c>n</c></pos><stem>pie</stem></mw><gra type="gra" index="3" head="1" relation="OBJ"/></mor></w>
+    <g><w>now<mor type="mor"><mw><pos><c>adv</c></pos><stem>now</stem></mw><gra type="gra" index="4" head="1" relation="JCT"/></mor></w><ga type="explanation">the gooseberry pie has all gone now</ga></g>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="5" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">ɡɒn bu:bi [*] paı naʊ</a>
+    <a type="errcoding">voiced velar plosive replaced by voiced bilabial plosive;</a>
+  </u>
+  <u who="CHI" uID="u55">
+    <w>Sovereign's<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Sovereign</stem></mw><gra type="gra" index="1" head="3" relation="SUBJ"/><mor-post><mw><pos><c>aux</c></pos><stem>be</stem><mk type="sfxf">3S</mk></mw><gra type="gra" index="2" head="3" relation="AUX"/></mor-post></mor></w>
+    <w>gone<mor type="mor"><mw><pos><c>part</c></pos><stem>go</stem><mk type="sfxf">PERF</mk></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w>
+    <w>away<mor type="mor"><mw><pos><c>adv</c></pos><stem>away</stem></mw><gra type="gra" index="4" head="3" relation="JCT"/></mor></w>
+    <w>now<mor type="mor"><mw><pos><c>adv</c></pos><stem>now</stem></mw><gra type="gra" index="5" head="3" relation="JCT"/></mor></w>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="6" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">sɒsɒn [*] ɡɒn əweı naʊ</a>
+    <a type="errcoding">voiced labio-dental fricative replaced by voiceless alveolar fricative;</a>
+  </u>
+  <u who="CHI" uID="u56">
+    <w>another<mor type="mor"><mw><pos><c>qn</c></pos><stem>another</stem></mw><gra type="gra" index="1" head="2" relation="DET"/></mor></w>
+    <w>one<mor type="mor"><mw><pos><c>pro</c><s>indef</s></pos><stem>one</stem></mw><gra type="gra" index="2" head="3" relation="SUBJ"/></mor></w>
+    <g><w>eat<mor type="mor"><mw><pos><c>v</c></pos><stem>eat</stem></mw><gra type="gra" index="3" head="0" relation="ROOT"/></mor></w><ga type="explanation">I'm eating another one</ga></g>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="4" head="3" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">lɛləʊ wʌn i:t</a>
+  </u>
+  <u who="CHI" uID="u57">
+    <w>now<mor type="mor"><mw><pos><c>adv</c></pos><stem>now</stem></mw><gra type="gra" index="1" head="2" relation="JCT"/></mor></w>
+    <g><w>Jenny<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Jenny</stem></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w><ga type="explanation">Jenny's having some now</ga></g>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">nɑ: d̪ɛni [*]</a>
+    <a type="errcoding">voiced palato-alveolar affricate replaced by voiced dental plosive;</a>
+  </u>
+  <u who="CHI" uID="u58">
+    <w>not<mor type="mor"><mw><pos><c>neg</c></pos><stem>not</stem></mw><gra type="gra" index="1" head="2" relation="JCT"/></mor></w>
+    <w>raining<mor type="mor"><mw><pos><c>part</c></pos><stem>rain</stem><mk type="sfx">PROG</mk></mw><gra type="gra" index="2" head="0" relation="ROOT"/></mor></w>
+    <w>no<mor type="mor"><mw><pos><c>qn</c></pos><stem>no</stem></mw><gra type="gra" index="3" head="4" relation="QUANT"/></mor></w>
+    <g><w>more<mor type="mor"><mw><pos><c>qn</c></pos><stem>more</stem></mw><gra type="gra" index="4" head="2" relation="QUANT-OBJ"/></mor></w><ga type="explanation">it's not raining any more</ga></g>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="5" head="2" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">nɒ reının nəʊ mɑ</a>
+  </u>
+  <u who="CHI" uID="u59">
+    <w>take<mor type="mor"><mw><pos><c>v</c></pos><stem>take</stem></mw><gra type="gra" index="1" head="0" relation="ROOT"/></mor></w>
+    <g><w>Mummy<mor type="mor"><mw><pos><c>n</c><s>prop</s></pos><stem>Mummy</stem></mw><gra type="gra" index="2" head="1" relation="OBJ"/></mor></w><ga type="explanation">can we take Mummy ?</ga></g>
+    <t type="p"><mor type="mor"><mt type="p"/><gra type="gra" index="3" head="1" relation="PUNCT"/></mor></t>
+
+    <a type="extension" flavor="pho">tɛ mʌmi</a>
+    <a type="comments">question signalled initially by facial expression</a>
+  </u>
+</CHAT>
