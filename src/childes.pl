@@ -24,14 +24,14 @@ my $curId;
 # opt_r : use replacement (ex: gonna => going to)
 #my ($opt_t, $opt_f, $opt_m, $opt_p, $opt_w, $opt_i, $opt_o, $opt_s, $opt_u, $opt_r) = (0,0,1,1,1,0,0,0,0,0);
 my $opt_t = 0;
-my $opt_f = 1;
-my $opt_m = 1;
-my $opt_p = 1;
+my $opt_f = 0;
+my $opt_m = 0;
+my $opt_p = 0;
 my $opt_w = 0;
 my $opt_i = 0;
 my $opt_o = 0;
 my $opt_s = 0;
-my $opt_u = 1;
+my $opt_u = 0;
 my $opt_r = 0;
 
 # we should really check if it succeeded or not
