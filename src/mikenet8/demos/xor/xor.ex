@@ -1,0 +1,13 @@
+CLAMP Input 0 FULL 0 0
+TARGET Output 2 FULL 1 0
+;
+CLAMP Input 0 FULL 1 0
+TARGET Output 2 FULL 0 1
+;
+CLAMP Input 0 FULL 0 1
+TARGET Output 2 FULL 0 1
+;
+CLAMP Input 0 FULL 1 1 
+TARGET Output 2 FULL 1 0
+;
+

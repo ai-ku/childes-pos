@@ -57,11 +57,8 @@ sub chi {
             my $cn = $cnt{$a}{$g};
             $cc += $cn;
             $hit += $cn * 0.5 * ($cn - 1) if 'X' ne $g;
-#            print "hit: $a $g $hit\n";
         }
-#        print "total: $total cc:$cc ". $hit / $total ."\n";
         $total += $cc * 0.5 * ($cc - 1);
-        $acc += $hit / $total;
     }
     my $miss = 0;
     my @k = keys %rcnt;
@@ -73,7 +70,6 @@ sub chi {
             }
         }
     }
-#    print STDERR "$hit, $total, $miss\n";
     return ($hit / $total, $hit * 1.0 / ($hit + $miss));
 }
 

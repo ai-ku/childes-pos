@@ -19,21 +19,17 @@ class frame:
         self.tokenCount = 0
         self.utteranceCount = 0
         self.debug = 1
+        self.filterFrameCount = 0
         self.filterUtterBound = False
         self.removeUtterBound = False
         self.filterTokenTags = False
-        self.tagMap={'n':'n','pro':'n','adj':'adj', 'adv':'adv', 'post':'adv','conj':'conj',\
-                         'det':'det', 'qn':'det', 'prep':'prep', 'v':'v', 'aux':'v',\
-                         'part':'v', 'mod':'v', 'neg':'neg', \
-                         'co':'int', 'int':'int', 'wh':'wh'}
-        self.tagMap={'n':'n','pro':'n','adj':'adj', 'adv':'adv','conj':'conj',\
-                         'det':'det', 'qn':'det', 'prep':'prep', 'v':'v', 'aux':'v',\
-                         'part':'v', 'mod':'v', 'neg':'neg', \
-                         'co':'int', 'int':'int', 'wh':'wh'}
-        # self.tagMap={'n':'n', 'pro':'n', 'adj':'adj', 'adv':'adv', 'conj':'conj', 'det':'det',\
-        #                  'prep':'prep', 'v':'v', 'aux':'v', 'part':'v', 'mod':'v', 'co':'int','int':'int',\
-        #                  'wh':'wh'
-        #              }
+#        self.tagMap={'n':'n','pro':'n','adj':'adj', 'adv':'adv','conj':'conj',\
+#                         'det':'det', 'qn':'det', 'prep':'prep', 'v':'v', 'aux':'v',\
+#                         'part':'v', 'mod':'v', 'neg':'neg', \
+#                         'co':'int', 'int':'int', 'wh':'wh'}
+        self.tagMap={'n':'n', 'pro':'n', 'adj':'adj', 'adv':'adv', 'conj':'conj', 'det':'det',\
+                          'prep':'prep', 'v':'v', 'aux':'v','int':'int',\
+                         'neg':'neg', 'wh':'wh'}
         #### regs ###
         self.regUtterBound = re.compile('^P_')
         self.regWordTag = re.compile('^(.*?)\/(.*?):')
@@ -45,10 +41,13 @@ class frame:
             if len(s) >= 3:
                 for i in range(1,len(s)-1):
                     if self.filterUtterBound and (self.regUtterBound.search(s[i-1]) or self.regUtterBound.search(s[i + 1]) or self.regUtterBound.search(s[i])): continue
-                    pair = (s[i-1],s[i+1])
-                    if self.filterTokenTags and t[i] not in self.tagMap:
+                    tt = t[i]
+                    if self.filterTokenTags and tt not in self.tagMap:
                         continue
-                    self.frames[pair][(s[i],t[i])] += 1
+                    elif tt in self.tagMap:
+                        tt = self.tagMap[t[i]]
+                    pair = (s[i-1],s[i+1])
+                    self.frames[pair][(s[i],tt)] += 1
                     self.frames[pair]["_A_"] += 1
             else:
                  continue
@@ -56,17 +55,17 @@ class frame:
 
     def get_prebigram_frames(self):        
         for (s,t) in izip(self.data, self.tag):
-#            print s
-#            print t
             if len(s) >= 2:
                 for i in range(1,len(s)):
                     if self.filterUtterBound and (self.regUtterBound.search(s[i-1]) or  self.regUtterBound.search(s[i])): continue
                     pair = (s[i-1], "X")
-                    if self.filterTokenTags and t[i] not in self.tagMap:
+                    tt = t[i]
+                    if self.filterTokenTags and tt not in self.tagMap:
                         continue
-                        
+                    elif tt in self.tagMap:
+                        tt = self.tagMap[t[i]]
 #                    print "PPP", pair
-                    self.frames[pair][(s[i],t[i])] += 1
+                    self.frames[pair][(s[i],tt)] += 1
                     self.frames[pair]["_A_"] += 1
             else:
                  continue
@@ -79,9 +78,12 @@ class frame:
 #                    if s[i+1] == "Aran": print >> sys.stderr, s[i], s[i+1]
                     if self.filterUtterBound and (self.regUtterBound.search(s[i + 1]) or  self.regUtterBound.search(s[i])): continue
                     pair = ("X", s[i+1])
-                    if self.filterTokenTags and t[i] not in self.tagMap:
+                    tt = t[i]
+                    if self.filterTokenTags and tt not in self.tagMap:
                         continue
-                    self.frames[pair][(s[i], t[i])] += 1
+                    elif tt in self.tagMap:
+                        tt = self.tagMap[t[i]]
+                    self.frames[pair][(s[i], tt)] += 1
                     self.frames[pair]["_A_"] += 1
             else:
                  continue
@@ -98,10 +100,20 @@ class frame:
             elif tt in self.tagMap:
                 tt = self.tagMap[tt]               
             d[tt] += c
-        print d
         ss = sum(map(lambda x: x * (x - 1) * 0.5, d.values()))
-        return ss / total
+        if ss == total and total == 0: return 0
+        else: return ss / total
 
+    def filter_frames(self):
+        rem = []
+        for (i,f) in enumerate(sorted(self.frames.iteritems(), key=lambda x: x[1]["_A_"], reverse=True), start=0):
+            if f[1]["_A_"] <= self.filterFrameCount:
+                rem.append(f[0])
+        for f in rem:
+            del self.frames[f]
+        if (self.debug == 1): print >> sys.stderr, "## Filtered Frequent-Frames(<= {0}) {1}".\
+                format(self.filterFrameCount, len(self.frames))
+                    
     def frame_print(self):
         analysedToken, analysedType = 0,{}
         for (i,f) in enumerate(sorted(self.frames.iteritems(), key=lambda x: x[1]["_A_"], reverse=True), start=0):
@@ -109,12 +121,7 @@ class frame:
                 print "{0}:{1}\t{2} acc:{3}\t===>\t".format(f[0][0],f[0][1], f[1]["_A_"], self.category_accuracy(f[1])),
                 for (w,c) in sorted(f[1].items(), key=lambda x: x[1], reverse=True):
                     if w == "_A_": continue
-                    tt = w[1]
-                    if self.filterTokenTags and tt not in self.tagMap: 
-                        continue
-                    elif tt in self.tagMap:
-                        tt = self.tagMap[tt]
-                    print "({0},{1}):{2}\t".format(w[0],tt,c),
+                    print "({0},{1}):{2}\t".format(w[0],w[1],c),
                     analysedToken += c
                     analysedType[w] = 1
                 print
@@ -128,10 +135,8 @@ class frame:
                 cluster = ":".join(f[0])
 #                print "{0}:{1}\t{2}\t===>\t".format(f[0][0],f[0][1], f[1]["_A_"]),
                 for (w,c) in sorted(f[1].items(), key=lambda x: x[1], reverse=True):
-                    if w == "_A_": continue
+                    if w == "_A_" : continue
                     tt = w[1]
-                    if self.filterTokenTags and tt not in self.tagMap:
-                        continue
                     analysedToken += c
                     analysedType[w] = 1
                     for i in range(c):
@@ -207,15 +212,16 @@ if __name__ == '__main__':
     usage = "usage: %prog [options] < std-in"
     parser = OptionParser(usage)
     parser.add_option("-f", "--frame_type", action="store", default= 'fre',dest="frame", help="frame types:fre, prbi or psbi. [default: %default]")
-    parser.add_option("-t", type="int", dest="thr", default= '45', help="print top t frames. Set 0 to print all frames. [default: %default]")
+    parser.add_option("-t", type="int", dest="thr", default= '45', help="Calculates the top thr frames. [default: %default]")
     parser.add_option("-u", action="store_true", default=False, dest="ufilter", help="filter utterance boundaries (ex:P_*) [defaut: %default]")
     parser.add_option("-m", action="store_true", dest="mintz", help="Clear data according to Mintz(2003) ")
     parser.add_option("-p", action="store_true", default=False, dest="pFrames", help="Print top t frames [default: %default]")
     parser.add_option("-g", action="store_true", default=False, dest="pGroups", help="Print induced groupings (format: word*TAB*gold_tag*TAB*induced_tag) [default: %default]")
     parser.add_option("-r", action="store_true", default=False, dest="filterTags", help="Filter tags that are not in standard gold tag set (Mintz 2003) [default: %default]")
+    parser.add_option("-c", type="int", default=1, dest="filterCount", help="Filter frames that are observed less than count [default: %default]")
     (options, args) = parser.parse_args(sys.argv);
     ff = frame()
-    if options.thr != None:        
+    if options.thr != None:
         ff.threshold = options.thr
     if options.ufilter != None:
         ff.filterUtterBound = options.ufilter
@@ -228,6 +234,9 @@ if __name__ == '__main__':
     ff.read()
     ff.info()
     ff.get_frames()
+    if options.filterCount != None:
+        ff.filterFrameCount = options.filterCount
+        #ff.filter_frames()
     if options.pFrames:
         ff.frame_print()
     if options.pGroups:

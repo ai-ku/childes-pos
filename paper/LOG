@@ -159,3 +159,50 @@ Section: Replicating (Mintz 2003)
 
 	Apply some token based approach.
 
+--Wed Dec  5 13:37:34 EET 2012
+
+shuffled 10K input
+
+with fann_weight_init function
+        AXB     AX + BX   AX      XB
+anne    0.3648  0.4594    X       0.4267
+aran    0.4245  0.4266    0.4119  0.4520
+eve     0.3137  0.3482    0.4112  0.5003
+naomi   0.3678  0.4205    0.4285  0.4423
+nina    0.3275  0.3567    0.3816  0.4104
+peter   0.3170  0.4551    0.4091  0.4098
+
+with random_wwight(-0.5,0.5)
+        AX + BX   AXB     AX      XB
+anne    .4474     .3379   .3983   .4197
+aran    .4496     ?       .4103   .4415
+eve     .4463     .2791   .4236   .5284
+naomi   .4883     .3352   .4491   .4205
+nina    .4046     .3216   .3677   .3986
+peter   .4641     .3040   .4143   .3891
+
+with random_wwight(-1,1)
+        AX + BX   AXB     AX      XB
+anne    .4336             .3965   .4299
+aran    
+eve     
+naomi   
+nina    
+peter   
+
+
+with all data 1 epoch
+        AX + BX   AXB     AX      XB
+anne    
+aran    
+eve     
+naomi   
+nina    
+peter   
+
+
+mikenet 10K [-0.5,0.5]
+        AX+BX     AXB     AX      XB
+anne    .5873     .4414   .6046   .5882
+peter
+
