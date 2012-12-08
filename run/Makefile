@@ -61,6 +61,10 @@ MINTZ03_OPTIONS=-t ${FRAME_THR} -g -u
 %.wordsub.out: %.sub.gz
 	mikerun-args.py $*.wordsub | xargs -n5 -P8 mikerun.pl  > $@
 
+%.plot: %.out
+	cat $< | plotdata.pl 2=x 3=y > $@
+
+
 #also equivalent to FLEXIBLE
 %.fre.gz: %.data.gz
 	zcat $< | ${SRC_PATH}frame.py  ${MINTZ03_OPTIONS} 2> $*.fre.stat |gzip > $@ 
