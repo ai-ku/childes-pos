@@ -1,6 +1,14 @@
-MINTZ_DATA_PATH=../data/childes/mintz03xml/
-SRC_PATH=../src/
+### 1. GENERAL SETUP
 
+### 1.1 BIN INSTALLATION
+
+bin:
+	cd ../bin; make
+
+MINTZ_DATA_PATH=../data/childes/mintz03xml/
+TRAIN_DATA_PATH=../data/childes/data-xml
+SRC_PATH=../src/
+SEED=0
 all: mintz03 clair10pr clair10ps
 data: anne.data.gz aran.data.gz eve.data.gz naomi.data.gz nina.data.gz peter.data.gz
 
@@ -11,10 +19,49 @@ clair10ps: anne.psbi.eval aran.psbi.eval eve.psbi.eval naomi.psbi.eval nina.psbi
 %.data.gz:
 	ls ${MINTZ_DATA_PATH}$*/*.xml | ${SRC_PATH}childes.pl 2> $*.err | gzip > $@ &
 
+## SRILM Language Model
+SRILM_PATH=/opt/srilm/bin/i686-m64
+LM_VOCAB=2
+LM_NGRAM=4
+LM_DISCOUNT=-kndiscount
+export PATH := ../bin:.:${SRILM_PATH}:${PATH}
 
-# Constructs answer files of the top  frames
+train.tok.gz:
+	find ${TRAIN_DATA_PATH} -type f | ${SRC_PATH}childes.pl -w 2> train.tok.err | gzip > $@
+
+%.vocab.gz: train.tok.gz ## LM_VOCAB=2: time=1m16s, wc=78498   78498  672284
+	zcat $< | ngram-count -write-order 1 -text - -write - | \
+	perl -lane 'print $$F[0] if $$F[1] >= ${LM_VOCAB}' | gzip > $@
+
+%.lm.gz: %.vocab.gz train.tok.gz ## LM_NGRAM=4, LM_VOCAB=20: time=6m10s, wc=27427373 118077512 847912087
+	zcat train.tok.gz | ngram-count -order ${LM_NGRAM} ${LM_DISCOUNT} -interpolate -unk -vocab $< -text - -lm $@
+
+### FASTSUBS options:
+FS_NSUB=100 # go until you have this many substitutes
+FS_PSUB=1.0 # or this much cumulative probability
+FS_OPTIONS=-n ${FS_NSUB} -p ${FS_PSUB}
+
+%.sub.gz: %.fre.gz train.lm.gz  ## FS_NSUB=100 FS_PSUB=1: time=4h47m, wc=1222974 245817774 2350067125
+	cat $*.fre.stat | fastsubs ${FS_OPTIONS} train.lm.gz | grep -P '^X' | gzip > $@
+
+### WORDSUB options:
+WORDSUB=1
+
+%.pairs.gz: %.sub.gz	## WORDSUB=12: time=6m33s wc=14085192 28170384 151744889
+	zcat $< | awk '{for (i=0;i< ${WORDSUB};i++) print $$0}' |\
+	wordsub -s 0  | perl -lane '@a = split; $$c++; $$subs .= $$a[1] . " ";if ($$c == ${WORDSUB}){print "$$a[0] $$subs"; $$c =0; $$subs = "";}' | gzip > $@
+
+%.wordsub.mike.gz: %.pairs.gz %.fre.stat
+	sub2mike.py $*.fre.stat $*.pairs.gz 2> $*.wordsub.mike.gz.info | gzip > $@ 
+
+### FREQUENT (AXB), FLEXIBLE(AX + XB) and BIGRAM FRAMES (AX and XB)
 FRAME_THR=0
 MINTZ03_OPTIONS=-t ${FRAME_THR} -g -u 
+
+%.wordsub.out: %.sub.gz
+	mikerun-args.py $*.wordsub | xargs -n5 -P8 mikerun.pl  > $@
+
+#also equivalent to FLEXIBLE
 %.fre.gz: %.data.gz
 	zcat $< | ${SRC_PATH}frame.py  ${MINTZ03_OPTIONS} 2> $*.fre.stat |gzip > $@ 
 
@@ -33,57 +80,11 @@ MINTZ03_OPTIONS=-t ${FRAME_THR} -g -u
 %.gold.gz: %.gz
 	zcat $< | cut -f 2 | gzip > $*.gold.gz
 
-
 %.eval: %.pos.gz %.gold.gz
 	zcat $< | ${SRC_PATH}eval.pl -c -m -v -g $*.gold.gz 2> $@
 
 %.dist: %.gz
 	zcat $< | perl -lane '$$h{$$F[1]}++;END{print "$$_ $$h{$$_}" foreach keys(%h)}'
-
-
-## FANN Neural Network
-neural.data: anne.neural aran.neural eve.neural naomi.neural nina.neural peter.neural
-
-anne.neural: anne.fre.nn anne.psbi.nn anne.prbi.nn
-aran.neural: aran.fre.nn aran.psbi.nn aran.prbi.nn
-eve.neural: eve.fre.nn eve.psbi.nn eve.prbi.nn
-naomi.neural: naomi.fre.nn naomi.psbi.nn naomi.prbi.nn
-nina.neural: nina.fre.nn nina.psbi.nn nina.prbi.nn
-peter.neural: peter.fre.nn peter.psbi.nn peter.prbi.nn
-
-anne.run:	anne.fre.run anne.fle.run anne.prbi.run anne.psbi.run
-aran.run:	aran.fre.run aran.fle.run aran.prbi.run aran.psbi.run
-eve.run:	eve.fre.run eve.fle.run eve.prbi.run eve.psbi.run
-naomi.run:	naomi.fre.run naomi.fle.run naomi.prbi.run naomi.psbi.run
-nina.run:	nina.fre.run nina.fle.run nina.prbi.run nina.psbi.run
-peter.run:	peter.fre.run peter.fle.run peter.prbi.run peter.psbi.run
-
-%.fre.nn: %.fre.gz
-	../src/tofnn.py $< fre > $@
-
-%.fle.nn: %.fre.gz
-	../src/tofnn.py $< fle > $@
-
-%.psbi.nn: %.fre.gz
-	../src/tofnn.py $< ps > $@
-
-%.prbi.nn: %.fre.gz
-	../src/tofnn.py $< pr > $@
-
-SAMPLE_SIZE=10000
-
-%.fre.run: %.fre.nn
-	../src/simple_train $<  ${SAMPLE_SIZE} > $@ 2> $@.err &
-
-%.fle.run: %.fle.nn
-	../src/simple_train $< ${SAMPLE_SIZE} > $@ 2> $@.err &
-
-%.psbi.run: %.psbi.nn
-	../src/simple_train $<  ${SAMPLE_SIZE} > $@ 2> $@.err &
-
-%.prbi.run: %.prbi.nn
-	../src/simple_train $<  ${SAMPLE_SIZE} > $@ 2> $@.err &
-
 
 ## MIKENET Neural Network
 mikenet.data:	anne.mikenet aran.mikenet eve.mikenet naomi.mikenet nina.mikenet peter.mikenet
@@ -91,29 +92,31 @@ mikenet.data:	anne.mikenet aran.mikenet eve.mikenet naomi.mikenet nina.mikenet p
 %.mikenet: %.fre.runmk %.psbi.runmk %.prbi.runmk %.fle.runmk %.apsbi.runmk %.aprbi.runmk
 	echo $@
 
+%.fre.mike.gz: %.fre.gz
+	tomike.py $< fre 2> $@.info | gzip > $@ 
 
-%.fre.mike: %.fre.gz
-	../src/tomike.py $< fre > $@ 2> $@.info
+%.fle.mike.gz: %.fre.gz
+	tomike.py $< fle 2> $@.info | gzip > $@
 
-%.fle.mike: %.fre.gz
-	../src/tomike.py $< fle > $@ 2> $@.info
+%.psbi.mike.gz: %.fre.gz
+	tomike.py $< ps 2> $@.info | gzip > $@ 
 
-%.psbi.mike: %.fre.gz
-	../src/tomike.py $< ps > $@ 2> $@.info
+%.apsbi.mike.gz: %.psbi.gz
+	tomike.py $< ps 2> $@.info | gzip > $@
 
-%.apsbi.mike: %.psbi.gz
-	../src/tomike.py $< ps > $@ 2> $@.info
+%.prbi.mike.gz: %.fre.gz
+	tomike.py $< pr 2> $@.info | gzip > $@ 
 
-%.prbi.mike: %.fre.gz
-	../src/tomike.py $< pr > $@ 2> $@.info
+%.aprbi.mike.gz: %.prbi.gz
+	tomike.py $< pr 2> $@.info | gzip > $@
 
-%.aprbi.mike: %.prbi.gz
-	../src/tomike.py $< pr > $@ 2> $@.info
+%.runmk: %.mike.gz
+	runmike.py $<.info
 
-%.runmk: %.mike
-	../src/runmike.py $<.info
+## MIKENET Experiments
 
-.PRECIOUS: %.fre.gz %.prbi.gz %.psbi.gz %.word.gz %.pos.gz %.gold.gz %.data.gz %.fle.nn %.psbi.nn %.prbi.nn %.fre.nn %.psbi.mike %.prbi.mike %.apsbi.mike %.aprbi.mike %.fre.mike %.fle.mike %.runmk
+
+.PRECIOUS: %.fre.gz %.prbi.gz %.psbi.gz %.word.gz %.pos.gz %.gold.gz %.data.gz %.fle.nn %.psbi.nn %.prbi.nn %.fre.nn %.psbi.mike %.prbi.mike %.apsbi.mike %.aprbi.mike %.fre.mike %.fle.mike %.runmk %.sub.gz %.wordsub.mike %.pairs.gz %.wordsub.out
 
 
 clean:

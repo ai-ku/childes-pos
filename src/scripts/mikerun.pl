@@ -1,0 +1,31 @@
+#!/usr/bin/perl -w
+use strict;
+use File::Temp qw/tempdir/;
+
+my $usage = q{Usage: mikerun.pl runid seed nsub, data-name, frame};
+my $runid = shift or die $usage;
+my $seed = shift or die $usage;
+my $nsub = shift or die $usage;
+my $data = shift or die $usage;
+my $frame = shift or die $usage;
+my $subs = $data.".sub.gz";
+my $tmp = tempdir("mikerun-XXXX", CLEANUP => 1);
+my $wordsub_err = "$tmp/wordsub.gz";
+my $mike_info = "$tmp/mike.info";
+my $wordsub_mike = "$tmp/wmike.gz";
+my $mike_out = "$tmp/mike.out";
+my $mike_err = "$tmp/mike.err";
+my $wordsub = "awk '{for (i=0;i< $nsub;i++) print \$0}' |\	wordsub -s $seed | perl -lane '\@a = split; \$c++;\$subs .= \$a[1] . \" \";if (\$c == $nsub){print \"\$a[0] \$subs\"; \$c =0; \$subs = \"\";}' |gzip > $wordsub_err";
+my $tomike = "sub2mike.py $data.fre.stat $wordsub_err 2> $mike_info | gzip > $wordsub_mike";
+my $cmd = "zcat $subs | " . $wordsub;
+my $tm = time;
+#print "cmd:$cmd\n";
+system($cmd);
+#print "tomike:$tomike\n";
+system($tomike);
+my @minfo = split(' ', `cat $mike_info`);
+my $runmike = "mike_childes -f $wordsub_mike -i $minfo[2] -o $minfo[3] -seed $seed > $mike_out 2> $mike_err";
+system($runmike);
+$tm = time - $tm;
+my @res = split(' ', `cat $mike_out`);
+print join("\t", $runid, $seed, $nsub, $res[0], $tm)."\n";
