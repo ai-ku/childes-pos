@@ -54,15 +54,17 @@ WORDSUB=1
 %.wordsub.mike.gz: %.pairs.gz %.fre.stat
 	sub2mike.py $*.fre.stat $*.pairs.gz 2> $*.wordsub.mike.gz.info | gzip > $@ 
 
-### FREQUENT (AXB), FLEXIBLE(AX + XB) and BIGRAM FRAMES (AX and XB)
-FRAME_THR=0
-MINTZ03_OPTIONS=-t ${FRAME_THR} -g -u 
+### Wordsub experiments
 
 %.wordsub.out: %.sub.gz
 	mikerun-args.py $*.wordsub | xargs -n5 -P8 mikerun.pl  > $@
 
 %.plot: %.out
 	cat $< | plotdata.pl 2=x 3=y > $@
+
+### FREQUENT (AXB), FLEXIBLE(AX + XB) and BIGRAM FRAMES (AX and XB)
+FRAME_THR=0
+MINTZ03_OPTIONS=-t ${FRAME_THR} -g -u 
 
 
 #also equivalent to FLEXIBLE
@@ -118,6 +120,10 @@ mikenet.data:	anne.mikenet aran.mikenet eve.mikenet naomi.mikenet nina.mikenet p
 	runmike.py $<.info
 
 ## MIKENET Experiments
+
+%.frame.out: %.fre.gz %.prbi.gz %.psbi.gz
+	frame-args.py $* | xargs -n4 -P8 framerun.pl  > $@
+
 
 
 .PRECIOUS: %.fre.gz %.prbi.gz %.psbi.gz %.word.gz %.pos.gz %.gold.gz %.data.gz %.fle.nn %.psbi.nn %.prbi.nn %.fre.nn %.psbi.mike %.prbi.mike %.apsbi.mike %.aprbi.mike %.fre.mike %.fle.mike %.runmk %.sub.gz %.wordsub.mike %.pairs.gz %.wordsub.out

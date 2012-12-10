@@ -11,10 +11,10 @@ tag = dd()
 arr = []
 tagtype = "fre"
 
-if sys.argv[2] == "pr":
+if sys.argv[2] == "pr" or sys.argv[2] == "prbi" or sys.argv[2] == "apr":
     tagtype = "pr"
-elif sys.argv[2] == "ps":
-    tagtype = "ps"
+elif sys.argv[2] == "ps" or sys.argv[2] == "psbi" or sys.argv[2] == "aps":
+    tagtype = "ps"  
 elif sys.argv[2] == "fle":
     tagtype = "fle"
 elif sys.argv[2] == "fre":
@@ -29,7 +29,7 @@ for line in gzip.open(sys.argv[1]):
     f1,f2 = l[2].split(":")
     if l[1] not in tag:
         tag[l[1]] = len(tag)
-    if tagtype == "pr" and f1 not in frame:
+    if tagtype == "pr"  and f1 not in frame:
         frame[f1] = len(frame)
         arr.append([frame[f1],tag[l[1]]])
     elif tagtype == "pr":
@@ -51,8 +51,8 @@ for line in gzip.open(sys.argv[1]):
             framer[f2] = len(framer)
         arr.append([frame[f1],framer[f2],tag[l[1]]])
 
-print >> sys.stderr, "frame:",len(frame), "right:", len(framer)
-print >> sys.stderr, "tag:"," ".join(tag)
+#print >> sys.stderr, "frame:",len(frame), "right:", len(framer)
+#print >> sys.stderr, "tag:"," ".join(tag)
 ## header
 print >> sys.stderr, ">>>", len(arr), len(frame)+len(framer), len(tag)
 clab = ["0"] * len(tag)

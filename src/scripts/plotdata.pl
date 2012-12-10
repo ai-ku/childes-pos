@@ -1,5 +1,7 @@
 #!/usr/bin/perl -w
 use strict;
+use Data::Dumper;
+use Scalar::Util qw(looks_like_number);
 
 my @colspec;
 while(my $cx = shift) {
@@ -31,9 +33,9 @@ while(<>) {
     $sumsq{$x} += $y * $y;
 }
 
-for my $x (sort {$a<=>$b} keys %cnt) {
+for my $x (sort {looks_like_number($a) ? $a <=> $b : $a le $b} keys %cnt) {
     my $n = $cnt{$x};
     my $m = $sum{$x} / $n;
     my $v = $sumsq{$x} / $n - $m * $m;
-    printf "%g\t%g\t%g\n", $x, $m, sqrt($v);
+    printf "%s\t%g\t%g\n", $x, $m, sqrt($v);
 }
