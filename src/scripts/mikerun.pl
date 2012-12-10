@@ -2,12 +2,13 @@
 use strict;
 use File::Temp qw/tempdir/;
 
-my $usage = q{Usage: mikerun.pl runid seed nsub, data-name, frame};
+my $usage = q{Usage: mikerun.pl runid seed nsub data-name frame train_iterations};
 my $runid = shift or die $usage;
 my $seed = shift or die $usage;
 my $nsub = shift or die $usage;
 my $data = shift or die $usage;
 my $frame = shift or die $usage;
+my $iter = shift or die $usage;
 my $subs = $data.".sub.gz";
 my $tmp = tempdir("mikerun-XXXX", CLEANUP => 1);
 my $wordsub_err = "$tmp/wordsub.gz";
@@ -24,8 +25,8 @@ system($cmd);
 #print "tomike:$tomike\n";
 system($tomike);
 my @minfo = split(' ', `cat $mike_info`);
-my $runmike = "mike_childes -f $wordsub_mike -i $minfo[2] -o $minfo[3] -seed $seed > $mike_out 2> $mike_err";
+my $runmike = "mike_childes -f $wordsub_mike -i $minfo[2] -o $minfo[3] -seed $seed -iter $iter > $mike_out 2> $mike_err";
 system($runmike);
 $tm = time - $tm;
 my @res = split(' ', `cat $mike_out`);
-print join("\t", $runid, $seed, $nsub, $res[0], $tm)."\n";
+print join("\t", $runid, $seed, $nsub, $res[0], $tm, $iter)."\n";

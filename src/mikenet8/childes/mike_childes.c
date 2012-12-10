@@ -24,7 +24,7 @@
 
 #define TIME 3
 #define REP 1000
-#define ITER 10000
+unsigned int ITER=10000;
 
 int main(int argc,const char *argv[])
 {
@@ -73,6 +73,10 @@ int main(int argc,const char *argv[])
           else if (strcmp(argv[i],"-errorRadius")==0)
           {
                default_errorRadius=atof(argv[i+1]);
+               i++;
+          }
+          else if (strcmp(argv[i],"-iter")==0){
+               ITER = atoi(argv[i+1]);
                i++;
           }
           else if (strcmp(argv[i], "-f") == 0)
