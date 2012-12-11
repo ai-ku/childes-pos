@@ -23,9 +23,9 @@
 
 
 #define TIME 3
-#define REP 1000
+unsigned int REP = 1000;
 unsigned int ITER=10000;
-
+unsigned int VERBOSE=0;
 int main(int argc,const char *argv[])
 {
      Net *net;
@@ -34,7 +34,8 @@ int main(int argc,const char *argv[])
      Example *ex;
      Connections *c1,*c2,*c3,*c4;
      char * fileName = "input";
-     int i,count,j;
+     int i,count,j, dataCount =0;
+     int dataCountArray[6] = {0};
      int inputCount = 0,outputCount = 0, hiddenCount = 200;
      Real error, correct;
      Real epsilon,range;
@@ -75,6 +76,11 @@ int main(int argc,const char *argv[])
                default_errorRadius=atof(argv[i+1]);
                i++;
           }
+          else if (strcmp(argv[i],"-d")==0){
+               dataCountArray[dataCount]= atoi(argv[i+1]);
+               dataCount++;
+               i++;
+          }
           else if (strcmp(argv[i],"-iter")==0){
                ITER = atoi(argv[i+1]);
                i++;
@@ -83,6 +89,10 @@ int main(int argc,const char *argv[])
           {
                fileName = (char*)argv[i+1];
                i++;
+          }
+          else if (strcmp(argv[i], "-v") == 0)
+          {
+               VERBOSE = 1;
           }
           else if (strcmp(argv[i], "-i") == 0)
           {
@@ -156,11 +166,23 @@ int main(int argc,const char *argv[])
      /*  system("rm -f init.weights.Z");      */
 
      /* save out our weights to file 'init.weights' */
-     /*  save_weights(net,"init.weights");     */
 
      /* load in our example set */
-     fprintf(stderr, "Reading %s\n",fileName);
+     if (VERBOSE)
+          fprintf(stderr, "Reading %s Iter:%d ",fileName, ITER);
      examples=load_examples(fileName,TIME);
+     if (VERBOSE){
+          fprintf(stderr, "size:%d\n", examples->numExamples);     
+          for(i=0; i < 6; i++){
+               if (i == 0){
+                    fprintf(stderr, "DataCounts[%d] start:0 end:%d size:%d\n", \
+                         i,dataCountArray[i],dataCountArray[i]);
+               }else{
+                    fprintf(stderr, "DataCounts[%d] start:%d end:%d size:%d\n", \
+                         i,dataCountArray[i - 1], dataCountArray[i], dataCountArray[i] - dataCountArray[i - 1]);
+               }
+          }
+     }
      error=0.0;
      count=0;
      /* loop for ITER number of times */
@@ -189,9 +211,8 @@ int main(int argc,const char *argv[])
                count=0;
 
                /* print a message about average error so far */
-               /* fprintf(stderr, "%d\t%f\n",i,error); */
-
-               if (error < 0.01)
+               if (VERBOSE) fprintf(stderr, "%d\t%f\n",i,error);
+               if (error < 0.1)
                {
                     break;
                }
@@ -203,8 +224,20 @@ int main(int argc,const char *argv[])
      }
      /* done training.  write out results for each example */
      correct = 0;
+     dataCount = 0;
      for(i=0;i<examples->numExamples;i++)
      {
+          if (i % 1000 == 0) fprintf(stderr,".");
+          if (i == dataCountArray[dataCount]){
+               if (dataCount ==0){
+                    printf("%f\t", correct / dataCountArray[dataCount]);
+               }else{
+                    printf("%f\t", correct / (dataCountArray[dataCount] - dataCountArray[dataCount - 1]));
+
+               }
+               correct = 0;
+               dataCount++;
+          }
           ex=&examples->examples[i];
           bptt_forward(net,ex);
           int maxj = -1;
@@ -228,6 +261,6 @@ int main(int argc,const char *argv[])
           /*        get_value(ex->targets,output->index,TIME-1,0)); */
       
      }
-     printf("%f\n", correct / examples->numExamples);
+     printf("%f\n", correct / (dataCountArray[dataCount] - dataCountArray[dataCount - 1]));
      return 0;
 }

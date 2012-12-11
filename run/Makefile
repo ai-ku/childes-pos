@@ -7,7 +7,7 @@ bin:
 
 MINTZ_DATA_PATH=../data/childes/mintz03xml/
 TRAIN_DATA_PATH=../data/childes/data-xml
-SRC_PATH=../src/
+
 SEED=0
 all: mintz03 clair10pr clair10ps
 data: anne.data.gz aran.data.gz eve.data.gz naomi.data.gz nina.data.gz peter.data.gz
@@ -17,7 +17,7 @@ clair10pr: anne.prbi.eval aran.prbi.eval eve.prbi.eval naomi.prbi.eval nina.prbi
 clair10ps: anne.psbi.eval aran.psbi.eval eve.psbi.eval naomi.psbi.eval nina.psbi.eval peter.psbi.eval
 
 %.data.gz:
-	ls ${MINTZ_DATA_PATH}$*/*.xml | ${SRC_PATH}childes.pl 2> $*.err | gzip > $@ &
+	ls ${MINTZ_DATA_PATH}$*/*.xml | childes.pl 2> $*.err | gzip > $@ &
 
 ## SRILM Language Model
 SRILM_PATH=/opt/srilm/bin/i686-m64
@@ -45,14 +45,14 @@ FS_OPTIONS=-n ${FS_NSUB} -p ${FS_PSUB}
 	cat $*.fre.stat | fastsubs ${FS_OPTIONS} train.lm.gz | grep -P '^X' | gzip > $@
 
 ### WORDSUB options:
-WORDSUB=1
+WORDSUB=3
 
 %.pairs.gz: %.sub.gz	## WORDSUB=12: time=6m33s wc=14085192 28170384 151744889
 	zcat $< | awk '{for (i=0;i< ${WORDSUB};i++) print $$0}' |\
 	wordsub -s 0  | perl -lane '@a = split; $$c++; $$subs .= $$a[1] . " ";if ($$c == ${WORDSUB}){print "$$a[0] $$subs"; $$c =0; $$subs = "";}' | gzip > $@
 
-%.wordsub.mike.gz: %.pairs.gz %.fre.stat
-	sub2mike.py $*.fre.stat $*.pairs.gz 2> $*.wordsub.mike.gz.info | gzip > $@ 
+%.wordsub.mike.gz: %.pairs.gz %.fre.gz
+	sub2mike.py "./" $* 2> $*.wordsub.mike.gz.info | gzip > $@ 
 
 ### FREQUENT (AXB), FLEXIBLE(AX + XB) and BIGRAM FRAMES (AX and XB)
 FRAME_THR=0
@@ -61,13 +61,13 @@ MINTZ03_OPTIONS=-t ${FRAME_THR} -g -u
 
 #also equivalent to FLEXIBLE
 %.fre.gz: %.data.gz
-	zcat $< | ${SRC_PATH}frame.py  ${MINTZ03_OPTIONS} 2> $*.fre.stat |gzip > $@ 
+	zcat $< | frame.py  ${MINTZ03_OPTIONS} 2> $*.fre.stat |gzip > $@ 
 
 %.prbi.gz: %.data.gz
-	zcat $< | ${SRC_PATH}frame.py  -f prbi ${MINTZ03_OPTIONS} 2> $*.prbi.stat |gzip > $@ 
+	zcat $< | frame.py  -f prbi ${MINTZ03_OPTIONS} 2> $*.prbi.stat |gzip > $@ 
 
 %.psbi.gz: %.data.gz
-	zcat $< | ${SRC_PATH}frame.py  -f psbi ${MINTZ03_OPTIONS} 2> $*.psbi.stat |gzip > $@ 
+	zcat $< | frame.py  -f psbi ${MINTZ03_OPTIONS} 2> $*.psbi.stat |gzip > $@ 
 
 %.word.gz: %.gz
 	zcat $< | cut -f 1 | gzip > $@
@@ -79,7 +79,7 @@ MINTZ03_OPTIONS=-t ${FRAME_THR} -g -u
 	zcat $< | cut -f 2 | gzip > $*.gold.gz
 
 %.eval: %.pos.gz %.gold.gz
-	zcat $< | ${SRC_PATH}eval.pl -c -m -v -g $*.gold.gz 2> $@
+	zcat $< | eval.pl -c -m -v -g $*.gold.gz 2> $@
 
 %.dist: %.gz
 	zcat $< | perl -lane '$$h{$$F[1]}++;END{print "$$_ $$h{$$_}" foreach keys(%h)}'
@@ -91,44 +91,75 @@ mikenet.data:	anne.mikenet aran.mikenet eve.mikenet naomi.mikenet nina.mikenet p
 	echo $@
 
 %.fre.mike.gz: %.fre.gz
-	tomike.py $< fre 2> $@.info | gzip > $@ 
+	tomike.py fre $<  2> $@.info | gzip > $@ 
 
 %.fle.mike.gz: %.fre.gz
-	tomike.py $< fle 2> $@.info | gzip > $@
+	tomike.py fle $<  2> $@.info | gzip > $@
 
 %.psbi.mike.gz: %.fre.gz
-	tomike.py $< ps 2> $@.info | gzip > $@ 
+	tomike.py ps $<  2> $@.info | gzip > $@ 
 
 %.apsbi.mike.gz: %.psbi.gz
-	tomike.py $< ps 2> $@.info | gzip > $@
+	tomike.py ps $<  2> $@.info | gzip > $@
 
 %.prbi.mike.gz: %.fre.gz
-	tomike.py $< pr 2> $@.info | gzip > $@ 
+	tomike.py pr $<  2> $@.info | gzip > $@ 
 
 %.aprbi.mike.gz: %.prbi.gz
-	tomike.py $< pr 2> $@.info | gzip > $@
+	tomike.py pr $<  2> $@.info | gzip > $@
 
+all.fre.mike.gz: anne.fre.gz aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz peter.fre.gz
+	tomikesparse.py fre anne.fre.gz aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz peter.fre.gz \
+	2> $@.info | gzip > $@
+
+all.fle.mike.gz: anne.fre.gz aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz peter.fre.gz
+	tomikesparse.py fle anne.fre.gz aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz peter.fre.gz \
+	2> $@.info | gzip > $@
+
+all.pr.mike.gz: anne.fre.gz aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz peter.fre.gz
+	tomikesparse.py pr anne.fre.gz aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz peter.fre.gz \
+	2> $@.info | gzip > $@
+
+all.ps.mike.gz: anne.fre.gz aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz peter.fre.gz
+	tomikesparse.py ps anne.fre.gz aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz peter.fre.gz \
+	2> $@.info | gzip > $@
+
+### Individual Run
+
+ITER=10000
 %.runmk: %.mike.gz
-	runmike.py $<.info
+	runmike.py $<.info ${ITER}
+
 ## EXPERIMENTS
-EXP_ITER=100000
+
+EXP_ITER=10000
+NCPU=8
+## ALL-Data Experiments
+all.%.frame.out: all.%.mike.gz
+	allframe-args.py $< ${EXP_ITER} | xargs -n4 -P${NCPU} allframerun.pl > $@
+
+all.wordsub.out: anne.sub.gz aran.sub.gz eve.sub.gz naomi.sub.gz nina.sub.gz peter.sub.gz anne.fre.gz aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz peter.fre.gz
+	mikeall-args.py ${EXP_ITER} | xargs -n4 -P${NCPU} mikeallrun.pl
+
+#%.wordsub.mike.gz: %.pairs.gz %.fre.gz
+#	sub2mike.py $* 2> $*.wordsub.mike.gz.info | gzip > $@ 
+
 ## MIKENET Experiments
 
 %.frame.out: %.fre.gz %.prbi.gz %.psbi.gz
-	frame-args.py $* ${EXP_ITER} | xargs -n5 -P8 framerun.pl  > $@
+	frame-args.py $* ${EXP_ITER} | xargs -n5 -P1 framerun.pl  > $@
 
 ### Wordsub experiments
+##%.wordsub.mike.gz: %.pairs.gz %.fre.gz
+##	sub2mike.py $* 2> $*.wordsub.mike.gz.info | gzip > $@ 
 
-%.wordsub.out: %.sub.gz
-	mikerun-args.py $*.wordsub ${EXP_ITER} | xargs -n6 -P8 mikerun.pl  > $@
+%.wordsub.out: %.sub.gz %.fre.gz %.pairs.gz
+	mikerun-args.py $*.wordsub ${EXP_ITER} | xargs -n6 -P${NCPU} mikerun.pl  > $@
 
 %.plot: %.out
 	cat $< | plotdata.pl 2=x 3=y > $@
 
-
-
-.PRECIOUS: %.fre.gz %.prbi.gz %.psbi.gz %.word.gz %.pos.gz %.gold.gz %.data.gz %.fle.nn %.psbi.nn %.prbi.nn %.fre.nn %.psbi.mike %.prbi.mike %.apsbi.mike %.aprbi.mike %.fre.mike %.fle.mike %.runmk %.sub.gz %.wordsub.mike %.pairs.gz %.wordsub.out
-
+.PRECIOUS: %.fre.gz %.prbi.gz %.psbi.gz %.word.gz %.pos.gz %.gold.gz %.data.gz %.fle.nn %.psbi.nn %.prbi.nn %.fre.nn %.psbi.mike.gz %.prbi.mike.gz %.apsbi.mike.gz %.aprbi.mike.gz %.fre.mike.gz %.fle.mike.gz %.runmk %.sub.gz %.wordsub.mike.gz %.pairs.gz %.wordsub.out
 
 clean:
 	-rm *.fre.* *.prbi.* *.psbi.*

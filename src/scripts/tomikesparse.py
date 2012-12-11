@@ -60,23 +60,20 @@ for fi in range(2,len(sys.argv)):
 ## header
 print >> sys.stderr, ">>>", len(arr), len(frame)+len(framer), len(tag), " ".join(partition)
 clab = ["0"] * len(tag)
-ivec = ["0"] * len(frame)
-ivecr = ["0"] * len(framer)
-frame = "fre"
+
 for (ii,r) in enumerate(arr):
-    if ii % 1000 == 0: print >> sys.stderr, ".",
+    ivec = []
+    ivecr = []
     clab [r[-1]] = "1"
     lab = " ".join(clab)
-    ivec[r[0]] = "1"
-    print "CLAMP Input ALL FULL ",
+    ivec.append(str(r[0]))
+    print "CLAMP Input ALL SPARSE \n",
     if len(r) == 2:
         vec = " ".join(ivec)
-        print vec
+        print vec, ","
     elif len(r) == 3:
-        ivecr[r[1]] = "1"
+        ivecr.append(str(len(frame) + r[1]))
         vec = " ".join(ivec) + " " + " ".join(ivecr)
-        print vec
-        ivecr[r[1]] = "0"
+        print vec, ","
     print "TARGET Output 2 FULL " + lab + "\n;"
-    ivec[r[0]] = "0"
     clab[r[-1]] = "0"
