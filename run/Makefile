@@ -100,7 +100,7 @@ split.frame.out: anne.fre.gz aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz pet
 	splitframe-args.py ${EXP_ITER} ${SPLIT_RATIO} | xargs -n5 -P${NCPU} splitframerun.pl > $@
 
 split.wsub.out: anne.sub.gz aran.sub.gz eve.sub.gz naomi.sub.gz nina.sub.gz peter.sub.gz anne.fre.gz aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz peter.fre.gz
-	splitwordsub-args.pl ${EXP_ITER} ${SPLIT_RATIO} | xargs -n5 -P${NCPU} splitwordsubrun.pl
+	splitwordsub-args.pl ${EXP_ITER} ${SPLIT_RATIO} | xargs -n5 -P${NCPU} splitwordsubrun.pl > $@
 
 #	mikeall-args.py ${EXP_ITER} | xargs -n4 -P${NCPU} mikeallrun.pl
 
