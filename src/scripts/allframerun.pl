@@ -8,7 +8,7 @@ my $runid = shift or die $usage;
 my $seed = shift or die $usage;
 my $data = shift or die $usage;
 my $iter = shift or die $usage;
-my $tmp = tempdir("framerun-XXXX", CLEANUP => 0);
+my $tmp = tempdir("framerun-XXXX", CLEANUP => 1);
 #print STDERR "$runid $seed $data $frame $tmp $iter\n";
 my $mike_out = "$tmp/mike.out";
 my $mike_err = "$tmp/mike.err";

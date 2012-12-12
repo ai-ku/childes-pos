@@ -30,20 +30,22 @@ int main(int argc,const char *argv[])
 {
      Net *net;
      Group *input,*hidden,*output,*bias;
-     ExampleSet *examples;
+     ExampleSet *examples, *test;
      Example *ex;
      Connections *c1,*c2,*c3,*c4;
      char * fileName = "input";
-     int i,count,j, dataCount =0;
+     int i,count,j, dataCount =0, testCount = 0;
      int dataCountArray[6] = {0};
+     char * testFileArray[6] = {NULL};
      int inputCount = 0,outputCount = 0, hiddenCount = 200;
      Real error, correct;
      Real epsilon,range;
+     unsigned long seed = 0;
      /* don't buffer output */
      setbuf(stdout,NULL);
 
      /* set seed to unique number */
-     mikenet_set_seed(0);
+     mikenet_set_seed(seed);
 
      /* a default learning rate */
      epsilon=0.1;
@@ -58,7 +60,8 @@ int main(int argc,const char *argv[])
      {
           if (strcmp(argv[i],"-seed")==0)
           {
-               mikenet_set_seed(atol(argv[i+1]));
+               seed = atol(argv[i+1]);
+               mikenet_set_seed(seed);
                i++;
           }
           else if (strncmp(argv[i],"-epsilon",5)==0)
@@ -74,6 +77,11 @@ int main(int argc,const char *argv[])
           else if (strcmp(argv[i],"-errorRadius")==0)
           {
                default_errorRadius=atof(argv[i+1]);
+               i++;
+          }
+          else if (strcmp(argv[i],"-t")==0){
+               testFileArray[testCount] = (char *)argv[i+1];
+               testCount++;
                i++;
           }
           else if (strcmp(argv[i],"-d")==0){
@@ -168,12 +176,17 @@ int main(int argc,const char *argv[])
      /* save out our weights to file 'init.weights' */
 
      /* load in our example set */
-     if (VERBOSE)
+     if (VERBOSE){
           fprintf(stderr, "Reading %s Iter:%d ",fileName, ITER);
+          for(i=0; i < 6; i++){
+               if (testFileArray[i] == NULL) break;
+               fprintf(stderr, "TestSet:%s\n", testFileArray[i]);               
+          }
+     }
      examples=load_examples(fileName,TIME);
      if (VERBOSE){
           fprintf(stderr, "size:%d\n", examples->numExamples);     
-          for(i=0; i < 6; i++){
+          for(i=0; i < dataCount; i++){
                if (i == 0){
                     fprintf(stderr, "DataCounts[%d] start:0 end:%d size:%d\n", \
                          i,dataCountArray[i],dataCountArray[i]);
@@ -186,6 +199,8 @@ int main(int argc,const char *argv[])
      error=0.0;
      count=0;
      /* loop for ITER number of times */
+     /* Reset the seed to get same training set*/
+     mikenet_set_seed(seed);
      for(i=0;i<ITER;i++)
      {
           /* get j'th example from exampleset */
@@ -223,44 +238,75 @@ int main(int argc,const char *argv[])
           count++;
      }
      /* done training.  write out results for each example */
-     correct = 0;
-     dataCount = 0;
-     for(i=0;i<examples->numExamples;i++)
-     {
-          if (i % 1000 == 0) fprintf(stderr,".");
-          if (i == dataCountArray[dataCount]){
-               if (dataCount ==0){
-                    printf("%f\t", correct / dataCountArray[dataCount]);
-               }else{
-                    printf("%f\t", correct / (dataCountArray[dataCount] - dataCountArray[dataCount - 1]));
-
+     if (testCount == 0){
+          correct = 0;
+          dataCount = 0;
+          for(i=0;i<examples->numExamples;i++)
+          {
+               if (i % 1000 == 0) fprintf(stderr,".");
+               if (i == dataCountArray[dataCount]){
+                    if (dataCount ==0){
+                         printf("%f\t", correct / dataCountArray[dataCount]);
+                    }else{
+                         printf("%f\t", correct / (dataCountArray[dataCount] - dataCountArray[dataCount - 1]));
+                         
+                    }
+                    correct = 0;
+                    dataCount++;
                }
-               correct = 0;
-               dataCount++;
-          }
-          ex=&examples->examples[i];
-          bptt_forward(net,ex);
-          int maxj = -1;
-          Real  maxx = 0;
-          for(j=0 ; j < outputCount; j++){
-               if (output->outputs[TIME-1][j] > maxx){
-                    maxj = j;
-                    maxx = output->outputs[TIME-1][j];
+               ex=&examples->examples[i];
+               bptt_forward(net,ex);
+               int maxj = -1;
+               Real  maxx = 0;
+               for(j=0 ; j < outputCount; j++){
+                    if (output->outputs[TIME-1][j] > maxx){
+                         maxj = j;
+                         maxx = output->outputs[TIME-1][j];
+                    }
+                    /* printf("%d:%f ",j,output->outputs[TIME-1][j]); */
                }
-               /* printf("%d:%f ",j,output->outputs[TIME-1][j]); */
+               if (get_value(ex->targets,output->index,TIME-1,maxj) == 1)
+                    correct += 1;
           }
-          /* printf("max:%d\n",maxj); */
-          if (get_value(ex->targets,output->index,TIME-1,maxj) == 1)
-               correct += 1;
-          /* printf("i:%d g:%f cor:%f\n",i, get_value(ex->targets,output->index,TIME-1,maxj),correct / (i+1)); */
-          /* printf("example %d\tinputs %f\t%f\toutput %f\ttarget %f\n", */
-          /*     i, */
-          /*        get_value(ex->inputs,input->index,TIME-1,0), */
-          /*        get_value(ex->inputs,input->index,TIME-1,1), */
-          /*        output->outputs[TIME-1][0], */
-          /*        get_value(ex->targets,output->index,TIME-1,0)); */
-      
+          printf("%f\n", correct / (dataCountArray[dataCount] - dataCountArray[dataCount - 1]));
      }
-     printf("%f\n", correct / (dataCountArray[dataCount] - dataCountArray[dataCount - 1]));
+     else{
+          int tt = 0, dc = 0;
+          correct = 0;
+          for(tt = 0; tt < testCount; tt++){
+               test = load_examples(testFileArray[tt],TIME);
+               if (VERBOSE)
+                    fprintf(stderr,"Testing:%s size:%d\n",testFileArray[tt],test->numExamples);
+               correct = 0;
+               for(i=0;i<test->numExamples;i++){
+                    if (i == dataCountArray[dc]){
+                         if (dc ==0)
+                              printf("%f\t", correct / dataCountArray[dc]);
+                         else
+                              printf("%f\t", correct / (dataCountArray[dc] - dataCountArray[dc - 1]));                         
+                         correct = 0;
+                         dc++;
+                    }
+                    if (i % 1000 == 0) fprintf(stderr,".");
+                    ex=&test->examples[i];
+                    bptt_forward(net,ex);
+                    int maxj = -1;
+                    Real  maxx = 0;
+                    for(j=0 ; j < outputCount; j++){
+                         if (output->outputs[TIME-1][j] > maxx){
+                              maxj = j;
+                              maxx = output->outputs[TIME-1][j];
+                         }
+                         /* printf("%d:%f ",j,output->outputs[TIME-1][j]); */
+                    }
+                    if (get_value(ex->targets,output->index,TIME-1,maxj) == 1)
+                         correct += 1;
+               }
+               if (dataCount == 0)
+                    printf("%f\t", correct / test->numExamples);
+               else
+                    printf("%f\n", correct / (dataCountArray[dc] - dataCountArray[dc - 1]));
+          }
+     }
      return 0;
 }

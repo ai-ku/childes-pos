@@ -26,7 +26,10 @@ partition = []
 for fi in range(2,len(sys.argv)):
     for line in gzip.open(sys.argv[fi]):
         l = line.strip().split()
-        if l[1] == "X":
+        if l[0] == "-1":
+            arr.append(-1);
+            continue
+        elif l[1] == "X":
             continue
         instance += 1
         f1,f2 = l[2].split(":")
@@ -64,6 +67,9 @@ clab = ["0"] * len(tag)
 for (ii,r) in enumerate(arr):
     ivec = []
     ivecr = []
+    if r == -1:
+        print "-1"
+        continue
     clab [r[-1]] = "1"
     lab = " ".join(clab)
     ivec.append(str(r[0]))

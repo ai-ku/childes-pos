@@ -17,7 +17,7 @@ clair10pr: anne.prbi.eval aran.prbi.eval eve.prbi.eval naomi.prbi.eval nina.prbi
 clair10ps: anne.psbi.eval aran.psbi.eval eve.psbi.eval naomi.psbi.eval nina.psbi.eval peter.psbi.eval
 
 %.data.gz:
-	ls ${MINTZ_DATA_PATH}$*/*.xml | childes.pl 2> $*.err | gzip > $@ &
+	ls ${MINTZ_DATA_PATH}$*/*.xml | childes.pl 2> $*.err | gzip > $@
 
 ## SRILM Language Model
 SRILM_PATH=/opt/srilm/bin/i686-m64
@@ -54,10 +54,60 @@ WORDSUB=3
 %.wordsub.mike.gz: %.pairs.gz %.fre.gz
 	sub2mike.py "./" $* 2> $*.wordsub.mike.gz.info | gzip > $@ 
 
+### TRAIN-TEST SPLIT
+SPLIT_RATIO=.30
+
+%.split.fre.gz: %.fre.gz
+	rsplit.py ${SEED} $*.fre.stat  $< ${SPLIT_RATIO} 2> $*.split.fre.stat | gzip > $@  
+
+### Train-Test SPLIT
+
+### FLEXIBLE FRAMES Train-Test
+%.trfle.mike.gz: %.split.fre.gz
+	-rm $*.tefle.mike.gz
+	tomikesparse.py fle $< 2> $@.info | \
+		 split.py  2> $*.tefle.mike | gzip > $@
+	gzip $*.tefle.mike
+
+%.trfle.runmk: %.trfle.mike.gz
+	runmike.py $<.info ${ITER} $*.tefle.mike.gz
+
+### FIXED FRAMES Train-Test
+%.trfre.mike.gz: %.split.fre.gz
+	-rm $*.tefre.mike.gz
+	tomikesparse.py fre $< 2> $@.info | \
+		 split.py  2> $*.tefre.mike | gzip > $@
+	gzip $*.tefre.mike
+
+%.trfre.runmk: %.trfre.mike.gz
+	runmike.py $<.info ${ITER} $*.tefre.mike.gz
+
+### Wordsub Train-Test
+%.trws.mike.gz: %.pairs.gz %.split.fre.gz
+	-rm $*.trws.pairs.gz $*.tews.mike.gz $*.trws.fre.stat
+	ln -s $*.split.fre.stat $*.trws.fre.stat
+	ln -s $*.pairs.gz $*.trws.pairs.gz
+	sub2mike.py "./" $*.trws 2> $*.trws.mike.gz.info | \
+		 split.py  2> $*.tews.mike | gzip > $@
+	gzip $*.tews.mike	
+
+%.trws.runmk: %.trws.mike.gz
+	runmike.py $<.info ${ITER} $*.tews.mike.gz
+
+## ALL-Data Train-Test
+
+split.frame.out: anne.fre.gz aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz peter.fre.gz 
+	splitframe-args.py ${EXP_ITER} ${SPLIT_RATIO} | xargs -n5 -P${NCPU} splitframerun.pl > $@
+
+split.wsub.out: anne.sub.gz aran.sub.gz eve.sub.gz naomi.sub.gz nina.sub.gz peter.sub.gz anne.fre.gz aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz peter.fre.gz
+	splitwordsub-args.pl ${EXP_ITER} ${SPLIT_RATIO} | xargs -n5 -P${NCPU} splitwordsubrun.pl
+
+#	mikeall-args.py ${EXP_ITER} | xargs -n4 -P${NCPU} mikeallrun.pl
+
+
 ### FREQUENT (AXB), FLEXIBLE(AX + XB) and BIGRAM FRAMES (AX and XB)
 FRAME_THR=0
-MINTZ03_OPTIONS=-t ${FRAME_THR} -g -u 
-
+MINTZ03_OPTIONS=-t ${FRAME_THR} -u 
 
 #also equivalent to FLEXIBLE
 %.fre.gz: %.data.gz
@@ -141,25 +191,19 @@ all.%.frame.out: all.%.mike.gz
 all.wordsub.out: anne.sub.gz aran.sub.gz eve.sub.gz naomi.sub.gz nina.sub.gz peter.sub.gz anne.fre.gz aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz peter.fre.gz
 	mikeall-args.py ${EXP_ITER} | xargs -n4 -P${NCPU} mikeallrun.pl
 
-#%.wordsub.mike.gz: %.pairs.gz %.fre.gz
-#	sub2mike.py $* 2> $*.wordsub.mike.gz.info | gzip > $@ 
-
 ## MIKENET Experiments
 
 %.frame.out: %.fre.gz %.prbi.gz %.psbi.gz
 	frame-args.py $* ${EXP_ITER} | xargs -n5 -P1 framerun.pl  > $@
 
 ### Wordsub experiments
-##%.wordsub.mike.gz: %.pairs.gz %.fre.gz
-##	sub2mike.py $* 2> $*.wordsub.mike.gz.info | gzip > $@ 
-
 %.wordsub.out: %.sub.gz %.fre.gz %.pairs.gz
 	mikerun-args.py $*.wordsub ${EXP_ITER} | xargs -n6 -P${NCPU} mikerun.pl  > $@
 
 %.plot: %.out
 	cat $< | plotdata.pl 2=x 3=y > $@
 
-.PRECIOUS: %.fre.gz %.prbi.gz %.psbi.gz %.word.gz %.pos.gz %.gold.gz %.data.gz %.fle.nn %.psbi.nn %.prbi.nn %.fre.nn %.psbi.mike.gz %.prbi.mike.gz %.apsbi.mike.gz %.aprbi.mike.gz %.fre.mike.gz %.fle.mike.gz %.runmk %.sub.gz %.wordsub.mike.gz %.pairs.gz %.wordsub.out
+.PRECIOUS: %.fre.gz %.prbi.gz %.psbi.gz %.word.gz %.pos.gz %.gold.gz %.data.gz %.fle.nn %.psbi.nn %.prbi.nn %.fre.nn %.psbi.mike.gz %.prbi.mike.gz %.apsbi.mike.gz %.aprbi.mike.gz %.fre.mike.gz %.fle.mike.gz %.runmk %.sub.gz %.wordsub.mike.gz %.pairs.gz %.wordsub.out %.trws.fre.stat %.trws.mike.gz %.split.fre.stat %.trfle.mike.gz %.trfre.mike.gz
 
 clean:
 	-rm *.fre.* *.prbi.* *.psbi.*

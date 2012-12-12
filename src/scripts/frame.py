@@ -59,7 +59,7 @@ class frame:
                         sen = len(s) if send >= len(s) else send
                         print >> sys.stderr, si, i - sbg,tt," ".join(s[sbg:sen])
                         s[i] = trg
-                    
+                        print s[i],tt,s[i-1]+":"+s[i+1]
             else:
                  continue
         if (self.debug == 1): print >> sys.stderr, "## Frequent-Frames: {0}".format(len(self.frames))
