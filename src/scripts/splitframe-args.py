@@ -4,7 +4,8 @@ import sys
 import re
 
 seed = 1
-frames = ["fle", "fre"]
+#frames = ["fle", "fre"]
+frames = ["ps", "pr"]
 repeat = 10
 it = sys.argv[1]
 ratio = sys.argv[2]

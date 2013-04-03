@@ -102,7 +102,18 @@ split.frame.out: anne.fre.gz aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz pet
 split.wsub.out: anne.sub.gz aran.sub.gz eve.sub.gz naomi.sub.gz nina.sub.gz peter.sub.gz anne.fre.gz aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz peter.fre.gz
 	splitwordsub-args.pl ${EXP_ITER} ${SPLIT_RATIO} | xargs -n5 -P${NCPU} splitwordsubrun.pl > $@
 
-#	mikeall-args.py ${EXP_ITER} | xargs -n4 -P${NCPU} mikeallrun.pl
+split.frame.plot: split.frame.out
+	for label in anne aran eve naomi nina peter; do\
+		echo "$$label scores" >> $@; \
+		cat $< | plotdata.pl 2=$$label 3=x 4=y >> $@ ;\
+	done
+
+split.wsub.plot: split.wsub.out
+	for label in anne aran eve naomi nina peter; do\
+		echo "$$label scores" >> $@; \
+		cat $< | plotdata.pl 3=$$label 2=x 4=y >> $@ ;\
+	done
+
 
 
 ### FREQUENT (AXB), FLEXIBLE(AX + XB) and BIGRAM FRAMES (AX and XB)
@@ -183,7 +194,7 @@ ITER=10000
 ## EXPERIMENTS
 
 EXP_ITER=10000
-NCPU=8
+NCPU=10
 ## ALL-Data Experiments
 all.%.frame.out: all.%.mike.gz
 	allframe-args.py $< ${EXP_ITER} | xargs -n4 -P${NCPU} allframerun.pl > $@

@@ -11,7 +11,7 @@ my $iter = shift or die $usage;
 my $ratio = shift or die $usage;
 my @data = ("anne","aran","eve","naomi","nina","peter");
 my $tmp = tempdir("SPLIT-XXXX", CLEANUP => 1);
-#print STDERR "$runid $seed $data $frame $tmp $iter\n";
+#print STDERR "$runid $seed $frame $tmp $iter\n";
 my $mike_out = "$tmp/mike.out";
 my $mike_err = "$tmp/mike.err";
 my $tm = time;
@@ -56,6 +56,6 @@ my @res = split(' ', `cat $mike_out`);
 $tm = time - $tm;
 
 for(my $i = 0 ; $i < @data; $i++){
-     print join("\t", $runid, $seed, $data[$i], $res[$i], $tm, $iter, $minfo[2], $minfo[3])."\n";
+     print join("\t", $runid, $seed, $data[$i], $frame, $res[$i], $tm, $iter, $minfo[2], $minfo[3])."\n";
 }
-die
+
