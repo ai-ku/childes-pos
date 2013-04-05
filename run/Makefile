@@ -63,8 +63,8 @@ SPLIT_RATIO=.30
 ### Train-Test SPLIT
 
 ### FLEXIBLE FRAMES Train-Test
-%.trfle.mike.gz: %.split.fre.gz
-	-rm $*.tefle.mike.gz
+%.trfle.mike.gz: %.split.fre.rm
+	-gz $*.tefle.mike.gz
 	tomikesparse.py fle $< 2> $@.info | \
 		 split.py  2> $*.tefle.mike | gzip > $@
 	gzip $*.tefle.mike
@@ -94,12 +94,11 @@ SPLIT_RATIO=.30
 %.trws.runmk: %.trws.mike.gz
 	runmike.py $<.info ${ITER} $*.tews.mike.gz
 
-## ALL-Data Train-Test
-
+## ALL-Data Split Train-Test
 split.frame.out: anne.fre.gz aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz peter.fre.gz 
 	splitframe-args.py ${EXP_ITER} ${SPLIT_RATIO} | xargs -n5 -P${NCPU} splitframerun.pl > $@
 
-split.wsub.out: anne.sub.gz aran.sub.gz eve.sub.gz naomi.sub.gz nina.sub.gz peter.sub.gz anne.fre.gz aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz peter.fre.gz
+split.wsub.out: anne.sub.gz aran.sub.gz eve.sub.gz naomi.sub.gz nina.sub.gz peter.sub.gz anne.fre.gz	 aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz peter.fre.gz
 	splitwordsub-args.pl ${EXP_ITER} ${SPLIT_RATIO} | xargs -n5 -P${NCPU} splitwordsubrun.pl > $@
 
 split.frame.plot: split.frame.out
