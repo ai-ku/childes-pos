@@ -1,0 +1,51 @@
+Tue Dec 18 19:20:57 EET 2012
+
+Introduction or comparison section:
+
+Q What is our thing?
+Q How do we explain the acquisition better than others?
+Q What are our advantages?
+
+Most of the related work focused on:
+
+     * Frame 
+       - Related work defines frames aX, Xb, aXb or aX + Xb
+       Problems:
+	- Not well defined?
+	- Not explains the usage of different frames with similar words[!!!!]
+	- Words in same category with different frames can not be matched
+
+     * Accuracy 
+       - aX + Xb > aX > Xb > aXb and it is around 65% with (70/30
+         training split)
+       - Our accuracy is around +75%
+
+     * Coverage
+       - aXb suffers from coverage due to the sparsity, aX, Xb and aX
+         + Xb has better coverage due to the less sparsity.
+       - We do not suffer from the coverage problems even when we use
+         4 grams EMPHASIZE THIS
+	 - They have sparsity
+
+st clair neyi vurgulamis: Accuracy ve coverage problemini
+
+Distributional isler nasil yapilmis iyice bir anlatmak lazim 2-3 paper
+var okumak sart
+
+
+What is tractable and what is intractable? Bunun icin kendini savunmaya
+hazir ol LM konusunda buradan yardirabilirler? Redington et al(98)
+Caartwright ve Brent(97) isinin computationally intensive.
+
+
+Fixed frames are only available at the later stages of development
+(Gomez & Maye, 2005). 
+==> Bu sorun olabilir cocuklarin language model olusturdugunu gosterebilir miyiz?
+
+Tue Dec 18 19:21:06 EET 2012
+
+Bizim yaptigimiz is non-adjacent kelimeler ile ilgili degil.  Biz
+aslinda P(x|a) P(b|x) olasiliklarini kullanarak flexed frame benzeri
+bir islem yapiyoruz. Asil farkimiz frame yerine substitute kullanmamiz.
+
+Substitute fikri mosaic ve Aylin Hocanin yolladigi paperlarda var.

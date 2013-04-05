@@ -1,0 +1,79 @@
+\section{Substitute Words}
+\label{sec:substitute_vectors}
+
+In this study, we predict the syntactic category of a word in a given
+context based on its most likely substitute words.  Note that the
+substitute word distribution is a function of the context only and is
+indifferent to the target word.
+
+\cite{20674613} demonstrated that learning left and right bigrams
+together was much more effective than learning them individually.
+Thus it is best to use both the left and the right context when
+estimating the probabilities for potential lexical substitutes.  For
+example, in \emph{``He lived in San Francisco suburbs.''}, the token
+\emph{San} would be difficult to guess from the left context but it is
+almost certain looking at the right context.  We define $c_w$ as the
+$2n-1$ word window centered around the target word position: $w_{-n+1}
+\ldots w_0 \ldots w_{n-1}$.  The probability of a substitute word $w$
+in a given context $c_w$ can be estimated as:
+\begin{eqnarray}
+  \label{eq:lm1}P(w_0 = w | c_w) & \propto & P(w_{-n+1}\ldots w_0\ldots w_{n-1})\\
+  \label{eq:lm2}& = & P(w_{-n+1})P(w_{-n+2}|w_{-n+1})\ldots P(w_{n-1}|w_{-n+1}^{n-2})\\
+  \label{eq:lm3}& \approx & P(w_0| w_{-n+1}^{-1})P(w_{1}|w_{-n+2}^0)\ldots P(w_{n-1}|w_0^{n-2})
+\end{eqnarray}
+where $w_i^j$ represents the sequence of words $w_i w_{i+1} \ldots
+w_{j}$.  In Equation \ref{eq:lm1}, $P(w|c_w)$ is proportional to
+$P(w_{-n+1}\ldots w_0 \ldots w_{n+1})$ because the words of the
+context are fixed.  Terms without $w_0$ are identical for each
+substitute in Equation \ref{eq:lm2} therefore they have been dropped
+in Equation \ref{eq:lm3}.  Finally, because of the Markov property of
+n-gram language model, only the closest $n-1$ words are used in the
+experiments.
+
+Near the sentence boundaries the appropriate terms were truncated in
+Equation \ref{eq:lm3}.  Specifically, at the beginning of the sentence
+shorter n-gram contexts were used and at the end of the sentence terms
+beyond the end-of-sentence utterance were dropped.  
+
+%% Rest of this section details the choice of the data set, the
+%% vocabulary and the estimation of substitute probabilities.
+%% For computational efficiency only the top 100 substitutes and their
+%% unnormalized probabilities were computed for each of the 1,173,766
+%% positions in the test set\footnote{The substitutes with unnormalized
+%%   log probabilities can be downloaded from
+%%   \mbox{\url{http://goo.gl/jzKH0}}.  For a description of the {\sc
+%%     fastsubs} algorithm used to generate the substitutes please see
+%%   \mbox{\url{http://arxiv.org/abs/1205.5407v1}}.  {\sc fastsubs}
+%%   accomplishes this task in about 5 hours, a naive algorithm that
+%%   looks at the whole vocabulary would take more than 6 days on a
+%%   typical 2012 workstation.}.  The probability vectors for each
+%% position were normalized to add up to 1.0 giving us the final
+%% substitute vectors used in the rest of this study.
+
+% what is the LM training data
+%Train => 5181717 126019973 690121813
+
+To compute substitute probabilities we trained a language model using
+approximately 6.8 million tokens of child-directed speech data from
+the CHILDES corpus \citep*{macwhinney2000childes} (excluding sections of
+[test-set])
+% how is the language model trained
+We used SRILM \citep*{Stolcke2002} to build a 4-gram language model with
+Kneser-Ney discounting.
+% what is the vocabulary
+Words that were observed less than 2 times in the LM training data
+were replaced by \textsc{unk} tags, which gave us a vocabulary size of
+21734.
+% what is the test data
+[What is the test data? Where should we put this?]
+%% The first 24,020 tokens of the Penn Treebank Wall Street Journal
+%% Section 00 (PTB24K) was used as the test corpus to be induced.  The corpus
+%% size was kept small in order to efficiently compute full distance
+%% matrices.  Substitution probabilities for 12,672 vocabulary words were
+%% computed at each of the 24,020 positions.
+% perplexity
+[perplexity]
+%% The perplexity of the 4-gram language model on the test corpus was
+%% 55.4 which is quite low due to using a small 
+%% vocabulary and in-domain data.
+% what is the tag set

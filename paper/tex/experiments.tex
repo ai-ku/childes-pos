@@ -1,0 +1,75 @@
+\begin{enumerate}
+\item We need to clarify the tag set that is used during the
+  experiments. May be it is better to give the whole mapping as an
+  Appendix section.
+\item Data statistics (it is common to all experiments)
+\end{enumerate}
+\section{Experiment 1}
+Original Idea
+\subsection{Input Corpora}
+\subsection{Method}
+\subsection{Results}
+
+\begin{table}[ht]
+\small
+\centering
+\caption{The 70\% of the sentences in the union of 6 child corpora are
+  used as the training set while the remaining 30\% sentences of each
+  corpus are used as the test set.  Average classification accuracy
+  (10 runs) of the supervised connectionist model for the standard
+  labelling on each child corpus after 10K words of training are
+  summarized and the corresponding standard errors are reported in
+  parentheses.}
+\begin{tabular}{|l|l@{ }|l@{ }|l@{ }|l@{ }|l@{ }|l@{ }|l@{ }|}
+  \hline
+  & \multicolumn{4}{c|}{Frames} & \multicolumn{2}{c|}{\specialcell{Number of \\ Substitute Words}}\\
+  \hline
+  Child & aX & Xb & aXb & aX + Xb & 1 & 16\\
+  \hline
+  Anne & .5317 (.0374)  & .5065 (.0214) & .3788 (.0279) & .6190 (.0253) & .6221 (.0333) & .7829 (.0059) \\
+  Aran & .5098 (.0344) & .4779 (.0171) & .5098 (.0289) & .5863 (.0227) & .5916 (.0371) & .7597 (.007) \\
+  Eve & .5408 (.036)  & .4905 (.0183) & .5408 (.0186) & .6125 (.0229) & .6189 (.0287) & .7862 (.0058) \\
+  Naomi & .5250 (.0269) & .4922 (.0205) & .3860 (.028) & .6019 (.0218) & .6021 (.0322) & .7672 (.0071) \\
+  Nina & .5412 (.0304) & .5032 (.0213) & .3950 (.0223) & .6308 (.0277) & .6474 (.0331) & .8089 (.0089) \\
+  Peter & .5359 (.036) & .5092 (.0216) & .5359 (.0188) & .6250 (.0252) & .6315 (.0263) & .7974 (.0082) \\
+  \hline
+\end{tabular}
+\end{table}
+\begin{table}[h]
+\label{tab:myfirsttable}
+\end{table}
+
+\section{Experiment 2}
+Number of subsitutes.  We need to show 16 is better than 1 but 16+ is same
+\subsection{Input Corpora}
+\subsection{Method}
+\subsection{Results}
+
+\section{Experiment 3}
+N-gram order 2,3
+
+\section{Experiment 4}
+What happens when we change the data size?\\
+What happens when we change the vocabulary threshold?\\
+
+\subsection{Input Corpora}
+\subsection{Method}
+\subsection{Results}
+
+\section{Experiment 5}
+Left/rigth context substitute
+\subsection{Input Corpora}
+\subsection{Method}
+\subsection{Results}
+
+\section{Experiment 6}
+Other languages that we have in CHILDES
+
+\section{Experiment 7}
+What happens if some of the words are given (semi-supervised setting)
+
+\subsection{Input Corpora}
+\subsection{Method}
+\subsection{Results}
+
+
