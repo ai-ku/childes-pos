@@ -52,7 +52,7 @@ class frame:
                         self.frames[pair][(s[i],tt)] += 1
                         self.frames[pair]["_A_"] += 1
                     ## Print sentence and word index of each sample                    
-                        sbg,send = i - 4 + 1, i + 4
+                        sbg,send = i - self.ngram + 1, i + self.ngram
                         sbg = 0 if sbg < 0 else sbg
                     ##  print >> sys.stderr,"stc:"," ".join(s)
                         trg, s[i] = s[i], "X"
@@ -224,6 +224,7 @@ if __name__ == '__main__':
     parser = OptionParser(usage)
     parser.add_option("-f", "--frame_type", action="store", default= 'fre',dest="frame", help="frame types:fre, prbi or psbi. [default: %default]")
     parser.add_option("-t", type="int", dest="thr", default= '45', help="Calculates the top thr frames. [default: %default]")
+    parser.add_option("-n", type="int", dest="ngram", default= '4', help="Statics file ngram order. [default: %default]")
     parser.add_option("-u", action="store_true", default=False, dest="ufilter", help="filter utterance boundaries (ex:P_*) [defaut: %default]")
     parser.add_option("-m", action="store_true", dest="mintz", help="Clear data according to Mintz(2003) ")
     parser.add_option("-p", action="store_true", default=False, dest="pFrames", help="Print top t frames [default: %default]")

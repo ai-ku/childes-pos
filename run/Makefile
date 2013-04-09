@@ -17,7 +17,7 @@ clair10pr: anne.prbi.eval aran.prbi.eval eve.prbi.eval naomi.prbi.eval nina.prbi
 clair10ps: anne.psbi.eval aran.psbi.eval eve.psbi.eval naomi.psbi.eval nina.psbi.eval peter.psbi.eval
 
 %.data.gz:
-	ls ${MINTZ_DATA_PATH}$*/*.xml | childes.pl 2> $*.err | gzip > $@
+	ls ${MINTZ_DATA_PATH}$*/*.xml | childes.pl 2> $*.err | gzip > $@ &
 
 ## SRILM Language Model
 SRILM_PATH=/opt/srilm/bin/i686-m64
@@ -112,8 +112,6 @@ split.wsub.plot: split.wsub.out
 		echo "$$label scores" >> $@; \
 		cat $< | plotdata.pl 3=$$label 2=x 4=y >> $@ ;\
 	done
-
-
 
 ### FREQUENT (AXB), FLEXIBLE(AX + XB) and BIGRAM FRAMES (AX and XB)
 FRAME_THR=0
