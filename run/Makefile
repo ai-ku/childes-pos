@@ -42,7 +42,7 @@ FS_PSUB=1.0 # or this much cumulative probability
 FS_OPTIONS=-n ${FS_NSUB} -p ${FS_PSUB}
 
 %.sub.gz: %.fre.gz train.lm.gz  ## FS_NSUB=100 FS_PSUB=1: time=4h47m, wc=1222974 245817774 2350067125
-	cat $*.fre.stat | fastsubs ${FS_OPTIONS} train.lm.gz | grep -P '^X' | gzip > $@
+	cat $*.fre.stat | perl -lane 'print "@F[3..$$#F]" unless /^\#/' | fastsubs ${FS_OPTIONS} train.lm.gz | grep -P '^X' | gzip > $@
 
 ### WORDSUB options:
 WORDSUB=3
@@ -211,7 +211,7 @@ all.wordsub.out: anne.sub.gz aran.sub.gz eve.sub.gz naomi.sub.gz nina.sub.gz pet
 %.plot: %.out
 	cat $< | plotdata.pl 2=x 3=y > $@
 
-.PRECIOUS: %.fre.gz %.prbi.gz %.psbi.gz %.word.gz %.pos.gz %.gold.gz %.data.gz %.fle.nn %.psbi.nn %.prbi.nn %.fre.nn %.psbi.mike.gz %.prbi.mike.gz %.apsbi.mike.gz %.aprbi.mike.gz %.fre.mike.gz %.fle.mike.gz %.runmk %.sub.gz %.wordsub.mike.gz %.pairs.gz %.wordsub.out %.trws.fre.stat %.trws.mike.gz %.split.fre.stat %.trfle.mike.gz %.trfre.mike.gz
+.PRECIOUS: train.lm.gz train.vocab.gz %.fre.gz %.prbi.gz %.psbi.gz %.word.gz %.pos.gz %.gold.gz %.data.gz %.fle.nn %.psbi.nn %.prbi.nn %.fre.nn %.psbi.mike.gz %.prbi.mike.gz %.apsbi.mike.gz %.aprbi.mike.gz %.fre.mike.gz %.fle.mike.gz %.runmk %.sub.gz %.wordsub.mike.gz %.pairs.gz %.wordsub.out %.trws.fre.stat %.trws.mike.gz %.split.fre.stat %.trfle.mike.gz %.trfre.mike.gz
 
 clean:
 	-rm *.fre.* *.prbi.* *.psbi.*
