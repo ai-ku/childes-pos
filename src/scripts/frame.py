@@ -243,6 +243,8 @@ if __name__ == '__main__':
         ff.filterTokenTags = options.filterTags
     if options.frame != None:
         ff.frameType = options.frame
+    if options.frame != None:
+        ff.ngram = options.ngram
     ff.read()
     ff.info()
     ff.get_frames()

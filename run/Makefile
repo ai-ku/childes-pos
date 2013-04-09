@@ -119,7 +119,7 @@ MINTZ03_OPTIONS=-t ${FRAME_THR} -u
 
 #also equivalent to FLEXIBLE
 %.fre.gz: %.data.gz
-	zcat $< | frame.py  ${MINTZ03_OPTIONS} 2> $*.fre.stat |gzip > $@ 
+	zcat $< | frame.py  -n ${LM_NGRAM} ${MINTZ03_OPTIONS} 2> $*.fre.stat |gzip > $@ 
 
 %.prbi.gz: %.data.gz
 	zcat $< | frame.py  -f prbi ${MINTZ03_OPTIONS} 2> $*.prbi.stat |gzip > $@ 
