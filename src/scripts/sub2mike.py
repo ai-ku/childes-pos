@@ -12,10 +12,14 @@ subH = dd(int)
 instance = 0
 partition = []
 path = sys.argv[1]
+splitpos = 0
 for fi in sys.argv[2:]:
-    for line in open(fi + ".fre.stat"): ## place of this file is fixes
+    for line in open(fi + ".fre.stat"): ## place of this file is fixed
         l = line.strip().split()
         if l[0] == "##": continue
+        if l[0] == '-1':
+            splitpos = len(ans)
+            continue
         if l[2] not in ansH:
             ansH[l[2]] = len(ansH)
         ans.append(l[2])
@@ -32,11 +36,14 @@ for fi in sys.argv[2:]:
 if len(ans) != len(sub):
     sys.exit("Error in shift subs:{0} ans:{1}\n".format(len(sub), len(ans)))
 
-print >>sys.stderr, ">>>", len(ans), len(subH), len(ansH), " ".join(partition)
+print >>sys.stderr, ">>>", len(ans), len(subH), len(ansH), " ".join(partition), splitpos
 clab = ["0"] * len(ansH)
 ii = 0
 for (s,a) in zip(sub,ans):
-    ii += 1
+    ii += 1 
+    if ii == splitpos:
+        print "-1"
+        continue
     ivec = [0] * len(subH)
     clab[ansH[a]] = "1"
     print "CLAMP Input ALL FULL ",

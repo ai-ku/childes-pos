@@ -7,6 +7,7 @@ bin:
 
 MINTZ_DATA_PATH=../data/childes/mintz03xml/
 TRAIN_DATA_PATH=../data/childes/data-xml
+NCPU=40
 
 SEED=0
 all: mintz03 clair10pr clair10ps
@@ -45,7 +46,7 @@ FS_OPTIONS=-n ${FS_NSUB} -p ${FS_PSUB}
 	cat $*.fre.stat | perl -lane 'print "@F[3..$$#F]" unless /^\#/' | fastsubs ${FS_OPTIONS} train.lm.gz | grep -P '^X' | gzip > $@
 
 ### WORDSUB options:
-WORDSUB=3
+WORDSUB=16
 
 %.pairs.gz: %.sub.gz	## WORDSUB=12: time=6m33s wc=14085192 28170384 151744889
 	zcat $< | awk '{for (i=0;i< ${WORDSUB};i++) print $$0}' |\
@@ -63,8 +64,8 @@ SPLIT_RATIO=.30
 ### Train-Test SPLIT
 
 ### FLEXIBLE FRAMES Train-Test
-%.trfle.mike.gz: %.split.fre.rm
-	-gz $*.tefle.mike.gz
+%.trfle.mike.gz: %.split.fre.gz
+	-rm $*.tefle.mike.gz
 	tomikesparse.py fle $< 2> $@.info | \
 		 split.py  2> $*.tefle.mike | gzip > $@
 	gzip $*.tefle.mike
@@ -191,7 +192,7 @@ ITER=10000
 ## EXPERIMENTS
 
 EXP_ITER=10000
-NCPU=10
+
 ## ALL-Data Experiments
 all.%.frame.out: all.%.mike.gz
 	allframe-args.py $< ${EXP_ITER} | xargs -n4 -P${NCPU} allframerun.pl > $@
