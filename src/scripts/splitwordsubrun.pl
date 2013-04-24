@@ -8,8 +8,9 @@ my $seed = shift or die $usage;
 my $nsub = shift or die $usage;
 my $iter = shift or die $usage;
 my $ratio = shift or die $usage;
-my @data = ("anne","aran","eve","naomi","nina","peter");
-my $tmp = tempdir("mikerun-XXXX", CLEANUP => 1);
+#my @data = ("anne","aran","eve","naomi","nina","peter");
+my @data = ("peter");
+my $tmp = tempdir("mikerun-XXXX", CLEANUP => 0);
 my $mike_out = "$tmp/mike.out";
 my $mike_err = "$tmp/mike.err";
 my $tm = time;
@@ -48,14 +49,12 @@ system($catte);
 system("echo -1 |gzip > $tmp/foo.gz");
 system("zcat $tmp/allte.gz $tmp/foo.gz $tmp/alltr.gz | gzip > $tmp/all.gz");
 
-my $tomike = "sub2mikeSimple.py $tmp/all.gz 2> $tmp/all.info | split.py 2> $tmp/allte | gzip > $tmp/alltr.gz";
-#print STDERR "$tomike\n";
-#print STDERR "tomike:$tomike\n";
+my $tomike = "sub2mikeSimple.py $tmp/all.gz 2> $tmp/all.info | split.py 2> $tmp/mikeallte | gzip > $tmp/mikealltr.gz";
 system($tomike);
 my @minfo = split(' ', `cat $tmp/all.info`);
 my $datasizes = join(" -d ", @tesizes);
 
-my $runmike = "mike_childes -v -f $tmp/alltr.gz -i $minfo[2] -o $minfo[3] -seed $seed -d $datasizes -iter $iter -t $tmp/allte > $mike_out 2> $mike_err";
+my $runmike = "mike_childes -v -f $tmp/mikealltr.gz -i $minfo[2] -o $minfo[3] -seed $seed -d $datasizes -iter $iter -t $tmp/mikeallte > $mike_out 2> $mike_err";
 system($runmike);
 my @res = split(' ', `cat $mike_out`);
 $tm = time - $tm;

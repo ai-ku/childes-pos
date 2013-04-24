@@ -20,9 +20,9 @@ for fi in sys.argv[2:]:
         if l[0] == '-1':
             splitpos = len(ans)
             continue
-        if l[2] not in ansH:
-            ansH[l[2]] = len(ansH)
-        ans.append(l[2])
+        if l[3] not in ansH:
+            ansH[l[3]] = len(ansH)
+        ans.append(l[3])
     for l in gzip.open(path + fi + ".pairs.gz"): ## this can be changed
         instance += 1
         ll = l.strip().split()
@@ -40,9 +40,9 @@ print >>sys.stderr, ">>>", len(ans), len(subH), len(ansH), " ".join(partition), 
 clab = ["0"] * len(ansH)
 ii = 0
 for (s,a) in zip(sub,ans):
-    ii += 1 
     if ii == splitpos:
         print "-1"
+        ii += 1 
         continue
     ivec = [0] * len(subH)
     clab[ansH[a]] = "1"
@@ -52,3 +52,4 @@ for (s,a) in zip(sub,ans):
     print " ".join(map(str, ivec))
     print "TARGET Output 2 FULL " + " ".join(clab) + "\n;"
     clab[ansH[a]] = "0"
+    ii += 1 

@@ -46,7 +46,7 @@ FS_OPTIONS=-n ${FS_NSUB} -p ${FS_PSUB}
 	cat $*.fre.stat | perl -lane 'print "@F[3..$$#F]" unless /^\#/' | fastsubs ${FS_OPTIONS} train.lm.gz | grep -P '^X' | gzip > $@
 
 ### WORDSUB options:
-WORDSUB=16
+WORDSUB=1
 
 %.pairs.gz: %.sub.gz	## WORDSUB=12: time=6m33s wc=14085192 28170384 151744889
 	zcat $< | awk '{for (i=0;i< ${WORDSUB};i++) print $$0}' |\
@@ -100,7 +100,7 @@ split.frame.out: anne.fre.gz aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz pet
 	splitframe-args.py ${EXP_ITER} ${SPLIT_RATIO} | xargs -n5 -P${NCPU} splitframerun.pl > $@
 
 split.wsub.out: anne.sub.gz aran.sub.gz eve.sub.gz naomi.sub.gz nina.sub.gz peter.sub.gz anne.fre.gz	 aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz peter.fre.gz
-	splitwordsub-args.pl ${EXP_ITER} ${SPLIT_RATIO} | xargs -n5 -P${NCPU} splitwordsubrun.pl > $@
+	splitwordsub-args.py ${EXP_ITER} ${SPLIT_RATIO} | xargs -n5 -P${NCPU} splitwordsubrun.pl > $@
 
 split.frame.plot: split.frame.out
 	for label in anne aran eve naomi nina peter; do\
@@ -185,7 +185,7 @@ all.ps.mike.gz: anne.fre.gz aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz pete
 
 ### Individual Run
 
-ITER=10000
+ITER=100000
 %.runmk: %.mike.gz
 	runmike.py $<.info ${ITER}
 

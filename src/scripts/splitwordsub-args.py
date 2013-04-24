@@ -13,4 +13,4 @@ for (i,s) in enumerate(subsCount,start=1):
     for r in range(repeat):
         print i,seed,s,iters,ratio
         seed += 1
-
+    break
