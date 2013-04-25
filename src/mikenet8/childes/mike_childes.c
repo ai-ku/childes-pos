@@ -200,7 +200,8 @@ int main(int argc,const char *argv[])
      count=0;
      /* loop for ITER number of times */
      /* Reset the seed to get same training set*/
-     mikenet_set_seed(seed);
+     fprintf(stderr, "Training: %s size:%d\n", fileName, examples->numExamples);     
+     mikenet_set_seed(seed);     
      for(i=0;i<ITER;i++)
      {
           /* get j'th example from exampleset */
@@ -231,7 +232,6 @@ int main(int argc,const char *argv[])
                {
                     break;
                }
-
                /* zero error; start counting again */
                error=0.0;
           }
@@ -244,7 +244,7 @@ int main(int argc,const char *argv[])
           for(i=0;i<examples->numExamples;i++)
           {
                if (i % 1000 == 0) fprintf(stderr,".");
-               if (i == dataCountArray[dataCount]){
+               if (dataCount && i == dataCountArray[dataCount]){
                     if (dataCount ==0){
                          printf("%f\t", correct / dataCountArray[dataCount]);
                     }else{
@@ -279,7 +279,7 @@ int main(int argc,const char *argv[])
                     fprintf(stderr,"Testing:%s size:%d\n",testFileArray[tt],test->numExamples);
                correct = 0;
                for(i=0;i<test->numExamples;i++){
-                    if (i == dataCountArray[dc]){
+                    if (dataCount && i == dataCountArray[dc]){
                          if (dc ==0)
                               printf("%f\t", correct / dataCountArray[dc]);
                          else
@@ -303,7 +303,7 @@ int main(int argc,const char *argv[])
                          correct += 1;
                }
                if (dataCount == 0)
-                    printf("%f\t", correct / test->numExamples);
+                    printf("%f %d %d\t", correct / test->numExamples, (int)correct, test->numExamples);
                else
                     printf("%f\n", correct / (dataCountArray[dc] - dataCountArray[dc - 1]));
           }

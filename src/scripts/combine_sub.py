@@ -13,10 +13,10 @@ data = []
 sdata = []
 
 for fi in gzip.open(subs):
-    fi = fi.strip().split()
-    sdata.append(" ".join(fi[1:]))
+    fi = fi.strip()
+    sdata.append(fi)
 
-for fi in open(tags):
+for (ii,fi) in enumerate(open(tags)):
     fi = fi.strip().split()
     if fi[0] == "-1":
         data.append(fi[0])
@@ -25,7 +25,6 @@ for fi in open(tags):
         sid = int(mm.group(1))
 #        print >> sys.stderr, fi[3], mm.group(1), sdata[sid]
         data.append(fi[3] + " " + sdata[sid])
-
 
 
 if len(sdata) != len(data) - 1:

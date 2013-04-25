@@ -20,11 +20,11 @@ if m:
             l = line.strip().split()
             if l[0] == ">>>":
                 name = m.group(1) + "." + m.group(2)
-                datasize = l[4]
+                datasize = l[1]
                 cmd = "mike_childes -f " + name + ".mike.gz" + \
                     " -seed " + str(seed) + \
                     " -i " + l[2] + " -o " + l[3] + \
-                    " -v -iter "+ iters+ testData+ " -d " + datasize +" >" + name + ".runmk" + \
+                    " -v -iter "+ iters+ testData+" >" + name + ".runmk" + \
                     " 2>" + name + ".runmk.err &"
                 print "cmd:",cmd
                 os.system(cmd)

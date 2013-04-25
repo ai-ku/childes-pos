@@ -8,12 +8,15 @@ from collections import defaultdict as dd
 data = []
 ansH = dd(int)
 subH = dd(int)
-
 path = sys.argv[1]
-for line in gzip.open(sys.argv[1]): ## place of this file is fixes
+cons = 0
+split = 0
+for (ii,line) in enumerate(gzip.open(sys.argv[1])): ## place of this file is fixes
         l = line.strip().split()
         if l[0] == "-1": 
             data.append(l[0])
+            cons -= 1
+            split = ii
             continue
         if l[0] not in ansH:
             ansH[l[0]] = len(ansH)
@@ -25,7 +28,7 @@ for line in gzip.open(sys.argv[1]): ## place of this file is fixes
             arr.append(subH[s])
         data.append(arr)
 
-print >>sys.stderr, ">>>", len(data), len(subH), len(ansH)
+print >>sys.stderr, ">>>", len(data) + cons, len(subH), len(ansH), split
 clab = ["0"] * len(ansH)
 
 for d in data:

@@ -2,15 +2,16 @@
 use strict;
 use File::Temp qw/tempdir/;
 
-my $usage = q{Usage: mikerun.pl runid seed nsub data-name frame train_iterations};
+my $usage = q{Usage: splitwordsubrun.pl  runid seed nsub iters ratio data-name};
 my $runid = shift or die $usage;
 my $seed = shift or die $usage;
 my $nsub = shift or die $usage;
 my $iter = shift or die $usage;
 my $ratio = shift or die $usage;
-#my @data = ("anne","aran","eve","naomi","nina","peter");
-my @data = ("peter");
-my $tmp = tempdir("mikerun-XXXX", CLEANUP => 0);
+my $dataName = shift or die $usage;
+my @data = ("anne","aran","eve","naomi","nina","peter");
+@data = ($dataName) if ($dataName ne "all");
+my $tmp = tempdir("WSUB-XXXX", CLEANUP => 1);
 my $mike_out = "$tmp/mike.out";
 my $mike_err = "$tmp/mike.err";
 my $tm = time;
@@ -24,7 +25,7 @@ foreach my $dd (@data){
     system($trsplit);
     my $subs = $dd.".sub.gz";
     my $wordsub_out = "$tmp/$dd.pairs.gz";
-    my $wordsub = "awk '{for (i=0;i< $nsub;i++) print \$0}' |\	wordsub -s $seed | perl -lane '\@a = split; \$c++;\$subs .= \$a[1] . \" \";if (\$c == $nsub){print \"\$a[0] \$subs\"; \$c =0; \$subs = \"\";}' |gzip > $wordsub_out";
+    my $wordsub = "awk '{for (i=0;i< $nsub;i++) print \$0}' |\	wordsub -s $seed | perl -lane '\@a = split; \$c++;\$subs .= \$a[1] . \" \";if (\$c == $nsub){print \"\$subs\"; \$c =0; \$subs = \"\";}' |gzip > $wordsub_out";
     my $cmd = "zcat $subs | " . $wordsub;
 #    print STDERR "$cmd\n";
     system($cmd);
@@ -61,4 +62,3 @@ $tm = time - $tm;
 for(my $i = 0 ; $i < @data; $i++){
     print join("\t", $runid, $seed, $nsub, $data[$i], $res[$i], $tm, $iter, $minfo[2], $minfo[3])."\n";
 }
-

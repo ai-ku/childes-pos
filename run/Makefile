@@ -7,7 +7,7 @@ bin:
 
 MINTZ_DATA_PATH=../data/childes/mintz03xml/
 TRAIN_DATA_PATH=../data/childes/data-xml
-NCPU=40
+NCPU=10
 
 SEED=0
 all: mintz03 clair10pr clair10ps
@@ -50,7 +50,7 @@ WORDSUB=1
 
 %.pairs.gz: %.sub.gz	## WORDSUB=12: time=6m33s wc=14085192 28170384 151744889
 	zcat $< | awk '{for (i=0;i< ${WORDSUB};i++) print $$0}' |\
-	wordsub -s 0  | perl -lane '@a = split; $$c++; $$subs .= $$a[1] . " ";if ($$c == ${WORDSUB}){print "$$a[0] $$subs"; $$c =0; $$subs = "";}' | gzip > $@
+	wordsub -s 0  | perl -lane '@a = split; $$c++; $$subs .= $$a[1] . " ";if ($$c == ${WORDSUB}){print "$$subs"; $$c =0; $$subs = "";}' | gzip > $@
 
 %.wordsub.mike.gz: %.pairs.gz %.fre.gz
 	sub2mike.py "./" $* 2> $*.wordsub.mike.gz.info | gzip > $@ 
@@ -84,12 +84,15 @@ SPLIT_RATIO=.30
 	runmike.py $<.info ${ITER} $*.tefre.mike.gz
 
 ### Wordsub Train-Test
-%.trws.mike.gz: %.pairs.gz %.split.fre.gz
-	-rm $*.trws.pairs.gz $*.tews.mike.gz $*.trws.fre.stat
-	ln -s $*.split.fre.stat $*.trws.fre.stat
-	ln -s $*.pairs.gz $*.trws.pairs.gz
-	sub2mike.py "./" $*.trws 2> $*.trws.mike.gz.info | \
+%.trws.mike.gz: %.pairs.gz %.split.fre.gz 
+	-rm $*.tews.mike.gz
+	combine_sub.py	$*.split.fre.stat $<	> $*.temp.trws 2> $*.temp.tews
+	echo -1 > $*.trws.foo
+	cat $*.temp.tews $*.trws.foo $*.temp.trws | gzip > $*.trws.all.gz
+	-rm $*.temp.trws $*.trws.foo $*.temp.tews
+	sub2mikeSimple.py $*.trws.all.gz 2> $*.trws.mike.gz.info | \
 		 split.py  2> $*.tews.mike | gzip > $@
+	-rm $*.trws.all.gz
 	gzip $*.tews.mike	
 
 %.trws.runmk: %.trws.mike.gz
@@ -99,8 +102,16 @@ SPLIT_RATIO=.30
 split.frame.out: anne.fre.gz aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz peter.fre.gz 
 	splitframe-args.py ${EXP_ITER} ${SPLIT_RATIO} | xargs -n5 -P${NCPU} splitframerun.pl > $@
 
+### WORDSUB EXPERIMENTS
+
+all.wsub.out: anne.sub.gz aran.sub.gz eve.sub.gz naomi.sub.gz nina.sub.gz peter.sub.gz anne.fre.gz	 aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz peter.fre.gz
+	splitwordsub-args.py ${EXP_ITER} ${SPLIT_RATIO} all | xargs -n6 -P${NCPU} splitwordsubrun.pl > $@
+
+%.wsub.out: %.sub.gz %.fre.gz
+	splitwordsub-args.py ${EXP_ITER} ${SPLIT_RATIO} $* | xargs -n6 -P${NCPU} splitwordsubrun.pl > $@
+
 split.wsub.out: anne.sub.gz aran.sub.gz eve.sub.gz naomi.sub.gz nina.sub.gz peter.sub.gz anne.fre.gz	 aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz peter.fre.gz
-	splitwordsub-args.py ${EXP_ITER} ${SPLIT_RATIO} | xargs -n5 -P${NCPU} splitwordsubrun.pl > $@
+	splitwordsub-args.py ${EXP_ITER} ${SPLIT_RATIO} | xargs -n6 -P${NCPU} splitwordsubrun.pl > $@
 
 split.frame.plot: split.frame.out
 	for label in anne aran eve naomi nina peter; do\
@@ -185,7 +196,7 @@ all.ps.mike.gz: anne.fre.gz aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz pete
 
 ### Individual Run
 
-ITER=100000
+ITER=10000
 %.runmk: %.mike.gz
 	runmike.py $<.info ${ITER}
 
