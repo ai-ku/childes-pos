@@ -2,15 +2,16 @@
 use strict;
 use File::Temp qw/tempdir/;
 
-my $usage = q{Usage: framerun.pl runid seed data_name frame_type train_iteration};
+my $usage = q{Usage: framerun.pl runid seed frame_type train_iteration ratio dataName};
 
 my $runid = shift or die $usage;
 my $seed = shift or die $usage;
 my $frame = shift or die $usage;
 my $iter = shift or die $usage;
 my $ratio = shift or die $usage;
-#my @data = ("anne","aran","eve","naomi","nina","peter");
-my @data = ("peter");
+my $dataName = shift or die $usage;
+my @data = ("anne","aran","eve","naomi","nina","peter");
+@data = ($dataName) if ($dataName ne "all");
 my $tmp = tempdir("FRAME-XXXX", CLEANUP => 1);
 #print STDERR "$runid $seed $frame $tmp $iter\n";
 my $mike_out = "$tmp/mike.out";

@@ -4,15 +4,15 @@ import sys
 import re
 
 seed = 1
-frames = ["fle", "fre"]
-#frames = ["ps", "pr"]
+frames = ["fle", "fre", "ps", "pr"]
 repeat = 10
 it = sys.argv[1]
 ratio = sys.argv[2]
+dataName = sys.argv[3]
 
 for (i,fr) in enumerate(frames,start=1):
     seed = 1
     for r in range(repeat):
-        print i,seed,fr,it,ratio
+        print i,seed,fr,it,ratio,dataName
         seed += 1
 

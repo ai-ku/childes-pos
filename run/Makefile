@@ -99,31 +99,42 @@ SPLIT_RATIO=.30
 	runmike.py $<.info ${ITER} $*.tews.mike.gz
 
 ## ALL-Data Split Train-Test
+
+### FRAME EXPERIMENTS
+
 split.frame.out: anne.fre.gz aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz peter.fre.gz 
-	splitframe-args.py ${EXP_ITER} ${SPLIT_RATIO} | xargs -n5 -P${NCPU} splitframerun.pl > $@
+	splitframe-args.py ${EXP_ITER} ${SPLIT_RATIO} all | xargs -n6 -P${NCPU} splitframerun.pl > $@
 
-### WORDSUB EXPERIMENTS
-
-all.wsub.out: anne.sub.gz aran.sub.gz eve.sub.gz naomi.sub.gz nina.sub.gz peter.sub.gz anne.fre.gz	 aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz peter.fre.gz
-	splitwordsub-args.py ${EXP_ITER} ${SPLIT_RATIO} all | xargs -n6 -P${NCPU} splitwordsubrun.pl > $@
-
-%.wsub.out: %.sub.gz %.fre.gz
-	splitwordsub-args.py ${EXP_ITER} ${SPLIT_RATIO} $* | xargs -n6 -P${NCPU} splitwordsubrun.pl > $@
-
-split.wsub.out: anne.sub.gz aran.sub.gz eve.sub.gz naomi.sub.gz nina.sub.gz peter.sub.gz anne.fre.gz	 aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz peter.fre.gz
-	splitwordsub-args.py ${EXP_ITER} ${SPLIT_RATIO} | xargs -n6 -P${NCPU} splitwordsubrun.pl > $@
+%.frame.out: %.fre.gz
+	splitframe-args.py ${EXP_ITER} ${SPLIT_RATIO} $* | xargs -n6 -P${NCPU} splitframerun.pl > $@
 
 split.frame.plot: split.frame.out
+	-rm $@
 	for label in anne aran eve naomi nina peter; do\
 		echo "$$label scores" >> $@; \
 		cat $< | plotdata.pl 2=$$label 3=x 4=y >> $@ ;\
 	done
 
+%.frame.plot: %.frame.out
+	cat $< | plotdata.pl 2=$* 3=x 4=y > $@ 
+
+### WORDSUB EXPERIMENTS
+
+split.wsub.out: anne.sub.gz aran.sub.gz eve.sub.gz naomi.sub.gz nina.sub.gz peter.sub.gz anne.fre.gz	 aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz peter.fre.gz
+	splitwordsub-args.py ${EXP_ITER} ${SPLIT_RATIO} all | xargs -n6 -P${NCPU} splitwordsubrun.pl > $@
+
+%.wsub.out: %.sub.gz %.fre.gz
+	splitwordsub-args.py ${EXP_ITER} ${SPLIT_RATIO} $* | xargs -n6 -P${NCPU} splitwordsubrun.pl > $@
+
 split.wsub.plot: split.wsub.out
+	-rm $@
 	for label in anne aran eve naomi nina peter; do\
 		echo "$$label scores" >> $@; \
 		cat $< | plotdata.pl 3=$$label 2=x 4=y >> $@ ;\
 	done
+
+%.wsub.plot: %.wsub.out
+	cat $< | plotdata.pl 3=$* 2=x 4=y > $@
 
 ### FREQUENT (AXB), FLEXIBLE(AX + XB) and BIGRAM FRAMES (AX and XB)
 FRAME_THR=0
