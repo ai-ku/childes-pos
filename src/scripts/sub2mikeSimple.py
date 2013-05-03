@@ -8,27 +8,27 @@ from collections import defaultdict as dd
 data = []
 ansH = dd(int)
 subH = dd(int)
-path = sys.argv[1]
 cons = 0
 split = 0
-for (ii,line) in enumerate(gzip.open(sys.argv[1])): ## place of this file is fixes
-        l = line.strip().split()
+for (ii,line) in enumerate(sys.stdin): ## place of this file is fixes
+        l = line.strip().split("\t")
         if l[0] == "-1": 
             data.append(l[0])
             cons -= 1
             split = ii
             continue
-        if l[0] not in ansH:
-            ansH[l[0]] = len(ansH)
+        if l[2] not in ansH:
+            ansH[l[2]] = len(ansH)
         arr = []
-        arr.append(ansH[l[0]])
-        for s in l[1:]:
+        arr.append(ansH[l[2]])        
+        substitutes = l[3].strip().split()
+        for s in substitutes:
             if s not in subH:
                 subH[s] = len(subH)
             arr.append(subH[s])
         data.append(arr)
 
-print >>sys.stderr, ">>>", len(data) + cons, len(subH), len(ansH), split
+print >>sys.stderr, len(data) + cons, len(subH), len(ansH)
 clab = ["0"] * len(ansH)
 
 for d in data:

@@ -8,8 +8,8 @@ bin:
 MINTZ_DATA_PATH=../data/childes/mintz03xml/
 TRAIN_DATA_PATH=../data/childes/data-xml
 NCPU=10
-
 SEED=0
+
 all: mintz03 clair10pr clair10ps
 data: anne.data.gz aran.data.gz eve.data.gz naomi.data.gz nina.data.gz peter.data.gz
 
@@ -43,98 +43,95 @@ FS_PSUB=1.0 # or this much cumulative probability
 FS_OPTIONS=-n ${FS_NSUB} -p ${FS_PSUB}
 
 %.sub.gz: %.fre.gz train.lm.gz  ## FS_NSUB=100 FS_PSUB=1: time=4h47m, wc=1222974 245817774 2350067125
-	cat $*.fre.stat | perl -lane 'print "@F[3..$$#F]" unless /^\#/' | fastsubs ${FS_OPTIONS} train.lm.gz | grep -P '^X' | gzip > $@
+	zcat $< | cut -f 2 | fastsubs ${FS_OPTIONS} train.lm.gz | grep -P '^X' | gzip > $@
 
 ### WORDSUB options:
-WORDSUB=1
+WORDSUB=3
 
 %.pairs.gz: %.sub.gz	## WORDSUB=12: time=6m33s wc=14085192 28170384 151744889
 	zcat $< | awk '{for (i=0;i< ${WORDSUB};i++) print $$0}' |\
 	wordsub -s 0  | perl -lane '@a = split; $$c++; $$subs .= $$a[1] . " ";if ($$c == ${WORDSUB}){print "$$subs"; $$c =0; $$subs = "";}' | gzip > $@
 
-%.wordsub.mike.gz: %.pairs.gz %.fre.gz
-	sub2mike.py "./" $* 2> $*.wordsub.mike.gz.info | gzip > $@ 
+# (word TAB pos TAB subsitutes(space seperated))
+%.wsub.gz: %.pairs.gz %.fre.gz
+	zcat $< > $@.tmp
+	zcat $*.fre.gz | cut -f1,3,4 | paste - $@.tmp | gzip > $@
+	-rm $@.tmp
 
-### TRAIN-TEST SPLIT
-SPLIT_RATIO=.30
+### TRAIN-TEST SPLIT WITH CROSS VALIDATION
+CROSSVAL=10
+TARGET_FOLD=0
+ITER=20000
+VERBOSE=-v
 
 %.split.fre.gz: %.fre.gz
-	rsplit.py ${SEED} $*.fre.stat  $< ${SPLIT_RATIO} 2> $*.split.fre.stat | gzip > $@  
-
-### Train-Test SPLIT
+	crossval.py -v -seed ${SEED} -tarFold ${TARGET_FOLD} -foldNum ${CROSSVAL} -d $< 2> $*.split.fre.err | gzip > $@  
 
 ### FLEXIBLE FRAMES Train-Test
-%.trfle.mike.gz: %.split.fre.gz
-	-rm $*.tefle.mike.gz
-	tomikesparse.py fle $< 2> $@.info | \
-		 split.py  2> $*.tefle.mike | gzip > $@
-	gzip $*.tefle.mike
 
-%.trfle.runmk: %.trfle.mike.gz
-	runmike.py $<.info ${ITER} $*.tefle.mike.gz
+%.fle.runmk: %.fre.gz
+	-rm $*.tefle.runmk.gz
+	crossval.py -seed ${SEED} -tarFold ${TARGET_FOLD} -foldNum ${CROSSVAL} -d $< | \
+		tomikesparse.py fle 2> $@.info | \
+		split.py  2> $*.tefle.runmk | gzip > $*.trfle.runmk.gz
+	runmike.py ${VERBOSE} -info $@.info -i ${ITER} -te $*.tefle.runmk -tr $*.trfle.runmk.gz -seed ${SEED}
 
 ### FIXED FRAMES Train-Test
-%.trfre.mike.gz: %.split.fre.gz
-	-rm $*.tefre.mike.gz
-	tomikesparse.py fre $< 2> $@.info | \
-		 split.py  2> $*.tefre.mike | gzip > $@
-	gzip $*.tefre.mike
-
-%.trfre.runmk: %.trfre.mike.gz
-	runmike.py $<.info ${ITER} $*.tefre.mike.gz
+%.fre.runmk: %.fre.gz
+	-rm $*.tefre.runmk.gz
+	crossval.py -seed ${SEED} -tarFold ${TARGET_FOLD} -foldNum ${CROSSVAL} -d $< | \
+		tomikesparse.py fre 2> $@.info | \
+		split.py  2> $*.tefre.runmk | gzip > $*.trfre.runmk.gz
+	runmike.py ${VERBOSE} -info $@.info -i ${ITER} -te $*.tefre.runmk -tr $*.trfre.runmk.gz -seed ${SEED}
 
 ### Wordsub Train-Test
-%.trws.mike.gz: %.pairs.gz %.split.fre.gz 
-	-rm $*.tews.mike.gz
-	combine_sub.py	$*.split.fre.stat $<	> $*.temp.trws 2> $*.temp.tews
-	echo -1 > $*.trws.foo
-	cat $*.temp.tews $*.trws.foo $*.temp.trws | gzip > $*.trws.all.gz
-	-rm $*.temp.trws $*.trws.foo $*.temp.tews
-	sub2mikeSimple.py $*.trws.all.gz 2> $*.trws.mike.gz.info | \
-		 split.py  2> $*.tews.mike | gzip > $@
-	-rm $*.trws.all.gz
-	gzip $*.tews.mike	
-
-%.trws.runmk: %.trws.mike.gz
-	runmike.py $<.info ${ITER} $*.tews.mike.gz
+%.wsub.runmk: %.wsub.gz 
+	-rm $*.tewsub.runmk.gz
+	crossval.py -seed ${SEED} -tarFold ${TARGET_FOLD} -foldNum ${CROSSVAL} -d $< | \
+		sub2mikeSimple.py 2> $@.info | \
+		split.py  2> $*.tewsub.runmk | gzip > $*.trwsub.runmk.gz
+	runmike.py ${VERBOSE} -info $@.info -i ${ITER} -te $*.tewsub.runmk -tr $*.trwsub.runmk.gz -seed ${SEED}
 
 ## ALL-Data Split Train-Test
-
+EXP_CROSSVAL=10
+EXP_ITER=50000
+ARGS_FRAME=7
 ### FRAME EXPERIMENTS
 
 split.frame.out: anne.fre.gz aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz peter.fre.gz 
-	splitframe-args.py ${EXP_ITER} ${SPLIT_RATIO} all | xargs -n6 -P${NCPU} splitframerun.pl > $@
+	splitframe-args.py ${EXP_ITER} ${EXP_CROSSVAL} ${SEED} all | xargs -n${ARGS_FRAME} -P${NCPU} splitframerun.pl > $@
 
 %.frame.out: %.fre.gz
-	splitframe-args.py ${EXP_ITER} ${SPLIT_RATIO} $* | xargs -n6 -P${NCPU} splitframerun.pl > $@
+	splitframe-args.py ${EXP_ITER} ${EXP_CROSSVAL} ${SEED} $* | xargs -n${ARGS_FRAME} -P${NCPU} splitframerun.pl > $@
 
 split.frame.plot: split.frame.out
 	-rm $@
 	for label in anne aran eve naomi nina peter; do\
 		echo "$$label scores" >> $@; \
-		cat $< | plotdata.pl 2=$$label 3=x 4=y >> $@ ;\
+		cat $< | plotdata.pl 3=$$label 4=x 5=y >> $@ ;\
 	done
 
 %.frame.plot: %.frame.out
-	cat $< | plotdata.pl 2=$* 3=x 4=y > $@ 
+	cat $< | plotdata.pl 3=$* 4=x 5=y > $@ 
 
 ### WORDSUB EXPERIMENTS
+ARGS_WSUB=7
 
 split.wsub.out: anne.sub.gz aran.sub.gz eve.sub.gz naomi.sub.gz nina.sub.gz peter.sub.gz anne.fre.gz	 aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz peter.fre.gz
-	splitwordsub-args.py ${EXP_ITER} ${SPLIT_RATIO} all | xargs -n6 -P${NCPU} splitwordsubrun.pl > $@
+	splitwordsub-args.py ${EXP_ITER} ${EXP_CROSSVAL} ${SEED} all | xargs -n${ARGS_WSUB} -P${NCPU} splitwordsubrun.pl > $@
 
 %.wsub.out: %.sub.gz %.fre.gz
-	splitwordsub-args.py ${EXP_ITER} ${SPLIT_RATIO} $* | xargs -n6 -P${NCPU} splitwordsubrun.pl > $@
+	splitwordsub-args.py ${EXP_ITER} ${EXP_CROSSVAL} ${SEED} $* | xargs -n${ARGS_WSUB} -P${NCPU} splitwordsubrun.pl > $@
 
 split.wsub.plot: split.wsub.out
 	-rm $@
 	for label in anne aran eve naomi nina peter; do\
 		echo "$$label scores" >> $@; \
-		cat $< | plotdata.pl 3=$$label 2=x 4=y >> $@ ;\
+		cat $< | plotdata.pl 4=$$label 3=x 5=y >> $@ ;\
 	done
 
 %.wsub.plot: %.wsub.out
-	cat $< | plotdata.pl 3=$* 2=x 4=y > $@
+	cat $< | plotdata.pl 4=$* 3=x 5=y > $@
 
 ### FREQUENT (AXB), FLEXIBLE(AX + XB) and BIGRAM FRAMES (AX and XB)
 FRAME_THR=0
@@ -207,13 +204,11 @@ all.ps.mike.gz: anne.fre.gz aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz pete
 
 ### Individual Run
 
-ITER=10000
+
 %.runmk: %.mike.gz
 	runmike.py $<.info ${ITER}
 
 ## EXPERIMENTS
-
-EXP_ITER=10000
 
 ## ALL-Data Experiments
 all.%.frame.out: all.%.mike.gz

@@ -1,9 +1,8 @@
 #!/usr/bin/env python
 
-import sys
-import gzip
+import sys,gzip
 from collections import defaultdict as dd
-
+from pprint import pprint as pp
 
 frame = dd(int)
 framer = dd(int)
@@ -22,46 +21,42 @@ elif sys.argv[1] == "fre":
 else:
     sys.exit("Unmatched Tag" + sys.argv[1])
 instance = 0
-partition = []
-for fi in range(2,len(sys.argv)):
-    for line in gzip.open(sys.argv[fi]):
-        l = line.strip().split()
-        if l[0] == "-1":
-            arr.append(-1);
-            continue
-        elif l[1] == "X":
-            continue
-        instance += 1
-        f1,f2 = l[2].split(":")
-        if l[1] not in tag:
-            tag[l[1]] = len(tag)
-        if tagtype == "pr"  and f1 not in frame:
-            frame[f1] = len(frame)
-            arr.append([frame[f1],tag[l[1]]])
-        elif tagtype == "pr":
-            arr.append([frame[f1],tag[l[1]]])
-        if tagtype == "ps" and f2 not in frame:
-            frame[f2] = len(frame)
-            arr.append([frame[f2],tag[l[1]]])
-        elif tagtype == "ps":
-            arr.append([frame[f2],tag[l[1]]])
-        if tagtype == "fre" and l[2] not in frame:
-            frame[l[2]] = len(frame)
-            arr.append([frame[l[2]],tag[l[1]]])
-        elif tagtype == "fre":
-            arr.append([frame[l[2]],tag[l[1]]])
-        if tagtype == "fle":
-            if f1 not in frame:
-                frame[f1] = len(frame)
-            if f2 not in framer:
-                framer[f2] = len(framer)
-            arr.append([frame[f1],framer[f2],tag[l[1]]])
-    partition.append(str(instance))
 
-#print >> sys.stderr, "frame:",len(frame), "right:", len(framer)
-#print >> sys.stderr, "tag:"," ".join(tag)
-## header
-print >> sys.stderr, ">>>", len(arr), len(frame)+len(framer), len(tag), " ".join(partition)
+for line in sys.stdin:
+    l = line.strip().split("\t")
+    if l[0] == "-1":
+        arr.append(-1);
+        continue
+    elif l[1] == "X":
+        continue
+    instance += 1
+    f1,f2 = l[4].split(":")
+    if l[3] not in tag:
+        tag[l[3]] = len(tag)
+    if tagtype == "pr"  and f1 not in frame:
+        frame[f1] = len(frame)
+        arr.append([frame[f1],tag[l[3]]])
+    elif tagtype == "pr":
+        arr.append([frame[f1],tag[l[3]]])
+    if tagtype == "ps" and f2 not in frame:
+        frame[f2] = len(frame)
+        arr.append([frame[f2],tag[l[3]]])
+    elif tagtype == "ps":
+        arr.append([frame[f2],tag[l[3]]])
+    if tagtype == "fre" and l[4] not in frame:
+        frame[l[4]] = len(frame)
+        arr.append([frame[l[4]],tag[l[3]]])
+    elif tagtype == "fre":
+        arr.append([frame[l[4]],tag[l[3]]])
+    if tagtype == "fle":
+        if f1 not in frame:
+            frame[f1] = len(frame)
+        if f2 not in framer:
+            framer[f2] = len(framer)
+        arr.append([frame[f1],framer[f2],tag[l[3]]])
+
+if len(arr) - 1 != instance:    sys.exit("ERR: Size Missmatch")
+print >> sys.stderr, instance, len(frame)+len(framer), len(tag)
 clab = ["0"] * len(tag)
 
 for (ii,r) in enumerate(arr):

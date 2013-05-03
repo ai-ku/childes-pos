@@ -1,34 +1,35 @@
 #!/usr/bin/env python
 
-import re
-import sys
-import os
+import re,sys,os,argparse
 
-seed = 0
-tags = set(["fre", "fle", "prbi" , "psbi", "apsbi", "aprbi","wordsub","trws","trfle", "trfre"])
-iters = sys.argv[2]
-testData = ""
+tags = set(["fre", "fle", "prbi" , "psbi", "apsbi", "aprbi","wsub","trws","trfle", "trfre"])
+parser = argparse.ArgumentParser(description="Mike-net run script")
+parser.add_argument("-iter","-i", type=int, default=10000,help="number of neural-network iterations (default: %(default)s).")
+parser.add_argument("-tr", default=None, help="train data-file")
+parser.add_argument("-te", default=None, help="test data-file")
+parser.add_argument("-info", default=None, help="data info file")
+parser.add_argument('-v','-verbose', default = False, help='verbose', action="store_true")
+parser.add_argument('-seed', type=int, default = 1, \
+                        help='seed value (default: %(default)s)', action="store")
+args = parser.parse_args()
+iters = args.iter
+trainFile=args.tr
+testFile = args.te
+infoFile = args.info
+seed = args.seed
+m = re.search("^(.*?)\.(.*?)\.runmk\.info$",infoFile)
 
-if len(sys.argv) == 4:
-    testData = " -t " + sys.argv[3]
-
-m = re.search("^(.*?)\.(.*?)\.mike\.gz\.info$",sys.argv[1])
-
-if m:
-    if m.group(2) in tags:
-        for line in open(sys.argv[1]):
-            l = line.strip().split()
-            if l[0] == ">>>":
-                name = m.group(1) + "." + m.group(2)
-                datasize = l[1]
-                cmd = "mike_childes -f " + name + ".mike.gz" + \
-                    " -seed " + str(seed) + \
-                    " -i " + l[2] + " -o " + l[3] + \
-                    " -v -iter "+ iters+ testData+" >" + name + ".runmk" + \
-                    " 2>" + name + ".runmk.err &"
-                print "cmd:",cmd
-                os.system(cmd)
-                break
-
+if m and m.group(2) in tags:
+    with open(infoFile) as inf:
+        ll = inf.readline().strip().split()
+        datasize, feature, tags= ll
+        name = m.group(1) +  "." + m.group(2)
+        cmd = "mike_childes -f " + trainFile + \
+            " -seed " + str(seed) + \
+            " -i " + feature + " -o " + tags + \
+            " -v -iter "+ str(iters)+ " -t " +  testFile +" > " + name + ".runmk" + \
+            " 2> " + name  + ".runmk.err &"
+        if args.v: print "cmd:",cmd
+        os.system(cmd)
 else:
-    print "no match"
+    sys.exit("Wrong input files")

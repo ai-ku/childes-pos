@@ -2,14 +2,15 @@
 use strict;
 use File::Temp qw/tempdir/;
 
-my $usage = q{Usage: framerun.pl runid seed frame_type train_iteration ratio dataName};
+my $usage = q{Usage: framerun.pl runid seed foldid frame_type train_iteration fold dataName};
 
 my $runid = shift or die $usage;
-my $seed = shift or die $usage;
-my $frame = shift or die $usage;
-my $iter = shift or die $usage;
-my $ratio = shift or die $usage;
-my $dataName = shift or die $usage;
+my $seed = shift;
+my $foldId = shift;
+my $frame = shift or die("missing frame-> $usage");
+my $iter = shift or die("missing iter-> $usage");
+my $fold = shift or die("missing fold-> $usage");
+my $dataName = shift or die("missing dataname-> $usage");
 my @data = ("anne","aran","eve","naomi","nina","peter");
 @data = ($dataName) if ($dataName ne "all");
 my $tmp = tempdir("FRAME-XXXX", CLEANUP => 1);
@@ -21,9 +22,9 @@ my (@trsizes, @tesizes) = ((),());
 my ($trtotal, $tetotal, $total) = (0,0,0);
 my ($cattr,$catte) = ("cat ","cat ");
 foreach my $dd (@data){
-    my $trsplit = 	"rsplit.py $seed $dd.fre.stat  $dd.fre.gz $ratio 2> $tmp/$dd.wsp | gzip > $tmp/$dd.fsp.gz";
+    my $trsplit = "crossval.py -v -seed $seed -tarFold $foldId -foldNum $fold -d $dd.fre.gz 2> $tmp/$dd.split.err | gzip > $tmp/$dd.fsp.gz";
     system($trsplit);
-#    print STDERR "$trsplit\n";
+    print STDERR "$trsplit\n";
     my $testtrain =  "zcat $tmp/$dd.fsp.gz | split.py  2> $tmp/$dd.te > $tmp/$dd.tr";
 #    print STDERR "$testtrain\n";
     system($testtrain);
@@ -46,18 +47,17 @@ system($catte);
 system("echo -1 |gzip > $tmp/foo.gz");
 system("zcat $tmp/allte.gz $tmp/foo.gz $tmp/alltr.gz | gzip > $tmp/all.gz");
 #print STDERR "tr:$cattr\nte:$catte\n";
-my $tomike = "tomikesparse.py $frame $tmp/all.gz 2> $tmp/all.info | split.py  2> $tmp/allte | gzip > $tmp/alltr.gz";
+my $tomike = "zcat $tmp/all.gz | tomikesparse.py $frame  2> $tmp/all.info | split.py  2> $tmp/allte | gzip > $tmp/alltr.gz";
 system($tomike);
 #print STDERR "$tomike\n";
 my @minfo = split(' ', `cat $tmp/all.info`);
 my $datasizes = join(" -d ", @tesizes);
-my $runmike = "mike_childes -v -f $tmp/alltr.gz -i $minfo[2] -o $minfo[3] -seed $seed -d $datasizes -iter $iter -t $tmp/allte > $mike_out 2> $mike_err";
+my $runmike = "mike_childes -v -f $tmp/alltr.gz -i $minfo[1] -o $minfo[2] -seed $seed -d $datasizes -iter $iter -t $tmp/allte > $mike_out 2> $mike_err";
 #print STDERR "$runmike\n";
 system($runmike);
 my @res = split(' ', `cat $mike_out`);
 $tm = time - $tm;
 
 for(my $i = 0 ; $i < @data; $i++){
-     print join("\t", $runid, $seed, $data[$i], $frame, $res[$i], $tm, $iter, $minfo[2], $minfo[3])."\n";
+     print join("\t", $runid, $seed, $foldId, $data[$i], $frame, $res[$i], $tm, $iter, $minfo[0], $minfo[1], $minfo[2], $trsizes[$i])."\n";
 }
-
