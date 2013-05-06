@@ -46,11 +46,37 @@ FS_OPTIONS=-n ${FS_NSUB} -p ${FS_PSUB}
 	zcat $< | cut -f 2 | fastsubs ${FS_OPTIONS} train.lm.gz | grep -P '^X' | gzip > $@
 
 ### WORDSUB options:
-WORDSUB=3
-
+WORDSUB=16
 %.pairs.gz: %.sub.gz	## WORDSUB=12: time=6m33s wc=14085192 28170384 151744889
 	zcat $< | awk '{for (i=0;i< ${WORDSUB};i++) print $$0}' |\
-	wordsub -s 0  | perl -lane '@a = split; $$c++; $$subs .= $$a[1] . " ";if ($$c == ${WORDSUB}){print "$$subs"; $$c =0; $$subs = "";}' | gzip > $@
+	wordsub -s ${SEED}  | perl -lane '@a = split; $$c++; $$subs .= $$a[1] . " ";if ($$c == ${WORDSUB}){print "$$subs"; $$c =0; $$subs = "";}' | gzip > $@
+
+### SCODE (simple) experiments
+SCODE_CLUSTER=40
+SCODE_ITER=$(shell echo 1 + 100 / ${WORDSUB} | bc)
+
+maliy:
+	echo ${SCODE_ITER}
+
+WSC_OPTIONS=-r 1 -i ${SCODE_ITER} -d 25 -z 0.166 -p 50 -u 0.2 -s ${SEED} -v -a
+
+%.wpairs.gz: %.pairs.gz %.word.gz ## WS_NSUB=64: time=20m55s wc=75121024 150242048 809663253
+	zcat $*.pairs.gz > $@.tmp
+	zcat $*.word.gz | paste - $@.tmp | perl -lane 'print "$$F[0]\t$$_" foreach(@F[1..$$#F]);' | gzip > $@
+	-rm $@.tmp
+
+%.scode.gz: %.wpairs.gz 
+	zcat $< | scode ${WSC_OPTIONS} | gzip > $@
+
+KM_OPTIONS=-k ${SCODE_CLUSTER} -r 128 -l -w  -s ${SEED}
+%.kmeans.gz: %.scode.gz
+	zcat $< | perl -ne 'print if s/^0://' | wkmeans ${KM_OPTIONS} | gzip > $@
+
+%.eval: %.kmeans.gz %.pos.gz %.word.gz
+	zcat $*.kmeans.gz | wkmeans2eval.pl -t $*.word.gz|  eval.pl -m -v -g $*.pos.gz
+
+%.anl.gz: %.kmeans.gz %.word.gz
+	zcat $< | wkmeans2eval.pl -t $*.word.gz | analyze_cluster.py $*.word.gz | gzip > $@
 
 # (word TAB pos TAB subsitutes(space seperated))
 %.wsub.gz: %.pairs.gz %.fre.gz
@@ -147,17 +173,17 @@ MINTZ03_OPTIONS=-t ${FRAME_THR} -u
 %.psbi.gz: %.data.gz
 	zcat $< | frame.py  -f psbi ${MINTZ03_OPTIONS} 2> $*.psbi.stat |gzip > $@ 
 
-%.word.gz: %.gz
-	zcat $< | cut -f 1 | gzip > $@
+%.word.gz: %.fre.gz
+	zcat $< | cut -f 3 | gzip > $@
 
-%.pos.gz: %.gz
-	zcat $< | cut -f 3 | gzip > $*.pos.gz
+%.pos.gz: %.fre.gz
+	zcat $< | cut -f 4 | gzip > $*.pos.gz
 
-%.gold.gz: %.gz
+%.gold.gz: %.fre.gz
 	zcat $< | cut -f 2 | gzip > $*.gold.gz
 
-%.eval: %.pos.gz %.gold.gz
-	zcat $< | eval.pl -c -m -v -g $*.gold.gz 2> $@
+#%.eval: %.pos.gz %.gold.gz
+#	zcat $< | eval.pl -c -m -v -g $*.gold.gz 2> $@
 
 %.dist: %.gz
 	zcat $< | perl -lane '$$h{$$F[1]}++;END{print "$$_ $$h{$$_}" foreach keys(%h)}'
@@ -229,7 +255,7 @@ all.wordsub.out: anne.sub.gz aran.sub.gz eve.sub.gz naomi.sub.gz nina.sub.gz pet
 %.plot: %.out
 	cat $< | plotdata.pl 2=x 3=y > $@
 
-.PRECIOUS: train.lm.gz train.vocab.gz %.fre.gz %.prbi.gz %.psbi.gz %.word.gz %.pos.gz %.gold.gz %.data.gz %.fle.nn %.psbi.nn %.prbi.nn %.fre.nn %.psbi.mike.gz %.prbi.mike.gz %.apsbi.mike.gz %.aprbi.mike.gz %.fre.mike.gz %.fle.mike.gz %.runmk %.sub.gz %.wordsub.mike.gz %.pairs.gz %.wordsub.out %.trws.fre.stat %.trws.mike.gz %.split.fre.stat %.trfle.mike.gz %.trfre.mike.gz
+.PRECIOUS: train.lm.gz train.vocab.gz %.fre.gz %.prbi.gz %.psbi.gz %.word.gz %.pos.gz %.gold.gz %.data.gz %.fle.nn %.psbi.nn %.prbi.nn %.fre.nn %.psbi.mike.gz %.prbi.mike.gz %.apsbi.mike.gz %.aprbi.mike.gz %.fre.mike.gz %.fle.mike.gz %.runmk %.sub.gz %.wordsub.mike.gz %.pairs.gz %.wordsub.out %.trws.fre.stat %.trws.mike.gz %.split.fre.stat %.trfle.mike.gz %.trfre.mike.gz %.scode.gz %.kmeans.gz %.wpairs.gz
 
 clean:
 	-rm *.fre.* *.prbi.* *.psbi.*
