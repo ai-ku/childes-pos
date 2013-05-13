@@ -5,59 +5,93 @@
 \item Data statistics (it is common to all experiments)
 \end{enumerate}
 \section{Experiment 1}
-Original Idea
+In this section we replicate the corpus analyses of \cite{20674613}
+and \cite{Mintz200391}.  
+
 \subsection{Input Corpora}
+
+In order to be consistent with \cite{20674613} and \cite{Mintz200391},
+we use the same six corpora of child-directed speech from the CHILDES
+corpus \citep*{macwhinney2000childes}: Anne and Aran
+\citep*{theakston2001role}, Eve \citep*{JCL:1765112}, Naomi
+\citep*{sachs1983talking}, Nina \citep*{suppes1974semantics}, Peter
+\citep*{Bloom1974380, bloom1975structure}.  Following
+\cite{Mintz200391} we only analyze the adulth utterances in sessions
+where the target child is 2.6 years old or younger.
+
+\subsubsection{Preprocessing}
+
+The grammatical category of words in CHILDES are extracted by first
+applying the MOR parser \citep*{macwhinney2000childes} and then using
+the POST disambiguator \citep*{sagae2004automatic}.  The accuracy of
+CHILDES grammatical categories is approximately 95\%
+\citep*{parisse2000automatic} and it is embedded in the MOR line of
+the CHILDES corpus.
+
+We apply the following pre-processing steps \citep*{20674613} initial
+to our analyses:
+\begin{itemize}
+\item Utterance boundary marks are used in place of punctation, pause,
+  trailing off and interruption marks.
+\item Repetitions of a word are kept in the text and their grammatical
+  categories are automatically set to the grammatical category of the
+  original word.
+\item Words that are grammatically necessary but not spoken are
+  deleted (grammatical omissions).
+\item {\bf Short usages ??}
+
+\end{itemize}
+
 \subsection{Method}
 \subsection{Results}
 
-\begin{table}[ht]
-\small
-\centering
-\caption{The 70\% of the sentences in the union of 6 child corpora are
-  used as the training set while the remaining 30\% sentences of each
-  corpus are used as the test set.  Average classification accuracy
-  (10 runs) of the supervised connectionist model for the standard
-  labelling on each child corpus after 10K words of training are
-  summarized and the corresponding standard errors are reported in
-  parentheses.}
-\begin{tabular}{|l|l@{ }|l@{ }|l@{ }|l@{ }|l@{ }|l@{ }|l@{ }|}
-  \hline
-  & \multicolumn{4}{c|}{Frames} & \multicolumn{2}{c|}{\specialcell{Number of \\ Substitute Words}}\\
-  \hline
-  Child & aX & Xb & aXb & aX + Xb & 1 & 16\\
-  \hline
-  Anne & .5317 (.0374)  & .5065 (.0214) & .3788 (.0279) & .6190 (.0253) & .6221 (.0333) & .7829 (.0059) \\
-  Aran & .5098 (.0344) & .4779 (.0171) & .5098 (.0289) & .5863 (.0227) & .5916 (.0371) & .7597 (.007) \\
-  Eve & .5408 (.036)  & .4905 (.0183) & .5408 (.0186) & .6125 (.0229) & .6189 (.0287) & .7862 (.0058) \\
-  Naomi & .5250 (.0269) & .4922 (.0205) & .3860 (.028) & .6019 (.0218) & .6021 (.0322) & .7672 (.0071) \\
-  Nina & .5412 (.0304) & .5032 (.0213) & .3950 (.0223) & .6308 (.0277) & .6474 (.0331) & .8089 (.0089) \\
-  Peter & .5359 (.036) & .5092 (.0216) & .5359 (.0188) & .6250 (.0252) & .6315 (.0263) & .7974 (.0082) \\
-  \hline
-\end{tabular}
-\end{table}
-\begin{table}[h]
-\label{tab:myfirsttable}
-\end{table}
+% \begin{table}[ht]
+% \small
+% \centering
+% \caption{The 70\% of the sentences in the union of 6 child corpora are
+%   used as the training set while the remaining 30\% sentences of each
+%   corpus are used as the test set.  Average classification accuracy
+%   (10 runs) of the supervised connectionist model for the standard
+%   labelling on each child corpus after 10K words of training are
+%   summarized and the corresponding standard errors are reported in
+%   parentheses.}
+% \begin{tabular}{|l|l@{ }|l@{ }|l@{ }|l@{ }|l@{ }|l@{ }|l@{ }|}
+%   \hline
+%   & \multicolumn{4}{c|}{Frames} & \multicolumn{2}{c|}{\specialcell{Number of \\ Substitute Words}}\\
+%   \hline
+%   Child & aX & Xb & aXb & aX + Xb & 1 & 16\\
+%   \hline
+%   Anne & .5317 (.0374)  & .5065 (.0214) & .3788 (.0279) & .6190 (.0253) & .6221 (.0333) & .7829 (.0059) \\
+%   Aran & .5098 (.0344) & .4779 (.0171) & .5098 (.0289) & .5863 (.0227) & .5916 (.0371) & .7597 (.007) \\
+%   Eve & .5408 (.036)  & .4905 (.0183) & .5408 (.0186) & .6125 (.0229) & .6189 (.0287) & .7862 (.0058) \\
+%   Naomi & .5250 (.0269) & .4922 (.0205) & .3860 (.028) & .6019 (.0218) & .6021 (.0322) & .7672 (.0071) \\
+%   Nina & .5412 (.0304) & .5032 (.0213) & .3950 (.0223) & .6308 (.0277) & .6474 (.0331) & .8089 (.0089) \\
+%   Peter & .5359 (.036) & .5092 (.0216) & .5359 (.0188) & .6250 (.0252) & .6315 (.0263) & .7974 (.0082) \\
+%   \hline
+% \end{tabular}
+% \end{table}
 
 \begin{table}[ht]
 \small
 \centering
-\caption{ Average 10-fold classification accuracy of the supervised
-  connectionist model for the standard labelling on each child corpus
-  after 50K words of training are summarized and the corresponding
-  standard errors are reported in parentheses.}
-\begin{tabular}{|l|l@{ }|l@{ }|l@{ }|l@{ }|l@{ }|l@{ }|l@{ }|}
+\caption{10 fold cross-validation accuracy of the connectionist model on each
+  child corpus with the standard labelling are summarized.  The training
+  phase of each corpus is stopped after 50K word patterns are presented.  Standard
+  errors are reported in parentheses.
+}
+
+\begin{tabular}{|c|c@{ }|c@{ }|c@{ }|c@{ }|c@{ }|c@{ }|c@{ }|}
   \hline
   & \multicolumn{4}{c|}{Frames} & \multicolumn{2}{c|}{\specialcell{Number of \\ Substitute Words}}\\
   \hline
   Child & aX & Xb & aXb & aX + Xb & 1 & 16\\
   \hline
-  Anne & .6165 (.0119)  & .6150 (.0119) & .5251 (.0189) & .7545 (.0147) & .7321 (.0081) & .8273 (.0087) \\
-  Aran & .5924 (.0193) & .5583 (.0193) & .4834 (.0131) & .7164 (.0151) & .7081 (.0074) & .8136 (.0096) \\
-  Eve & .6337 (.0139)  & .5850 (.0116) & .5425 (.0198) & .7605 (.0104) & .7435 (.0208) & .8378 (.01999) \\
-  Naomi & .6183 (.0165) & .5908 (.0254) & .5353 (.0234) & .7438 (.0156) & .7146 (.0136) & .8165 (.0147) \\
-  Nina & .6353 (.0195) & .6097 (.0049) & .5556 (.0106) & .7745 (.0199) & .7527 (.0059) & .8494 (.0073) \\
-  Peter & .6056 (.0205) & .6232 (.0205) & .5604 (.0115) & .7630 (.005) & .7398 (.0120) & .8437 (.0061) \\
+  Anne & .6165 (.0119)  & .6150 (.0119) & .5251 (.0189) & .7545 (.0147) & .7321 (.0081) & {\bf .8273 (.0087)} \\
+  Aran & .5924 (.0193) & .5583 (.0193) & .4834 (.0131) & .7164 (.0151) & .7081 (.0074) & {\bf .8136 (.0096)} \\
+  Eve & .6337 (.0139)  & .5850 (.0116) & .5425 (.0198) & .7605 (.0104) & .7435 (.0208) & {\bf .8378 (.0199)} \\
+  Naomi & .6183 (.0165) & .5908 (.0254) & .5353 (.0234) & .7438 (.0156) & .7146 (.0136) & {\bf .8165 (.0147)} \\
+  Nina & .6353 (.0195) & .6097 (.0049) & .5556 (.0106) & .7745 (.0199) & .7527 (.0059) & {\bf .8494 (.0073)} \\
+  Peter & .6056 (.0205) & .6232 (.0205) & .5604 (.0115) & .7630 (.005) & .7398 (.0120) & {\bf .8437 (.0061)} \\
   \hline
 \end{tabular}
 \end{table}
@@ -97,5 +131,6 @@ What happens if some of the words are given (semi-supervised setting)
 \subsection{Input Corpora}
 \subsection{Method}
 \subsection{Results}
+
 
 
