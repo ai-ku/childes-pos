@@ -1,0 +1,14 @@
+To get the CHILDES data from childes.psy.cmu.edu/data/Eng-UK-MOR/ use the below wget command:
+
+wget -e robots=off -r -l 1 http://childes.psy.cmu.edu/data/Eng-USA-MOR/ -A "*.zip"
+
+then unzip all files using the following shell script
+
+for v in $(ls)
+do
+unzip $v
+done
+
+
+
+

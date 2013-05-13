@@ -1,225 +1,222 @@
 #!/usr/bin/env python
-#-*- coding: utf-8 -*-
 
 import sys
-import re
-import os
-import codecs
-from pprint import pprint
+from lxml import etree
+from lxml import objectify
+from pprint import pprint as pp 
 
+class childes:
+    class sentence:
+        def __init__(self, sid = None, who = None):
+            self.id = sid
+            self.who = who
+            self.type = ""
+            self.content = []
+            self.error = False
+        def append(self,w):
+            self.content.append(w)
+        def __str__(self):
+            out = "[sentence %s %s %s %s]\n" % (str(self.id), str(self.who),\
+                                                    str(self.type), str(self.error))
+            for w in self.content:
+                out += w.__str__() + "\n"
+            return out
+        def __iadd__(self,stc):
+            if stc.id == None or (stc.id == self.id):
+                self.content += stc.content
+            else:
+                print >> sys.stderr, "Bug in Sentence.__iadd_ %s" % self.id
+            return self
+    class word:
+        def __init__(self, w = "", c = "", s = "", stem = ""):
+            self.w, self.c, self.s = w, c, s
+            self.stem = stem
+            self.type = ""
+            self.pfx = ""
+            self.composite = False
+            self.replacement = False
+            self.repeat = 1
+        def __str__(self):
+            out = "w:" + str(self.w) + "\tc:" + str(self.c) + \
+                "\ts:" + str(self.s) +"\tst:"+str(self.stem) + \
+                "\tpfx:" + str(self.pfx) + "\ttype:" + str(self.type) +\
+                "\tcomposite:"+str(self.composite) + "\treplacement:" + str(self.replacement)
+            for i in range(self.repeat - 1):
+                out += "\n[r]" + out
+            return out
 
-class ChildesReader:
-#Comman tags
-# dictionary data structure of header
-    def __init__(self):
-        self.headerInfo = {}
-        self.participantInfo = {}
-        self.speakerTiers = []
-        self.outputTxt = []
-        self.outputMor = []
-        self.participantTag = u"@Participants:"
-    # Regular experession of cha files
-        self.regHeader = re.compile(u'^(@[\w:]+)(.*)$')
-        self.regSpeaker = re.compile(u'^\*(.*?):[\s]*(.*)$')
-        self.regDependent = re.compile(u'^%(.*?):[\s]*(.*)$')
-        self.regSkip = re.compile(u'^\s*([&\.,!\?;]|cm\|cm|\(\d\.\)|0)\s*$')
-        self.regAssimilation = re.compile(u'(\S+)[ ]*\[:(.*?)\]') #word [:correct_form_of_word] => correct_form_of_word
-        self.regOverlap = re.compile(u'<(.*?)>[ ]*\[[<|>]\d*?\]') #(<word> or word) ([<] or [>]) or ([<\d] or [>\d]) => word
-        self.regBestGuess = re.compile(u'<(.*?)>[ ]*\[\?\]') #word [?]or <word>[?] => word
-        self.regErrorMissing = re.compile(u'0*?(\S+)\s*\[\*\]') #0word [*] or word [*] => word
-        self.regRepetition = re.compile(u'(<[^<>]+>|\S+)\s*\[\/\]') # word [\] or <word> [\] => remove word or <word>
-        self.regRetracing = re.compile(u'(<[^<>]+>|\S+)\s*\[//\]') # word [\\] or <word> [\\] => remove word or <word>
-        self.regQuotationFollows = re.compile(u'(\+"\.\s*$|^[\s]*(\+"\s+)+|\+"\.[\s]*)')
-        self.regQuotationPrecedes = re.compile(u'\+"\.\s*')
-        self.regInterruption = re.compile(u'(\+/\.$|^\+,)')
-        self.regSelfCompletion = re.compile(u'^[\s]*\+,')
-        self.regContrastiveStress = re.compile(u'<([^<>]+)>[\s]*\[!!\]')  #word [!!]or <word>[!!] => word
-        self.regStressing = re.compile(u'<([^<>]+)>[\s]*\[!!\]')  #word [!]or <word>[!] => word
-        self.regParalinguistic = re.compile(u'<([^<>]+)>[\s]*\[=[!?]*\s*.*?\]') #word or <word> [=[?!] word]
-        self.regParalinguisticZero = re.compile(u'0[\s]*\[=[!?]*\s*.*?\]') #word or <word> [=[?!] word]
-#        self.regAlternativeTranscrion = re.compile(u'<(.*)>[\s]*\[=?\s*.*?\]') 
-        self.regSQuotaSpace = re.compile(u'“(\w)');
-        self.regEQuotaSpace = re.compile(u'(\w)”');
-        self.regLayzOverlap = re.compile(u'\+<');
-        self.regDualOverLapRetracing = re.compile(u'<[^<>]+>\s*\[[<>\?\!]\]\s*\[//?\]');
-        self.regDualOverLapRetracingWord = re.compile(u'\S+\s*\[[<>\?\!]\]\s*\[//?\]');
-        self.regCommentOnMainLine = re.compile(u'\[% .*?\]') # [% word] => removes
-        self.regActionTire = re.compile(u'\[%act:\s* .*?\]')
-        self.regRemoveStrangeSym = re.compile(u'\.*?\')
-        self.regCorrectWord = re.compile(u'\((\w+)\)')
-        self.regChildesTags = re.compile(u'(\(\.+\)|w{3}|x{2,3}|y{2,3}|&\S+|\[=[!?]*\s*[^\]\[]+\]|\[\* .*?\])|\[[<|>]\d*\]|\+(//|//\?)|\[!{1,2}\]|\[\?\]|^[ ]*\+\+|\[x \d+\]|\[\+ \S+]|^\+\^')
-    def  __clear__(self):
-        self.headerInfo = {}
-        self.participantInfo = {}
-        self.speakerTiers = []
-        self.outputTxt = []
-        self.outputMor = []
+    def __init__(self, fileName):
+        self.tagDict = {"part":"Participants", "sent":"u", "word":"w", \
+                        "mor":"mor", "short":"shortening", "punc":"t", \
+                            "g":"g", "comma":"tagMarker", "pause":"pause",\
+                            "senType":"k", "overlap":"overlap", "composite":"wk",\
+                            "replacement":"replacement", "error":"error",\
+                            "fragment":"fragment", "fragTag":"p", "repeat":"r"
+                            }
+        self.parser = etree.XMLParser(ns_clean=True)
+        self.fileName = fileName
+        self.root = None
+        self.participants = {}
+        self.sentences = []
+        self.current = None
+        if self.fileName:
+            self.root = self.parse().getroot()
 
-    def get_participants(self):
-        part = []    
-        if self.headerInfo.get(self.participantTag):
-            val = self.headerInfo[self.participantTag].split(',')
-            for p in val:
-                pm = re.search(u'^[\s]*(.*?)[\s]+(.*?)$', p)
-                (ptag, pval) = pm.group(1), pm.group(2)
-                self.participantInfo[ptag] = pval
+    def parse(self):
+        return etree.parse(self.fileName, self.parser)
 
-    def get_text_participant(self, tag):
-        for po in self.speakerTiers:
-            if po["tag"] == tag:
-                pprint(po["txt"])
+    def __str__(self):
+        return etree.tostring(self.root, pretty_print = True)
 
-    def get_gold_tags(self, tag):
-    #should we split this regexps?
-        for po in self.speakerTiers:
-            if po["tag"] != tag:
-                txt,mor = po["txt"], ""
-                if po.get("mor"):             
-                    mor = po["mor"]
-                    otxt = txt
-                    # two level
-                    txt = self.regDualOverLapRetracing.sub("",txt)
-                    txt = self.regDualOverLapRetracingWord.sub("",txt)
-                    # one level
-                    txt = self.regOverlap.sub(ur'\1',txt)
-                    txt = self.regAssimilation.sub(ur'\2',txt)
-                    txt = self.regBestGuess.sub(ur'\1',txt)
-                    txt = self.regErrorMissing.sub(ur'\1',txt)
-                    txt = self.regRepetition.sub("",txt)
-                    txt = self.regRetracing.sub("",txt)
-                    txt = self.regContrastiveStress.sub(ur'\1',txt)
-                    txt = self.regStressing.sub(ur'\1',txt)
-                    txt = self.regQuotationFollows.sub("",txt)
-                    mor = self.regQuotationFollows.sub("",mor)
-                    txt = self.regQuotationPrecedes.sub("",txt)
-                    mor = self.regQuotationPrecedes.sub("",mor)
-                    txt = self.regSelfCompletion.sub("",txt)
-                    txt = self.regParalinguistic.sub(ur'\1',txt)
-                    txt = self.regParalinguisticZero.sub("",txt)
-                    txt = self.regSQuotaSpace.sub(ur'bq \1',txt)
-                    txt = self.regEQuotaSpace.sub(ur'\1 eq',txt)
-                    txt = self.regCommentOnMainLine.sub("",txt)
-                    txt = self.regActionTire.sub("",txt)
-                    txt = self.regLayzOverlap.sub("",txt)
-                    txt = self.regCorrectWord.sub(r'\1',txt)
-                    txt = self.regChildesTags.sub("",txt) #always the last one
-                    mor = self.regChildesTags.sub("",mor) #always the last one
-                    txt = txt.strip()
-                    mor = mor.strip()
-                    txtArr = txt.split()
-                    morArr = mor.split()
-                    pair = []
-                    txtArr = filter(lambda x: self.regSkip.match(x) == None, txtArr)
-                    morArr = filter(lambda x: self.regSkip.match(x) == None, morArr)
-                    if len(morArr) != len(txtArr):
-                        print >> sys.stderr, u"[Original]",otxt
-                        print >> sys.stderr, u"[Modified]",txt
-                        print >> sys.stderr, len(morArr), morArr
-                        print >> sys.stderr, len(txtArr), txtArr
-#                        print >> sys.stderr,u"[mor]", mor
-                        pair = self.tag_matcher(txtArr, morArr)                    
-                        print >> sys.stderr, u"[pair]", pair
-                        print >> sys.stderr
-                    else:
-                        #                    pair = tag_matcher(txtArr, morArr)
-                        #                    print "CORRECT", pair
-                        self.outputTxt.append(txtArr)
-                        self.outputMor.append(morArr)
+    def print_node(self, elm):
+        print etree.tostring(elm, pretty_print = True)
 
-## Word-tag matcher
-    def tag_matcher(self, txtA, morA):
-        m = 0
-        pair = []
-        for t in txtA:
-            if not self.regSkip.match(t):
-                if m == len(morA): break;
-                pair.append((t,morA[m]))
-                m += 1
-        return pair
-    
+    def get_data(self):
+        for p in self.root:
+            tag = p.xpath("local-name()")
+            if tag == self.tagDict["part"]:
+                self.get_participants(p)
+            elif tag == self.tagDict["sent"]:
+                self.get_sentence(p)
+            else:
+                print "skip",tag
 
-    def read_cha(self, fileName):
-## Object is participant tag => 
-##            'TXT' => text of participant 
-##            'MOR' => morphology of text        
-        currentParObj = {}
-        interruptionObj = {}
-        lastest=""
-        for line in codecs.open( fileName, "r", "utf-8" ): # open(fileName):
-            # problems related to file system (I guess)
-            line = self.regRemoveStrangeSym.sub("", line)            
-            m = self.regHeader.search(line)
-    ## Can we do better?
-            if  m:
-                self.headerInfo[m.group(1)] = m.group(2)
-                self.get_participants()
-                continue
-            m = self.regSpeaker.search(line)
-            if m:
-                latest="txt"
-                if re.search(ur'^\+"?,',m.group(2)) and interruptionObj.get(m.group(1)) != None:
-#                    print >> sys.stderr, "Interruption continues", line
-                    currentParObj = interruptionObj[m.group(1)]
-                    currentParObj["txt"] += re.sub(ur'(^\+|(\+\/\.|\+\.\.\.)[\s]*$)', "",m.group(2));
-#                    currentParObj["txt"] += re.sub(ur'^\+,', "",m.group(2));
-                else:
-#                    print  >> sys.stderr, "No interruption continues", line, interruptionObj
-                    interruptionObj[m.group(1)] = None
-                    currentParObj = {}
-                    currentParObj["tag"] = m.group(1)
-                    currentParObj["txt"] = m.group(2)
-                self.speakerTiers.append(currentParObj)
-                if re.search(ur'(\+/\.|\+\.\.\.)\s*$',m.group(2)) and interruptionObj.get(m.group(1)) == None:                   
-                    interruptionObj[m.group(1)] = currentParObj;
-                    currentParObj["txt"] = re.sub(ur'(\+\/\.|\+\.\.\.)[\s]*$', "",m.group(2));
-#                    print >> sys.stderr, "Interruption start:",line
-#                else:
-#                    print >> sys.stderr, "No Interruption:",line
-#                    interruptionObj[m.group(1)] = None
-                continue
-            m = self.regDependent.search(line)
-            if m:
-                if currentParObj == None: print >> sys.stderr, "Null object error"
-                latest = m.group(1)
-                if currentParObj.get(m.group(1)):
-                    currentParObj[m.group(1)] += re.sub(ur'(\+\/\.|\+\.\.\.)[ ]*$', "",m.group(2));
-                else:
-                    currentParObj[m.group(1)] = re.sub(ur'(\+\/\.|\+\.\.\.)[ ]*$', "",m.group(2));
-            if re.search('^\t',line):
-                line = line.strip()
-                currentParObj[latest] += " " + re.sub(ur'(\+\/\.|\+\.\.\.)[ ]*$', "",line);
+    def get_participants(self, elm):
+        print "participants:",
+        for p in elm:
+            if p.get("role").find("Child") == -1:
+                self.participants[p.get("id")] = p.get("role")
+        print self.participants
 
-    def print_output(self, info):
-        for p in range(len(self.outputTxt)):
-            for i in range(len(self.outputTxt[p])):
-                if info == "txt":
-                    print self.outputTxt[p][i],
-                elif info == "mor":
-                    print self.outputMor[p][i],
-                elif info == "txt/mor":
-                    print u"{0}\t{1}".format(self.outputTxt[p][i],self.outputMor[p][i])
-                else:
-                    print u"{0}\t{1}".format(self.outputTxt[p][i],self.outputMor[p][i])
-            print
+    def get_sentence(self, elm):
+        if elm.get("who") not in self.participants:
+            print >> sys.stderr, "[skip sentence %s, %s]" % (elm.get("who"), elm.get("uID"))
+            return
+#        if elm.get("uID") != "u795":
+#            return
+        self.current = self.sentence(sid=elm.get("uID"), who=elm.get("who"))
+        self.get_tags(elm, self.current)
+        print self.current
+        self.current = None
 
-#    def read_directory(self, path):
-path = sys.argv[1]
-if os.path.isfile(path):
-    test = ChildesReader()
-    test.read_cha(sys.argv[1])
-    test.get_gold_tags("CHI")
-    test.print_output("")
-else:
-    for dirname, dirnames, filenames in os.walk(path):
-        for filename in filenames:
-            if re.search(ur'^\w*\.cha$',filename):
-                fname = os.path.join(dirname, filename)
-                print >> sys.stderr, "[FILE]", fname
-                child = ChildesReader()
-                child.read_cha(fname)
-                child.get_gold_tags("CHI")
-                child.print_output("txt/mor")
+    def get_tags(self,elm, stc = None):
+        if not stc:
+            stc = self.sentence()
+        for p in elm:
+            tag = p.xpath("local-name()")
+            if tag == self.tagDict["word"]:
+                rw = self.get_word(p)
+                if rw.__class__.__name__ == "word":
+                    stc.append(rw)
+                elif rw.__class__.__name__ == "sentence":
+                    stc += rw
+            elif tag == self.tagDict["punc"] or tag == self.tagDict["comma"]:
+                stc.append(self.get_punc(p))
+            elif tag == self.tagDict["g"]: ##[!!] what does g mean???
+                gStc = self.get_tags(p)
+                stc += gStc
+            #### Helper Tags
+            elif tag == self.tagDict["repeat"]:
+                for w in stc.content:
+                    w.repeat = int(p.get("times"))
+            elif tag == self.tagDict["error"]:
+                stc.error = True
+            elif tag == self.tagDict["pause"]:
+                ptype = "P_" + p.get("symbolic-length")
+                stc.append(self.word(w=ptype, c = ptype, s = ptype))
+            elif tag == self.tagDict["senType"]: ##[!!] what does g mean???
+                stc.type += p.get("type")
+            elif tag == self.tagDict["overlap"]: ##[!!] what does g mean???
+                stc.type += p.get("type")
+            else:
+                if tag not in set(["a","e", "linker", "quotation", "ga", "postcode"]): 
+                    print >> sys.stderr, "unhandled\t%s\t%s\t%s" % \
+                        (self.current.id, "get_tags", tag)
+        return stc
 
+    def get_punc(self, elm):
+        ptype = "P_" + elm.get("type")
+        curw = self.word(w=ptype, c = ptype, s = ptype)
+        return curw
 
+    def get_word(self, elm):
+        curw = self.word(w=elm.text) if elm.text != None  else self.word()
+        if elm.get("type") != None: curw.type = elm.get("type")
+        for p in elm:
+            tag = p.xpath("local-name()")
+            if tag == self.tagDict["mor"]:
+                self.get_morph(p, curw)
+            elif tag == self.tagDict["short"]:
+                curw.w += p.text + p.tail if p.tail != None else p.text
+            elif curw.type == self.tagDict["fragment"] and tag == self.tagDict["fragTag"]:
+                curw.w += p.tail if p.tail != None else ""
+                if p.get("type") != None: curw.type += "_" + p.get("type")
+            elif tag == self.tagDict["replacement"]:
+                curw = self.get_tags(p)
+                for c in curw.content:
+                    c.replacement = True
+            elif tag == self.tagDict["composite"]:
+                curw.w += "_" + p.tail
+                curw.composite = True
+            else:
+                print >> sys.stderr, "unhandled\t%s\t%s\t%s" % \
+                    (self.current.id, "get_word", tag)
+        return curw
+    def get_replacement(self, elm):
+        for p in elm:
+            tag =  p.xpath("local-name()") 
+            if tag == self.tagDict["word"]:
+                curw = self.get_word(p)
+            else:
+                print >> sys.stderr, "unhandled\t%s\t%s\t%s" % \
+                    (self.current.id, "get_replacement", tag)
+            curw.replacement = True
+            return curw
+        
+    def get_morph(self, elm, word = None):
+        for p in elm:
+            tag =  p.xpath("local-name()") 
+            if tag == "mw":
+                self.get_mw(p,word)
+            elif tag == "mwc":
+                if word.composite:#compound words with "cmp"
+                    self.get_mw(p,word)
+                else: #compound words without "cmp" in <w>
+                    word.composite = True
+                    self.get_mw(p,word)
+            else:
+                ##[!!] handle mor-post to handle tokens such as it's
+                if tag not in set(["gra", "mor-post", "men-x"]): 
+                    print >> sys.stderr, "unhandled\t%s\t%s\t%s" % \
+                    (self.current.id, "get_morph", tag)
 
+    def get_mw(self, elm, word = None):
+        for p in elm:
+            tag = p.xpath("local-name()")
+            if  tag == "pos":
+                self.get_pos(p,word)
+            elif tag == "stem":
+                word.stem = p.text
+            elif tag == "mpfx":
+                word.pfx = p.text
+            else:
+                if tag not in set(["mk", "mw"]):  #due to compound words
+                    print >> sys.stderr, "unhandled\t%s\t%s\t%s" % \
+                        (self.current.id, "get_mw", tag)
 
+    def get_pos(self, elm, word = None):
+        for p in elm:
+            tag = p.xpath("local-name()")
+            if  tag == "s":
+                word.s = p.text
+            elif tag  == "c":
+                word.c = p.text
+            else:
+                print >> sys.stderr, "unhandled:%s:%s:%s" % \
+                    (self.current.id, "get_pos", tag)
+        
+if __name__ == "__main__":
+    c = childes(sys.argv[1])
+    c.get_data()
+#    c.get_participants()
+#    c.get_sentence()

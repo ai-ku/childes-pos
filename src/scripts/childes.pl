@@ -262,7 +262,10 @@ sub get_word{
         switch($_->{'_elt'}){
             case 'mor' { $mor = get_word_mor($_);}
             case 'p' {warn("unhandled[$curId]  sub_word:type:$_->{'_elt'}") if $_->{'p'}{'drawl'}}
-            case 'shortening' {$str .= get_shortening($_); $shortflag = 1}
+            ### This line is buggy
+            ### shortening has different orders  (an<sh d>=> and)  (<sh be> cause => because)
+            ### This code does not works iteratively between tags
+            case 'shortening' {$str .= get_shortening($_); $shortflag = 1;} 
             case 'replacement' {$rep = sub_g($_);}
             case 'wk' {}
             case 'pos'{}
