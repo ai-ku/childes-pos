@@ -4,7 +4,7 @@
   Appendix section.
 \item Data statistics (it is common to all experiments)
 \end{enumerate}
-\section{Experiment 1}
+\section{Experiment 1: corpus analysis}
 In this section we replicate the corpus analyses of \cite{20674613}
 and \cite{Mintz200391}.  
 
@@ -39,11 +39,56 @@ to our analyses:
 \item Words that are grammatically necessary but not spoken are
   deleted (grammatical omissions).
 \item {\bf Short usages ??}
-
 \end{itemize}
 
 \subsection{Method}
 \subsection{Results}
+
+\section{Experiment 2: computational modelling of substitutes}
+
+% Why do we choose feedforward connectionist model?
+\cite{20674613} compare the effect of distributional cues from
+flexible frames to fixed frames on learning grammatical category by
+using a feedforward connectionist model.  We adopt their framework to
+compare the paradigmatic representation (substitute words) with the
+syntagmatic representation (flexible and fixed frames).
+
+% What does the connectionist model do? Briefly explain without giving
+% too much mathematical details
+% Two aspects:  
+% description of learning process
+% how to represent distributional
+\subsection{Method}
+A prototypical connectionist model consists of input, hidden and
+output layers.  Input and output layers are connected to each other
+through the hidden layer.  The behavior of the output units are
+determined by the activity of the hidden layers which is triggered by
+the input layer.
+
+% How do they represent the frame information?
+We trained three connectionist models according the source of
+distributional information:
+\begin{enumerate}
+\item $AxB$: Each input unit represents a unique frame thus only one
+  unit is activated (set to 1) for each word.
+
+\item $Ax + xB$: The first and second half of the input units
+  correspond to the preceding word, $A$, and the succeeding word $B$,
+  respectively.  Therefore for each word two input units are
+  activated.
+
+\item $Substitutes$: Each input unit represents a unique substitute
+  word and input units that correpond to the substitutes are set to
+  the number of their occurences in the sampled substitutes set.
+    
+\end{enumerate}
+
+% How we are going to represent the substitute information using the
+% frame information?
+
+% Give an example sentence to show how we represent each frame
+
+
 
 % \begin{table}[ht]
 % \small
