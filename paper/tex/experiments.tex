@@ -4,66 +4,142 @@
   Appendix section.
 \item Data statistics (it is common to all experiments)
 \end{enumerate}
-\section{Experiment 1}
-Original Idea
+\section{Experiment 1: corpus analysis}
+In this section we replicate the corpus analyses of \cite{clair2010}
+and \cite{Mintz200391}.  
+
 \subsection{Input Corpora}
+
+In order to be consistent with \cite{clair2010} and \cite{Mintz200391},
+we use the same six corpora of child-directed speech from the CHILDES
+corpus \citep*{macwhinney2000childes}: Anne and Aran
+\citep*{theakston2001role}, Eve \citep*{JCL:1765112}, Naomi
+\citep*{sachs1983talking}, Nina \citep*{suppes1974semantics}, Peter
+\citep*{Bloom1974380, bloom1975structure}.  Following
+\cite{Mintz200391} we only analyze the adult utterances in sessions
+where the target child is 2.6 years old or younger.
+
+\subsubsection{Preprocessing}
+
+The grammatical category of words in CHILDES are extracted by first
+applying the MOR parser \citep*{macwhinney2000childes} and then using
+the POST disambiguator \citep*{sagae2004automatic}.  The accuracy of
+CHILDES grammatical categories is approximately 95\%
+\citep*{parisse2000automatic} and it is encoded in the MOR line of the
+CHILDES corpus.
+
+We apply the following pre-processing steps \citep*{clair2010} initial
+to our analyses:
+\begin{itemize}
+\item All punctuation, pause, trailing off and interruption marks are
+  treated as utterance boundary marks.
+\item Repetitions of a word are kept in the text and their grammatical
+  categories are automatically set to the grammatical category of the
+  original word.
+\item Words that are grammatically necessary but not spoken are
+  deleted (grammatical omissions).
+\item {\bf Short usages ??}
+\item {\bf Frames do not include utterance
+    boundaries. \cite{Mintz200391}}
+\end{itemize}
+
 \subsection{Method}
+%% How do we extract frames? Which words are the our target words
+Word sequences that consist of three words and do not contain any
+utterance boundaries are extracted for each child corpus seperately.
+The first and third words of the word sequences are treated as frame
+elements while the middle word is the target word that we want to
+categorize.  The correct grammatical category of target words are
+extracted from CHILDES.
+
+%% Define frames in here again? also in related work.
+%% What is standard labeling? 
+%% Are we going to report accuracy and completeness
+
+%% Do we replicate the 45 tag case?  No.  \cite{}
 \subsection{Results}
 
-\begin{table}[ht]
-\small
-\centering
-\caption{The 70\% of the sentences in the union of 6 child corpora are
-  used as the training set while the remaining 30\% sentences of each
-  corpus are used as the test set.  Average classification accuracy
-  (10 runs) of the supervised connectionist model for the standard
-  labelling on each child corpus after 10K words of training are
-  summarized and the corresponding standard errors are reported in
-  parentheses.}
-\begin{tabular}{|l|l@{ }|l@{ }|l@{ }|l@{ }|l@{ }|l@{ }|l@{ }|}
-  \hline
-  & \multicolumn{4}{c|}{Frames} & \multicolumn{2}{c|}{\specialcell{Number of \\ Substitute Words}}\\
-  \hline
-  Child & aX & Xb & aXb & aX + Xb & 1 & 16\\
-  \hline
-  Anne & .5317 (.0374)  & .5065 (.0214) & .3788 (.0279) & .6190 (.0253) & .6221 (.0333) & .7829 (.0059) \\
-  Aran & .5098 (.0344) & .4779 (.0171) & .5098 (.0289) & .5863 (.0227) & .5916 (.0371) & .7597 (.007) \\
-  Eve & .5408 (.036)  & .4905 (.0183) & .5408 (.0186) & .6125 (.0229) & .6189 (.0287) & .7862 (.0058) \\
-  Naomi & .5250 (.0269) & .4922 (.0205) & .3860 (.028) & .6019 (.0218) & .6021 (.0322) & .7672 (.0071) \\
-  Nina & .5412 (.0304) & .5032 (.0213) & .3950 (.0223) & .6308 (.0277) & .6474 (.0331) & .8089 (.0089) \\
-  Peter & .5359 (.036) & .5092 (.0216) & .5359 (.0188) & .6250 (.0252) & .6315 (.0263) & .7974 (.0082) \\
-  \hline
-\end{tabular}
-\end{table}
-\begin{table}[h]
-\label{tab:myfirsttable}
-\end{table}
+\section{Experiment 2: computational modeling of substitutes}
 
-\begin{table}[ht]
-\small
-\centering
-\caption{ Average 10-fold classification accuracy of the supervised
-  connectionist model for the standard labelling on each child corpus
-  after 50K words of training are summarized and the corresponding
-  standard errors are reported in parentheses.}
-\begin{tabular}{|l|l@{ }|l@{ }|l@{ }|l@{ }|l@{ }|l@{ }|l@{ }|}
-  \hline
-  & \multicolumn{4}{c|}{Frames} & \multicolumn{2}{c|}{\specialcell{Number of \\ Substitute Words}}\\
-  \hline
-  Child & aX & Xb & aXb & aX + Xb & 1 & 16\\
-  \hline
-  Anne & .6165 (.0119)  & .6150 (.0119) & .5251 (.0189) & .7545 (.0147) & .7321 (.0081) & .8273 (.0087) \\
-  Aran & .5924 (.0193) & .5583 (.0193) & .4834 (.0131) & .7164 (.0151) & .7081 (.0074) & .8136 (.0096) \\
-  Eve & .6337 (.0139)  & .5850 (.0116) & .5425 (.0198) & .7605 (.0104) & .7435 (.0208) & .8378 (.01999) \\
-  Naomi & .6183 (.0165) & .5908 (.0254) & .5353 (.0234) & .7438 (.0156) & .7146 (.0136) & .8165 (.0147) \\
-  Nina & .6353 (.0195) & .6097 (.0049) & .5556 (.0106) & .7745 (.0199) & .7527 (.0059) & .8494 (.0073) \\
-  Peter & .6056 (.0205) & .6232 (.0205) & .5604 (.0115) & .7630 (.005) & .7398 (.0120) & .8437 (.0061) \\
-  \hline
-\end{tabular}
-\end{table}
-\begin{table}[h]
-\label{tab:myfirsttable}
-\end{table}
+% Why do we choose feedforward connectionist model?
+\cite{clair2010} uses feed-forward connectionist model to compare the
+effect of distributional cues from various frame types on the
+grammatical category problem.  We adopt their framework to compare the
+paradigmatic representation (substitute words) with the syntagmatic
+representation (flexible frames).
+% What are the input and output layer
+% What does the connectionist model do? Briefly explain without giving
+% too much mathematical details
+% Two aspects:  
+% description of learning process
+% how to represent distributional
+
+A prototypical connectionist model consists of input, hidden and
+output layers.  Input and output layers are connected to each other
+through the hidden layer.  The behavior of the output units are
+determined by the activity of the hidden layers which is triggered by
+the input layer.
+
+\subsection{Method}
+
+We train two connectionist models to compare flexible frames ($aX+Xb$)
+to the substitute words ($a*b$).
+
+\subsection{Architecture}
+% How do they represent the frame information?
+For each model we input the distributional information to the
+feed-forward connectionist model in the following way,
+
+\begin{itemize}
+%#\item $aXb$: Each input unit represents a distinct frame thus only one
+% unit is activated (i.e. set to 1) for each target word.
+\item {\bf$aX+Xb$ model:} The first and second half of the input units
+  correspond to the preceding bigram ($a$) and the succeeding bigram
+  ($b$), respectively.  Thus two input units are activated for each
+  target word.
+\item {\bf $a*b$ model:} Each input unit represents a distinct
+  substitute and input units that correspond to the substitutes of the
+  target word are set to the number of their occurrences in the
+  sampled set.
+\end{itemize}
+
+% Give an example sentence to show how we represent each frame
+Each output unit represents a distinct grammatical category therefore
+the models are expected to produce only one active (non-zero) output
+unit for each target word.  If there are more than one active units
+present in the output layer\footnote{why neural network produces more
+  than one active unit.}, the target word is assigned to the
+corresponding grammatical category of the largest unit.
+
+Both models have 10 output units due to the standard labeling
+\citep*{Mintz200391}.
+
+Number of hidden units is set to 200 and initialized randomly for each
+model. {\bf backprobagation(0.1), learning rate, sigmoid...}
+
+\subsection{Training and Testing}
+
+%%% How do we split the train and test
+% 10-fold cross valdiation
+% -> define/implementaion
+% -> advantage
+
+We analyze each child corpus seperately and apply 10-fold cross
+validation to measure model performances.  10-fold cross validation
+randomly splits the sentences of each corpora into 10 sentence wise
+equal sized subsamples.  Thus target words from the same sentence are
+observed in the same subsample.  A single subsample is kept as the
+test data while remaining 9 samples are used as the training data.
+The process is repeated until all subsamples are used exactly once as
+the test data and report the average accuracy of the 10 runs.  The
+main advantage of cross validation is that each subsample is observed
+both as test and training set.
+
+To compare the effects of paradigmatic representation with the
+syntagmatic one we test both models on each child corpus using the
+same 10-fold cross validation split.
+
+\input{framevssub}
 
 \section{Experiment 2}
 Number of subsitutes.  We need to show 16 is better than 1 but 16+ is same
@@ -97,5 +173,6 @@ What happens if some of the words are given (semi-supervised setting)
 \subsection{Input Corpora}
 \subsection{Method}
 \subsection{Results}
+
 
 
