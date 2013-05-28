@@ -62,8 +62,8 @@ extracted from CHILDES.
 \section{Experiment 2: computational modeling of substitutes}
 
 % Why do we choose feedforward connectionist model?
-\cite{clair2010} uses feed-forward connectionist model to compare the
-effect of distributional cues from various frame types on the
+\cite{clair2010} used a feed-forward connectionist model to compare
+the effect of distributional cues from various frame types on the
 grammatical category problem.  We adopt their framework to compare the
 paradigmatic representation (substitute words) with the syntagmatic
 representation (flexible frames).
@@ -100,8 +100,38 @@ feed-forward connectionist model in the following way,
 \item {\bf $a*b$ model:} Each input unit represents a distinct
   substitute and input units that correspond to the substitutes of the
   target word are set to the number of their occurrences in the
-  sampled set.
+  sampled subsitute set.
 \end{itemize}
+
+%Statistics related to frames
+\begin{table}[ht]
+\centering
+\caption{
+  Number of input layer units of the flexible frame ($aX + Xb$) and 
+  the substitute based models are summarized.  Substitute based model
+  samples 16 substitutes per target word. Standard errors are
+  reported in parentheses.
+}
+\begin{tabular}{lrr}
+  \hline  
+  Child & \specialcell{Distinct\\$aX+Xb$} & \specialcell{Distinct \\ $Substitutes$}\\
+  \hline
+  Anne  & 3601 & 4999.4 (39.86)\\
+  Aran  & 4857 & 6066.3 (40.84)\\
+  Eve   & 2928 & 4261.1 (32.18)\\
+  Naomi & 2396 & 3366.3 (39.11)\\
+  Nina  & 3084 & 4936.3 (36.29)\\
+  Peter & 2835 & 4290.5 (34.56)\\
+  \hline
+\end{tabular}
+\label{t:inputunits}
+\end{table}
+
+Table~\ref{t:inputunits} presents the number of input layer units of
+syntagmatic and paradigmatic representation based models on each child
+corpus seperately.  The number of distinct frames is fixed for any
+given corpus while the number of distinct substitutes varies due to
+the random sampling of substitutes.
 
 % Give an example sentence to show how we represent each frame
 Each output unit represents a distinct grammatical category therefore
@@ -132,8 +162,8 @@ observed in the same subsample.  A single subsample is kept as the
 test data while remaining 9 samples are used as the training data.
 The process is repeated until all subsamples are used exactly once as
 the test data and report the average accuracy of the 10 runs.  The
-main advantage of cross validation is that each subsample is observed
-both as test and training set.
+main advantage of the cross validation is that each subsample is
+observed both as test and training data.
 
 To compare the effects of paradigmatic representation with the
 syntagmatic one we test both models on each child corpus using the
