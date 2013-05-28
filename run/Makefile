@@ -164,7 +164,7 @@ wsub.stat:	anne.wsub.out aran.wsub.out eve.wsub.out naomi.wsub.out nina.wsub.out
 	-rm $@
 	for label in anne aran eve naomi nina peter; do\
 		echo "$$label" >> $@; \
-		cat $$label.wsub.out | perl -lane 'if ($$F[3] == ${DATA_NUMSUB}) {$$c+=1; $$t += $$F[${DATA_WSUBFEAT}];}END{print $$t/$$c}' >> $@;\
+		cat $$label.wsub.out | perl -lane 'if ($$F[3] == ${DATA_NUMSUB}) {$$c+=1; $$t += $$F[${DATA_WSUBFEAT}]; $$t2 += $$F[${DATA_WSUBFEAT}]**2;} END{print $$t/$$c . " ". ($$t2/$$c - ($$t/$$c)**2)**.5 }' >> $@;\
 	done
 
 DATA_FRAME=4
