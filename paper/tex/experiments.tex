@@ -5,12 +5,12 @@
 \item Data statistics (it is common to all experiments)
 \end{enumerate}
 \section{Experiment 1: corpus analysis}
-In this section we replicate the corpus analyses of \cite{20674613}
+In this section we replicate the corpus analyses of \cite{clair2010}
 and \cite{Mintz200391}.  
 
 \subsection{Input Corpora}
 
-In order to be consistent with \cite{20674613} and \cite{Mintz200391},
+In order to be consistent with \cite{clair2010} and \cite{Mintz200391},
 we use the same six corpora of child-directed speech from the CHILDES
 corpus \citep*{macwhinney2000childes}: Anne and Aran
 \citep*{theakston2001role}, Eve \citep*{JCL:1765112}, Naomi
@@ -28,7 +28,7 @@ CHILDES grammatical categories is approximately 95\%
 \citep*{parisse2000automatic} and it is encoded in the MOR line of the
 CHILDES corpus.
 
-We apply the following pre-processing steps \citep*{20674613} initial
+We apply the following pre-processing steps \citep*{clair2010} initial
 to our analyses:
 \begin{itemize}
 \item All punctuation, pause, trailing off and interruption marks are
@@ -39,19 +39,34 @@ to our analyses:
 \item Words that are grammatically necessary but not spoken are
   deleted (grammatical omissions).
 \item {\bf Short usages ??}
+\item {\bf Frames do not include utterance
+    boundaries. \cite{Mintz200391}}
 \end{itemize}
 
 \subsection{Method}
+%% How do we extract frames? Which words are the our target words
+Word sequences that consist of three words and do not contain any
+utterance boundaries are extracted for each child corpus seperately.
+The first and third words of the word sequences are treated as frame
+elements while the middle word is the target word that we want to
+categorize.  The correct grammatical category of target words are
+extracted from CHILDES.
+
+%% Define frames in here again? also in related work.
+%% What is standard labeling? 
+%% Are we going to report accuracy and completeness
+
+%% Do we replicate the 45 tag case?  No.  \cite{}
 \subsection{Results}
 
 \section{Experiment 2: computational modeling of substitutes}
 
 % Why do we choose feedforward connectionist model?
-\cite{20674613} compare the effect of distributional cues from various
-type of frames on the learning grammatical category problem by using a
-feed-forward connectionist model.  We adopt their framework to compare
-the paradigmatic representation (substitute words) with the
-syntagmatic representation (flexible frames).
+\cite{clair2010} uses feed-forward connectionist model to compare the
+effect of distributional cues from various frame types on the
+grammatical category problem.  We adopt their framework to compare the
+paradigmatic representation (substitute words) with the syntagmatic
+representation (flexible frames).
 % What are the input and output layer
 % What does the connectionist model do? Briefly explain without giving
 % too much mathematical details
@@ -72,7 +87,8 @@ to the substitute words ($a*b$).
 
 \subsection{Architecture}
 % How do they represent the frame information?
-For each model we represent the input in the following way,
+For each model we input the distributional information to the
+feed-forward connectionist model in the following way,
 
 \begin{itemize}
 %#\item $aXb$: Each input unit represents a distinct frame thus only one
@@ -82,23 +98,46 @@ For each model we represent the input in the following way,
   ($b$), respectively.  Thus two input units are activated for each
   target word.
 \item {\bf $a*b$ model:} Each input unit represents a distinct
-  substitute and input units that correspond to the substitutes are set
-  to the number of their occurrences in the target word substitutes.
+  substitute and input units that correspond to the substitutes of the
+  target word are set to the number of their occurrences in the
+  sampled set.
 \end{itemize}
 
 % Give an example sentence to show how we represent each frame
 Each output unit represents a distinct grammatical category therefore
 the models are expected to produce only one active (non-zero) output
 unit for each target word.  If there are more than one active units
-present in the output layer we assign the largest one as the
-grammatical category of the target word.
+present in the output layer\footnote{why neural network produces more
+  than one active unit.}, the target word is assigned to the
+corresponding grammatical category of the largest unit.
 
 Both models have 10 output units due to the standard labeling
 \citep*{Mintz200391}.
 
 Number of hidden units is set to 200 and initialized randomly for each
-model. {\bf backprobagation, learning rate, sigmoid...}
+model. {\bf backprobagation(0.1), learning rate, sigmoid...}
 
+\subsection{Training and Testing}
+
+%%% How do we split the train and test
+% 10-fold cross valdiation
+% -> define/implementaion
+% -> advantage
+
+We analyze each child corpus seperately and apply 10-fold cross
+validation to measure model performances.  10-fold cross validation
+randomly splits the sentences of each corpora into 10 sentence wise
+equal sized subsamples.  Thus target words from the same sentence are
+observed in the same subsample.  A single subsample is kept as the
+test data while remaining 9 samples are used as the training data.
+The process is repeated until all subsamples are used exactly once as
+the test data and report the average accuracy of the 10 runs.  The
+main advantage of cross validation is that each subsample is observed
+both as test and training set.
+
+To compare the effects of paradigmatic representation with the
+syntagmatic one we test both models on each child corpus using the
+same 10-fold cross validation split.
 
 \input{framevssub}
 
