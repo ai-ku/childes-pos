@@ -135,7 +135,7 @@ class childes:
         return stc
 
     def get_punc(self, elm):
-        ptype = "P_" + elm.get("type")
+        ptype = "P_" + str(elm.get("type")).replace(" ","_")
         curw = self.word(w=ptype, c = ptype, s = ptype)
         return curw
 

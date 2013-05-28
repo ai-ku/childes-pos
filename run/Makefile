@@ -55,9 +55,6 @@ WORDSUB=16
 SCODE_CLUSTER=40
 SCODE_ITER=$(shell echo 1 + 100 / ${WORDSUB} | bc)
 
-maliy:
-	echo ${SCODE_ITER}
-
 WSC_OPTIONS=-r 1 -i ${SCODE_ITER} -d 25 -z 0.166 -p 50 -u 0.2 -s ${SEED} -v -a
 
 %.wpairs.gz: %.pairs.gz %.word.gz ## WS_NSUB=64: time=20m55s wc=75121024 150242048 809663253
@@ -158,6 +155,27 @@ split.wsub.plot: split.wsub.out
 
 %.wsub.plot: %.wsub.out
 	cat $< | plotdata.pl 4=$* 3=x 5=y > $@
+
+### DATA Statistics
+
+DATA_NUMSUB=16
+DATA_WSUBFEAT=9
+wsub.stat:	anne.wsub.out aran.wsub.out eve.wsub.out naomi.wsub.out nina.wsub.out peter.wsub.out 
+	-rm $@
+	for label in anne aran eve naomi nina peter; do\
+		echo "$$label" >> $@; \
+		cat $$label.wsub.out | perl -lane 'if ($$F[3] == ${DATA_NUMSUB}) {$$c+=1; $$t += $$F[${DATA_WSUBFEAT}];}END{print $$t/$$c}' >> $@;\
+	done
+
+DATA_FRAME=4
+DATA_FRAMEFEAT=9
+frame.stat: anne.frame.out aran.frame.out eve.frame.out naomi.frame.out nina.frame.out peter.frame.out 
+	-rm $@
+	for label in anne aran eve naomi nina peter; do\
+		echo "$$label" >> $@; \
+		cat $$label.frame.out | perl -lane '$$t->{$$F[${DATA_FRAME}]}{_C_} += $$F[${DATA_FRAMEFEAT}]; $$t->{$$F[${DATA_FRAME}]}{_A_} += 1; END{foreach (keys %$$t) {print "$$_ ". $$t->{$$_}{_C_} / $$t->{$$_}{_A_};}}' >> $@;\
+	done
+
 
 ### FREQUENT (AXB), FLEXIBLE(AX + XB) and BIGRAM FRAMES (AX and XB)
 FRAME_THR=0
