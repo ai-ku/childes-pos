@@ -1,0 +1,62 @@
+\section{Related Work}
+Previous research demonstrate that infants have a mechanism to process
+statistical properties of natural language(Saffran et al., 1996).
+Distributional knowledge,which is also a statistical approach to natural
+language, refers to the notion that context of a word determines grammatical
+properties of it. For instance, (Gomez, 2002) and (Van Heugten et al.,2010)
+demonstrated that distributional statistics help infants acquire non-adjacent
+dependencies. Distributional knowledge also plays an important part in word
+segmentation task(Saffran,Newport, et al., 1996).
+
+One of the approaches of distributional information to construct syntactic
+categories is the work of (Redington et al., 1998). They define the context of
+a word as previous and following words. With this definition, they construct
+context vectors of target words for clustering. Using average link clustering
+with a treshold maximizing accuracy and completeness, target  words are
+seperated into categories. Although the categorizations are generally accurate,
+the method lacks of completeness. Furthermore, as (Ambridge  and 2011) pointed
+out one might question what could be the underlying process to determine the
+treshold for infants to do such clustering.
+
+(Cartwight et al.,1997) introduces an incremental method to make use of
+distributional knowledge. Intrinsic idea behind the method is that no language
+learner has ever a chance to process all the sentences of the language to learn
+syntactic categorization, thus, a generalization method such as distributional
+processing may help learner confine the search space for later generalization.
+To accomplish this, they convert the problem into Minimum Descriptive Language
+optimization problem. The crucial part of the method is that after a sentence
+is processed, it is forgotton. Results are similar with Redingtons's work, high
+in accuracy but low in completeness. Still, it shows that distributional
+knowledge is powerful for syntactic categorization even if the learner is
+exposed the small amount of syntactic knowledge of the language.
+
+By extending the work on adults with artificial language inputs (Mintz,2002),
+(Mintz, 2003) proposes a notion to represent the context of a word. Frequent
+frames can be defined as two jointly appearing words with one word in the
+middle. Experiments on child directed speech reveal that even relatively small
+fraction of frames has ability to categorize the half of the corpora. Though
+the accuracy is impressive, the same as previous work, it suffers from
+completeness, in addition, it has covarege problem. As a further step, (St.
+Clair et al., 2010), combines the bigram's coverage power(Redington et
+al.,1998),(Monaghan and Christansen, 2008) and accuracy of fixed
+frames(Mintz,2003). Extensive experiments result that infants make use of both
+bigram and trigram sources. As they pointed out, they may even use higher-order
+relationships among words. 
+
+
+(Freudenthal et al.,2004) points out a different complication on distributional
+methods for constructing syntactic categories. One of the core ideas behind
+distributional methods is that words in the same context share the same
+syntactic categories and can be used interchangebly(REFERENCE HERE).
+Freudenthal claims that evaluation methods used in previous work such as
+(Mintz, 2003), (Cartwright, 1997) and (Redington et al., 1998) can be
+misleading. In those work, if a word is substituted with another one in its
+category, the resulting sentences erronous in a way that are not observed in
+infants speech. As a success criteria, they argue that proposed categorization
+should generate plausible sentences. They introduce chunking mechanism to
+overcome this problem by merging  words that are seen frequently. Results seems
+successful to generate meaningful sentences after substitution, still, the
+proposed solution is computationally complex to disclose the learning mechanism
+in infants.
+
+

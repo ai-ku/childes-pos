@@ -1,24 +1,20 @@
 \begin{table}[ht]
 \centering
-\caption{10 fold cross-validation accuracy of flexible frame ($aX + Xb$) and
-  substitute based models on each child corpus are summarized.
-  The training phase on each corpus is stopped after 50K word patterns
-  are presented and the standard labeling is used.  Substitute based model
-  samples 16 substitutes per target word. Standard errors are
-  reported in parentheses.
+\caption{10-fold cross-validation classification accuracies of flexible frame
+  ($aX + Xb$) and paradigmatic models ($a*b$) on each child corpus after 100K
+  training patterns are summarized.  Standard errors are reported in
+  parentheses.
 }
-
-
 \begin{tabular}{|l|l|l|}
   \hline
   Child & $aX + Xb$ & $Substitutes$\\
   \hline
-  Anne  & .7545 (.0147) & {\bf .8273 (.0087)} \\
-  Aran  & .7164 (.0151) & {\bf .8136 (.0096)} \\
-  Eve   & .7605 (.0104) & {\bf .8378 (.0199)} \\
-  Naomi & .7438 (.0156) & {\bf .8165 (.0147)} \\
-  Nina  & .7745 (.0199) & {\bf .8494 (.0073)} \\
-  Peter & .7630 (.005)  & {\bf .8437 (.0061)} \\
+  Anne  & .7833 (.0072) & {\bf .8335 (.0078)} \\
+  Aran  & .7495 (.0091) & {\bf .8218 (.0063)} \\
+  Eve   & .7896 (.0073) & {\bf .8467 (.0113)} \\
+  Naomi & .7643 (.0122) & {\bf .8212 (.0132)} \\
+  Nina  & .8053 (.0083) & {\bf .8555 (.0058)} \\
+  Peter & .7924 (.0083) & {\bf .8509 (.0083)} \\
   \hline
 \end{tabular}
 \label{t:framevssub}

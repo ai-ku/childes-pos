@@ -14,7 +14,6 @@
 %% The list of all files belonging to the 'Elsarticle Bundle' is
 %% given in the file `manifest.txt'.
 %%
-
 %% Template article for Elsevier's document class `elsarticle'
 %% with harvard style bibliographic references
 %% SP 2008/03/01
@@ -42,7 +41,8 @@
 %% use the graphics package for simple commands
 %% \usepackage{graphics}
 %% or use the graphicx package for more complicated commands
-%% \usepackage{graphicx}
+\usepackage{graphicx, subfigure}
+\usepackage{caption}
 %% or use the epsfig package if you prefer to use the old commands
 %% \usepackage{epsfig}
 
@@ -152,9 +152,9 @@ modeling \sep Paradigmatic approach
 \end{frontmatter}
 
 % \linenumbers
-
 %% main text
 \input{introduction}
+\input{related}
 \input{substitute}
 \input{experiments}
 \section{General Discussion}
@@ -211,7 +211,7 @@ modeling \sep Paradigmatic approach
 
 
 %% References with bibTeX database:
-
+\clearpage
 \bibliographystyle{model5-names}
 \bibliography{childes}
 
@@ -243,6 +243,4 @@ modeling \sep Paradigmatic approach
 
 %%
 %% End of file `elsarticle-template-harv.tex'.
-
-
 

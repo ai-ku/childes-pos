@@ -1,13 +1,13 @@
+%% Experiment Section Counter
+\newcounter{ExperimentCounter}
+\setcounter{ExperimentCounter}{1}
+\section{Experiment Setup}
 \begin{enumerate}
 \item We need to clarify the tag set that is used during the
   experiments. May be it is better to give the whole mapping as an
   Appendix section.
 \item Data statistics (it is common to all experiments)
 \end{enumerate}
-\section{Experiment 1: corpus analysis}
-In this section we replicate the corpus analyses of \cite{clair2010}
-and \cite{Mintz200391}.  
-
 \subsection{Input Corpora}
 
 In order to be consistent with \cite{clair2010} and \cite{Mintz200391},
@@ -32,41 +32,49 @@ We apply the following pre-processing steps \citep*{clair2010} initial
 to our analyses:
 \begin{itemize}
 \item All punctuation, pause, trailing off and interruption marks are
-  treated as utterance boundary marks.
+  treated as utterance boundaries.
 \item Repetitions of a word are kept in the text and their grammatical
   categories are automatically set to the grammatical category of the
   original word.
 \item Words that are grammatically necessary but not spoken are
   deleted (grammatical omissions).
 \item {\bf Short usages ??}
-\item {\bf Frames do not include utterance
-    boundaries. \cite{Mintz200391}}
+    boundaries. 
 \end{itemize}
 
-\subsection{Method}
+\subsubsection{Target Word}
 %% How do we extract frames? Which words are the our target words
-Word sequences that consist of three words and do not contain any
-utterance boundaries are extracted for each child corpus seperately.
-The first and third words of the word sequences are treated as frame
-elements while the middle word is the target word that we want to
-categorize.  The correct grammatical category of target words are
-extracted from CHILDES.
+Word sequences that consist of three words and do not contain any utterance
+boundaries are extracted from each child corpus separately
+\citep*{Mintz200391}.  The first and the third words of sequences are treated
+as frame elements while the middle one is the target word that we want to
+categorize.  The correct grammatical category of target words are extracted
+from CHILDES.  [!! put number of target words table] 
+
+\subsubsection{Language Modeling Substitute Words}
+\label{s:lm}
+To compute substitute probabilities of target words we trained a language model
+using approximately 6.8 million words\footnote{Anne, Aran, Eve, Naomi and Peter
+corpora are excluded.} of child-directed speech data from CHILDES.  We used
+SRILM \citep*{Stolcke2002} to build a 4-gram language model with Kneser-Ney
+discounting.  Words that were observed less than 2 times in the LM training
+data were replaced with unknown word tag \textsc{<unk>}, which gave us a
+vocabulary size of 21734.
 
 %% Define frames in here again? also in related work.
 %% What is standard labeling? 
 %% Are we going to report accuracy and completeness
 
 %% Do we replicate the 45 tag case?  No.  \cite{}
-\subsection{Results}
 
-\section{Experiment 2: computational modeling of substitutes}
-
+\subsection{Computational Modeling Algorithm}
+\label{s:computational}
 % Why do we choose feedforward connectionist model?
 \cite{clair2010} used a feed-forward connectionist model to compare
 the effect of distributional cues from various frame types on the
-grammatical category problem.  We adopt their framework to compare the
-paradigmatic representation (substitute words) with the syntagmatic
-representation (flexible frames).
+grammatical category learning.  We adopt their framework to compare
+the paradigmatic representation (substitute words) with the
+syntagmatic representation (flexible frames).
 % What are the input and output layer
 % What does the connectionist model do? Briefly explain without giving
 % too much mathematical details
@@ -80,15 +88,10 @@ through the hidden layer.  The behavior of the output units are
 determined by the activity of the hidden layers which is triggered by
 the input layer.
 
-\subsection{Method}
-
-We train two connectionist models to compare flexible frames ($aX+Xb$)
-to the substitute words ($a*b$).
-
-\subsection{Architecture}
-% How do they represent the frame information?
-For each model we input the distributional information to the
-feed-forward connectionist model in the following way,
+% How do they represent the frame/input information?
+We train separate connectionist models to compare flexible frames ($aX+Xb$) to
+the substitute words ($a*b$).  For each model we input the distributional
+information to the feed-forward connectionist model in the following way,
 
 \begin{itemize}
 %#\item $aXb$: Each input unit represents a distinct frame thus only one
@@ -100,46 +103,55 @@ feed-forward connectionist model in the following way,
 \item {\bf $a*b$ model:} Each input unit represents a distinct
   substitute and input units that correspond to the substitutes of the
   target word are set to the number of their occurrences in the
-  sampled subsitute set.
+  sampled substitute set.
 \end{itemize}
 
-%Statistics related to frames
-\begin{table}[ht]
-\centering
-\caption{
-  Number of input layer units of the flexible frame ($aX + Xb$) and 
-  the substitute based models are summarized.  Substitute based model
-  samples 16 substitutes per target word. Standard errors are
-  reported in parentheses.
-}
-\begin{tabular}{lrr}
-  \hline  
-  Child & \specialcell{Distinct\\$aX+Xb$} & \specialcell{Distinct \\ $Substitutes$}\\
-  \hline
-  Anne  & 3601 & 4999.4 (39.86)\\
-  Aran  & 4857 & 6066.3 (40.84)\\
-  Eve   & 2928 & 4261.1 (32.18)\\
-  Naomi & 2396 & 3366.3 (39.11)\\
-  Nina  & 3084 & 4936.3 (36.29)\\
-  Peter & 2835 & 4290.5 (34.56)\\
-  \hline
-\end{tabular}
-\label{t:inputunits}
-\end{table}
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=.6\textwidth]{../figures/inputlayer.pdf}
+  \caption{Number of input layer units of the flexible frame ($aX + Xb$) and
+    the substitute based model($a*b$) are summarized.  $a*b$ samples 16
+    substitutes per target word.  Standard errors are reported with error bars. 
+  }
+  \label{fig:inputunits}
+\end{figure}
+%%%Statistics related to frames
+%%\begin{table}[ht]
+%%\centering
+%%\caption{
+%%  Number of input layer units of the flexible frame ($aX + Xb$) and 
+%%  the substitute based models are summarized.  Substitute based model
+%%  samples 16 substitutes per target word. Standard errors are
+%%  reported in parentheses.
+%%}
+%%\begin{tabular}{lrr}
+%%  \hline  
+%%  Child & \specialcell{Distinct\\$aX+Xb$} & \specialcell{Distinct \\ $Substitutes$}\\
+%%  \hline
+%%  Anne  & 3601 & 4999.4 (39.86)\\
+%%  Aran  & 4857 & 6066.3 (40.84)\\
+%%  Eve   & 2928 & 4261.1 (32.18)\\
+%%  Naomi & 2396 & 3366.3 (39.11)\\
+%%  Nina  & 3084 & 4936.3 (36.29)\\
+%%  Peter & 2835 & 4290.5 (34.56)\\
+%%  \hline
+%%\end{tabular}
+%%\label{t:inputunits}
+%%\end{table}
 
-Table~\ref{t:inputunits} presents the number of input layer units of
+Table~\ref{fig:inputunits} presents the number of input layer units of
 syntagmatic and paradigmatic representation based models on each child
 corpus seperately.  The number of distinct frames is fixed for any
 given corpus while the number of distinct substitutes varies due to
-the random sampling of substitutes.
+the random sampling.
 
 % Give an example sentence to show how we represent each frame
-Each output unit represents a distinct grammatical category therefore
-the models are expected to produce only one active (non-zero) output
-unit for each target word.  If there are more than one active units
-present in the output layer\footnote{why neural network produces more
-  than one active unit.}, the target word is assigned to the
-corresponding grammatical category of the largest unit.
+Each output unit represents a distinct grammatical category therefore the
+models are expected to produce only one active (non-zero) output unit for each
+target word.  If there are more than one active units present in the output
+layer\footnote{why neural network produces more than one active unit.}, the
+target word is assigned to the corresponding grammatical category of the output
+unit with the largest value.
 
 Both models have 10 output units due to the standard labeling
 \citep*{Mintz200391}.
@@ -154,55 +166,237 @@ model. {\bf backprobagation(0.1), learning rate, sigmoid...}
 % -> define/implementaion
 % -> advantage
 
-We analyze each child corpus seperately and apply 10-fold cross
-validation to measure model performances.  10-fold cross validation
-randomly splits the sentences of each corpora into 10 sentence wise
-equal sized subsamples.  Thus target words from the same sentence are
-observed in the same subsample.  A single subsample is kept as the
-test data while remaining 9 samples are used as the training data.
-The process is repeated until all subsamples are used exactly once as
-the test data and report the average accuracy of the 10 runs.  The
-main advantage of the cross validation is that each subsample is
-observed both as test and training data.
+We analyze each child corpus separately and apply 10-fold cross validation to
+measure model performances.  In order to apply 10-fold cross validation we
+randomly split the sentences of each corpus into 10 folds .  Thus target words
+from the same sentence are observed in the same fold.  At each iteration a
+single fold is kept as the test data while remaining 9 samples are used as the
+training data.  We repeat this process until all folds are used exactly once as
+the test data and report the average accuracy of 10 runs.  The main advantage
+of the cross validation is that all sentences are eventually used both for
+testing and training.
 
-To compare the effects of paradigmatic representation with the
-syntagmatic one we test both models on each child corpus using the
-same 10-fold cross validation split.
+To compare the effects of paradigmatic representation ($a*b$) with the
+syntagmatic one ($aX+Xb$) we train and test both models on each child corpus
+using the same 10-fold cross validation split.  Unless stated otherwise, in the
+rest of this paper, we stopped the training phase of feed-forward connectionist
+model on each corpus after $100K$ input patterns, used the standard labeling to
+evaluate model accuracies, calculated substitute distributions with with the LM
+defined in Section~\ref{s:lm} and sampled 16 substitutes per target word in
+models using the paradigmatic representation.
 
+In the next section we replicate the corpus analysis of \cite{Mintz200391} and
+\cite{clair2010}.  Section~\ref{s:exp_paradigmatic} compares the classification
+accuracies of syntagmatic and paradigmatic representation based models.  The
+effects of the number of substitutes and the language model n-gram order on the
+paradigmatic model performance are inspected in Section~\ref{s:exp_substitutes}
+and \ref{s:exp_ngram}, respectively. 
+
+\section{Experiment \arabic{ExperimentCounter}: Corpus analysis}
+\label{s:exp_corpus}
+\stepcounter{ExperimentCounter}
+\section{Experiment \arabic{ExperimentCounter}: Sytagmatic vs Paradigmatic}
+\label{s:exp_paradigmatic}
+\stepcounter{ExperimentCounter}
 \input{framevssub}
 
-\section{Experiment 2}
-Number of subsitutes.  We need to show 16 is better than 1 but 16+ is same
-\subsection{Input Corpora}
-\subsection{Method}
+\section{Experiment \arabic{ExperimentCounter}: Number of Substitutes}
+\label{s:exp_substitutes}
+\stepcounter{ExperimentCounter}
+In order to observe the effect of number of substitutes we repeat paradigmatic
+model experiments with different number of substitutes.  The number of
+substitutes effects the number of active input units of the feed-forward
+connectionist model.  Due to the random sampling from the substitute
+distribution of a given context number of active units might vary.  The sum of
+active input unit values of a given target word equals to the number of
+substitutes sampled for that particular target word. 
+
+\subsection{Method} 
+
+We used the same experimental settings except that the number of substitutes
+per target word are varied between 1 and 64\footnote{We do not observe any
+significant difference on model accuracies when we set the number of
+substitutes to  more than 64.}.
+
 \subsection{Results}
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=.6\textwidth]{../figures/substitute.pdf}
+  \caption{10-fold cross validation accuracy of each child corpus for different
+  number of substitutes.}
+  \label{fig:substitutes}
+\end{figure}
+Figure~\ref{fig:substitutes} summarizes the effect of increasing number of
+substitutes on each child corpus. The classification accuracy of the
+paradigmatic model dramatically increases on each child corpus until the number
+of substitutes reaches to 16.   After 16 substitutes the effect of increasing
+number of substitutes resulted in very minor changes on the classification
+accuracy.  Thus the model is fairly robust to the number of substitutes as long
+as the model can observe more than 16 substitutes per target word.
 
-\section{Experiment 3}
-N-gram order 2,3
+In the next experiment we analyze the effect of quality of substitute words on
+the classification accuracy of the paradigmatic model.
 
-\section{Experiment 4}
-What happens when we change the data size?\\
-What happens when we change the vocabulary threshold?\\
+\section{Experiment \arabic{ExperimentCounter}: Language Model N-gram Order}
+\stepcounter{ExperimentCounter}
+\label{s:exp_ngram}
+The n-gram parameter effects the perplexity of language model which is in fact
+a measurement of the number of words that can be observed in a given n-gram
+context window.  Therefore one can expect that as the n-gram increases the
+model assigns more relevant substitutes to the context.  In this set of
+experiments we test paradigmatic model by changing the n-gram order of the
+language models that are used to sample substitutes.
 
-\subsection{Input Corpora}
 \subsection{Method}
-\subsection{Results}
 
-\section{Experiment 5}
-Left/rigth context substitute
-\subsection{Input Corpora}
+We used the same experimental settings except that the n-gram order of language
+models that are used to sample substitutes are varied from 2 to 5.
+
+\subsection{Results}
+\begin{figure}[h!]
+  \subfigure[]{
+  \includegraphics[width=.5\textwidth]{../figures/perplexity.pdf}
+  \label{fig:perplexity}
+  }
+  \subfigure[]{
+  \includegraphics[width=.5\textwidth]{../figures/ngram.pdf}
+  \label{fig:ngram}
+  }
+  \caption{Language Model perplexities on each child corpus for different
+  n-gram orders are presented on the left figure while 10-fold cross validation
+  accuracies calculated based on these models are presented on the right.} 
+\end{figure}
+[We need update make file to get perplexity on test set!!] The classification
+accuracy of pardigmatic model on each child corpus is slightly different for
+n-gram orders higher than 2 as summarized in Figure~\ref{fig:ngram}.  One
+possible explanation of similar performances with n-grams 3,4 and 5 is that our
+model defines the context of a target word by using $2n-2$ words (i.e., $n-1$
+words left to the target word and $n-1$ word right to the target word) however
+most of the sentences in our test corpora is shorter than 7 words.  
+%%% Presenting them with figure is much more powerful
+%%% Perplexity of LM with different n-grams
+%%\begin{table}[ht]
+%%\centering
+%%\caption{Language model perplexities on each child corpus for different n-gram
+%%orders.} 
+%%\begin{tabular}{lcccc}
+%%  \hline  
+%%  Child & 2-gram & 3-gram & 4-gram & 5-gram \\
+%%  \hline
+%%  Anne  & 30.44 & 23.55 & 22.85 & 22.81\\
+%%  Aran  & 39.22 & 29.21 & 28.28 & 28.21\\
+%%  Eve   & 40.02 & 32.77 & 32.06 & 32.01\\
+%%  Naomi & 39.72 & 32.43 & 31.83 & 31.81\\
+%%  Nina  & 25.64 & 27.81 & 26.93 & 26.84\\
+%%  Peter & 33.93 & 26.45 & 25.76 & 25.76\\
+%%  \hline
+%%\end{tabular}
+%%\label{t:perplexity}
+%%\end{table}
+\section{Experiment \arabic{ExperimentCounter}}
+\stepcounter{ExperimentCounter}
+\label{s:exp4}
+This is a new experiment not completed yet.
 \subsection{Method}
-\subsection{Results}
+\begin{figure}[h]
+  \subfigure[$aX+Xb$ model with $5K$ iterations] {
+    \includegraphics[width=0.5\textwidth]{../figures/fletags5K.pdf}
+    \label{fig:subfig1}
+  }
+  \subfigure[$a*b$ model with $5K$ iterations] {
+    \includegraphics[width=0.5\textwidth]{../figures/wsubtags5K.pdf}
+    \label{fig:subfig2}
+  }
+  \subfigure[$aX+Xb$ model with $100K$ iterations] {
+    \includegraphics[width=0.5\textwidth]{../figures/fletags100K.pdf}
+    \label{fig:subfig3}
+  }
+  \subfigure[$a*b$ model with $100K$ iterations] {
+    \includegraphics[width=0.5\textwidth]{../figures/wsubtags100K.pdf}
+    \label{fig:subfig4}
+  }
+  \caption{10-fold cross validation individual tag accuracies of $aX+Xb$ and
+  $a*b$ on each child corpus after $5K$ and $100K$ iterations of feed-forward
+  connectionist algorithm.}
+  \label{fig:learningIteration}
+\end{figure}
 
-\section{Experiment 6}
-Other languages that we have in CHILDES
+\begin{figure}[h]
+  \subfigure[$aX$ model with $5K$ iterations] {
+    \includegraphics[width=0.4\textwidth]{../figures/prtags5K.pdf}
+    \label{fig:subfig5}
+  }
+  \subfigure[$Xb$ model with $5K$ iterations] {
+    \includegraphics[width=0.4\textwidth]{../figures/pstags5K.pdf}
+    \label{fig:subfig6}
+  }
+  \subfigure[$aXb$ model with $5K$ iterations] {
+    \includegraphics[width=0.4\textwidth]{../figures/fretags5K.pdf}
+    \label{fig:subfig7}
+  }
+  \subfigure[$aX+Xb$ model with $5K$ iterations] {
+    \includegraphics[width=0.4\textwidth]{../figures/fletags5K.pdf}
+    \label{fig:subfig8}
+  }
+  \subfigure[$a*b$ model with $5K$ iterations] {
+    \includegraphics[width=0.4\textwidth]{../figures/wsubtags100K.pdf}
+    \label{fig:subfig9}
+  }
+  \caption{10-fold cross validation individual tag accuracies of $aX$, $Xb$,
+  $aXb$, $aX+Xb$ and $a*b$ on each child corpus after $5K$ iterations
+  of feed-forward connectionist algorithm.}
+  \label{fig:learningIteration5KApp}
+\end{figure}
 
-\section{Experiment 7}
-What happens if some of the words are given (semi-supervised setting)
-
-\subsection{Input Corpora}
-\subsection{Method}
-\subsection{Results}
+\begin{figure}[h]
+  \subfigure[$aX$ model with $100K$ iterations] {
+    \includegraphics[width=0.4\textwidth]{../figures/prtags100K.pdf}
+    \label{fig:subfig10}
+  }
+  \subfigure[$Xb$ model with $100K$ iterations] {
+    \includegraphics[width=0.4\textwidth]{../figures/pstags100K.pdf}
+    \label{fig:subfig11}
+  }
+  \subfigure[$aXb$ model with $100K$ iterations] {
+    \includegraphics[width=0.4\textwidth]{../figures/fretags100K.pdf}
+    \label{fig:subfig12}
+  }
+  \subfigure[$aX+Xb$ model with $100K$ iterations] {
+    \includegraphics[width=0.4\textwidth]{../figures/fletags100K.pdf}
+    \label{fig:subfig13}
+  }
+  \subfigure[$a*b$ model with $100K$ iterations] {
+    \includegraphics[width=0.4\textwidth]{../figures/wsubtags100K.pdf}
+    \label{fig:subfig14}
+  }
+  \caption{10-fold cross validation individual tag accuracies of $aX$, $Xb$,
+  $aXb$, $aX+Xb$ and $a*b$ on each child corpus after $100K$ iterations
+  of feed-forward connectionist algorithm.}
+  \label{fig:learningIteration100KApp}
+\end{figure}
+% What happens when we change the data size?\\
+% What happens when we change the vocabulary threshold?\\
+% 
+% \subsection{Input Corpora}
+% \subsection{Method}
+% \subsection{Results}
+% 
+% %% Let's drop this experiment, it is expensive.  We might handle 
+% %% it hacking the fastsubs but I'm not sure about the mathematics.
+% %% \section{Experiment 5}
+% %% Left/rigth context substitute
+% %% \subsection{Input Corpora}
+% %% \subsection{Method}
+% %% \subsection{Results}
+% \section{Experiment 6}
+% Other languages that we have in CHILDES
+% 
+% \section{Experiment 7}
+% What happens if some of the words are given (semi-supervised setting)
+% 
+% \subsection{Input Corpora}
+% \subsection{Method}
+% \subsection{Results}
 
 
 
