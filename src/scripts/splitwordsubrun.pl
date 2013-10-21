@@ -47,7 +47,7 @@ $cattr .= " | gzip > $tmp/alltr.gz";
 $catte .= " | gzip > $tmp/allte.gz";
 system($cattr);
 system($catte);
-system("echo -1 |gzip > $tmp/foo.gz");
+system("echo -1 | gzip > $tmp/foo.gz");
 system("zcat $tmp/allte.gz $tmp/foo.gz $tmp/alltr.gz | gzip > $tmp/all.gz");
 
 my $tomike = "zcat  $tmp/all.gz | sub2mikeSimple.py 2> $tmp/all.info | split.py 2> $tmp/mikeallte | gzip > $tmp/mikealltr.gz";
@@ -55,8 +55,13 @@ system($tomike);
 my @minfo = split(' ', `cat $tmp/all.info`);
 my $datasizes = join(" -d ", @tesizes);
 
-my $runmike = "mike_childes -v -f $tmp/mikealltr.gz -i $minfo[1] -o $minfo[2] -seed $seed -d $datasizes -iter $iter -t $tmp/mikeallte > $mike_out 2> $mike_err";
+my $runmike = "mike_childes -f $tmp/mikealltr.gz -i $minfo[1] -o $minfo[2] -seed $seed -d $datasizes -iter $iter -t $tmp/mikeallte > $mike_out 2> $mike_err";
 system($runmike);
+if (@data == 1) {
+  # if we have only one data perform the analysis
+  my $analysis = "idx2tag.py $tmp/allte.gz $tmp/mike.err > $data[0].wsub$nsub.fold$foldId.out 2> $tmp/$data[0].wsub$nsub.fold$foldId.err";
+  system($analysis);
+}
 my @res = split(' ', `cat $mike_out`);
 $tm = time - $tm;
 for(my $i = 0 ; $i < @data; $i++){

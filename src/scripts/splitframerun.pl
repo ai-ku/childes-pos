@@ -52,9 +52,17 @@ system($tomike);
 #print STDERR "$tomike\n";
 my @minfo = split(' ', `cat $tmp/all.info`);
 my $datasizes = join(" -d ", @tesizes);
-my $runmike = "mike_childes -v -f $tmp/alltr.gz -i $minfo[1] -o $minfo[2] -seed $seed -d $datasizes -iter $iter -t $tmp/allte > $mike_out 2> $mike_err";
+my $runmike = "mike_childes -f $tmp/alltr.gz -i $minfo[1] -o $minfo[2] -seed $seed -d $datasizes -iter $iter -t $tmp/allte > $mike_out 2> $mike_err";
 #print STDERR "$runmike\n";
 system($runmike);
+if (@data == 1) {
+  # if we have only one data perform the analysis
+  my $convert = "zcat $tmp/allte.gz | cut -f1,3,4 | gzip > $tmp/tmpanal.gz";
+  system($convert);
+  my $analysis = "idx2tag.py $tmp/tmpanal.gz $tmp/mike.err > $data[0].$frame.fold$foldId.out 2> $tmp/analysis.err";
+  system($analysis);
+}
+
 my @res = split(' ', `cat $mike_out`);
 $tm = time - $tm;
 

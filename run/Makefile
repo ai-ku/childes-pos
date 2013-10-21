@@ -5,6 +5,7 @@
 bin:
 	cd ../bin; make
 
+RESULTS_PATH=results/
 MINTZ_DATA_PATH=../data/childes/mintz03xml/
 TRAIN_DATA_PATH=../data/childes/data-xml
 NCPU=10
@@ -16,9 +17,18 @@ data: anne.data.gz aran.data.gz eve.data.gz naomi.data.gz nina.data.gz peter.dat
 mintz03: anne.fre.eval aran.fre.eval eve.fre.eval naomi.fre.eval nina.fre.eval peter.fre.eval
 clair10pr: anne.prbi.eval aran.prbi.eval eve.prbi.eval naomi.prbi.eval nina.prbi.eval peter.prbi.eval
 clair10ps: anne.psbi.eval aran.psbi.eval eve.psbi.eval naomi.psbi.eval nina.psbi.eval peter.psbi.eval
+yatbaz12: anne.wsub.plot aran.wsub.plot eve.wsub.plot naomi.wsub.plot nina.wsub.plot peter.wsub.plot 
+
+yatbaz12_nohup: train.tok.gz
+	nohup make anne.wsub.plot > anne.out 2> anne.err &
+	nohup make aran.wsub.plot > aran.out 2> aran.err &
+	nohup make eve.wsub.plot > eve.out 2> eve.err &
+	nohup make naomi.wsub.plot > naomi.out 2> naomi.err &
+	nohup make nina.wsub.plot > nina.out 2> nina.err &
+	nohup make peter.wsub.plot > peter.out 2> peter.err &
 
 %.data.gz:
-	ls ${MINTZ_DATA_PATH}$*/*.xml | childes.pl 2> $*.err | gzip > $@ &
+	ls ${MINTZ_DATA_PATH}$*/*.xml | childes.pl 2> $*.err | gzip > $@ 
 
 ## SRILM Language Model
 SRILM_PATH=/opt/srilm/bin/i686-m64
@@ -28,7 +38,11 @@ LM_DISCOUNT=-kndiscount
 export PATH := ../bin:.:${SRILM_PATH}:${PATH}
 
 train.tok.gz:
-	find ${TRAIN_DATA_PATH} -type f | ${SRC_PATH}childes.pl -w 2> train.tok.err | gzip > $@
+	find ${TRAIN_DATA_PATH} -type f | childes.pl -w 2> train.tok.err | gzip > $@
+
+# test data extractor
+%.tok.gz:
+	ls ${MINTZ_DATA_PATH}$*/*.xml | childes.pl -w 2> $*.err | gzip > $@ 
 
 %.vocab.gz: train.tok.gz ## LM_VOCAB=2: time=1m16s, wc=78498   78498  672284
 	zcat $< | ngram-count -write-order 1 -text - -write - | \
@@ -36,6 +50,17 @@ train.tok.gz:
 
 %.lm.gz: %.vocab.gz train.tok.gz ## LM_NGRAM=4, LM_VOCAB=20: time=6m10s, wc=27427373 118077512 847912087
 	zcat train.tok.gz | ngram-count -order ${LM_NGRAM} ${LM_DISCOUNT} -interpolate -unk -vocab $< -text - -lm $@
+
+%.ppl.gz: %.data.gz train.lm.gz 
+	zcat $< | extractText.py | \
+	ngram -order ${LM_NGRAM} -unk -lm train.lm.gz -ppl - -debug 2 | gzip > $@
+
+mintz03.ppl.plot: anne.ppl.gz aran.ppl.gz eve.ppl.gz naomi.ppl.gz nina.ppl.gz peter.ppl.gz 
+	-rm $@
+	for label in anne aran eve naomi nina peter; do\
+		echo "$$label n-gram: ${LM_NGRAM}" >> $@; \
+		zcat $$label.ppl.gz | tail -1 >> $@;\
+	done
 
 ### FASTSUBS options:
 FS_NSUB=100 # go until you have this many substitutes
@@ -117,15 +142,23 @@ VERBOSE=-v
 
 ## ALL-Data Split Train-Test
 EXP_CROSSVAL=10
-EXP_ITER=50000
+EXP_ITER=100000
 ARGS_FRAME=7
-### FRAME EXPERIMENTS
 
+### FRAME EXPERIMENTS
 split.frame.out: anne.fre.gz aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz peter.fre.gz 
 	splitframe-args.py ${EXP_ITER} ${EXP_CROSSVAL} ${SEED} all | xargs -n${ARGS_FRAME} -P${NCPU} splitframerun.pl > $@
 
 %.frame.out: %.fre.gz
+	-rm $*.*.fold*.out
 	splitframe-args.py ${EXP_ITER} ${EXP_CROSSVAL} ${SEED} $* | xargs -n${ARGS_FRAME} -P${NCPU} splitframerun.pl > $@
+	ls $*.fle.fold*.out | analyzetags.py > $*.fle.${EXP_ITER}.anl
+	ls $*.fre.fold*.out | analyzetags.py > $*.fre.${EXP_ITER}.anl
+	ls $*.pr.fold*.out | analyzetags.py > $*.pr.${EXP_ITER}.anl
+	ls $*.ps.fold*.out | analyzetags.py > $*.ps.${EXP_ITER}.anl
+	-mkdir -p ${RESULTS_PATH}${EXP_ITER}
+	mv $*.*.fold*.out ${RESULTS_PATH}${EXP_ITER}
+	cp $@ ${RESULTS_PATH}${EXP_ITER}
 
 split.frame.plot: split.frame.out
 	-rm $@
@@ -145,6 +178,10 @@ split.wsub.out: anne.sub.gz aran.sub.gz eve.sub.gz naomi.sub.gz nina.sub.gz pete
 
 %.wsub.out: %.sub.gz %.fre.gz
 	splitwordsub-args.py ${EXP_ITER} ${EXP_CROSSVAL} ${SEED} $* | xargs -n${ARGS_WSUB} -P${NCPU} splitwordsubrun.pl > $@
+#	ls $*.wsub.fold*.out | analyzetags.py > $*.fixwsub${EXP_ITER}.anl
+	-mkdir -p ${RESULTS_PATH}${EXP_ITER}
+	mv $*.wsub*.fold*.out ${RESULTS_PATH}${EXP_ITER}
+	cp $@ ${RESULTS_PATH}${EXP_ITER}
 
 split.wsub.plot: split.wsub.out
 	-rm $@
@@ -154,6 +191,35 @@ split.wsub.plot: split.wsub.out
 	done
 
 %.wsub.plot: %.wsub.out
+	cat $< | plotdata.pl 4=$* 3=x 5=y > $@
+
+### FIX WORDSUB EXPERIMENTS
+## This experiments assumes fixed number of substitutes
+## Run the previous experiments to determine the best number of subsititutes.
+
+FSUB_EXP_CROSSVAL=10
+FSUB_EXP_ITER=10
+FSUB_ARGS_WSUB=7
+FSUB_SUBS=16
+
+split.fixwsub.out: anne.sub.gz aran.sub.gz eve.sub.gz naomi.sub.gz nina.sub.gz peter.sub.gz anne.fre.gz	 aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz peter.fre.gz
+	splitwordsub-args.py ${FSUB_EXP_ITER} ${FSUB_EXP_CROSSVAL} ${SEED} all | perl -lane 'print if $$F[3] == ${FSUB_SUBS}' | xargs -n${FSUB_ARGS_WSUB} -P${NCPU} splitwordsubrun.pl > $@
+
+%.fixwsub.out: %.sub.gz %.fre.gz
+	splitwordsub-args.py ${FSUB_EXP_ITER} ${FSUB_EXP_CROSSVAL} ${SEED} $* |perl -lane 'print if $$F[3] == ${FSUB_SUBS}'| xargs -n${FSUB_ARGS_WSUB} -P${NCPU} splitwordsubrun.pl > $@			
+	ls $*.wsub${FSUB_SUBS}.fold*.out | analyzetags.py > $*.fixwsub${FSUB_EXP_ITER}.anl
+	-mkdir -p ${RESULTS_PATH}${FSUB_EXP_ITER}
+	mv $*.wsub*.fold*.out ${RESULTS_PATH}${FSUB_EXP_ITER}
+	cp $@ ${RESULTS_PATH}${FSUB_EXP_ITER}
+
+split.fixwsub.plot: split.fixwsub.out
+	-rm $@
+	for label in anne aran eve naomi nina peter; do\
+		echo "$$label scores" >> $@; \
+		cat $< | plotdata.pl 4=$$label 3=x 5=y >> $@ ;\
+	done
+
+%.fixwsub.plot: %.fixwsub.out
 	cat $< | plotdata.pl 4=$* 3=x 5=y > $@
 
 ### DATA Statistics

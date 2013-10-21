@@ -243,7 +243,7 @@ int main(int argc,const char *argv[])
           dataCount = 0;
           for(i=0;i<examples->numExamples;i++)
           {
-               if (i % 1000 == 0) fprintf(stderr,".");
+               if (VERBOSE && i % 1000 == 0) fprintf(stderr,".");
                if (dataCount && i == dataCountArray[dataCount]){
                     if (dataCount ==0){
                          printf("%f\t", correct / dataCountArray[dataCount]);
@@ -280,27 +280,44 @@ int main(int argc,const char *argv[])
                correct = 0;
                for(i=0;i<test->numExamples;i++){
                     if (dataCount && i == dataCountArray[dc]){
-                         if (dc ==0)
+                         if (dc == 0)
                               printf("%f\t", correct / dataCountArray[dc]);
                          else
                               printf("%f\t", correct / (dataCountArray[dc] - dataCountArray[dc - 1]));                         
                          correct = 0;
                          dc++;
                     }
-                    if (i % 1000 == 0) fprintf(stderr,".");
+                    if (VERBOSE && i % 1000 == 0) fprintf(stderr,".");
                     ex=&test->examples[i];
                     bptt_forward(net,ex);
                     int maxj = -1;
                     Real  maxx = 0;
+                    int goldIdx = -1; 
                     for(j=0 ; j < outputCount; j++){
                          if (output->outputs[TIME-1][j] > maxx){
                               maxj = j;
                               maxx = output->outputs[TIME-1][j];
+                         } 
+                         if (get_value(ex->targets,output->index,TIME-1,j) == 1) {
+                            if(goldIdx != -1) {
+                              fprintf(stderr,\
+                                  "Multiple active output unit: Instance:%d unit:%d in test set!"\
+                                  ,i,j);
+                            }
+                            goldIdx = j; 
                          }
                          /* printf("%d:%f ",j,output->outputs[TIME-1][j]); */
                     }
-                    if (get_value(ex->targets,output->index,TIME-1,maxj) == 1)
+                    if (goldIdx != -1 || maxj != -1) {
+                      // prints the goldtag and answer tag
+                      fprintf(stderr, "%d %d\n", goldIdx, maxj);
+                    } else{
+                      fprintf(stderr, "No active output units in test set");
+                      exit(-1);
+                    }
+                    if (get_value(ex->targets,output->index,TIME-1,maxj) == 1) {
                          correct += 1;
+                    }
                }
                if (dataCount == 0)
                     printf("%f %d %d\t", correct / test->numExamples, (int)correct, test->numExamples);
