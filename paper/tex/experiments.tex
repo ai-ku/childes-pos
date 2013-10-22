@@ -72,9 +72,9 @@ vocabulary size of 21734.
 % Why do we choose feedforward connectionist model?
 \cite{clair2010} used a feed-forward connectionist model to compare
 the effect of distributional cues from various frame types on the
-grammatical category learning.  We adopt their framework to compare
-the paradigmatic representation (substitute words) with the
-syntagmatic representation (flexible frames).
+grammatical category learning.  We adopt their framework to compare the
+paradigmatic representation (substitute words) with the best performing
+syntagmatic representation (i.e., flexible frames).
 % What are the input and output layer
 % What does the connectionist model do? Briefly explain without giving
 % too much mathematical details
@@ -156,8 +156,10 @@ unit with the largest value.
 Both models have 10 output units due to the standard labeling
 \citep*{Mintz200391}.
 
-Number of hidden units is set to 200 and initialized randomly for each
-model. {\bf backprobagation(0.1), learning rate, sigmoid...}
+Unless stated otherwise, all connectionist models in this paper uses the
+following parameters: (1)number of hidden units is set to 200 and initialized
+randomly for each model, (2){\bf backprobagation(0.1)}, (3){\bf learning
+rate},(4) {\bf sigmoid...}
 
 \subsection{Training and Testing}
 
@@ -203,39 +205,48 @@ and \ref{s:exp_ngram}, respectively.
 \section{Experiment \arabic{ExperimentCounter}: Number of Substitutes}
 \label{s:exp_substitutes}
 \stepcounter{ExperimentCounter}
-In order to observe the effect of number of substitutes we repeat paradigmatic
-model experiments with different number of substitutes.  The number of
-substitutes effects the number of active input units of the feed-forward
-connectionist model.  Due to the random sampling from the substitute
-distribution of a given context number of active units might vary.  The sum of
-active input unit values of a given target word equals to the number of
-substitutes sampled for that particular target word. 
+In this experiment we analyze the effects of number of substitutes both on the
+number of input units and the model classification accuracies.  A side from the
+effect on classification accuracies the number of sampled substitutes also
+varies the number of active and non-active units in the input layer.  
+%% The sum
+%% of active input unit values of a given target word equals to the number of
+%% substitutes sampled for each target word. 
 
 \subsection{Method} 
-
 We used the same experimental settings except that the number of substitutes
-per target word are varied between 1 and 64\footnote{We do not observe any
-significant difference on model accuracies when we set the number of
-substitutes to  more than 64.}.
+per target word is varied between 1 and 64\footnote{We do not observe any
+significant difference on model classification accuracies for the number of
+substitutes that are more than 64.}.
 
-\subsection{Results}
+\subsection{Results and discussion}
 \begin{figure}[ht]
   \centering
   \includegraphics[width=.6\textwidth]{../figures/substitute.pdf}
   \caption{10-fold cross validation accuracy of each child corpus for different
   number of substitutes.}
   \label{fig:substitutes}
-\end{figure}
-Figure~\ref{fig:substitutes} summarizes the effect of increasing number of
-substitutes on each child corpus. The classification accuracy of the
-paradigmatic model dramatically increases on each child corpus until the number
-of substitutes reaches to 16.   After 16 substitutes the effect of increasing
-number of substitutes resulted in very minor changes on the classification
-accuracy.  Thus the model is fairly robust to the number of substitutes as long
-as the model can observe more than 16 substitutes per target word.
+\end{figure} 
 
-In the next experiment we analyze the effect of quality of substitute words on
-the classification accuracy of the paradigmatic model.
+Figure~\ref{fig:substitutes} plots the model classification accuracy of each
+child corpus versus the number of substitutes.  The classification accuracy
+dramatically increases on each child corpus until the number of substitutes
+reaches to 16.   After 16 substitutes the effect of increasing number of
+substitutes resulted in very minor changes on the classification accuracy.
+Thus the model is fairly robust to the number of substitutes as long as the
+model can observe at least 16 substitutes per target word.  
+
+One possible explanation of these similar classification accuracies with the
+substitutes more than 16 is that as the number of substitutes increases the
+number of input units also increases while the number of hidden units is fixed
+to 200. Figure~\ref{fig:substitutes}[Put subs vs input graph] shows the trend
+of the number of input units as we increase the number of substitutes on each
+child corpus.  \cite{clair2010} set the number of hidden units such that the
+ratio between the number of hidden and input units was same for each model and
+reported slight improvements over the models with 200 hidden units.  
+
+In the next experiment we analyze the effect of substitute word quality on the
+classification accuracy of the paradigmatic model.
 
 \section{Experiment \arabic{ExperimentCounter}: Language Model N-gram Order}
 \stepcounter{ExperimentCounter}
@@ -244,15 +255,15 @@ The n-gram parameter effects the perplexity of language model which is in fact
 a measurement of the number of words that can be observed in a given n-gram
 context window.  Therefore one can expect that as the n-gram increases the
 model assigns more relevant substitutes to the context.  In this set of
-experiments we test paradigmatic model by changing the n-gram order of the
+experiments we test the paradigmatic model by changing the n-gram order of the
 language models that are used to sample substitutes.
 
 \subsection{Method}
+We used the same experimental settings except that the n-gram order of the
+language model that is used to sample substitutes is varied from 2 to
+5\footnote{After 5-gram the perplexity plateaued \citep*{Goodman2001403}.}. 
 
-We used the same experimental settings except that the n-gram order of language
-models that are used to sample substitutes are varied from 2 to 5.
-
-\subsection{Results}
+\subsection{Results and discussion}
 \begin{figure}[h!]
   \subfigure[]{
   \includegraphics[width=.5\textwidth]{../figures/perplexity.pdf}
@@ -266,13 +277,22 @@ models that are used to sample substitutes are varied from 2 to 5.
   n-gram orders are presented on the left figure while 10-fold cross validation
   accuracies calculated based on these models are presented on the right.} 
 \end{figure}
-[We need update make file to get perplexity on test set!!] The classification
-accuracy of pardigmatic model on each child corpus is slightly different for
-n-gram orders higher than 2 as summarized in Figure~\ref{fig:ngram}.  One
-possible explanation of similar performances with n-grams 3,4 and 5 is that our
-model defines the context of a target word by using $2n-2$ words (i.e., $n-1$
-words left to the target word and $n-1$ word right to the target word) however
-most of the sentences in our test corpora is shorter than 7 words.  
+
+The perplexity of each child corpus is dramatically improved when the n-gram
+order of the language model is increased from 2 to 3 and varies slightly for
+orders higher than 3.  Figure~\ref{fig:perplexity} plots the perplexity versus
+the n-gram order.  As shown in Figure~\ref{fig:ngram}, the model classification
+accuracies on each child corpus with different n-grams are slightly improved
+for the n-gram orders higher than 3 which is in fact parallel to the perplexity
+trends.  Overall, the classification accuracy of paradigmatic model is highly
+correlated to the perplexity of the given language model that is used to sample
+substitutes.
+
+%% One possible explanation of similar performances with n-grams 3,4 and 5 is
+%% that our model defines the context of a target word by using $2n-2$ words
+%% (i.e., $n-1$ words left to the target word and $n-1$ word right to the target
+%% word) however most of the sentences in our test corpora is shorter than 7
+%% words. 
 %%% Presenting them with figure is much more powerful
 %%% Perplexity of LM with different n-grams
 %%\begin{table}[ht]
