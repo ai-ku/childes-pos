@@ -162,7 +162,7 @@ randomly for each model, (2){\bf backprobagation(0.1)}, (3){\bf learning
 rate},(4) {\bf sigmoid...}
 
 \subsection{Training and Testing}
-
+\label{sec:training}
 %%% How do we split the train and test
 % 10-fold cross valdiation
 % -> define/implementaion
@@ -197,10 +197,31 @@ and \ref{s:exp_ngram}, respectively.
 \section{Experiment \arabic{ExperimentCounter}: Corpus analysis}
 \label{s:exp_corpus}
 \stepcounter{ExperimentCounter}
-\section{Experiment \arabic{ExperimentCounter}: Sytagmatic vs Paradigmatic}
+\section{Experiment \arabic{ExperimentCounter}: Syntagmatic vs Paradigmatic}
 \label{s:exp_paradigmatic}
 \stepcounter{ExperimentCounter}
-\input{framevssub}
+
+In order to compare the distributional information of syntagmatic and
+paradigmatic representations we train separate feed-forward connectionist
+models for each child corpus based on these representations.  \cite{clair2010}
+showed that flexible frames have richer distributional information than other
+frame types both in terms of classification accuracy and coverage .  Thus we
+only report results of the models based on substitute words ($a*b$) and
+flexible frames ($aX+Xb$)\footnote{We can put the comparison with other frames
+in Appendix.  }. 
+
+\subsection{Method}
+All models are trained and evaluated according to steps summarized in
+Section~\ref{sec:training}.  Similar to analysis in \cite{clair2010}, we split
+the training phase of each model into two as early and later training stage in
+which we stop and evaluate the models on the corresponding test sets after 10K
+and 100K, respectively.
+
+\subsection{Results and discussion}
+
+
+\input{framevssub10K}
+\input{framevssub100K}
 
 \section{Experiment \arabic{ExperimentCounter}: Number of Substitutes}
 \label{s:exp_substitutes}
@@ -289,7 +310,7 @@ the n-gram order.  As shown in Figure~\ref{fig:ngram}, the model classification
 accuracies on each child corpus are slightly improved for orders higher than 3
 which is in fact parallel to the perplexity trends in
 Figure~\ref{fig:perplexity}.  Overall, the classification accuracy of
-paradigmatic model is highly correlated to the perplexity of the language
+paradigmatic model is highly correlated with the perplexity of the language
 model that is used to sample substitutes.
 
 %% One possible explanation of similar performances with n-grams 3,4 and 5 is
