@@ -232,18 +232,20 @@ Figure~\ref{fig:substitutes} plots the model classification accuracy of each
 child corpus versus the number of substitutes.  The classification accuracy
 dramatically increases on each child corpus until the number of substitutes
 reaches to 16.   After 16 substitutes the effect of increasing number of
-substitutes resulted in very minor changes on the classification accuracy.
+substitutes resulted in very minor changes on the classification accuracies.
 Thus the model is fairly robust to the number of substitutes as long as the
 model can observe at least 16 substitutes per target word.  
 
-One possible explanation of these similar classification accuracies with the
-substitutes more than 16 is that as the number of substitutes increases the
-number of input units also increases while the number of hidden units is fixed
-to 200. Figure~\ref{fig:substitutes}[Put subs vs input graph] shows the trend
-of the number of input units as we increase the number of substitutes on each
-child corpus.  \cite{clair2010} set the number of hidden units such that the
-ratio between the number of hidden and input units was same for each model and
-reported slight improvements over the models with 200 hidden units.  
+Figure~\ref{fig:substitutes} [Put subs vs input graph] shows the increasing
+trend of the number of input units as the number of substitutes on each child
+corpus increases.  One possible problem of these models is that the number of
+input units increases with the increasing number of substitutes meanwhile the
+number of hidden units is fixed to 200.   \cite{clair2010} came up this problem
+while comparing flexible frames with other frames and solved it by setting the
+number of hidden units such that the ratio between the number of hidden and
+input units was same for each model.  Although they reported slight
+improvements over the versions with fixed number of hidden units, the
+classification accuracy ranking of the models did not change. 
 
 In the next experiment we analyze the effect of substitute word quality on the
 classification accuracy of the paradigmatic model.
@@ -251,17 +253,19 @@ classification accuracy of the paradigmatic model.
 \section{Experiment \arabic{ExperimentCounter}: Language Model N-gram Order}
 \stepcounter{ExperimentCounter}
 \label{s:exp_ngram}
-The n-gram parameter effects the perplexity of language model which is in fact
+The n-gram order effects the perplexity of the language model which is in fact
 a measurement of the number of words that can be observed in a given n-gram
-context window.  Therefore one can expect that as the n-gram increases the
-model assigns more relevant substitutes to the context.  In this set of
-experiments we test the paradigmatic model by changing the n-gram order of the
-language models that are used to sample substitutes.
+context window.  Therefore one can expect that as the n-gram order increases
+the model assigns more relevant substitutes to the
+context\footnote{\cite{Goodman2001403} showed that the perplexity plateaued when
+the order is higher than 5.}.  In this set of experiments we test the
+paradigmatic model by changing the n-gram order of the language model that are
+used to sample substitutes.
 
 \subsection{Method}
 We used the same experimental settings except that the n-gram order of the
 language model that is used to sample substitutes is varied from 2 to
-5\footnote{After 5-gram the perplexity plateaued \citep*{Goodman2001403}.}. 
+5. 
 
 \subsection{Results and discussion}
 \begin{figure}[h!]
@@ -282,11 +286,11 @@ The perplexity of each child corpus is dramatically improved when the n-gram
 order of the language model is increased from 2 to 3 and varies slightly for
 orders higher than 3.  Figure~\ref{fig:perplexity} plots the perplexity versus
 the n-gram order.  As shown in Figure~\ref{fig:ngram}, the model classification
-accuracies on each child corpus with different n-grams are slightly improved
-for the n-gram orders higher than 3 which is in fact parallel to the perplexity
-trends.  Overall, the classification accuracy of paradigmatic model is highly
-correlated to the perplexity of the given language model that is used to sample
-substitutes.
+accuracies on each child corpus are slightly improved for orders higher than 3
+which is in fact parallel to the perplexity trends in
+Figure~\ref{fig:perplexity}.  Overall, the classification accuracy of
+paradigmatic model is highly correlated to the perplexity of the language
+model that is used to sample substitutes.
 
 %% One possible explanation of similar performances with n-grams 3,4 and 5 is
 %% that our model defines the context of a target word by using $2n-2$ words
