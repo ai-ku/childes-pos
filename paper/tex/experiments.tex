@@ -210,17 +210,48 @@ only report results of the models based on substitute words ($a*b$) and
 flexible frames ($aX+Xb$)\footnote{We can put the comparison with other frames
 in Appendix.  }. 
 
-\subsection{Method}
+\subsection{Method} 
+
 All models are trained and evaluated according to steps summarized in
 Section~\ref{sec:training}.  Similar to analysis in \cite{clair2010}, we split
-the training phase of each model into two as early and later training stage in
-which we stop and evaluate the models on the corresponding test sets after 10K
-and 100K, respectively.
+the training phase of each model into two as short and long training phases in
+which we stop and evaluate the models on the corresponding test sets after
+presenting 10K and 100K training patterns, respectively.
 
-\subsection{Results and discussion}
-
-
+\subsection{Results of Short Training Phase}
+Table~\ref{t:framevssub10K} gives the overall classification accuracies of
+$aX+Xb$ and $a*b$ models on each child corpus.  The $a*b$ model significantly
+outperforms the $aX+Xb$ model on each child corpora.[add lambda values]
 \input{framevssub10K}
+
+To further investigate the accuracy gap between $aX+Xb$ and $a*b$ models, we
+plot the classification accuracies of each grammatical category in the standard
+%%labeling for both models in Figure~\ref{fig:category10Kvs100K}.
+%%\begin{figure}[h]
+%%  \subfigure[$aX+Xb$ model with $10K$ iterations] {
+%%    \includegraphics[width=0.5\textwidth]{../figures/fletags10K.pdf}
+%%    \label{fig:subfig1}
+%%  }
+%%  \subfigure[$a*b$ model with $10K$ iterations] {
+%%    \includegraphics[width=0.5\textwidth]{../figures/wsubtags10K.pdf}
+%%    \label{fig:subfig2}
+%%  }
+%%  \subfigure[$aX+Xb$ model with $100K$ iterations] {
+%%    \includegraphics[width=0.5\textwidth]{../figures/fletags100K.pdf}
+%%    \label{fig:subfig3}
+%%  }
+%%  \subfigure[$a*b$ model with $100K$ iterations] {
+%%    \includegraphics[width=0.5\textwidth]{../figures/wsubtags100K.pdf}
+%%    \label{fig:subfig4}
+%%  }
+%%  \caption{10-fold cross validation individual tag accuracies of $aX+Xb$ and
+%%  $a*b$ on each child corpus after $5K$ and $100K$ iterations of feed-forward
+%%  connectionist algorithm.}
+%%  \label{fig:category10Kvs100K}
+%%\end{figure}
+\subsection{Results of Long Training Phase} 
+
+
 \input{framevssub100K}
 
 \section{Experiment \arabic{ExperimentCounter}: Number of Substitutes}
@@ -338,87 +369,60 @@ model that is used to sample substitutes.
 %%\end{tabular}
 %%\label{t:perplexity}
 %%\end{table}
-\section{Experiment \arabic{ExperimentCounter}}
-\stepcounter{ExperimentCounter}
-\label{s:exp4}
-This is a new experiment not completed yet.
-\subsection{Method}
-\begin{figure}[h]
-  \subfigure[$aX+Xb$ model with $5K$ iterations] {
-    \includegraphics[width=0.5\textwidth]{../figures/fletags5K.pdf}
-    \label{fig:subfig1}
-  }
-  \subfigure[$a*b$ model with $5K$ iterations] {
-    \includegraphics[width=0.5\textwidth]{../figures/wsubtags5K.pdf}
-    \label{fig:subfig2}
-  }
-  \subfigure[$aX+Xb$ model with $100K$ iterations] {
-    \includegraphics[width=0.5\textwidth]{../figures/fletags100K.pdf}
-    \label{fig:subfig3}
-  }
-  \subfigure[$a*b$ model with $100K$ iterations] {
-    \includegraphics[width=0.5\textwidth]{../figures/wsubtags100K.pdf}
-    \label{fig:subfig4}
-  }
-  \caption{10-fold cross validation individual tag accuracies of $aX+Xb$ and
-  $a*b$ on each child corpus after $5K$ and $100K$ iterations of feed-forward
-  connectionist algorithm.}
-  \label{fig:learningIteration}
-\end{figure}
-
-\begin{figure}[h]
-  \subfigure[$aX$ model with $5K$ iterations] {
-    \includegraphics[width=0.4\textwidth]{../figures/prtags5K.pdf}
-    \label{fig:subfig5}
-  }
-  \subfigure[$Xb$ model with $5K$ iterations] {
-    \includegraphics[width=0.4\textwidth]{../figures/pstags5K.pdf}
-    \label{fig:subfig6}
-  }
-  \subfigure[$aXb$ model with $5K$ iterations] {
-    \includegraphics[width=0.4\textwidth]{../figures/fretags5K.pdf}
-    \label{fig:subfig7}
-  }
-  \subfigure[$aX+Xb$ model with $5K$ iterations] {
-    \includegraphics[width=0.4\textwidth]{../figures/fletags5K.pdf}
-    \label{fig:subfig8}
-  }
-  \subfigure[$a*b$ model with $5K$ iterations] {
-    \includegraphics[width=0.4\textwidth]{../figures/wsubtags100K.pdf}
-    \label{fig:subfig9}
-  }
-  \caption{10-fold cross validation individual tag accuracies of $aX$, $Xb$,
-  $aXb$, $aX+Xb$ and $a*b$ on each child corpus after $5K$ iterations
-  of feed-forward connectionist algorithm.}
-  \label{fig:learningIteration5KApp}
-\end{figure}
-
-\begin{figure}[h]
-  \subfigure[$aX$ model with $100K$ iterations] {
-    \includegraphics[width=0.4\textwidth]{../figures/prtags100K.pdf}
-    \label{fig:subfig10}
-  }
-  \subfigure[$Xb$ model with $100K$ iterations] {
-    \includegraphics[width=0.4\textwidth]{../figures/pstags100K.pdf}
-    \label{fig:subfig11}
-  }
-  \subfigure[$aXb$ model with $100K$ iterations] {
-    \includegraphics[width=0.4\textwidth]{../figures/fretags100K.pdf}
-    \label{fig:subfig12}
-  }
-  \subfigure[$aX+Xb$ model with $100K$ iterations] {
-    \includegraphics[width=0.4\textwidth]{../figures/fletags100K.pdf}
-    \label{fig:subfig13}
-  }
-  \subfigure[$a*b$ model with $100K$ iterations] {
-    \includegraphics[width=0.4\textwidth]{../figures/wsubtags100K.pdf}
-    \label{fig:subfig14}
-  }
-  \caption{10-fold cross validation individual tag accuracies of $aX$, $Xb$,
-  $aXb$, $aX+Xb$ and $a*b$ on each child corpus after $100K$ iterations
-  of feed-forward connectionist algorithm.}
-  \label{fig:learningIteration100KApp}
-\end{figure}
+%%
+%%\begin{figure}[h]
+%%  \subfigure[$aX$ model with $5K$ iterations] {
+%%    \includegraphics[width=0.4\textwidth]{../figures/prtags5K.pdf}
+%%    \label{fig:subfig5}
+%%  }
+%%  \subfigure[$Xb$ model with $5K$ iterations] {
+%%    \includegraphics[width=0.4\textwidth]{../figures/pstags5K.pdf}
+%%    \label{fig:subfig6}
+%%  }
+%%  \subfigure[$aXb$ model with $5K$ iterations] {
+%%    \includegraphics[width=0.4\textwidth]{../figures/fretags5K.pdf}
+%%    \label{fig:subfig7}
+%%  }
+%%  \subfigure[$aX+Xb$ model with $5K$ iterations] {
+%%    \includegraphics[width=0.4\textwidth]{../figures/fletags5K.pdf}
+%%    \label{fig:subfig8}
+%%  }
+%%  \subfigure[$a*b$ model with $5K$ iterations] {
+%%    \includegraphics[width=0.4\textwidth]{../figures/wsubtags100K.pdf}
+%%    \label{fig:subfig9}
+%%  }
+%%  \caption{10-fold cross validation individual tag accuracies of $aX$, $Xb$,
+%%  $aXb$, $aX+Xb$ and $a*b$ on each child corpus after $5K$ iterations
+%%  of feed-forward connectionist algorithm.}
+%%  \label{fig:learningIteration5KApp}
+%%\end{figure}
+%%
+%%\begin{figure}[h]
+%%  \subfigure[$aX$ model with $100K$ iterations] {
+%%    \includegraphics[width=0.4\textwidth]{../figures/prtags100K.pdf}
+%%    \label{fig:subfig10}
+%%  }
+%%  \subfigure[$Xb$ model with $100K$ iterations] {
+%%    \includegraphics[width=0.4\textwidth]{../figures/pstags100K.pdf}
+%%    \label{fig:subfig11}
+%%  }
+%%  \subfigure[$aXb$ model with $100K$ iterations] {
+%%    \includegraphics[width=0.4\textwidth]{../figures/fretags100K.pdf}
+%%    \label{fig:subfig12}
+%%  }
+%%  \subfigure[$aX+Xb$ model with $100K$ iterations] {
+%%    \includegraphics[width=0.4\textwidth]{../figures/fletags100K.pdf}
+%%    \label{fig:subfig13}
+%%  }
+%%  \subfigure[$a*b$ model with $100K$ iterations] {
+%%    \includegraphics[width=0.4\textwidth]{../figures/wsubtags100K.pdf}
+%%    \label{fig:subfig14}
+%%  }
+%%  \caption{10-fold cross validation individual tag accuracies of $aX$, $Xb$,
+%%  $aXb$, $aX+Xb$ and $a*b$ on each child corpus after $100K$ iterations
+%%  of feed-forward connectionist algorithm.}
+%%  \label{fig:learningIteration100KApp}
+%%\end{figure}
 % What happens when we change the data size?\\
 % What happens when we change the vocabulary threshold?\\
 % 

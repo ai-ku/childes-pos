@@ -1,22 +1,26 @@
 \begin{table}[ht]
-\centering
-\caption{10-fold cross-validation classification accuracies of models based on
-  flexible frames ($aX + Xb$) and substitutes ($a*b$) on each child corpus
-  after 10K training patterns are summarized.  Standard errors are reported in
+  \small 
+  \centering
+  \caption{10-fold cross-validation classification accuracies of models based on
+    flexible frames ($aX + Xb$) and substitutes ($a*b$) on each child corpus
+    after 10K training patterns are summarized.  Standard errors are reported in
   parentheses.}
-\begin{tabular}{|l|l|l|}
-  \hline
-  Child & $aX + Xb$ & $Substitutes$\\
-  \hline
-  Anne  & .6587 (.0255) & {\bf .7945 (.0126)} \\
-  Aran  & .???? (.????) & {\bf .7814 (.0099)} \\
-  Eve   & .6360 (.0230) & {\bf .8148 (.0095)} \\
-  Naomi & .6191 (.0322) & {\bf .7917 (.0182)} \\
-  Nina  & .6745 (.0245) & {\bf .8263 (.0124)} \\
-  Peter & .6687 (.0238) & {\bf .8135 (.0139)} \\
-  \hline
-\end{tabular}
-\label{t:framevssub10K}
+  \begin{tabular}{lccccc}
+    \hline
+    Corpus & \multicolumn{2}{c}{$aX+Xb$} && \multicolumn{2}{c}{$a*b$} \\
+    \cline{2-3}
+    \cline{5-6}
+    & Accuracy & $\lambda$ && Accuracy & $\lambda$\\
+    \hline
+    Anne  & .6587 (.0255) & .4486 (.0365) && {\bf .7945 (.0126)} & .6684 (.0301)\\
+    Aran  & .5618 (.0636) & .3332 (.0613) && {\bf .7814 (.0099)} & .6500 (.0170)\\
+    Eve   & .6360 (.0230) & .4351 (.0359) && {\bf .8148 (.0095)} & .7127 (.0142)\\
+    Naomi & .6191 (.0322) & .3907 (.0547) && {\bf .7917 (.0182)} & .6673 (.0290)\\
+    Nina  & .6745 (.0245) & .4818 (.0384) && {\bf .8263 (.0124)} & .7243 (.0188)\\
+    Peter & .6687 (.0238) & .4857 (.0293) && {\bf .8135 (.0139)} & .7092 (.0209)\\
+    \hline
+  \end{tabular}
+  \label{t:framevssub10K}
 \end{table}
 
 % \begin{table}[ht]
