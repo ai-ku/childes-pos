@@ -30,11 +30,12 @@ plt.bar(index + bar_width, means_par, bar_width,
     error_kw=error_config,
     label='a*b')
 
-plt.xlabel('Child Corpus')
-plt.ylabel('Number of Input Units')
+fsz = 16
+plt.xlabel('Child Corpus', fontsize=fsz)
+plt.ylabel('Number of Input Units', fontsize=fsz)
 #plt.title('Scores by group and gender')
 xticksLabel = ('Anne', 'Aran', 'Eve', 'Naomi', 'Nina', 'Peter') 
-plt.xticks(index + bar_width, xticksLabel) 
+plt.xticks(index + bar_width, xticksLabel, fontsize=fsz) 
 plt.legend()
 plt.tight_layout()
 #plt.show()

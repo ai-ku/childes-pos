@@ -180,12 +180,14 @@ testing and training.
 
 To compare the effects of paradigmatic representation ($a*b$) with the
 syntagmatic one ($aX+Xb$) we train and test both models on each child corpus
-using the same 10-fold cross validation split.  Unless stated otherwise, in the
-rest of this paper, we stopped the training phase of feed-forward connectionist
-model on each corpus after $100K$ input patterns, used the standard labeling to
-evaluate model accuracies, calculated substitute distributions with with the LM
-defined in Section~\ref{s:lm} and sampled 16 substitutes per target word in
-models using the paradigmatic representation.
+using the identical 10-fold cross validation split.  Thus every model in this
+paper exposed to the identical sequence of training and testing patterns.
+Unless stated otherwise, in the rest of this paper, we stopped the training
+phase of feed-forward connectionist model on each corpus after the $100K$ input
+patterns, used the standard labeling to evaluate model accuracies, calculated
+substitute distributions with with the LM defined in Section~\ref{s:lm} and
+sampled 16 substitutes per target word in models using the paradigmatic
+representation.
 
 In the next section we replicate the corpus analysis of \cite{Mintz200391} and
 \cite{clair2010}.  Section~\ref{s:exp_paradigmatic} compares the classification
@@ -211,25 +213,32 @@ flexible frames ($aX+Xb$)\footnote{We can put the comparison with other frames
 in Appendix.  }. 
 
 \subsection{Method} 
-
 All models are trained and evaluated according to steps summarized in
 Section~\ref{sec:training}.  Similar to analysis in \cite{clair2010}, we split
 the training phase of each model into two as short and long training phases in
 which we stop and evaluate the models on the corresponding test sets after
-presenting 10K and 100K training patterns, respectively.
+presenting identical 10K and 100K training patterns, respectively.  
 
 \subsection{Results of Short Training Phase}
 Table~\ref{t:framevssub10K} gives the overall classification accuracies of
 $aX+Xb$ and $a*b$ models on each child corpus.  The accuracy of $a*b$ model
 significantly outperforms the $aX+Xb$ model on each child corpora even with a
-limited amount training patters.  Lambdas of $a*b$ model are significantly
-closer to the perfect association than lambdas of $aX+Xb$ model while lambdas
-of both models are significantly different from zero association.
+limited amount of training patters.  Lambdas of the $a*b$ model are
+significantly closer to the perfect association than lambdas of the $aX+Xb$
+model.  Lambdas of both models are significantly different from zero
+association.
 \input{framevssub10K}
 
 To further investigate the accuracy gap between $aX+Xb$ and $a*b$ models, we
 plot the classification accuracies of each grammatical category in the standard
-labeling for both models in Figure~\ref{fig:category10K}.
+labeling for both models in Figure~\ref{fig:category10K}.  Even after 10K
+training patterns both models are able to achieve relatively higher accuracies
+on nouns({\it n}), verbs({\it v}), determiners({\it det}) and prepositions({\it
+prep}) than the rest of the grammatical categories.  The $a*b$ model is more
+successful than the $aX+Xb$ model in learning grammatical categories such as
+wh-words({\it wh}), adjectives({\it adj}), adverbs({\it adv}),
+conjunctions({\it conj}) and negations({\it neg}). 
+
 \begin{figure}[h]
   \subfigure[$aX+Xb$] {
     \includegraphics[width=0.5\textwidth]{../figures/fletags10K.pdf}
@@ -245,6 +254,32 @@ labeling for both models in Figure~\ref{fig:category10K}.
   \label{fig:category10K}
 \end{figure}
 
+Finally, with limited amount of training patterns the $a*b$ model able to
+categorize nine out of ten grammatical categories in each child corpus with
+different levels of accuracies.  On the other hand, the $aX+Xb$ model performs
+poorly on {\it wh}, {\it conj}, {\it adv}, {\it neg} and {\it int} and can not
+correctly classify any members of these grammatical groups in at least one of
+the child corpora.
+
+\subsection{Results of Long Training Phase} 
+
+Previous section shows that the $a*b$ model is more accurate than the $aX+Xb$
+model on learning grammatical categories with limited amount of language
+exposure.  In this section each model is trained with 100K input patterns to
+observe the effect of extensive language exposure on learning.
+\input{framevssub100K}
+
+Table~\ref{t:framevssub100K} summarizes the overall classification accuracies
+of $aX+Xb$ and $a*b$ models on each child corpus.  Although differences between
+corresponding accuracies and lambda values of $aX+Xb$ and $a*b$ models are less
+than 10K experiments, the $a*b$ model is still significantly more accurate than
+the $aX+Xb$ model on all child corpora.  The $a*b$ model benefit less from the
+extensive training than the $aX+Xb$ model. One possible explanation of this
+behavior is that the number of input units of the $a*b$ model on each child
+corpus is significantly higher than the $aX+Xb$ (see
+Figure~\ref{fig:inputunits}) while the number of hidden units is fixed to 200
+for both models. 
+
 \begin{figure}[h]
   \subfigure[$aX+Xb$] {
     \includegraphics[width=0.5\textwidth]{../figures/fletags100K.pdf}
@@ -259,10 +294,12 @@ labeling for both models in Figure~\ref{fig:category10K}.
   feed-forward connectionist algorithm.  }
   \label{fig:category100K}
 \end{figure}
-\subsection{Results of Long Training Phase} 
 
-
-\input{framevssub100K}
+In contrast to the 50K results, $aX+Xb$ model performs poorly only on {\it
+conj} and {\it int} as shown in Figure~\ref{fig:category100K}.  Both models
+accurately learn the noun, verb, determiner and preposition groups.  However,
+$a*b$ models still significantly accurate on adjectives, conjunctions and
+negations.
 
 \section{Experiment \arabic{ExperimentCounter}: Number of Substitutes}
 \label{s:exp_substitutes}
