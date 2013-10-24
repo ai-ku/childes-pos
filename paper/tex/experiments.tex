@@ -220,35 +220,45 @@ presenting 10K and 100K training patterns, respectively.
 
 \subsection{Results of Short Training Phase}
 Table~\ref{t:framevssub10K} gives the overall classification accuracies of
-$aX+Xb$ and $a*b$ models on each child corpus.  The $a*b$ model significantly
-outperforms the $aX+Xb$ model on each child corpora.[add lambda values]
+$aX+Xb$ and $a*b$ models on each child corpus.  The accuracy of $a*b$ model
+significantly outperforms the $aX+Xb$ model on each child corpora even with a
+limited amount training patters.  Lambdas of $a*b$ model are significantly
+closer to the perfect association than lambdas of $aX+Xb$ model while lambdas
+of both models are significantly different from zero association.
 \input{framevssub10K}
 
 To further investigate the accuracy gap between $aX+Xb$ and $a*b$ models, we
 plot the classification accuracies of each grammatical category in the standard
-%%labeling for both models in Figure~\ref{fig:category10Kvs100K}.
-%%\begin{figure}[h]
-%%  \subfigure[$aX+Xb$ model with $10K$ iterations] {
-%%    \includegraphics[width=0.5\textwidth]{../figures/fletags10K.pdf}
-%%    \label{fig:subfig1}
-%%  }
-%%  \subfigure[$a*b$ model with $10K$ iterations] {
-%%    \includegraphics[width=0.5\textwidth]{../figures/wsubtags10K.pdf}
-%%    \label{fig:subfig2}
-%%  }
-%%  \subfigure[$aX+Xb$ model with $100K$ iterations] {
-%%    \includegraphics[width=0.5\textwidth]{../figures/fletags100K.pdf}
-%%    \label{fig:subfig3}
-%%  }
-%%  \subfigure[$a*b$ model with $100K$ iterations] {
-%%    \includegraphics[width=0.5\textwidth]{../figures/wsubtags100K.pdf}
-%%    \label{fig:subfig4}
-%%  }
-%%  \caption{10-fold cross validation individual tag accuracies of $aX+Xb$ and
-%%  $a*b$ on each child corpus after $5K$ and $100K$ iterations of feed-forward
-%%  connectionist algorithm.}
-%%  \label{fig:category10Kvs100K}
-%%\end{figure}
+labeling for both models in Figure~\ref{fig:category10K}.
+\begin{figure}[h]
+  \subfigure[$aX+Xb$] {
+    \includegraphics[width=0.5\textwidth]{../figures/fletags10K.pdf}
+    \label{fig:subfig1}
+  }
+  \subfigure[$a*b$] { 
+    \includegraphics[width=0.5\textwidth]{../figures/wsubtags10K.pdf}
+    \label{fig:subfig2}
+  }
+ \caption{10-fold cross validation individual tag accuracies of $aX+Xb$ and
+  $a*b$ on each child corpus after $10K$ training patterns are presented to
+  feed-forward connectionist algorithm.  }
+  \label{fig:category10K}
+\end{figure}
+
+\begin{figure}[h]
+  \subfigure[$aX+Xb$] {
+    \includegraphics[width=0.5\textwidth]{../figures/fletags100K.pdf}
+    \label{fig:subfig3}
+  }
+  \subfigure[$a*b$] {
+    \includegraphics[width=0.5\textwidth]{../figures/wsubtags100K.pdf}
+    \label{fig:subfig4}
+  }
+  \caption{10-fold cross validation individual tag accuracies of $aX+Xb$ and
+  $a*b$ on each child corpus after $100K$ training patterns are presented to
+  feed-forward connectionist algorithm.  }
+  \label{fig:category100K}
+\end{figure}
 \subsection{Results of Long Training Phase} 
 
 

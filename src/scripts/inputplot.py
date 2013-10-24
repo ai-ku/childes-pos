@@ -2,7 +2,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-
 n_children = 6
 
 means_par= (4999.3, 6066.3, 4261.1, 3366.3, 4936.3, 4290.5)

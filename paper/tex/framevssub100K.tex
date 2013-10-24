@@ -1,23 +1,34 @@
 \begin{table}[ht]
   \small
   \centering
-  \caption{10-fold cross-validation classification accuracies of models based on
-    flexible frames ($aX + Xb$) and substitutes ($a*b$) on each child corpus
-    after 100K training patterns are summarized.  Standard errors are reported in
-  parentheses.}
+  \caption{10-fold cross-validation classification accuracies of models based
+    on flexible frames ($aX + Xb$) and substitutes ($a*b$) on each child corpus
+    after 100K training patterns are summarized.  Standard errors are reported
+    in parentheses.  Lambdas of $aX+Xb$ and $a*b$ are both tested against each
+    other and zero association by using z-test.  All tests have $p<.001$.}
   \begin{tabular}{lccccc}
     \hline
     Corpus & \multicolumn{2}{c}{$aX+Xb$} && \multicolumn{2}{c}{$a*b$} \\
     \cline{2-3}
     \cline{5-6}
     & Accuracy & $\lambda$ && Accuracy & $\lambda$\\
+%% With z-score differences    
+%%    & Accuracy & $\lambda$ && Accuracy & $\lambda$ & $\lambda_{a*b}-\lambda_{aX+Xb}$\\
+%%
+%%    \hline
+%%    Anne  & .7833 (.0072) & .6496 (.0118) && .8335 (.0078) & .7295 (.0123) & 6.49\\
+%%    Aran  & .7495 (.0091) & .5991 (.0119) && .8218 (.0063) & .7147 (.0100) & 9.71\\
+%%    Eve   & .7896 (.0073) & .6738 (.0106) && .8467 (.0113) & .7622 (.0172) & 5.13\\
+%%    Naomi & .7643 (.0122) & .6232 (.0176) && .8212 (.0132) & .7140 (.0207) & 4.38\\
+%%    Nina  & .8053 (.0083) & .6899 (.0148) && .8555 (.0058) & .7711 (.0082) & 5.48\\
+%%    Peter & .7924 (.0083) & .6757 (.0126) && .8509 (.0083) & .7669 (.0090) & 7.23\\
     \hline
-    Anne  & .7833 (.0072) &&& {\bf .8335 (.0078)} & .7295 (.0123)\\
-    Aran  & .7495 (.0091) &&& {\bf .8218 (.0063)} & .7147 (.0100)\\
-    Eve   & .7896 (.0073) &&& {\bf .8467 (.0113)} & .7622 (.0172)\\
-    Naomi & .7643 (.0122) &&& {\bf .8212 (.0132)} & .7140 (.0207)\\
-    Nina  & .8053 (.0083) &&& {\bf .8555 (.0058)} & .7711 (.0082)\\
-    Peter & .7924 (.0083) &&& {\bf .8509 (.0083)} & .7669 (.0090)\\
+    Anne  & .7833 (.0072) & .6496 (.0118) && .8335 (.0078) & .7295 (.0123)\\
+    Aran  & .7495 (.0091) & .5991 (.0119) && .8218 (.0063) & .7147 (.0100)\\
+    Eve   & .7896 (.0073) & .6738 (.0106) && .8467 (.0113) & .7622 (.0172)\\
+    Naomi & .7643 (.0122) & .6232 (.0176) && .8212 (.0132) & .7140 (.0207)\\
+    Nina  & .8053 (.0083) & .6899 (.0148) && .8555 (.0058) & .7711 (.0082)\\
+    Peter & .7924 (.0083) & .6757 (.0126) && .8509 (.0083) & .7669 (.0090)\\
     \hline
   \end{tabular}
   \label{t:framevssub100K}
