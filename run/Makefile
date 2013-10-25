@@ -142,7 +142,7 @@ VERBOSE=-v
 
 ## ALL-Data Split Train-Test
 EXP_CROSSVAL=10
-EXP_ITER=100000
+EXP_ITER=10
 ARGS_FRAME=7
 
 ### FRAME EXPERIMENTS
@@ -171,13 +171,14 @@ split.frame.plot: split.frame.out
 	cat $< | plotdata.pl 3=$* 4=x 5=y > $@ 
 
 ### WORDSUB EXPERIMENTS
-ARGS_WSUB=7
+ARGS_WSUB=8
+HIDDEN_RATIO=0
 
 split.wsub.out: anne.sub.gz aran.sub.gz eve.sub.gz naomi.sub.gz nina.sub.gz peter.sub.gz anne.fre.gz	 aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz peter.fre.gz
-	splitwordsub-args.py ${EXP_ITER} ${EXP_CROSSVAL} ${SEED} all | xargs -n${ARGS_WSUB} -P${NCPU} splitwordsubrun.pl > $@
+	splitwordsub-args.py ${EXP_ITER} ${EXP_CROSSVAL} ${SEED} all ${HIDDEN_RATIO} | xargs -n${ARGS_WSUB} -P${NCPU} splitwordsubrun.pl > $@
 
 %.wsub.out: %.sub.gz %.fre.gz
-	splitwordsub-args.py ${EXP_ITER} ${EXP_CROSSVAL} ${SEED} $* | xargs -n${ARGS_WSUB} -P${NCPU} splitwordsubrun.pl > $@
+	splitwordsub-args.py ${EXP_ITER} ${EXP_CROSSVAL} ${SEED} $* ${HIDDEN_RATIO} | xargs -n${ARGS_WSUB} -P${NCPU} splitwordsubrun.pl > $@
 #	ls $*.wsub.fold*.out | analyzetags.py > $*.fixwsub${EXP_ITER}.anl
 	-mkdir -p ${RESULTS_PATH}${EXP_ITER}
 	mv $*.wsub*.fold*.out ${RESULTS_PATH}${EXP_ITER}
@@ -199,14 +200,15 @@ split.wsub.plot: split.wsub.out
 
 FSUB_EXP_CROSSVAL=10
 FSUB_EXP_ITER=10
-FSUB_ARGS_WSUB=7
+FSUB_ARGS_WSUB=8
 FSUB_SUBS=16
+FSUB_HIDDEN_RATIO=0.1
 
 split.fixwsub.out: anne.sub.gz aran.sub.gz eve.sub.gz naomi.sub.gz nina.sub.gz peter.sub.gz anne.fre.gz	 aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz peter.fre.gz
-	splitwordsub-args.py ${FSUB_EXP_ITER} ${FSUB_EXP_CROSSVAL} ${SEED} all | perl -lane 'print if $$F[3] == ${FSUB_SUBS}' | xargs -n${FSUB_ARGS_WSUB} -P${NCPU} splitwordsubrun.pl > $@
+	splitwordsub-args.py ${FSUB_EXP_ITER} ${FSUB_EXP_CROSSVAL} ${SEED} all ${FSUB_HIDDEN_RATIO} | perl -lane 'print if $$F[3] == ${FSUB_SUBS}' | xargs -n${FSUB_ARGS_WSUB} -P${NCPU} splitwordsubrun.pl > $@
 
 %.fixwsub.out: %.sub.gz %.fre.gz
-	splitwordsub-args.py ${FSUB_EXP_ITER} ${FSUB_EXP_CROSSVAL} ${SEED} $* |perl -lane 'print if $$F[3] == ${FSUB_SUBS}'| xargs -n${FSUB_ARGS_WSUB} -P${NCPU} splitwordsubrun.pl > $@			
+	splitwordsub-args.py ${FSUB_EXP_ITER} ${FSUB_EXP_CROSSVAL} ${SEED} $* ${FSUB_HIDDEN_RATIO} |perl -lane 'print if $$F[3] == ${FSUB_SUBS}'| xargs -n${FSUB_ARGS_WSUB} -P${NCPU} splitwordsubrun.pl > $@			
 	ls $*.wsub${FSUB_SUBS}.fold*.out | analyzetags.py > $*.fixwsub${FSUB_EXP_ITER}.anl
 	-mkdir -p ${RESULTS_PATH}${FSUB_EXP_ITER}
 	mv $*.wsub*.fold*.out ${RESULTS_PATH}${FSUB_EXP_ITER}
