@@ -29,8 +29,8 @@ class frame:
 #                         'part':'v', 'mod':'v', 'neg':'neg', \
 #                         'co':'int', 'int':'int', 'wh':'wh'}
         self.tagMap={'n':'n', 'pro':'n', 'adj':'adj', 'adv':'adv', 'conj':'conj', 'det':'det',\
-                          'prep':'prep', 'v':'v', 'aux':'v','int':'int',\
-                         'neg':'neg', 'wh':'wh'}
+            'prep':'prep', 'v':'v', 'part':'v', 'mod':'v', 'aux':'v','int':'int',\
+            'neg':'neg', 'wh':'wh'}
         #### regs ###
         self.regUtterBound = re.compile('^P_')
         self.regWordTag = re.compile('^(.*?)\/(.*?):')

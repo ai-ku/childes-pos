@@ -20,6 +20,12 @@ mean1 = float(sys.argv[1])
 std1= float(sys.argv[2])
 mean2 = float(sys.argv[3])
 std2 = float(sys.argv[4])
-print "%g vs %g, z-test: %s" % (mean1, mean2, ztest(mean1, std1, mean2, std2, 0.0001))
-print "%g vs %g, z-test: %s" % (mean1, 0., ztest(mean1, std1, 0, 0, 0.0001))
-print "%g vs %g, z-test: %s" % (mean2, 0., ztest(mean2, std2, 0, 0, 0.0001))
+
+if len(sys.argv) == 6:
+  alpha = float(sys.argv[5])
+else:
+  alpha = 0.0001
+
+print "%g vs %g, z-test: %s" % (mean1, mean2, ztest(mean1, std1, mean2, std2, alpha))
+print "%g vs %g, z-test: %s" % (mean1, 0., ztest(mean1, std1, 0, 0, alpha))
+print "%g vs %g, z-test: %s" % (mean2, 0., ztest(mean2, std2, 0, 0, alpha))

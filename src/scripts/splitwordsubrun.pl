@@ -30,8 +30,8 @@ foreach my $dd (@data){
     my $combine_out = "$tmp/$dd.wsub.gz";
     my $combine = "zcat $dd.fre.gz | cut -f1,3,4 | paste - $wordsub_out | gzip > $combine_out";
     system($combine);
-    my $trsplit = "crossval.py -v -seed $seed -tarFold $foldId -foldNum $fold -d $combine_out 2>$tmp/$dd.wsp.err | split.py 2> $tmp/$dd.te > $tmp/$dd.tr";
-    print STDERR "$trsplit\n";
+    my $trsplit = "crossval.py -w -v -seed $seed -tarFold $foldId -foldNum $fold -d $combine_out 2>$tmp/$dd.wsp.err | split.py 2> $tmp/$dd.te > $tmp/$dd.tr";
+#    print STDERR "$trsplit\n";
     system($trsplit);
     $cattr .= "$tmp/$dd.tr ";
     $catte .= "$tmp/$dd.te ";

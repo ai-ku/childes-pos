@@ -16,7 +16,10 @@ def lambdaCalc(total, data, dataT, debug=False):
   # calculate answ|gold lambda_b
   rowMax = max([sum(r.values()) for r in dataT.values()]) 
   maxColSum = sum([max(r.values()) for r in data.values()]) 
-  lambda_b = (maxColSum - rowMax) / (tot - rowMax)
+  if tot - rowMax != 0:
+    lambda_b = (maxColSum - rowMax) / (tot - rowMax)
+  else:
+    lambda_b = 0
   if debug:
     print "rowMax:", rowMax, " maxColSum:", maxColSum , " N:", tot
     print "data:"

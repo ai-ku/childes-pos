@@ -22,9 +22,9 @@ my (@trsizes, @tesizes) = ((),());
 my ($trtotal, $tetotal, $total) = (0,0,0);
 my ($cattr,$catte) = ("cat ","cat ");
 foreach my $dd (@data){
-    my $trsplit = "crossval.py -v -seed $seed -tarFold $foldId -foldNum $fold -d $dd.fre.gz 2> $tmp/$dd.split.err | gzip > $tmp/$dd.fsp.gz";
+    my $trsplit = "crossval.py -w -v -seed $seed -tarFold $foldId -foldNum $fold -d $dd.fre.gz 2> $tmp/$dd.split.err | gzip > $tmp/$dd.fsp.gz";
     system($trsplit);
-    print STDERR "$trsplit\n";
+#    print STDERR "$trsplit\n";
     my $testtrain =  "zcat $tmp/$dd.fsp.gz | split.py  2> $tmp/$dd.te > $tmp/$dd.tr";
 #    print STDERR "$testtrain\n";
     system($testtrain);
@@ -55,17 +55,38 @@ my $datasizes = join(" -d ", @tesizes);
 my $runmike = "mike_childes -f $tmp/alltr.gz -i $minfo[1] -o $minfo[2] -seed $seed -d $datasizes -iter $iter -t $tmp/allte > $mike_out 2> $mike_err";
 #print STDERR "$runmike\n";
 system($runmike);
-if (@data == 1) {
+#### Split answer to individual files to analyze
+open(ANS, "$tmp/mike.err") or die("missing mikenet output");
+my ($line, $pos) = (0, 0);
+open(CUR, ">$tmp/$data[$pos].ans");
+while(<ANS>) {
+  chomp;
+  if ($_ !~ /^(\d+)\s(\d+)$/) {
+    print STDERR "SKIP: $_\n"; 
+    next;
+  }
+  if ($pos < @tesizes- 1 && $line == $tesizes[$pos]) {
+    close(CUR);
+    $pos += 1;
+    open(CUR, ">$tmp/$data[$pos].ans");
+  } 
+  print CUR "$1 $2\n";
+  $line += 1;
+}
+
+### print folds
+foreach(@data) {
   # if we have only one data perform the analysis
-  my $convert = "zcat $tmp/allte.gz | cut -f1,3,4 | gzip > $tmp/tmpanal.gz";
+  my $convert = "cat $tmp/$_.te | cut -f1,3,4 | gzip > $tmp/$_.anal.gz";
   system($convert);
-  my $analysis = "idx2tag.py $tmp/tmpanal.gz $tmp/mike.err > $data[0].$frame.fold$foldId.out 2> $tmp/analysis.err";
+  my $analysis = "idx2tag.py $tmp/$_.anal.gz $tmp/$_.ans > $_.all.$frame.fold$foldId.out 2> $tmp/$_.anal.err";
   system($analysis);
 }
 
 my @res = split(' ', `cat $mike_out`);
 $tm = time - $tm;
 
+### write results
 for(my $i = 0 ; $i < @data; $i++){
-     print join("\t", $runid, $seed, $foldId, $data[$i], $frame, $res[$i], $tm, $iter, $minfo[0], $minfo[1], $minfo[2], $trsizes[$i])."\n";
+  print join("\t", $runid, $seed, $foldId, $data[$i], $frame, $res[$i + 1], $tm, $iter, $minfo[0], $minfo[1], $minfo[2], $trsizes[$i], $res[0])."\n";
 }

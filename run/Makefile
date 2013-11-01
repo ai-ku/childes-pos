@@ -5,10 +5,10 @@
 bin:
 	cd ../bin; make
 
-RESULTS_PATH=results/
+RESULTS_PATH=xresults/
 MINTZ_DATA_PATH=../data/childes/mintz03xml/
 TRAIN_DATA_PATH=../data/childes/data-xml
-NCPU=10
+NCPU=40
 SEED=0
 
 all: mintz03 clair10pr clair10ps
@@ -109,7 +109,7 @@ KM_OPTIONS=-k ${SCODE_CLUSTER} -r 128 -l -w  -s ${SEED}
 ### TRAIN-TEST SPLIT WITH CROSS VALIDATION
 CROSSVAL=10
 TARGET_FOLD=0
-ITER=20000
+ITER=10000
 VERBOSE=-v
 
 %.split.fre.gz: %.fre.gz
@@ -148,15 +148,27 @@ ARGS_FRAME=7
 ### FRAME EXPERIMENTS
 split.frame.out: anne.fre.gz aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz peter.fre.gz 
 	splitframe-args.py ${EXP_ITER} ${EXP_CROSSVAL} ${SEED} all | xargs -n${ARGS_FRAME} -P${NCPU} splitframerun.pl > $@
+	-mkdir -p ${RESULTS_PATH}${EXP_ITER}
+	for label in anne aran eve naomi nina peter; do\
+		echo "$$label scores" >> split.frame.plot; \
+		cat split.frame.out | plotdata.pl 3=$$label 4=x 5=y >> split.frame.plot ;\
+		ls $$label.all.fle.fold*.out | analyzetags.py > ${RESULTS_PATH}${EXP_ITER}/$*.all.fle.anl;\
+		ls $$label.all.fre.fold*.out | analyzetags.py > ${RESULTS_PATH}${EXP_ITER}/$*.all.fre.anl;\
+		ls $$label.all.pr.fold*.out | analyzetags.py > ${RESULTS_PATH}${EXP_ITER}/$*.all.pr.anl;\
+		ls $$label.all.ps.fold*.out | analyzetags.py > ${RESULTS_PATH}${EXP_ITER}/$*.all.ps.anl;\
+		mv $$label.all.*.fold*.out ${RESULTS_PATH}${EXP_ITER};\
+	done
+	cp split.frame.plot ${RESULTS_PATH}${EXP_ITER}
+	cp $@ ${RESULTS_PATH}${EXP_ITER}
 
 %.frame.out: %.fre.gz
 	-rm $*.*.fold*.out
 	splitframe-args.py ${EXP_ITER} ${EXP_CROSSVAL} ${SEED} $* | xargs -n${ARGS_FRAME} -P${NCPU} splitframerun.pl > $@
-	ls $*.fle.fold*.out | analyzetags.py > $*.fle.${EXP_ITER}.anl
-	ls $*.fre.fold*.out | analyzetags.py > $*.fre.${EXP_ITER}.anl
-	ls $*.pr.fold*.out | analyzetags.py > $*.pr.${EXP_ITER}.anl
-	ls $*.ps.fold*.out | analyzetags.py > $*.ps.${EXP_ITER}.anl
 	-mkdir -p ${RESULTS_PATH}${EXP_ITER}
+	-ls $*.all.fle.fold*.out | analyzetags.py > ${RESULTS_PATH}${EXP_ITER}/$*.fle.anl
+	-ls $*.all.fre.fold*.out | analyzetags.py > ${RESULTS_PATH}${EXP_ITER}/$*.fre.anl
+	-ls $*.all.pr.fold*.out | analyzetags.py > ${RESULTS_PATH}${EXP_ITER}/$*.pr.anl
+	-ls $*.all.ps.fold*.out | analyzetags.py > ${RESULTS_PATH}${EXP_ITER}/$*.ps.anl
 	mv $*.*.fold*.out ${RESULTS_PATH}${EXP_ITER}
 	cp $@ ${RESULTS_PATH}${EXP_ITER}
 
@@ -172,13 +184,12 @@ split.frame.plot: split.frame.out
 
 ### WORDSUB EXPERIMENTS
 ARGS_WSUB=8
-HIDDEN_RATIO=0
 
 split.wsub.out: anne.sub.gz aran.sub.gz eve.sub.gz naomi.sub.gz nina.sub.gz peter.sub.gz anne.fre.gz	 aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz peter.fre.gz
-	splitwordsub-args.py ${EXP_ITER} ${EXP_CROSSVAL} ${SEED} all ${HIDDEN_RATIO} | xargs -n${ARGS_WSUB} -P${NCPU} splitwordsubrun.pl > $@
+	splitwordsub-args.py ${EXP_ITER} ${EXP_CROSSVAL} ${SEED} all 0| xargs -n${ARGS_WSUB} -P${NCPU} splitwordsubrun.pl > $@
 
 %.wsub.out: %.sub.gz %.fre.gz
-	splitwordsub-args.py ${EXP_ITER} ${EXP_CROSSVAL} ${SEED} $* ${HIDDEN_RATIO} | xargs -n${ARGS_WSUB} -P${NCPU} splitwordsubrun.pl > $@
+	splitwordsub-args.py ${EXP_ITER} ${EXP_CROSSVAL} ${SEED} $* 0| xargs -n${ARGS_WSUB} -P${NCPU} splitwordsubrun.pl > $@
 #	ls $*.wsub.fold*.out | analyzetags.py > $*.fixwsub${EXP_ITER}.anl
 	-mkdir -p ${RESULTS_PATH}${EXP_ITER}
 	mv $*.wsub*.fold*.out ${RESULTS_PATH}${EXP_ITER}
@@ -194,15 +205,38 @@ split.wsub.plot: split.wsub.out
 %.wsub.plot: %.wsub.out
 	cat $< | plotdata.pl 4=$* 3=x 5=y > $@
 
+### WORDSUB DYNAMIC HIDDEN UNITS EXPERIMENTS
+HIDDEN_RATIO=0.1
+
+split.hwsub.out: anne.sub.gz aran.sub.gz eve.sub.gz naomi.sub.gz nina.sub.gz peter.sub.gz anne.fre.gz	 aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz peter.fre.gz
+	splitwordsub-args.py ${EXP_ITER} ${EXP_CROSSVAL} ${SEED} all ${HIDDEN_RATIO} | xargs -n${ARGS_WSUB} -P${NCPU} splitwordsubrun.pl > $@
+
+%.hwsub.out: %.sub.gz %.fre.gz
+	splitwordsub-args.py ${EXP_ITER} ${EXP_CROSSVAL} ${SEED} $* ${HIDDEN_RATIO} | xargs -n${ARGS_WSUB} -P${NCPU} splitwordsubrun.pl > $@
+	-mkdir -p ${RESULTS_PATH}${EXP_ITER}_hr${HIDDEN_RATIO}
+	mv $*.wsub*.fold*.out ${RESULTS_PATH}${EXP_ITER}_hr${HIDDEN_RATIO}
+	cp $@ ${RESULTS_PATH}${EXP_ITER}_hr${HIDDEN_RATIO}
+
+split.hwsub.plot: split.hwsub.out
+	-rm $@
+	for label in anne aran eve naomi nina peter; do\
+		echo "$$label scores" >> $@; \
+		cat $< | plotdata.pl 4=$$label 3=x 5=y >> $@ ;\
+	done
+
+%.hwsub.plot: %.hwsub.out
+	cat $< | plotdata.pl 4=$* 3=x 5=y > $@
+
+
 ### FIX WORDSUB EXPERIMENTS
 ## This experiments assumes fixed number of substitutes
 ## Run the previous experiments to determine the best number of subsititutes.
 
 FSUB_EXP_CROSSVAL=10
-FSUB_EXP_ITER=10
+FSUB_EXP_ITER=300000
 FSUB_ARGS_WSUB=8
 FSUB_SUBS=16
-FSUB_HIDDEN_RATIO=0.1
+FSUB_HIDDEN_RATIO=0
 
 split.fixwsub.out: anne.sub.gz aran.sub.gz eve.sub.gz naomi.sub.gz nina.sub.gz peter.sub.gz anne.fre.gz	 aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz peter.fre.gz
 	splitwordsub-args.py ${FSUB_EXP_ITER} ${FSUB_EXP_CROSSVAL} ${SEED} all ${FSUB_HIDDEN_RATIO} | perl -lane 'print if $$F[3] == ${FSUB_SUBS}' | xargs -n${FSUB_ARGS_WSUB} -P${NCPU} splitwordsubrun.pl > $@
@@ -247,7 +281,7 @@ frame.stat: anne.frame.out aran.frame.out eve.frame.out naomi.frame.out nina.fra
 
 ### FREQUENT (AXB), FLEXIBLE(AX + XB) and BIGRAM FRAMES (AX and XB)
 FRAME_THR=0
-MINTZ03_OPTIONS=-t ${FRAME_THR} -u 
+MINTZ03_OPTIONS=-t ${FRAME_THR} -u  
 
 #also equivalent to FLEXIBLE
 %.fre.gz: %.data.gz
@@ -314,11 +348,9 @@ all.ps.mike.gz: anne.fre.gz aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz pete
 	tomikesparse.py ps anne.fre.gz aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz peter.fre.gz \
 	2> $@.info | gzip > $@
 
-### Individual Run
+### Clair Neural-Network replicate 
 
-
-%.runmk: %.mike.gz
-	runmike.py $<.info ${ITER}
+%.rep.out: %.fre.gz
 
 ## EXPERIMENTS
 
@@ -331,7 +363,7 @@ all.wordsub.out: anne.sub.gz aran.sub.gz eve.sub.gz naomi.sub.gz nina.sub.gz pet
 
 ## MIKENET Experiments
 
-%.frame.out: %.fre.gz %.prbi.gz %.psbi.gz
+%.1rame.out: %.fre.gz %.prbi.gz %.psbi.gz
 	frame-args.py $* ${EXP_ITER} | xargs -n5 -P1 framerun.pl  > $@
 
 ### Wordsub experiments

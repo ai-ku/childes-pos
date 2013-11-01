@@ -21,11 +21,12 @@ elif sys.argv[1] == "fre":
 else:
     sys.exit("Unmatched Tag" + sys.argv[1])
 instance = 0
-
+splitFlag = 0
 for line in sys.stdin:
     l = line.strip().split("\t")
     if l[0] == "-1":
         arr.append(-1);
+        splitFlag += 1
         continue
     elif l[1] == "X":
         continue
@@ -55,8 +56,8 @@ for line in sys.stdin:
             framer[f2] = len(framer)
         arr.append([frame[f1],framer[f2],tag[l[3]]])
 
-if len(arr) - 1 != instance:    sys.exit("ERR: Size Missmatch")
-print >> sys.stderr, instance, len(frame)+len(framer), len(tag)
+print >> sys.stderr, instance, len(frame)+len(framer), len(tag), len(arr)
+if len(arr) - splitFlag != instance:    sys.exit("ERR: Size Missmatch")
 clab = ["0"] * len(tag)
 
 for (ii,r) in enumerate(arr):

@@ -35,7 +35,7 @@
 ##          subdirectory in build tree
 ##
 ##########################################################################
-export MIKENET_DIR=/scratch/myatbaz/child/src/mikenet8/
+export MIKENET_DIR=/scratch/myatbaz/child/src/mikenet8
 foo:
 	@echo "To build the simulator, type 'make' followed by "
 	@echo "your architecture type"

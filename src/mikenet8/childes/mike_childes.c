@@ -3,7 +3,7 @@
    at the bottom of your .cshrc file will do the trick:
 
    setenv MIKENET_DIR ~mharm/mikenet/default/
-*/
+   */
 
 #include <stdio.h>
 #include <math.h>
@@ -32,6 +32,7 @@ int main(int argc,const char *argv[])
   int dataCountArray[6] = {0};
   char * testFileArray[6] = {NULL};
   int inputCount = 0,outputCount = 0, hiddenCount = 200;
+  int batchFlag = 0;
   Real error, correct;
   Real epsilon,range, hiddenRatio = 0;
   unsigned long seed = 0;
@@ -48,13 +49,13 @@ int main(int argc,const char *argv[])
   range=0.5;
 
   default_errorRadius=0.0;
-
   const char *usage = "mike_childes [options]\n"
     "-seed\t\tRandom seed (default to 0)\n"
     "-i\t\tNumer of input units (default to 0)\n"
     "-h\t\tNumer of hidden units (default to 200)\n"
-    "-h\t\tNumer of output units (default to 0)\n"
+    "-o\t\tNumer of output units (default to 0)\n"
     "-r\t\tRatio of input units / hidden units.(default to 200)\n"
+    "-b\t\tEnables batch learning (default online learning)\n"
     "-epsilon\tBack probagation epsilon (Default 0.1)\n"
     "-help\t\tprints this help\n";
   /* what are the command line arguments? */
@@ -104,6 +105,8 @@ int main(int argc,const char *argv[])
     } else if (strcmp(argv[i], "-r") == 0) {
       hiddenRatio = atof(argv[i+1]);
       i++;
+    } else if (strcmp(argv[i], "-b") == 0) {
+      batchFlag = 1;
     } else {
       fprintf(stderr,"unknown argument: %s\n%s\n",argv[i],usage);
       exit(-1);
@@ -197,10 +200,13 @@ int main(int argc,const char *argv[])
   /* Reset the seed to get same training set*/
   fprintf(stderr, "Training: %s size:%d\n", fileName, examples->numExamples);     
   mikenet_set_seed(seed);     
-  for(i=0;i<ITER;i++)
-  {
+  for(i=0;i<ITER;i++) {
     /* get j'th example from exampleset */
-    ex=get_random_example(examples);
+    int ridx = (int) (mikenet_random() * (Real)examples->numExamples);
+    ex = &examples->examples[ridx];
+    /*Original one*/
+    // ex = get_random_example(examples);
+    
     /* do forward propagation */
     bptt_forward(net,ex);
 
@@ -212,19 +218,18 @@ int main(int argc,const char *argv[])
 
     /* online learning: apply the deltas 
        from previous call to compute_gradients */
-    bptt_apply_deltas(net);
+    if(batchFlag == 0)  
+      bptt_apply_deltas(net);
 
     /* is it time to write status? */
-    if (count==REP)
-    {
+    if (count==REP) {
       /* average error over last 'count' iterations */
       error = error/(float)count;
       count=0;
 
       /* print a message about average error so far */
       if (VERBOSE) fprintf(stderr, "%d\t%f\n",i,error);
-      if (error < 0.1)
-      {
+      if (error < 0.1) {
         break;
       }
       /* zero error; start counting again */
@@ -232,6 +237,8 @@ int main(int argc,const char *argv[])
     }
     count++;
   }
+  if(batchFlag == 1) 
+      bptt_apply_deltas(net);
   /* done training.  write out results for each example */
   if (testCount == 0){
     correct = 0;

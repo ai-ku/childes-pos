@@ -101,7 +101,7 @@ int main(int argc,char *argv[])
   default_errorComputation=CROSS_ENTROPY_ERROR;
 
   /* logistic activation */
-  default_activationType=LOGISTIC_ACTIVATION;
+//  default_activationType=LOGISTIC_ACTIVATION;
 
   /* set the seed for the random number generator */
   mikenet_set_seed(seed);
