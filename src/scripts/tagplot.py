@@ -44,7 +44,7 @@ def tagPlot(datas, outName="tags.pdf"):
   leg = plt.legend(legend, loc='best', fontsize=fsz - 4, fancybox=True)
   leg.get_frame().set_alpha(0.2)
   plt.yticks(fontsize=fsz)
-  plt.ylabel("Averaged Accuracy", fontsize=fsz)
+  plt.ylabel("Accuracy", fontsize=fsz)
   plt.xlabel("Grammatical Category", fontsize=fsz)
   plt.savefig(outName)
     

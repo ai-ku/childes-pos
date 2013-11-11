@@ -11,28 +11,34 @@ PLOT_DIR=figures/
 ### 2 Plots
 WSUB_PLOT=../run/
 PLOT_DATA=figure_data/
+ALL=""
 
 fletags10K.pdf:
-	ls ${PLOT_DATA}*.fle.10000.anl | tagplot.py $@
+	ls ${PLOT_DATA}10000/*.${ALL}.fle.anl | tagplot.py $@
 	mv $@ ${PLOT_DIR}$@
 	
 wsubtags10K.pdf:
-	ls ${PLOT_DATA}*.fixwsub10000.anl | tagplot.py $@
+	ls ${PLOT_DATA}10000/*.${ALL}.wsub16.anl | tagplot.py $@
 	mv $@ ${PLOT_DIR}$@
 
 fletags100K.pdf:
-	ls ${PLOT_DATA}*.fle.100000.anl | tagplot.py $@
+	ls ${PLOT_DATA}100000/*.${ALL}.fle.anl | tagplot.py $@
 	mv $@ ${PLOT_DIR}$@
 	
 wsubtags100K.pdf:
-	ls ${PLOT_DATA}*.fixwsub100000.anl | tagplot.py $@
+	ls ${PLOT_DATA}100000/*.${ALL}.wsub16.anl | tagplot.py $@
 	mv $@ ${PLOT_DIR}$@
-
 
 substitute.pdf: 
+	#train test on same child corpus
 	ls ${PLOT_DATA}*wsub.plot | subsplot.py 
 	mv $@ ${PLOT_DIR}$@
-	
+
+allsubstitute.pdf: 
+	#train on all child corpus test on each child corpus
+	cat ${PLOT_DATA}split.wsub.plot | allsubsplot.py 
+	mv allsubstitute.pdf ${PLOT_DIR}$@
+
 ngram.pdf:
 	ls ${PLOT_DATA}fixwsub*gram | ngramplot.py 
 	mv $@ ${PLOT_DIR}$@
