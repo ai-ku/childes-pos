@@ -5,7 +5,8 @@
     on flexible frames ($aX + Xb$) and substitutes ($a*b$) on each child corpus
     after 10K training patterns are summarized.  Standard errors are reported
     in parentheses.  Lambdas of $aX+Xb$ and $a*b$ are both tested against each
-    other and zero association by using z-test.  All tests have $p<.001$.}
+    other and zero association by using two tailed z-test.  All tests have
+    $p<.001$.}
 \begin{tabular}{lccccc}
     \hline
     Corpus & \multicolumn{2}{c}{$aX+Xb$} && \multicolumn{2}{c}{$a*b$} \\
@@ -16,14 +17,14 @@
 %% With z-score differences    
 %%    & Accuracy & $\lambda$ && Accuracy & $\lambda$ & $\lambda_{a*b}-\lambda_{aX+Xb}$\\
 %%    \hline 
-    Anne  & .6481 (.1741) & .4712 (.0323) && .8049 (.0059) & .7047 (.0101)\\
-    Aran  & .6108 (.0268) & .4238 (.0283) && .7837 (.0071) & .6743 (.0097)\\
-    Eve   & .6027 (.0524) & .4275 (.0485) && .8174 (.0110) & .7246 (.0158)\\
-    Naomi & .6166 (.0210) & .4160 (.0261) && .7824 (.0137) & .6670 (.0254)\\
-    Nina  & .6671 (.0244) & .4878 (.0397) && .8220 (.0055) & .7267 (.0094)\\
-    Peter & .6588 (.0226) & .4899 (.0335) && .8152 (.0082) & .7244 (.0119)\\
-    \hline
-    ALL-TRAIN & & && &\\
+%%    Anne  & .6481 (.1741) & .4712 (.0323) && .8049 (.0059) & .7047 (.0101)\\
+%%    Aran  & .6108 (.0268) & .4238 (.0283) && .7837 (.0071) & .6743 (.0097)\\
+%%    Eve   & .6027 (.0524) & .4275 (.0485) && .8174 (.0110) & .7246 (.0158)\\
+%%    Naomi & .6166 (.0210) & .4160 (.0261) && .7824 (.0137) & .6670 (.0254)\\
+%%    Nina  & .6671 (.0244) & .4878 (.0397) && .8220 (.0055) & .7267 (.0094)\\
+%%    Peter & .6588 (.0226) & .4899 (.0335) && .8152 (.0082) & .7244 (.0119)\\
+%%    \hline
+%%    ALL-TRAIN & & && &\\
     \hline
     Anne  & .6252 (.0231) & .4323 (.0352) && .7970 (.0069) & .6925 (.0111)\\
     Aran  & .5968 (.0218) & .3908 (.0327) && .7783 (.0083) & .6653 (.0123)\\
