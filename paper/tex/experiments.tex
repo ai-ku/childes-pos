@@ -47,9 +47,9 @@ to our analyses:
 Word sequences that consist of three words and do not contain any utterance
 boundaries are extracted from each child corpus separately
 \citep*{Mintz200391}.  The first and the third words of sequences are treated
-as frame elements while the middle one is the target word that we want to
-categorize.  The correct grammatical category of target words are extracted
-from CHILDES.  [!! put number of target words table] 
+as frame elements while the middle one is the target word that is categorized.
+The correct grammatical category of target words are extracted from CHILDES.
+[!! put number of target words table] 
 
 \subsubsection{Language Modeling Substitute Words}
 \label{s:lm}
@@ -168,26 +168,25 @@ rate},(4) {\bf sigmoid...}
 % -> define/implementaion
 % -> advantage
 
-We analyze each child corpus separately and apply 10-fold cross validation to
-measure model performances.  In order to apply 10-fold cross validation we
-randomly split the sentences of each corpus into 10 folds .  Thus target words
-from the same sentence are observed in the same fold.  At each iteration a
-single fold is kept as the test data while remaining 9 samples are used as the
-training data.  We repeat this process until all folds are used exactly once as
-the test data and report the average accuracy of 10 runs.  The main advantage
-of the cross validation is that all sentences are eventually used both for
-testing and training.
+We measure and compare the classification accuracy of models by applying
+10-fold cross validation on the union of six child corpora.  To perform 10-fold
+cross validation we randomly split each child corpus into 10 folds.  At each
+iteration a single fold from each child corpus is kept as the test data while
+the union of remaining 9 folds of each child corpus are used as the training
+data.  We repeat this process until all folds are used exactly once as the test
+data and report the average accuracy of 10 runs on each child corpus
+separately.  The main advantage of the cross validation is that all sentences
+are eventually used both for testing and training. [!! cite]
 
 To compare the effects of paradigmatic representation ($a*b$) with the
-syntagmatic one ($aX+Xb$) we train and test both models on each child corpus
-using the identical 10-fold cross validation split.  Thus every model in this
-paper exposed to the identical sequence of training and testing patterns.
-Unless stated otherwise, in the rest of this paper, we stopped the training
-phase of feed-forward connectionist model on each corpus after the $100K$ input
-patterns, used the standard labeling to evaluate model accuracies, calculated
-substitute distributions with with the LM defined in Section~\ref{s:lm} and
-sampled 16 substitutes per target word in models using the paradigmatic
-representation.
+syntagmatic one ($aX+Xb$) we train and test both models using the identical
+10-fold cross validation split.  Thus every model in this paper exposed to the
+identical sequence of training and testing patterns.  Unless stated otherwise,
+in the rest of this paper, we stopped the training phase of feed-forward
+connectionist model on each corpus after $100K$ input patterns, used the
+standard labeling to evaluate model accuracies, calculated substitute
+distributions with with the LM defined in Section~\ref{s:lm} and sampled 16
+substitutes per target word in models using the paradigmatic representation.
 
 In the next section we replicate the corpus analysis of \cite{Mintz200391} and
 \cite{clair2010}.  Section~\ref{s:exp_paradigmatic} compares the classification
@@ -199,6 +198,7 @@ and \ref{s:exp_ngram}, respectively.
 \section{Experiment \arabic{ExperimentCounter}: Corpus analysis}
 \label{s:exp_corpus}
 \stepcounter{ExperimentCounter}
+\input{corpusdata}
 \section{Experiment \arabic{ExperimentCounter}: Syntagmatic vs Paradigmatic}
 \label{s:exp_paradigmatic}
 \stepcounter{ExperimentCounter}
