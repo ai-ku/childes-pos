@@ -19,11 +19,87 @@ We apply following preprocessing steps initial to our analysis:
 
 \section{Frequent Frames}
 \label{app:mintz03}
-In this section we examine the corpus statistics of the top 45 fixed frames
-($aXb$) and replicate \cite{Mintz200391} in order to show how informative
-frequent frames are on grammatical categorization compared to the frequent
-bi-gram frames($aX$ and $Xb$) \cite{clair2010}.
+In this section we replicated \cite{clair2010} to compare the amount of
+categorical information provided by the top-45 fixed and bi-gram frames.
 
+\begin{table}[ht]
+  \footnotesize
+  \centering
+  \caption{Summary of the total number of utterances and types in each
+    child corpus.  For the sake of space, we only report the percentages of
+  analyzed utterances(types) in the top-45 $aXb$, $aX$ and $Xb$.}
+  \begin{tabular}{lccccc}
+    \hline
+    Corpus & \specialcell{Corpus\\Utterances(Types)}&\multicolumn{3}{c}{\specialcell{Analyzed\\Utterances(Types)}}\\
+    && $aXb$ & $aX$ & $Xb$ \\ 
+    \hline
+    Anne & 93371(2623) & .0462(.1357)& .3994(.8147) & .3619(.6465)\\ 
+    Aran & 104997(3256)& .0537(.1901)& .4383(.8353) & .4026(.6670)\\ 
+    Eve  & 59095(2184) & .0595(.1735)& .4097(.7770) & .3505(.5650)\\
+    Naomi& 28793(1883) & .0572(.1603)& .3988(.7785) & .3455(.5586)\\
+    Nina & 72879(2036) & .0842(.2249)& .4805(.8560) & .4028(.7062)\\
+    Peter& 72834(2145) & .0671(.1762)& .4318(.8027) & .3770(.6317)\\
+    \hline
+  \end{tabular}
+  \label{tab:corpusstat45}
+\end{table}
+
+\begin{table}[ht]
+  \footnotesize
+  \centering
+  \caption{$aXb$} \begin{tabular}{lcccc}
+    \hline
+    Corpus & \specialcell{Token\\Accuracy} & \specialcell{Type\\Accuracy} &
+    \specialcell{Token\\Completeness} & \specialcell{Type\\Completeness}\\
+    \hline
+    Anne  & .9693(.3909) & .8870(.4209) & .0756(.0221) & .0864(.0221)\\ 
+    Aran  & .9527(.4166) & .8582(.4096) & .0794(.0221) & .0819(.0226)\\
+    Eve   & .9731(.4935) & .8973(.4895) & .0645(.0222) & .0681(.0226)\\
+    Naomi & .9496(.4858) & .8910(.4983) & .0650(.0219) & .0630(.0224)\\
+    Nina  & .9615(.4782) & .8855(.4616) & .0787(.0221) & .0902(.0219)\\
+    Peter & .9468(.4600) & .8615(.5249) & .0586(.0222) & .0739(.0217)\\
+    \hline
+  \end{tabular}
+  \label{t:mintz03aXb}
+\end{table}
+%% aX
+\begin{table}[ht]
+  \footnotesize
+  \centering
+  \caption{$aX$} \begin{tabular}{lcccc}
+    \hline
+    Corpus & \specialcell{Token\\Accuracy} & \specialcell{Type\\Accuracy} &
+    \specialcell{Token\\Completeness} & \specialcell{Type\\Completeness}\\
+    \hline
+    Anne  & .6348(.2654) & .5667(.3104) & .0850(.0219) & .0694(.0221)\\ 
+    Aran  & .5939(.2582) & .5472(.3000) & .0791(.0220) & .0727(.0220)\\
+    Eve   & .6775(.2735) & .5954(.2966) & .1002(.0221) & .0752(.0221)\\
+    Naomi & .6509(.2754) & .5996(.3082) & .1017(.0220) & .0821(.0222)\\
+    Nina  & .6809(.2877) & .6287(.3525) & .1073(.0220) & .0745(.0221)\\
+    Peter & .6527(.2618) & .5043(.2715) & .1103(.0220) & .0715(.0221)\\
+    \hline
+  \end{tabular}
+  \label{t:mintz03aX}
+\end{table}
+%% Xb
+\begin{table}[ht]
+  \footnotesize
+  \centering
+  \caption{$Xb$} \begin{tabular}{lcccc}
+    \hline
+    Corpus & \specialcell{Token\\Accuracy} & \specialcell{Type\\Accuracy} &
+    \specialcell{Token\\Completeness} & \specialcell{Type\\Completeness}\\
+    \hline
+    Anne  & .4462(.2613) & .4048(.2920) & .0651(.0651) & .0426(.0426)\\ 
+    Aran  & .4758(.2755) & .4142(.3045) & .0733(.0733) & .0443(.0443)\\
+    Eve   & .4492(.2601) & .3960(.2851) & .0676(.0676) & .0470(.0470)\\
+    Naomi & .4532(.2602) & .3717(.2764) & .0740(.0740) & .0438(.0438)\\
+    Nina  & .4837(.2650) & .4530(.3375) & .0867(.0867) & .0458(.0458)\\
+    Peter & .4368(.2617) & .3500(.2702) & .0744(.0744) & .0417(.0417)\\
+    \hline
+  \end{tabular}
+  \label{t:mintz03Xb}
+\end{table}
 \section{Experiment \arabic{ExperimentCounter}: Corpus analysis}
 \input{frametable}
 
