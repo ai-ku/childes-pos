@@ -11,22 +11,22 @@ PLOT_DIR=figures/
 ### 2 Plots
 WSUB_PLOT=../run/
 PLOT_DATA=figure_data/
-ALL=""
+ALL=".all"
 
 fletags10K.pdf:
-	ls ${PLOT_DATA}10000/*.${ALL}.fle.anl | tagplot.py $@
+	ls ${PLOT_DATA}10000/*${ALL}.fle.anl | tagplot.py $@
 	mv $@ ${PLOT_DIR}$@
 	
 wsubtags10K.pdf:
-	ls ${PLOT_DATA}10000/*.${ALL}.wsub16.anl | tagplot.py $@
+	ls ${PLOT_DATA}10000/*${ALL}.wsub16.anl | tagplot.py $@
 	mv $@ ${PLOT_DIR}$@
 
 fletags100K.pdf:
-	ls ${PLOT_DATA}100000/*.${ALL}.fle.anl | tagplot.py $@
+	ls ${PLOT_DATA}100000/*${ALL}.fle.anl | tagplot.py $@
 	mv $@ ${PLOT_DIR}$@
 	
 wsubtags100K.pdf:
-	ls ${PLOT_DATA}100000/*.${ALL}.wsub16.anl | tagplot.py $@
+	ls ${PLOT_DATA}100000/*${ALL}.wsub16.anl | tagplot.py $@
 	mv $@ ${PLOT_DIR}$@
 
 substitute.pdf: 

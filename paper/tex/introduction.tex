@@ -1,4 +1,37 @@
 \section{Introduction}
 \label{sec:introduction}
 \subsection{Psycholinguistic evidence relevant to substitutes}
+
 \subsection{Comparison with previous distributional approaches}
+
+Following two examples\footnote{These examples are extracted from the Anne
+corpus and substitute probabilities are calculated as described in
+Section~\ref{sec:substitute_vectors}.} illustrate the advantage of paradigmatic
+representations in uncovering similarities where no overt similarity that can
+be captured by a syntagmatic representation exists. The word ``you'' from the
+first sentence and the word ``I'' from the second sentence have no common
+neighbors.  The paradigmatic representation captures the similarity of these
+words by suggesting the same top substitutes for both (the numbers in
+parentheses give substitute probabilities): 
+
+\begin{quote}
+  \small
+  % Anne corpus sentence id:13228
+  (1) \noindent{\em ``they fall out when {\bf you} put it in the box .''}\\
+  \noindent{\bf you:} you(.8188), I(.1027), they(.0408), we(.0146) $\ldots$
+\end{quote}
+
+\begin{quote}
+  \small
+  % Anne corpus sentence id: 13085
+  (2) \noindent {\em ``what have {\bf I} got here ?''}\\
+  \noindent {\bf I:} we(.8074), you(.1213), I(.0638), they(.0073) $\ldots$
+\end{quote}
+
+The high probability substitutes reflect both semantic and syntactic properties
+of the context.  Top substitutes for ``I'' and ``you'' are not only nouns, but
+specifically nouns compatible with the semantic context.  Top substitutes for
+the word ``fall'' in the first example consist of words that are also  verbs:
+come(.7875), go(.0305), fall(.0232), were(.0187) $\ldots$.
+
+

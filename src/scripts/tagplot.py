@@ -29,6 +29,7 @@ def tagPlot(datas, outName="tags.pdf"):
   i = 0
   xorder = ["n", "wh", "adj", "v", "det", "adv", "conj", "prep", "neg", "int"]
   xticks = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  plt.ylim([0, 1])
   for (c, cn) in sorted(datas.items(), key=lambda x: x[0]):
     vals = []
     legend.append(c)

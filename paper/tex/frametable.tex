@@ -1,0 +1,28 @@
+\begin{table}[ht]
+  \small
+  \centering
+  \caption{10-fold cross-validation classification accuracies of models based
+    on flexible frames ($aX + Xb$) and substitutes ($a*b$) on each child corpus
+    after 100K training patterns are summarized.  Standard errors are reported
+    in parentheses.  Lambdas of $aX+Xb$ and $a*b$ are both tested against each
+    other and zero association by using two tailed z-test.  All tests have
+    $p<.001$.} \begin{tabular}{lccccc}
+    \hline
+    Corpus & \multicolumn{2}{c}{$aXb$} 
+    && \multicolumn{2}{c}{$aX+Xb$}\\ 
+    \cline{2-3}
+    \cline{5-6}
+    & Accuracy & $\lambda$ && Accuracy & $\lambda$\\
+   \hline
+    Anne  & .5416 (.0224)& .3099 (.0255) &&.7628 (.0075) & .6407 (.0124)\\
+    Aran  & .5156 (.0215)& .2837 (.0120) &&.7337 (.0059) & .5977 (.0081)\\
+    Eve   & .5370 (.0258)& .3209 (.0130) &&.7580 (.0068) & .6351 (.0083)\\
+    Naomi & .5229 (.0244)& .2840 (.0220) &&.7316 (.0086) & .5892 (.0113)\\
+    Nina  & .5636 (.0113)& .3287 (.0183) &&.7755 (.0040) & .6547 (.0075)\\
+    Peter & .5661 (.0180)& .3541 (.0206) &&.7670 (.0071) & .6518 (.0088)\\
+    \hline
+  \end{tabular}
+  \label{t:frame100K}
+\end{table}
+
+

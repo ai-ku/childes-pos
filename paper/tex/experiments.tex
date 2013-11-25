@@ -1,26 +1,46 @@
 %% Experiment Section Counter
 \newcounter{ExperimentCounter}
 \setcounter{ExperimentCounter}{1}
-\section{Experiment Setup}
-\begin{enumerate}
-\item We need to clarify the tag set that is used during the
-  experiments. May be it is better to give the whole mapping as an
-  Appendix section.
-\item Data statistics (it is common to all experiments)
-\end{enumerate}
+\section{Experimental Setup}
 \subsection{Input Corpora}
 
-In order to be consistent with \cite{clair2010} and \cite{Mintz200391},
-we use the same six corpora of child-directed speech from the CHILDES
-corpus \citep*{macwhinney2000childes}: Anne and Aran
+In order to be obtain comparable results with \cite{clair2010} and
+\cite{Mintz200391}, we use the same six corpora of child-directed speech from
+the CHILDES\footnote{ Specifically, CHILDES version $2.0.1$ is used in
+experiments.} corpus \citep*{macwhinney2000childes}: Anne and Aran
 \citep*{theakston2001role}, Eve \citep*{JCL:1765112}, Naomi
 \citep*{sachs1983talking}, Nina \citep*{suppes1974semantics}, Peter
-\citep*{Bloom1974380, bloom1975structure}.  Following
-\cite{Mintz200391} we only analyze the adult utterances in sessions
-where the target child is 2.6 years old or younger.
+\citep*{Bloom1974380, bloom1975structure}.  Following \cite{Mintz200391} we
+only analyze the adult utterances in sessions where the target child is 2.6
+years old or younger.  Initial to analysis we perform the preprocessing that is
+detailed in \ref{app:preprocessing}.
 
-\subsubsection{Preprocessing}
+% \subsubsection{Target Words}
+%% How do we extract frames? Which words are the our target words
+\input{corpusdata}
+Word sequences that consist of three words and do not contain any utterance
+boundaries are extracted from each child corpus separately
+\citep*{Mintz200391}.  The first and the third words of sequences are treated
+as frame elements while the middle utterance is the target word that is
+categorized.  Table~\ref{tab:corpusstat} summarizes the number of target word
+tokens and types in each corpus.   
 
+To calculate substitutes we extracted the 4-gram left and right contexts of
+each target word when they are available \footnote{Lower order n-gram contexts
+are extracted when the 4-gram left or right context is not available.}.
+
+\subsubsection{Language Modeling Substitute Words}
+\label{s:lm}
+We extracted training data of approximately 6.8 million tokens\footnote{Anne,
+Aran, Eve, Naomi and Peter corpora are excluded.} of child-directed speech data
+from CHILDES following the steps defined in Section~\ref{app:preprocessing}.
+To calculate substitute probabilities we train a 4-gram language model with
+Kneser-Ney discounting on the training data using SRILM \citep*{Stolcke2002}.
+Words that were observed less than 2 times in the language model training data
+were replaced with unknown word tag \textsc{<unk>}, which gave us a vocabulary
+size of 21734.
+
+\subsubsection{Grammatical categories and Evaluation}
 The grammatical category of words in CHILDES are extracted by first
 applying the MOR parser \citep*{macwhinney2000childes} and then using
 the POST disambiguator \citep*{sagae2004automatic}.  The accuracy of
@@ -28,44 +48,18 @@ CHILDES grammatical categories is approximately 95\%
 \citep*{parisse2000automatic} and it is encoded in the MOR line of the
 CHILDES corpus.
 
-We apply the following pre-processing steps \citep*{clair2010} initial
-to our analyses:
-\begin{itemize}
-\item All punctuation, pause, trailing off and interruption marks are
-  treated as utterance boundaries.
-\item Repetitions of a word are kept in the text and their grammatical
-  categories are automatically set to the grammatical category of the
-  original word.
-\item Words that are grammatically necessary but not spoken are
-  deleted (grammatical omissions).
-\item {\bf Short usages ??}
-    boundaries. 
-\end{itemize}
+To evaluate classification accuracy we use the standard labeling
+\citep*{Mintz200391}\footnote{\cite{Mintz200391} also defined an expanded
+labeling in which pro-nouns, auxiliaries and copula forms have their own
+categories.} that categorizes target words as: nouns (including pronouns), verbs
+(including copula and auxiliaries forms), prepositions, adjectives, adverbs,
+determiners, conjunctions, wh-words, negation (i.e., ``not'') and
+interjections.
 
-\subsubsection{Target Word}
-%% How do we extract frames? Which words are the our target words
-Word sequences that consist of three words and do not contain any utterance
-boundaries are extracted from each child corpus separately
-\citep*{Mintz200391}.  The first and the third words of sequences are treated
-as frame elements while the middle one is the target word that is categorized.
-The correct grammatical category of target words are extracted from CHILDES.
-[!! put number of target words table] 
-
-\subsubsection{Language Modeling Substitute Words}
-\label{s:lm}
-To compute substitute probabilities of target words we trained a language model
-using approximately 6.8 million words\footnote{Anne, Aran, Eve, Naomi and Peter
-corpora are excluded.} of child-directed speech data from CHILDES.  We used
-SRILM \citep*{Stolcke2002} to build a 4-gram language model with Kneser-Ney
-discounting.  Words that were observed less than 2 times in the LM training
-data were replaced with unknown word tag \textsc{<unk>}, which gave us a
-vocabulary size of 21734.
 
 %% Define frames in here again? also in related work.
 %% What is standard labeling? 
 %% Are we going to report accuracy and completeness
-
-%% Do we replicate the 45 tag case?  No.  \cite{}
 
 \subsection{Computational Modeling Algorithm}
 \label{s:computational}
@@ -115,30 +109,6 @@ information to the feed-forward connectionist model in the following way,
   }
   \label{fig:inputunits}
 \end{figure}
-%%%Statistics related to frames
-%%\begin{table}[ht]
-%%\centering
-%%\caption{
-%%  Number of input layer units of the flexible frame ($aX + Xb$) and 
-%%  the substitute based models are summarized.  Substitute based model
-%%  samples 16 substitutes per target word. Standard errors are
-%%  reported in parentheses.
-%%}
-%%\begin{tabular}{lrr}
-%%  \hline  
-%%  Child & \specialcell{Distinct\\$aX+Xb$} & \specialcell{Distinct \\ $Substitutes$}\\
-%%  \hline
-%%  Anne  & 3601 & 4999.4 (39.86)\\
-%%  Aran  & 4857 & 6066.3 (40.84)\\
-%%  Eve   & 2928 & 4261.1 (32.18)\\
-%%  Naomi & 2396 & 3366.3 (39.11)\\
-%%  Nina  & 3084 & 4936.3 (36.29)\\
-%%  Peter & 2835 & 4290.5 (34.56)\\
-%%  \hline
-%%\end{tabular}
-%%\label{t:inputunits}
-%%\end{table}
-
 Table~\ref{fig:inputunits} presents the number of input layer units of
 syntagmatic and paradigmatic representation based models on each child
 corpus seperately.  The number of distinct frames is fixed for any
@@ -195,10 +165,6 @@ effects of the number of substitutes and the language model n-gram order on the
 paradigmatic model performance are inspected in Section~\ref{s:exp_substitutes}
 and \ref{s:exp_ngram}, respectively. 
 
-\section{Experiment \arabic{ExperimentCounter}: Corpus analysis}
-\label{s:exp_corpus}
-\stepcounter{ExperimentCounter}
-\input{corpusdata}
 \section{Experiment \arabic{ExperimentCounter}: Syntagmatic vs Paradigmatic}
 \label{s:exp_paradigmatic}
 \stepcounter{ExperimentCounter}
@@ -210,7 +176,7 @@ showed that flexible frames have richer distributional information than other
 frame types both in terms of classification accuracy and coverage .  Thus we
 only report results of the models based on substitute words ($a*b$) and
 flexible frames ($aX+Xb$)\footnote{We can put the comparison with other frames
-in Appendix.  }. 
+in Appendix.}. 
 
 \subsection{Method} 
 All models are trained and evaluated according to steps summarized in

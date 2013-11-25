@@ -1,0 +1,29 @@
+\appendix
+\section{Preprocessing}
+\label{app:preprocessing}
+We apply following preprocessing steps initial to our analysis:
+\begin{itemize}
+\item All punctuation, pause, trailing off and interruption marks are
+  treated as utterance boundaries.
+\item Repetitions of a word are kept in the text and their grammatical
+  categories are automatically set to the grammatical category of the
+  original word.
+\item Words that are grammatically necessary but not spoken are
+  deleted (grammatical omissions).
+\item Shortenings, dropping sounds out of words, are ignored and converted to
+  the corresponding actual word forms.
+\item Untranscribed words such as {\it xxx} or {\it yyy} are removed. 
+\item Assimilations, complex sound changes of words or word phrases, are not
+  converted to the actual form.
+\end{itemize}
+
+\section{Frequent Frames}
+\label{app:mintz03}
+In this section we examine the corpus statistics of the top 45 fixed frames
+($aXb$) and replicate \cite{Mintz200391} in order to show how informative
+frequent frames are on grammatical categorization compared to the frequent
+bi-gram frames($aX$ and $Xb$) \cite{clair2010}.
+
+\section{Experiment \arabic{ExperimentCounter}: Corpus analysis}
+\input{frametable}
+
