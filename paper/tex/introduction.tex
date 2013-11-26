@@ -1,18 +1,44 @@
 \section{Introduction}
 \label{sec:introduction}
-\subsection{Psycholinguistic evidence relevant to substitutes}
+%% Describe the problem 
+%% Explicitly state the importance 
+%% Present result & previous conclusions
+%% state the extending points
+%% outline purpose
+%% list questions and hypotheses
+%% state the findings 
+%% the contribution
+%% outline of the paper
+Grammatical categories represent the group of words that can be substituted for
+one another without altering the grammatical correctness of a sentence.
+Grammatical rules apply not to individual words (e.g. baby, talk) but to the
+grammatical categories (e.g. noun, verb).  Therefore, learning grammatical
+categories is an important step in language acquisition.  Researches on
+learning grammatical categories were able to show that distributional
+information of word co-occurrences is one of the reliable cues
+\citep*{Mintz200391,clair2010}[!!  more].  There are also evidences that
+lexical stress, prosodic and phonological cues are beneficial in learning
+grammatical categories[!!cite]. 
 
-\subsection{Comparison with previous distributional approaches}
+%% \subsection{Comparison with previous distributional approaches}
+The distributional representation of word co-occurrences can be grouped into
+two: syntagmatic and paradigmatic.  The syntagmatic representation relates
+words according to co-occurrences with the neighboring words while the
+paradigmatic representation relates the words that can be substituted for one
+another in a given context.
 
+In this paper we hypothesize that infants construct paradigmatic representation
+of words on the fly and construct grammatical categories accordingly.
 Following two examples\footnote{These examples are extracted from the Anne
-corpus and substitute probabilities are calculated as described in
-Section~\ref{sec:substitute_vectors}.} illustrate the advantage of paradigmatic
-representations in uncovering similarities where no overt similarity that can
-be captured by a syntagmatic representation exists. The word ``you'' from the
-first sentence and the word ``I'' from the second sentence have no common
-neighbors.  The paradigmatic representation captures the similarity of these
-words by suggesting the same top substitutes for both (the numbers in
-parentheses give substitute probabilities): 
+  corpus and substitute word probabilities are calculated as described in
+  Section~\ref{sec:substitute_vectors}.} illustrate the advantage of
+  paradigmatic representations in uncovering similarities where no overt
+  similarity that can be captured by a syntagmatic representation exists. The
+  word ``you'' from the first sentence and the word ``I'' from the second
+  sentence have no common neighbors no matter how large the context is.  The
+  paradigmatic representation captures the similarity of these words by
+  suggesting the same top substitutes for both (the numbers in parentheses give
+  substitute probabilities): 
 
 \begin{quote}
   \small
@@ -28,10 +54,27 @@ parentheses give substitute probabilities):
   \noindent {\bf I:} we(.8074), you(.1213), I(.0638), they(.0073) $\ldots$
 \end{quote}
 
-The high probability substitutes reflect both semantic and syntactic properties
-of the context.  Top substitutes for ``I'' and ``you'' are not only pro-nouns, but
-specifically pro-nouns compatible with the semantic context.  Top substitutes for
-the word ``fall'' in the first example consist of words that are also  verbs:
-come(.7875), go(.0305), fall(.0232), were(.0187) $\ldots$.
+The high probability substitutes reflect both semantic and grammatical
+properties of the context.  Top substitutes for ``I'' and ``you'' are not only
+pro-nouns, but specifically pro-nouns compatible with the semantic context.
+Top substitutes for the word ``fall'' in the first example consist of words
+that are also verbs: come(.7875), go(.0305), fall(.0232), were(.0187) $\ldots$.
 
 
+\paragraph {Syntagmatic representation} \cite{Mintz200391} showed that
+non-adjacent high frequent bi-gram frames, ``aXb'' ({\it a} and {\it b} are the
+left and the right bigrams, respecively), are very informative to the language
+learners on grammatical categorization of the middle tokens, {\it X}.  The main
+limitation of this approach is that using only top-N {\it frequent frames}
+introduces coverage problem while using all of the frames introduces frame
+sparsity.  Another drawback is that tokens with only one common neighbors could
+not exchange information. 
+
+\cite{clair2010} overcame the limitations of frequent frames ($aXb$) by
+introducing {\it flexible frames} ($aX+Xb$) which represent left and right
+frames separately.  They report improvements over $aXb$ in terms of accuracy
+and coverage.  A common limitation of $aXb$ and $aX+Xb$ is that as frames get
+larger than bigrams the re-occurrence frequency of a frame becomes lower which
+causes the data sparsity \citep*{manning99foundations}.
+
+\subsection{Psycholinguistic evidence relevant to substitutes}
