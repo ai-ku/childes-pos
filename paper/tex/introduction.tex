@@ -9,10 +9,10 @@
 %% state the findings 
 %% the contribution
 %% outline of the paper
-Grammatical categories represent the group of words that can be substituted for
-one another without altering the grammatical correctness of a sentence.
 Grammatical rules apply not to individual words (e.g. baby, talk) but to the
-grammatical categories (e.g. noun, verb).  Therefore, learning grammatical
+grammatical categories (e.g. noun, verb).  Grammatical categories represent the
+group of words that can be substituted for one another without altering the
+grammatical correctness of a sentence.  Therefore, learning grammatical
 categories is an important step in language acquisition.  Researches on
 learning grammatical categories were able to show that distributional
 information of word co-occurrences is one of the reliable cues
@@ -23,22 +23,22 @@ grammatical categories[!!cite].
 %% \subsection{Comparison with previous distributional approaches}
 The distributional representation of word co-occurrences can be grouped into
 two: syntagmatic and paradigmatic.  The syntagmatic representation relates
-words according to co-occurrences with the neighboring words while the
+words according to the co-occurrences with the neighboring words while the
 paradigmatic representation relates the words that can be substituted for one
 another in a given context.
 
-In this paper we hypothesize that infants construct paradigmatic representation
-of words on the fly and construct grammatical categories accordingly.
+In this paper we hypothesize that infants represent contexts as substitute word
+distributions and form grammatical categories accordingly.
 Following two examples\footnote{These examples are extracted from the Anne
-  corpus and substitute word probabilities are calculated as described in
-  Section~\ref{sec:substitute_vectors}.} illustrate the advantage of
-  paradigmatic representations in uncovering similarities where no overt
-  similarity that can be captured by a syntagmatic representation exists. The
-  word ``you'' from the first sentence and the word ``I'' from the second
-  sentence have no common neighbors no matter how large the context is.  The
-  paradigmatic representation captures the similarity of these words by
-  suggesting the same top substitutes for both (the numbers in parentheses give
-  substitute probabilities): 
+corpus and substitute word probabilities are calculated as described in
+Section~\ref{sec:substitute_vectors}.} illustrate the advantage of paradigmatic
+representations in uncovering similarities where no overt similarity that can
+be captured by a syntagmatic representation exists. The word ``you'' from the
+first sentence and the word ``I'' from the second sentence have no common
+neighbors no matter how large the context is.  The paradigmatic representation
+captures the similarity of these words by suggesting the similar top
+substitutes for both (the numbers in parentheses give substitute
+probabilities): 
 
 \begin{quote}
   \small
@@ -54,11 +54,24 @@ Following two examples\footnote{These examples are extracted from the Anne
   \noindent {\bf I:} we(.8074), you(.1213), I(.0638), they(.0073) $\ldots$
 \end{quote}
 
-The high probability substitutes reflect both semantic and grammatical
-properties of the context.  Top substitutes for ``I'' and ``you'' are not only
-pro-nouns, but specifically pro-nouns compatible with the semantic context.
-Top substitutes for the word ``fall'' in the first example consist of words
-that are also verbs: come(.7875), go(.0305), fall(.0232), were(.0187) $\ldots$.
+Note that substitute word distribution of a context ({\it ``fall out when \_
+put it in''}) is independent of the actual word (i.e., {\it ``you''}).  The
+high probability substitutes reflect both semantic and grammatical properties
+of the context.  Top substitutes for ``I'' and ``you'' are not only pro-nouns,
+but specifically pro-nouns compatible with the semantic context.  Top
+substitutes for the word ``fall'' in the first example consist of words that
+are also verbs: come(.7875), go(.0305), fall(.0232), were(.0187) $\ldots$.
+
+The examples shows that the paradigmatic representation relates words according
+to the substitute word distribution of their context even when the surface
+forms of the contexts do not have any common words.  Thus this makes the
+paradigmatic representation more robust to the data sparsity compared to the
+syntagmatic representation.
+
+\subsection{Psycholinguistic evidence relevant to substitutes}
+
+\cite{gomez2002variability} showed that 18-months infants are able to detect 
+
 
 
 \paragraph {Syntagmatic representation} \cite{Mintz200391} showed that
@@ -77,4 +90,3 @@ and coverage.  A common limitation of $aXb$ and $aX+Xb$ is that as frames get
 larger than bigrams the re-occurrence frequency of a frame becomes lower which
 causes the data sparsity \citep*{manning99foundations}.
 
-\subsection{Psycholinguistic evidence relevant to substitutes}
