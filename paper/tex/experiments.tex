@@ -134,8 +134,8 @@ Both models have 10 output units due to the standard labeling
 
 Unless stated otherwise, all connectionist models in this paper uses the
 following parameters: (1)number of hidden units is set to 200 and initialized
-randomly for each model, (2){\bf backprobagation(0.1)}, (3){\bf learning
-rate},(4) {\bf sigmoid...}
+randomly for each model. (2) The backpropagation parameter is set to 0.1. The 
+learning function is sigmoid and the learning rate is 0.2(!!).
 
 \subsection{Training and Testing}
 \label{sec:training}
@@ -152,7 +152,7 @@ the union of remaining 9 folds of each child corpus are used as the training
 data.  We repeat this process until all folds are used exactly once as the test
 data and report the average accuracy of 10 runs on each child corpus
 separately.  The main advantage of the cross validation is that all sentences
-are eventually used both for testing and training. [!! cite]
+are eventually used both for testing and training. [!! citation]
 
 To compare the effects of paradigmatic representation ($a*b$) with the
 syntagmatic one ($aX+Xb$) we train and test both models using the identical
@@ -249,7 +249,10 @@ extensive training than the $aX+Xb$ model. One possible explanation of this
 behavior is that the number of input units of the $a*b$ model on each child
 corpus is significantly higher than the $aX+Xb$ (see
 Figure~\ref{fig:inputunits}) while the number of hidden units is fixed to 200
-for both models. 
+for both models. As \citep*{clair2010} did, we experiment with the number of
+hidden units such that the ratio between the number of input units and
+the number of hidden units is the
+same for both models. We do not observe significant changes on the result.
 
 \begin{figure}[h]
   \subfigure[$aX+Xb$] {
@@ -305,9 +308,9 @@ does not significantly change the classification accuracy. Thus, the
 model is fairly robust to the number of substitutes as long as the
 model can observe at least 16 substitutes per target word.
 
-Figure~\ref{fig:substitutes} [Put subs vs input graph] shows the increasing
-trend of the number of input units as the number of substitutes on each child
-corpus increases.  One possible problem of these models is that the number of
+%%Figure~\ref{fig:substitutes} [Put subs vs input graph] shows the increasing trend of the number of input units as the number of substitutes on each child corpus increases.(!!)
+
+One possible problem of these models is that the number of
 input units increases with the increasing number of substitutes meanwhile the
 number of hidden units is fixed to 200. \cite{clair2010} came up this problem
 while comparing flexible frames with other frames and solved it by setting the
@@ -317,7 +320,8 @@ improvements over the versions with fixed number of hidden units, the
 classification accuracy ranking of the models did not change. 
 
 In the next experiment we analyze the effect of substitute word quality on the
-classification accuracy of the paradigmatic model.
+classification accuracy of the paradigmatic model by experimenting with
+the n-gram order of the language model.
 
 \section{Experiment \arabic{ExperimentCounter}: Language Model N-gram Order}
 \stepcounter{ExperimentCounter}
