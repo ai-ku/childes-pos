@@ -62,7 +62,7 @@ but specifically pro-nouns compatible with the semantic context.  Top
 substitutes for the word ``fall'' in the first example consist of words that
 are also verbs: come(.7875), go(.0305), fall(.0232), were(.0187) $\ldots$.
 
-The examples shows that the paradigmatic representation relates words according
+These examples shows that the paradigmatic representation relates words according
 to the substitute word distribution of their context even when the surface
 forms of the contexts do not have any common words.  Thus this makes the
 paradigmatic representation more robust to the data sparsity compared to the
@@ -72,21 +72,41 @@ syntagmatic representation.
 
 \cite{gomez2002variability} showed that 18-months infants are able to detect 
 
+\paragraph {Syntagmatic representation} 
+In syntagmatic representation the context is defined with the neighboring
+words, typically co-occurrences with a single word on the left or a single word
+on the right word called a ``frame'' (e.g., {\em {\bf the} dog {\bf is}; {\bf
+the} cat {\bf is}})
+\citep*{SchutzePe93,Redington98distributionalinformation, Mintz200391,clair2010,lamar-EtAl:2010:Short,maron2010sphere}. A common limitation of syntagmatic representation is that
+it is not possible to exchange information between the words without common
+neighbors.  To solve the common neighbor problem one can increase the frame
+size however it will introduce the data sparsity due to the low re-occurrence
+frequency of large frames \citep*{manning99foundations}.
 
+\cite{Mintz200391} showed that non-adjacent high frequent bi-gram frames,
+``aXb'' ({\it a} and {\it b} are the left and the right bigrams, respectively),
+are very informative to the language learners on grammatical categorization of
+the middle tokens, {\it X}.  The main limitation of this approach is that using
+only top-N {\it frequent frames} introduces coverage problem while using all of
+the frames introduces frame sparsity.  \cite{clair2010} overcame the
+limitations of frequent frames ($aXb$) by introducing {\it flexible frames}
+($aX+Xb$) which represent left and right frames separately.  They report
+improvements over $aXb$ in terms of accuracy and coverage.  
 
-\paragraph {Syntagmatic representation} \cite{Mintz200391} showed that
-non-adjacent high frequent bi-gram frames, ``aXb'' ({\it a} and {\it b} are the
-left and the right bigrams, respecively), are very informative to the language
-learners on grammatical categorization of the middle tokens, {\it X}.  The main
-limitation of this approach is that using only top-N {\it frequent frames}
-introduces coverage problem while using all of the frames introduces frame
-sparsity.  Another drawback is that tokens with only one common neighbors could
-not exchange information. 
+\paragraph {Paradigmatic representation}
 
-\cite{clair2010} overcame the limitations of frequent frames ($aXb$) by
-introducing {\it flexible frames} ($aX+Xb$) which represent left and right
-frames separately.  They report improvements over $aXb$ in terms of accuracy
-and coverage.  A common limitation of $aXb$ and $aX+Xb$ is that as frames get
-larger than bigrams the re-occurrence frequency of a frame becomes lower which
-causes the data sparsity \citep*{manning99foundations}.
+In the paradigmatic representation the context is defined as the distribution
+of the substitute words in that context \citep*{SchutzePe93, Schutze1995,
+YatbazSY12}.   In part-of-speech induction literature \cite{Schutze1995}
+incorporated paradigmatic information by concatenating the left and the right
+co-occurrence vectors of the right and left neighbors, respectively and grouped
+the words that have similar vectors.  The limitation of \cite{Schutze1995} is
+that he uses the bi-gram information and suffers from sparsity as the context
+size gets larger.  \cite{YatbazSY12} took a more formal approach and
+calculates the most probable substitutes of a given context using a 4-gram
+statistical language model.  Their model achieves the state-of-the-art result
+in the part-of-speech induction literature.  To the best of our knowledge,
+there are not any paradigmatic representation based child language acquisition
+models.  
+
 
