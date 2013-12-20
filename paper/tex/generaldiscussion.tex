@@ -2,15 +2,15 @@
 
 This study proposes paradigmatic representations of context as opposed to
 syntagmatic representations for syntactic category acquisition. The
-paradigmatic approach suggests to use probable substitutes of word ($a*b$). On
-the other hand the syntagmatic approach proposes to use the preceding bigram
-and the succeeding bigram whichever is fruitful ($aX + Xb$).
+paradigmatic approach suggests using probable substitutes of word ($a*b$). On
+the other hand, the syntagmatic approach proposes using the preceding bigram
+and the succeeding bigram, whichever is fruitful ($aX + Xb$).
 
-In order to contrast these two representations we replicate the experimental
+To contrast these two representations we replicate the experimental
 setup of \cite{clair2010}. Experiments show that when the models exposed to
-limited amount of training patters the $a*b$ is significantly more accurate
-than $aX + Xb$. Results of long training phase show the same pattern, however,
-the gap between these approaches gets smaller.
+limited amount of training patterns the $a*b$ is significantly more accurate
+than $aX + Xb$. Results of the long training phase show the same pattern, however,
+the gap between these approaches decreases.
 
 We investigate the dependency of the model to the number of substitutes. In
 this experimental setup the number of substitutes varies from 1 to 64. The
@@ -20,8 +20,8 @@ conclude that the model is robust as long as 16 substitutes are observed.
 
 We explore the effect of the n-gram order of language model to the accuracy of
 the model. While determining the probability of the next word in a sequence of
-words, n-gram order determines how many preceding should be considered.  We
-hypothesise that order of n-gram determines how accurate the substitutes of a
+words, n-gram order determines how many preceding word should be used.  We
+hypothesise that the order of n-gram determines how accurate the substitutes of a
 target word. Thus, it should affect the ($a*b$) model's accuracy.
 Figure~\ref{fig:perplexity} and Figure~\ref{fig:perplexity} show that the
-model's performance highly dependend on the n-gram order of the language model.
+model's performance dependens on the n-gram order of the language model.

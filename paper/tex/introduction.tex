@@ -9,15 +9,15 @@
 %% state the findings 
 %% the contribution
 %% outline of the paper
-Grammatical rules apply not to individual words (e.g. baby, talk) but to the
+Grammatical rules apply not to individual words (e.g. baby, talk) but to
 grammatical categories (e.g. noun, verb).  Grammatical categories represent the
 group of words that can be substituted for one another without altering the
 grammatical correctness of a sentence.  Therefore, learning grammatical
-categories is an important step in language acquisition.  Researches on
-learning grammatical categories were able to show that distributional
+categories is an important step in language acquisition.  Studies on
+learning grammatical categories have shown that distributional
 information of word co-occurrences is one of the reliable cues
-\citep*{Mintz200391,clair2010,Redington98distributionalinformation}.  There are
-also evidences that lexical stress, prosodic and phonological cues are
+\citep*{Mintz200391,clair2010,Redington98distributionalinformation}.  There is
+also evidence that lexical stress, prosodic and phonological cues are
 beneficial in learning grammatical categories
 \citep*{monaghan2012integrating,saffran1996word,saffran1996word}. 
 
@@ -30,7 +30,7 @@ another in a given context.
 
 In this paper we hypothesize that infants represent contexts as substitute word
 distributions and form grammatical categories accordingly.
-Following two examples\footnote{These examples are extracted from the Anne
+The following two examples\footnote{These examples are extracted from the Anne
 corpus and substitute word probabilities are calculated as described in
 Section~\ref{sec:substitute_vectors}.} illustrate the advantage of paradigmatic
 representations in uncovering similarities where no overt similarity that can
@@ -58,14 +58,14 @@ probabilities):
 Note that substitute word distribution of a context ({\it ``fall out when \_
 put it in''}) is independent of the actual word (i.e., {\it ``you''}).  The
 high probability substitutes reflect both semantic and grammatical properties
-of the context.  Top substitutes for ``I'' and ``you'' are not only pro-nouns,
+of the context.  Top substitutes for ``I'' and ``you'' are not only pronouns,
 but specifically pro-nouns compatible with the semantic context.  Top
 substitutes for the word ``fall'' in the first example consist of words that
 are also verbs: come(.7875), go(.0305), fall(.0232), were(.0187) $\ldots$.
 
-These examples shows that the paradigmatic representation relates words according
+These examples show that the paradigmatic representation relates words according
 to the substitute word distribution of their context even when the surface
-forms of the contexts do not have any common words.  Thus this makes the
+forms of the contexts do not have any common words.  Thus, this makes the
 paradigmatic representation more robust to the data sparsity compared to the
 syntagmatic representation.
 
@@ -80,15 +80,15 @@ on the right word called a ``frame'' (e.g., {\em {\bf the} dog {\bf is}; {\bf
 the} cat {\bf is}})
 \citep*{SchutzePe93,Redington98distributionalinformation, Mintz200391,clair2010,lamar-EtAl:2010:Short,maron2010sphere}. A common limitation of syntagmatic representation is that
 it is not possible to exchange information between the words without common
-neighbors.  To solve the common neighbor problem one can increase the frame
-size however it will introduce the data sparsity due to the low re-occurrence
+neighbors.  To solve the common neighbor problem the frame can be increased
+however it will introduce the data sparsity due to the low re-occurrence
 frequency of large frames \citep*{manning99foundations}.
 
 \cite{Mintz200391} showed that non-adjacent high frequent bi-gram frames,
 ``aXb'' ({\it a} and {\it b} are the left and the right bigrams, respectively),
-are very informative to the language learners on grammatical categorization of
+are very informative to language learners on grammatical categorization of
 the middle tokens, {\it X}.  The main limitation of this approach is that using
-only top-N {\it frequent frames} introduces coverage problem while using all of
+only top-N {\it frequent frames} introduces a coverage problem while using all of
 the frames introduces frame sparsity.  \cite{clair2010} overcame the
 limitations of frequent frames ($aXb$) by introducing {\it flexible frames}
 ($aX+Xb$) which represent left and right frames separately.  They report
@@ -101,24 +101,24 @@ of the substitute words in that context \citep*{SchutzePe93, Schutze1995,
 YatbazSY12}.   In part-of-speech induction literature \cite{Schutze1995}
 incorporated paradigmatic information by concatenating the left and the right
 co-occurrence vectors of the right and left neighbors, respectively and grouped
-the words that have similar vectors.  The limitation of \cite{Schutze1995} is
-that he uses the bi-gram information and suffers from sparsity as the context
+the words that have similar vectors.  The limitation of this study is that Schutze
+uses the bi-gram information and suffers from sparsity as the context
 size gets larger.  \cite{YatbazSY12} took a more formal approach and
-calculates the most probable substitutes of a given context using a 4-gram
+calculate the most probable substitutes of a given context using a 4-gram
 statistical language model.  Their model achieves the state-of-the-art result
 in the part-of-speech induction literature.  To the best of our knowledge,
-there are not any paradigmatic representation based child language acquisition
-models.  
+no paradigmatic representation based child language acquisition
+models exists.  
 
 In this paper, we introduce a novel representation and hypothesize that
 children represent context by constructing substitute word distributions.  To
 accomplish this, we adopt the learning framework of \citep*{clair2010} and
-compared our new representation with the former syntagmatic based
+compare our new representation with the former syntagmatic based
 representations. 
 
 The rest of the paper is organized as follows. In the following section, we explain other
 distributional approaches to grammatical category acquisition. Secondly, we provide
-the detailed explanation of our calculations of substitute words. In the experiments section,
+a detailed explanation of our calculations of substitute words. In the experiments section,
 first we introduce the experimental setup we used and give the details of the experiments
-to contrast the paradigmatic approach and syntagmatic approach. Lastly, we provide the
+to contrast the paradigmatic approach with the syntagmatic approach. Lastly, we provide a
 general discussion on the findings of our results. 

@@ -21,23 +21,23 @@
 %% demonstrate that a memory-based distributional framework is 
 %% successful in the tasks of phonetic discrimination, a word learning , and non-adjacent
 %% association.
-In this section we talk about other distributional approaches to the grammatical category
+In this section we present distributional approaches to the grammatical category
 acquisition. First we introduce the distributional hypothesis and the measure
-of success in distributional approaches. We continue with the previous
-studies.
+of success in distributional approaches. Then, we introduce previous
+distributional studies.
 
 Distributional hypothesis or knowledge is a statistical approach to natural
 language. The distributional hypothesis suggests that words 
-occurring in the similar contexts tend to have similar meaning 
-and grammatical properties \cite{harris1954word}. The two success criteria defined for
+occurring in similar contexts tend to have similar meaning 
+and grammatical properties \citep*{harris1954word}. The two success criteria defined for
 distributional approaches to syntactic category
 acquisition are accuracy and completeness. Accuracy measures how
 accurate the predictions were at grouping the words into the
 same grammatical categoty together. It is defined
 as the total number of correct category predictions
-over total number of predictions. The completeness, on the other hand
+over total number of predictions. Completeness, on the other hand,
 measures how well a given category is predicted. The completeness
-is equal to number of correct predictions for a category divided
+is equal to the number of correct predictions for a category divided
 by number of correct predictions summed with number misses in that category.
 
 
@@ -47,42 +47,35 @@ context vectors of target words for clustering. Using average link clustering
 with a threshold maximizing accuracy and completeness, target  words are
 separated into categories. Although the categorizations are generally accurate,
 the method lacks of completeness. In addition, the underlying process to determine
-the threshold for infants is not clear \cite{ambridge2011child}. \cite{cartwright1997syntactic} introduces an incremental learning framework for syntactic category acquisition. They claim that no language 
-learner is exposed to all the sentences of the language to learn
-syntactic categorization. Therefore, their framework, exploiting
-distributional knowledge to confine the search space, forgets the sentence
-after processing it. To accomplish this, they convert the syntactic category acquisition into 
-Minimum Description Length optimization problem. Their results are 
-similar to \cite{Redington98distributionalinformation}, high in 
-accuracy but low in completeness. Still, it shows that distributional
-knowledge is powerful for syntactic categorization even if the learner is
-exposed the small portion of the syntactic input. \cite{Mintz200391} proposes frequent frames. A frequent frame consists of two jointly appearing words with one word in the middle and co-occur
-frequently. Experiments on child directed speech reveal that 
+the threshold for infants is not clear \citep*{ambridge2011child}. \cite{cartwright1997syntactic} introduce an incremental learning framework for syntactic category acquisition. 
+%They claim that no language learner is exposed to all the sentences of the language to learn syntactic categorization. Therefore, their framework, exploiting distributional knowledge to confine the search space, forgets the sentence after processing it. To accomplish this, they convert the syntactic category acquisition into Minimum Description Length optimization problem. 
+Their results are similar to \cite{Redington98distributionalinformation}, high in 
+accuracy but low in completeness. %Still, it shows that distributional knowledge is powerful for syntactic categorization even if the learner isexposed the small portion of the syntactic input. 
+\cite{Mintz200391} proposes frequent frames. A frequent frame consists of two jointly appearing words with one word in the middle cooccurring frequently. Experiments on child directed speech reveal that 
 frequent frames have the ability to assign word categories with high
-accuracy. Though the accuracy is high, the same as the previous work, it suffers from
-completeness. As \cite{clair2010} points out, frequent frames suffer from coverage.
-\cite{clair2010} combines the bigram's 
-coverage power \cite{Redington98distributionalinformation} and \cite{monaghan2008integration}
- and accuracy of frequent frames \cite{Mintz200391}. The 
+accuracy. Though the accuracy is high, it suffers from
+completeness. As \cite{clair2010} point out, frequent frames suffer from coverage.
+\cite{clair2010} combine the bigram's 
+coverage power \citep*{Redington98distributionalinformation} and \citep*{monaghan2008integration}
+ and accuracy of frequent frames \citep*{Mintz200391}. The 
 experiments demonstrate that infants make use of both bigram and 
-trigram sources. As they pointed out, they may even use higher-order 
-relationships between words. 
+trigram sources. As \cite{clair2010} pointed out, language learners may even use higher-order 
+relationships between words.
 
-\cite{freudenthal2005resolution} points out a complication of distributional
+\cite{freudenthal2005resolution} identify a complication of distributional
 methods for constructing syntactic categories. Distributional methods suggest 
-that words occurring in the similar context  can be used interchangebly. They 
-claim the evaluation methods used in studies like \cite{Redington98distributionalinformation, monaghan2008integration} or \cite{Mintz200391} could be misleading. Specifically, if a word is substituted with another one in its
+that words occurring in a similar context can be used interchangebly. They 
+claim the evaluation methods used in studies like \citep*{Redington98distributionalinformation, monaghan2008integration,Mintz200391} could be misleading. Specifically, if a word is substituted with another one in its
 category, the resulting sentences could be erroneous in a way that they are not observed in
 infants' speech. As a success criteria, they argue that the proposed categorization
-should generate plausible sentences. They introduce chunking mechanism merging 
-words that are seen frequently. The mechanism seems
-successful to generate meaningful sentences, still, the
+should generate plausible sentences. They introduce a chunking mechanism merging 
+words that are seen frequently. The mechanism is successful in generating meaningful sentences, still, the
 proposed solution is computationally complex to disclose the learning mechanism
 in infants.
 
-More recently, \cite{alishahi2012concurrent} proposes an incremental learning
+More recently, \cite{alishahi2012concurrent} propose an incremental learning
 scheme inducing soft word categories while learning the meaning of words. 
-\cite{thothathiri2012effect} examines the role of prosody on infants' distributional learning of
-syntactic categories and concludes that the prosody shows little influence. \cite{reeder2013shared} aims to answer the use of distributional knowledge when the evidence on  the possible context of a word is not enough. Furthermore,
-they explain how and when the language users form new categories depending on
+\cite{thothathiri2012effect} examine the role of prosody on infants' distributional learning of
+syntactic categories and concludes that the prosody shows little influence. \cite{reeder2013shared} discuss to answer the use of distributional knowledge when the evidence on  the possible context of a word is not enough. Furthermore,
+they explain how and when language users form new categories depending on
 the overlaps between the context words.

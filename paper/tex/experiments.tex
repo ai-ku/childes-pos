@@ -39,11 +39,11 @@ are extracted when the 4-gram left or right context is not available.}.
 \label{s:lm}
 We extracted training data of approximately 6.8 million tokens\footnote{Anne,
 Aran, Eve, Naomi and Peter corpora are excluded.} of child-directed speech data
-from CHILDES following the steps defined in Section~\ref{app:preprocessing}.
+from CHILDES following the steps defined in Appendix A.
 To calculate substitute word probabilities, we train a 4-gram language model with
 Kneser-Ney discounting on the training data using SRILM \citep*{Stolcke2002}.
 Words that were observed less than 2 times in the language model training data
-were replaced with unknown word tag \textsc{<unk>}, which gave us a vocabulary
+were replaced with an unknown word tag \textsc{<unk>}, which gave us a vocabulary
 size of 21734.
 
 \subsubsection{Grammatical categories and Evaluation}
@@ -51,7 +51,7 @@ The grammatical category of words in CHILDES are extracted by first
 applying the MOR parser \citep*{macwhinney2000childes} and then using
 the POST disambiguator \citep*{sagae2004automatic}.  The accuracy of
 CHILDES grammatical categories is approximately 95\%
-\citep*{parisse2000automatic} and it is encoded in the MOR line of the
+\citep*{parisse2000automatic} and is encoded in the MOR line of the
 CHILDES corpus.
 
 To evaluate classification accuracy we use the standard labeling
@@ -91,7 +91,7 @@ the input layer.
 % How do they represent the frame/input information?
 We train separate connectionist models to compare flexible frames ($aX+Xb$) to
 the substitute words ($a*b$).  For each model we input the distributional
-information to the feed-forward connectionist model in the following way,
+information to the feed-forward connectionist model in the following way:
 
 \begin{itemize}
 %#\item $aXb$: Each input unit represents a distinct frame thus only one
@@ -117,12 +117,12 @@ information to the feed-forward connectionist model in the following way,
 \end{figure}
 Table~\ref{fig:inputunits} presents the number of input layer units of
 syntagmatic and paradigmatic representation based models on each child
-corpus seperately.  The number of distinct frames is fixed for any
+corpus separately.  The number of distinct frames is fixed for any
 given corpus while the number of distinct substitutes varies due to
 the random sampling.
 
 % Give an example sentence to show how we represent each frame
-Each output unit represents a distinct grammatical category therefore the
+Each output unit represents a distinct grammatical category; therefore, the
 models are expected to produce only one active (non-zero) output unit for each
 target word.  If there are more than one active units present in the output
 layer\footnote{why neural network produces more than one active unit.}, the
@@ -132,7 +132,7 @@ unit with the largest value.
 Both models have 10 output units due to the standard labeling
 \citep*{Mintz200391}.
 
-Unless stated otherwise, all connectionist models in this paper uses the
+Unless stated otherwise, all connectionist models in this paper use the
 following parameters: (1)number of hidden units is set to 200 and initialized
 randomly for each model. (2) The backpropagation parameter is set to 0.1. The 
 learning function is sigmoid and the learning rate is 0.2(!!).
@@ -148,7 +148,7 @@ We measure and compare the classification accuracy of models by applying
 10-fold cross validation on the union of six child corpora.  To perform 10-fold
 cross validation we randomly split each child corpus into 10 folds.  At each
 iteration a single fold from each child corpus is kept as the test data while
-the union of remaining 9 folds of each child corpus are used as the training
+the union of the remaining 9 folds of each child corpus are used as the training
 data.  We repeat this process until all folds are used exactly once as the test
 data and report the average accuracy of 10 runs on each child corpus
 separately.  The main advantage of the cross validation is that all sentences
@@ -156,7 +156,7 @@ are eventually used both for testing and training. [!! citation]
 
 To compare the effects of paradigmatic representation ($a*b$) with the
 syntagmatic one ($aX+Xb$) we train and test both models using the identical
-10-fold cross validation split.  Thus every model in this paper exposed to the
+10-fold cross validation split.  Thus every model in this paper is exposed to the
 identical sequence of training and testing patterns.  Unless stated otherwise,
 in the rest of this paper, we stopped the training phase of feed-forward
 connectionist model on each corpus after $100K$ input patterns, used the
@@ -186,7 +186,7 @@ in Appendix.}.
 
 \subsection{Method} 
 All models are trained and evaluated according to steps summarized in
-Section~\ref{sec:training}.  Similar to analysis in \cite{clair2010}, we split
+Section~\ref{sec:training}.  Similar to the analysis in \citep*{clair2010}, we split
 the training phase of each model into two as short and long training phases in
 which we stop and evaluate the models on the corresponding test sets after
 presenting identical 10K and 100K training patterns, respectively.  
@@ -225,7 +225,7 @@ conjunctions({\it conj}) and negations({\it neg}).
   \label{fig:category10K}
 \end{figure}
 
-Finally, with limited amount of training patterns the $a*b$ model is able to
+Finally, with limited amount of training patterns, the $a*b$ model is able to
 categorize nine out of ten grammatical categories in each child corpus with
 different levels of accuracies.  On the other hand, the $aX+Xb$ model performs
 poorly on {\it wh}, {\it conj}, {\it adv}, {\it neg} and {\it int} and can not
@@ -245,11 +245,11 @@ of $aX+Xb$ and $a*b$ models on each child corpus.  Although differences between
 corresponding accuracies and lambda values of $aX+Xb$ and $a*b$ models are less
 than 10K experiments, the $a*b$ model is still significantly more accurate than
 the $aX+Xb$ model on all child corpora.  The $a*b$ model benefit less from the
-extensive training than the $aX+Xb$ model. One possible explanation of this
+extensive training than the $aX+Xb$ model. One possible explanation for this
 behavior is that the number of input units of the $a*b$ model on each child
 corpus is significantly higher than the $aX+Xb$ (see
 Figure~\ref{fig:inputunits}) while the number of hidden units is fixed to 200
-for both models. As \citep*{clair2010} did, we experiment with the number of
+for both models. As \cite{clair2010} did, we experiment with the number of
 hidden units such that the ratio between the number of input units and
 the number of hidden units is the
 same for both models. We do not observe significant changes on the result.
@@ -278,8 +278,8 @@ negations.
 \label{s:exp_substitutes}
 \stepcounter{ExperimentCounter}
 In this experiment we analyze the effects of number of substitutes both on the
-number of input units and the model classification accuracies.  A side from the
-effect on classification accuracies the number of sampled substitutes also
+number of input units and the model classification accuracies.  Aside from the
+effect on classification accuracies, the number of sampled substitutes also
 varies the number of active and non-active units in the input layer.  
 %% The sum
 %% of active input unit values of a given target word equals to the number of
@@ -303,7 +303,7 @@ substitutes that are more than 64.}.
 Figure~\ref{fig:substitutes} plots the model classification accuracy of each
 child corpus versus the number of substitutes.  The classification accuracy
 dramatically increases on each child corpus until the number of substitutes
-reaches to 16. After 16 substitutes, increasing the number of substitutes
+reaches 16. After 16 substitutes, increasing the number of substitutes
 does not significantly change the classification accuracy. Thus, the 
 model is fairly robust to the number of substitutes as long as the
 model can observe at least 16 substitutes per target word.
@@ -312,7 +312,7 @@ model can observe at least 16 substitutes per target word.
 
 One possible problem of these models is that the number of
 input units increases with the increasing number of substitutes meanwhile the
-number of hidden units is fixed to 200. \cite{clair2010} came up this problem
+number of hidden units is fixed to 200. \cite{clair2010} discussed this problem
 while comparing flexible frames with other frames and solved it by setting the
 number of hidden units such that the ratio between the number of hidden and
 input units is fixed for each model.  Although they reported slight
@@ -327,18 +327,18 @@ the n-gram order of the language model.
 \stepcounter{ExperimentCounter}
 \label{s:exp_ngram}
 
-In this set of experiments we test the paradigmatic model by changing the n-gram order of the language model that are
+In this set of experiments, we test the paradigmatic model by changing the n-gram order of the language model that are
 used to sample substitutes. A language model defines probabilities for the sequences of strings in a language.
-The n-gram order of language model determines number of preceding items taking into account
+The n-gram order of language model determines the number of preceding items taken into account
 while determining the probability of the upcoming word. The previous studies
-show that young children are sensitive to statistical properties of language \cite{saffran1996statistical}
-and are able to store 4-word sequences \cite{bannard2008stored}. Experiments
+show that young children are sensitive to statistical properties of language \citep*{saffran1996statistical}
+and are able to store 4-word sequences \citep*{bannard2008stored}. Experiments
 with adults also suggest that the language users are sensitive to co-occurrence
-patterns beyond bigram \cite{arnon2010more}.
+patterns beyond bigram \citep*{arnon2010more}.
 
 The perplexity of the language model is a measurement of the 
 number of words that can be observed in a given n-gram
-context window and determined by n-gram order of the language model.  Therefore one can expect that as the n-gram order increases the model assigns more relevant substitutes to the
+context window and determined by n-gram order of the language model.  Therefore, as the n-gram order increases the model assigns more relevant substitutes to the
 context\footnote{\cite{Goodman2001403} showed that the perplexity plateaued when
 the order is higher than 5.}. 
 
