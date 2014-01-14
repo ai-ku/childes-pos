@@ -75,11 +75,12 @@ while(<ANS>) {
 }
 
 ### print folds
+my $printTag = @data == 1 ? "" : "all.";
 foreach(@data) {
   # if we have only one data perform the analysis
   my $convert = "cat $tmp/$_.te | cut -f1,3,4 | gzip > $tmp/$_.anal.gz";
   system($convert);
-  my $analysis = "idx2tag.py $tmp/$_.anal.gz $tmp/$_.ans > $_.all.$frame.fold$foldId.out 2> $tmp/$_.anal.err";
+  my $analysis = "idx2tag.py $tmp/$_.anal.gz $tmp/$_.ans > $_.$printTag$frame.fold$foldId.out 2> $tmp/$_.anal.err";
   system($analysis);
 }
 

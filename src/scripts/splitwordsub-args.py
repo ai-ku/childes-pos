@@ -14,4 +14,4 @@ for (i,s) in enumerate(subsCount,start=1):
     for r in range(fold):
         print i, seed, foldId, s, iters, fold, dataName, hiddenRatio
         foldId += 1
-
+	sys.exit(1)

@@ -10,7 +10,8 @@ ansH = dd(int)
 subH = dd(int)
 cons = 0
 split = 0
-for (ii,line) in enumerate(sys.stdin): ## place of this file is fixes
+
+for (ii,line) in enumerate(sys.stdin): ## place of this file is fixed
         l = line.strip().split("\t")
         if l[0] == "-1": 
             data.append(l[0])

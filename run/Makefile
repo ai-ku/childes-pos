@@ -5,10 +5,10 @@
 bin:
 	cd ../bin; make
 
-RESULTS_PATH=xresults/
+RESULTS_PATH=dis_results/
 MINTZ_DATA_PATH=../data/childes/mintz03xml/
 TRAIN_DATA_PATH=../data/childes/data-xml
-NCPU=40
+NCPU=10
 SEED=0
 
 all: mintz03 clair10pr clair10ps
@@ -68,7 +68,7 @@ FS_PSUB=1.0 # or this much cumulative probability
 FS_OPTIONS=-n ${FS_NSUB} -p ${FS_PSUB}
 
 %.sub.gz: %.fre.gz train.lm.gz  ## FS_NSUB=100 FS_PSUB=1: time=4h47m, wc=1222974 245817774 2350067125
-	zcat $< | cut -f 2 | fastsubs ${FS_OPTIONS} train.lm.gz | grep -P '^X' | gzip > $@
+	zcat $< | cut -f 2 | fastsubs ${FS_OPTIONS} train.lm.gz 2> $*.sub.err | grep -P '^X' | gzip > $@
 
 ### WORDSUB options:
 WORDSUB=16
@@ -142,34 +142,37 @@ VERBOSE=-v
 
 ## ALL-Data Split Train-Test
 EXP_CROSSVAL=10
-EXP_ITER=10
+EXP_ITER=100000
 ARGS_FRAME=7
 
 ### FRAME EXPERIMENTS
 split.frame.out: anne.fre.gz aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz peter.fre.gz 
 	splitframe-args.py ${EXP_ITER} ${EXP_CROSSVAL} ${SEED} all | xargs -n${ARGS_FRAME} -P${NCPU} splitframerun.pl > $@
 	-mkdir -p ${RESULTS_PATH}${EXP_ITER}
+	-rm split.frame.plot
 	for label in anne aran eve naomi nina peter; do\
-		echo "$$label scores" >> split.frame.plot; \
-		cat split.frame.out | plotdata.pl 3=$$label 4=x 5=y >> split.frame.plot ;\
-		ls $$label.all.fle.fold*.out | analyzetags.py > ${RESULTS_PATH}${EXP_ITER}/$*.all.fle.anl;\
-		ls $$label.all.fre.fold*.out | analyzetags.py > ${RESULTS_PATH}${EXP_ITER}/$*.all.fre.anl;\
-		ls $$label.all.pr.fold*.out | analyzetags.py > ${RESULTS_PATH}${EXP_ITER}/$*.all.pr.anl;\
-		ls $$label.all.ps.fold*.out | analyzetags.py > ${RESULTS_PATH}${EXP_ITER}/$*.all.ps.anl;\
-		mv $$label.all.*.fold*.out ${RESULTS_PATH}${EXP_ITER};\
+		echo "$$label scores" >> ${RESULTS_PATH}${EXP_ITER}/split.frame.plot ;\
+		cat split.frame.out | plotdata.pl 3=$$label 4=x 5=y >> ${RESULTS_PATH}${EXP_ITER}/split.frame.plot ;\
+		ls $$label.all.fle.fold*.out | analyzetags.py > ${RESULTS_PATH}${EXP_ITER}/$$label.all.fle.anl;\
+		ls $$label.all.fre.fold*.out | analyzetags.py > ${RESULTS_PATH}${EXP_ITER}/$$label.all.fre.anl;\
+		ls $$label.all.pr.fold*.out | analyzetags.py > ${RESULTS_PATH}${EXP_ITER}/$$label.all.pr.anl;\
+		ls $$label.all.ps.fold*.out | analyzetags.py > ${RESULTS_PATH}${EXP_ITER}/$$label.all.ps.anl;\
+		mv $$label.all.f*.fold*.out ${RESULTS_PATH}${EXP_ITER};\
+		mv $$label.all.p*.fold*.out ${RESULTS_PATH}${EXP_ITER};\
 	done
-	cp split.frame.plot ${RESULTS_PATH}${EXP_ITER}
 	cp $@ ${RESULTS_PATH}${EXP_ITER}
 
 %.frame.out: %.fre.gz
 	-rm $*.*.fold*.out
 	splitframe-args.py ${EXP_ITER} ${EXP_CROSSVAL} ${SEED} $* | xargs -n${ARGS_FRAME} -P${NCPU} splitframerun.pl > $@
 	-mkdir -p ${RESULTS_PATH}${EXP_ITER}
-	-ls $*.all.fle.fold*.out | analyzetags.py > ${RESULTS_PATH}${EXP_ITER}/$*.fle.anl
-	-ls $*.all.fre.fold*.out | analyzetags.py > ${RESULTS_PATH}${EXP_ITER}/$*.fre.anl
-	-ls $*.all.pr.fold*.out | analyzetags.py > ${RESULTS_PATH}${EXP_ITER}/$*.pr.anl
-	-ls $*.all.ps.fold*.out | analyzetags.py > ${RESULTS_PATH}${EXP_ITER}/$*.ps.anl
-	mv $*.*.fold*.out ${RESULTS_PATH}${EXP_ITER}
+	-cat $@ | plotdata.pl 3=$* 4=x 5=y > ${RESULTS_PATH}${EXP_ITER}/$*.frame.plot 
+	-ls $*.fle.fold*.out | analyzetags.py > ${RESULTS_PATH}${EXP_ITER}/$*.fle.anl
+	-ls $*.fre.fold*.out | analyzetags.py > ${RESULTS_PATH}${EXP_ITER}/$*.fre.anl
+	-ls $*.pr.fold*.out | analyzetags.py > ${RESULTS_PATH}${EXP_ITER}/$*.pr.anl
+	-ls $*.ps.fold*.out | analyzetags.py > ${RESULTS_PATH}${EXP_ITER}/$*.ps.anl
+	-mv $*.f*.fold*.out ${RESULTS_PATH}${EXP_ITER}
+	-mv $*.p*.fold*.out ${RESULTS_PATH}${EXP_ITER}
 	cp $@ ${RESULTS_PATH}${EXP_ITER}
 
 split.frame.plot: split.frame.out
@@ -182,16 +185,50 @@ split.frame.plot: split.frame.out
 %.frame.plot: %.frame.out
 	cat $< | plotdata.pl 3=$* 4=x 5=y > $@ 
 
+### SUBSTITUTE DISTRIBUTION EXPERIMENTS
+ARGS_DIS=6
+
+split.dis.out: anne.sub.gz aran.sub.gz eve.sub.gz naomi.sub.gz nina.sub.gz peter.sub.gz anne.fre.gz	 aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz peter.fre.gz
+	splitdis-args.py ${EXP_ITER} ${EXP_CROSSVAL} ${SEED} all 0| xargs -n${ARGS_DIS} -P${NCPU} splitdisrun.pl > $@
+	-mkdir -p ${RESULTS_PATH}${EXP_ITER}
+	-rm split.dis.plot
+	for label in anne aran eve naomi nina peter; do\
+		echo "$$label scores" >> ${RESULTS_PATH}${EXP_ITER}/split.dis.plot; \
+		cat split.dis.out | plotdata.pl 2=$$label 0=x 3=y >> ${RESULTS_PATH}${EXP_ITER}/split.dis.plot ;\
+		mv $$label.all.dis.fold*.out ${RESULTS_PATH}${EXP_ITER};\
+	done
+	cp $@ ${RESULTS_PATH}${EXP_ITER}
+
+%.dis.out: %.sub.gz %.fre.gz
+	splitdis-args.py ${EXP_ITER} ${EXP_CROSSVAL} ${SEED} $* 0| xargs -n${ARGS_DIS} -P${NCPU} splitdisrun.pl > $@
+#	ls $*.dis.fold*.out | analyzetags.py > $*.fixdis${EXP_ITER}.anl
+	-mkdir -p ${RESULTS_PATH}${EXP_ITER}
+	cat $@ | plotdata.pl 4=$* 3=x 5=y > ${RESULTS_PATH}${EXP_ITER}/$*.dis.plot
+	mv $*.dis*.fold*.out ${RESULTS_PATH}${EXP_ITER}
+	cp $@ ${RESULTS_PATH}${EXP_ITER}
+
+split.dis.plot: split.dis.out
+		cat $< | plotdata.pl 2=x 3=y >> $@ 
+
 ### WORDSUB EXPERIMENTS
 ARGS_WSUB=8
 
 split.wsub.out: anne.sub.gz aran.sub.gz eve.sub.gz naomi.sub.gz nina.sub.gz peter.sub.gz anne.fre.gz	 aran.fre.gz eve.fre.gz naomi.fre.gz nina.fre.gz peter.fre.gz
 	splitwordsub-args.py ${EXP_ITER} ${EXP_CROSSVAL} ${SEED} all 0| xargs -n${ARGS_WSUB} -P${NCPU} splitwordsubrun.pl > $@
+	-mkdir -p ${RESULTS_PATH}${EXP_ITER}
+	-rm split.wsub.plot
+	for label in anne aran eve naomi nina peter; do\
+		echo "$$label scores" >> ${RESULTS_PATH}${EXP_ITER}/split.wsub.plot; \
+		cat split.wsub.out | plotdata.pl 4=$$label 3=x 5=y >> ${RESULTS_PATH}${EXP_ITER}/split.wsub.plot ;\
+		mv $$label.all.wsub*.fold*.out ${RESULTS_PATH}${EXP_ITER};\
+	done
+	cp $@ ${RESULTS_PATH}${EXP_ITER}
 
 %.wsub.out: %.sub.gz %.fre.gz
 	splitwordsub-args.py ${EXP_ITER} ${EXP_CROSSVAL} ${SEED} $* 0| xargs -n${ARGS_WSUB} -P${NCPU} splitwordsubrun.pl > $@
 #	ls $*.wsub.fold*.out | analyzetags.py > $*.fixwsub${EXP_ITER}.anl
 	-mkdir -p ${RESULTS_PATH}${EXP_ITER}
+	cat $@ | plotdata.pl 4=$* 3=x 5=y > ${RESULTS_PATH}${EXP_ITER}/$*.wsub.plot
 	mv $*.wsub*.fold*.out ${RESULTS_PATH}${EXP_ITER}
 	cp $@ ${RESULTS_PATH}${EXP_ITER}
 

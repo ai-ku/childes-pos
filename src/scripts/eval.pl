@@ -2,7 +2,7 @@
 use strict;
 use Data::Dumper;
 
-my $usage = qq{eval.pl [-m -v] -g <gold> < input
+my $usage = qq{eval.pl [-m -v -c] -g <gold> < input
 Calculates many-to-one and v-measure evaluations.
 -m prints many-to-one (default)
 -v prints v-measure (homogeneity, completeness, v-measure)
@@ -23,7 +23,7 @@ while(<>) {
     my $g = <GOLD>;    
     chomp $g;
     $cnt{$_}{$g}++;
-    $rcnt{$g}{$_}++;
+    $rcnt{$g}{$_}++ ;
 }
 
 close(GOLD);
@@ -39,7 +39,7 @@ if ($opt_m and $opt_v and $opt_c) {
 } elsif ($opt_v) {
     push @ans, vm();
 } elsif ($opt_c){
-    push @ans, chi();
+    push @ans, mintz03();
 } else{
     push @ans, m2o();
 } 
@@ -47,7 +47,7 @@ if ($opt_m and $opt_v and $opt_c) {
 $_ = sprintf("%f", $_) for @ans;
 print STDERR join("\t", @ans)."\n";
 
-sub chi {
+sub mintz03{
     my $total = 0;
     my $hit = 0;
     my $acc = 0;

@@ -24,6 +24,7 @@ class frame:
         self.filterUtterBound = False
         self.removeUtterBound = False
         self.filterTokenTags = False
+        self.quiet = True
 #        self.tagMap={'n':'n','pro':'n','adj':'adj', 'adv':'adv','conj':'conj',\
 #                         'det':'det', 'qn':'det', 'prep':'prep', 'v':'v', 'aux':'v',\
 #                         'part':'v', 'mod':'v', 'neg':'neg', \
@@ -58,7 +59,8 @@ class frame:
                         trg, s[i] = s[i], "X"
                         sen = len(s) if send >= len(s) else send
                     ##  sys.stderr.write("%d\t%d\t%s\t%s\n" % (si, i - sbg,tt," ".join(s[sbg:sen])))
-                        sys.stdout.write("%d\t%s\t%s\t%s\t%s:%s\n" % (si," ".join(s[sbg:sen]), trg,tt,s[i-1],s[i+1]))
+                        if self.quiet:
+                          sys.stdout.write("%d\t%s\t%s\t%s\t%s:%s\n" % (si," ".join(s[sbg:sen]), trg,tt,s[i-1],s[i+1]))
                         s[i] = trg
             else:
                  continue
@@ -231,6 +233,7 @@ if __name__ == '__main__':
     parser.add_option("-g", action="store_true", default=False, dest="pGroups", help="Print induced groupings (format: word*TAB*gold_tag*TAB*induced_tag) [default: %default]")
     parser.add_option("-r", action="store_true", default=False, dest="filterTags", help="Filter tags that are not in standard gold tag set (Mintz 2003) [default: %default]")
     parser.add_option("-c", type="int", default=1, dest="filterCount", help="Filter frames that are observed less than count [default: %default]")
+    parser.add_option("-q", action="store_false", default=True, dest="quiet", help="Disables all printing and can be used with other printing flags.[default: %default]") 
     (options, args) = parser.parse_args(sys.argv);
     ff = frame()
     if options.thr != None:
@@ -245,6 +248,8 @@ if __name__ == '__main__':
         ff.frameType = options.frame
     if options.ngram != None:
         ff.ngram = options.ngram
+    if options.quiet != None:
+        ff.quiet = options.quiet
     ff.read()
     ff.info()
     ff.get_frames()
