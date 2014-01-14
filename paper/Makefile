@@ -29,6 +29,10 @@ wsubtags100K.pdf:
 	ls ${PLOT_DATA}100000/*${ALL}.wsub16.anl | tagplot.py $@
 	mv $@ ${PLOT_DIR}$@
 
+distags%.pdf:
+	ls ${PLOT_DATA}100000/$*_train/*${ALL}.dis.anl | tagplot.py $@
+	mv $@ ${PLOT_DIR}$@
+
 substitute.pdf: 
 	#train test on same child corpus
 	ls ${PLOT_DATA}*wsub.plot | subsplot.py 

@@ -1,12 +1,13 @@
 #!/usr/bin/perl -w
 use strict;
 use File::Temp qw/tempdir/;
-my $usage = q{Usage: splitdisrun.pl seed foldid iters fold data-name hiddenRatio};
+my $usage = q{Usage: splitdisrun.pl seed foldid iters fold data-name nsub hiddenRatio};
 my $seed = shift; 
 my $foldId = shift;
 my $iter = shift or die("missing iter-> $usage");
 my $fold = shift or die("missing fold-> $usage");
 my $dataName = shift or die("missing dataname-> $usage");
+my $nsub = shift or die("missing nsub-> $usage"); 
 my $hiddenRatio = shift; 
 my @data = ("anne","aran","eve","naomi","nina","peter");
 @data = ($dataName) if ($dataName ne "all");
@@ -22,7 +23,7 @@ foreach my $dd (@data){
     my $subs = $dd.".sub.gz";
     my $wordsub_out = "$tmp/$dd.pairs";
     my $wordsub_seed = $foldId;
-    my $wordsub = "norm.py > $wordsub_out"; 
+    my $wordsub = "norm.py $nsub > $wordsub_out"; 
     my $cmd = "zcat $subs | " . $wordsub;
     system($cmd);
     my $combine_out = "$tmp/$dd.dis.gz";

@@ -63,12 +63,12 @@ mintz03.ppl.plot: anne.ppl.gz aran.ppl.gz eve.ppl.gz naomi.ppl.gz nina.ppl.gz pe
 	done
 
 ### FASTSUBS options:
-FS_NSUB=100 # go until you have this many substitutes
+FS_NSUB=4000 # go until you have this many substitutes
 FS_PSUB=1.0 # or this much cumulative probability
 FS_OPTIONS=-n ${FS_NSUB} -p ${FS_PSUB}
-
+OMP_NUM_THREADS=40 
 %.sub.gz: %.fre.gz train.lm.gz  ## FS_NSUB=100 FS_PSUB=1: time=4h47m, wc=1222974 245817774 2350067125
-	zcat $< | cut -f 2 | fastsubs ${FS_OPTIONS} train.lm.gz 2> $*.sub.err | grep -P '^X' | gzip > $@
+	zcat $< | cut -f 2 | fastsubs-omp ${FS_OPTIONS} train.lm.gz 2> $*.sub.err | grep -P '^X' | gzip > $@
 
 ### WORDSUB options:
 WORDSUB=16

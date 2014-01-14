@@ -33,6 +33,7 @@ fastsubs: check
 	test -e ../src/fastbust || (cd ../src/ ; git clone ${FASTSUBS_GIT_REPO} ; git checkout ${FASTSUBS_GIT_TAG}) 
 	cd ../src/fastsubs; make
 	test -e $@ || ln -s ../src/fastsubs/fastsubs .
+	test -e $@-omp || ln -s ../src/fastsubs/fastsubs-omp .
 	test -e wordsub || ln -s ../src/fastsubs/wordsub .
 
 check:
