@@ -73,30 +73,29 @@ syntagmatic representation.
 
 %\cite{gomez2002variability} showed that 18-months infants are able to detect 
 
-\paragraph {Syntagmatic representation} 
-In syntagmatic representation the context is defined with the neighboring
+In {\em the syntagmatic representation} the context is defined with the neighboring
 words, typically co-occurrences with a single word on the left or a single word
 on the right word called a ``frame'' (e.g., {\em {\bf the} dog {\bf is}; {\bf
-the} cat {\bf is}})
-\citep*{SchutzePe93,Redington98distributionalinformation, Mintz200391,clair2010,lamar-EtAl:2010:Short,maron2010sphere}. A common limitation of syntagmatic representation is that
-it is not possible to exchange information between the words without common
-neighbors.  To solve the common neighbor problem the frame can be increased
-however it will introduce the data sparsity due to the low re-occurrence
-frequency of large frames \citep*{manning99foundations}.
+the} cat {\bf is}}) \citep*{SchutzePe93,Redington98distributionalinformation,
+Mintz200391,clair2010,lamar-EtAl:2010:Short,maron2010sphere}. A common
+limitation of syntagmatic representation is that it is not possible to exchange
+information between the words without common neighbors.  To increase the chance
+of having common neighbors the frame size can be increased however this will
+introduce the data sparsity due to the low re-occurrence frequency of large
+frames \citep*{manning99foundations}.
 
 \cite{Mintz200391} showed that non-adjacent high frequent bi-gram frames,
-``aXb'' ({\it a} and {\it b} are the left and the right bigrams, respectively),
-are very informative to language learners on grammatical categorization of
-the middle tokens, {\it X}.  The main limitation of this approach is that using
-only top-N {\it frequent frames} introduces a coverage problem while using all of
-the frames introduces frame sparsity.  \cite{clair2010} overcame the
-limitations of frequent frames ($aXb$) by introducing {\it flexible frames}
-($aX+Xb$) which represent left and right frames separately.  They report
-improvements over $aXb$ in terms of accuracy and coverage.  
+``aXb'' where {\it a} and {\it b} are the left and the right bigrams,
+respectively, are very informative to language learners on grammatical
+categorization of the middle tokens, {\it X}.  The main limitation of this
+approach is that using only top-N {\it frequent frames} introduces a coverage
+problem while using all of the frames introduces frame sparsity.
+\cite{clair2010} overcame the limitations of frequent frames ($aXb$) by
+introducing {\it flexible frames} ($aX+Xb$) which represent left and right
+frames separately.  They report improvements over $aXb$ in terms of accuracy
+and coverage.  
 
-\paragraph {Paradigmatic representation}
-
-In the paradigmatic representation the context is defined as the distribution
+In {\em the paradigmatic representation} the context is defined as the distribution
 of the substitute words in that context \citep*{SchutzePe93, Schutze1995,
 YatbazSY12}.   In part-of-speech induction literature \cite{Schutze1995}
 incorporated paradigmatic information by concatenating the left and the right
